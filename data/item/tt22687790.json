@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt22687790",
+    "name": "A Haunting in Venice",
+    "image": "https://m.media-amazon.com/images/M/MV5BYmI4MzE2YjQtYWMxYi00MjBhLThhOTYtYjdiOGQ4NzE4MWViXkEyXkFqcGdeQXVyMzUwNDIxMjQ@._V1_.jpg",
+    "description": "In post-World War II Venice, Poirot, now retired and living in his own exile, reluctantly attends a seance. But when one of the guests is murdered, it is up to the former detective to once again uncover the killer.",
+    "rating": 6.6,
+    "certificate": "PG-13",
+    "genre": [
+        "Crime",
+        "Drama",
+        "Horror"
+    ],
+    "year": 2023,
+    "time": "1h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في أعقاب الحرب العالمية الثانية، يعيش هركيول بوارو بمدينة البندقية الإيطالية بعيدًا عن الماضي، ولكن حينما تقع جريمة قتل غامضة، يصبح على بوارو التخلي عن تقاعده وكشف لغز الجريمة.",
+    "video": {},
+    "related": [
+        "tt7657566",
+        "tt3402236"
+    ]
+}

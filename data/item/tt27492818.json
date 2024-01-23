@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt27492818",
+    "name": "ابن الحاج أحمد",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzYzNjE5ZTItYTlhZC00ZGJlLWFhNWUtNGFjMzY1YjNmZGQ4XkEyXkFqcGdeQXVyMTI1OTkzMzQ5._V1_.jpg",
+    "description": "A young merchant (Ahmed) works as a salesman in his father&apos;s grocery store, and is exposed to many problems, after he finds himself facing a gang, which forces him to cooperate with the young woman (Nabila) and deal with her.",
+    "rating": 4.4,
+    "certificate": "G",
+    "genre": [
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "1h 40m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتورط شاب يدعى (أحمد) يعمل بائعًا بمتجر بقالة والده في متاعب جمة، بعدما يجد نفسه في مواجهة إحدى العصابات الخطيرة، مما يحتم عليه التعاون مع الشابة (نبيلة) والتصدي للخطر معًا.",
+    "video": [],
+    "related": []
+}

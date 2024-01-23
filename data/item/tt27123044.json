@@ -1,0 +1,18 @@
+{
+    "type": "Movie",
+    "imdbId": "tt27123044",
+    "name": "حسن المصري",
+    "image": "https://m.media-amazon.com/images/M/MV5BM2E4YmRiM2EtYzA5Mi00ZjFmLWI3MDEtYjdhZWM0ZjcwNzYxXkEyXkFqcGdeQXVyNzc3NTQ3MTU@._V1_.jpg",
+    "rating": 5.6,
+    "certificate": "12+",
+    "genre": [
+        "Action"
+    ],
+    "year": 2023,
+    "time": "",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يُعاني حسن من الشعور بالذنب بعد فقدانه لوالدته وشقيقته، ويقبل وظيفة جديدة سائقًا وحارسًا شخصيًا لفتاة مراهقة؛ فيجد الخلاص من خلال حمايتها وإنقاذها من كافة المخاطر مهما تكلف الأمر.",
+    "video": [],
+    "related": []
+}

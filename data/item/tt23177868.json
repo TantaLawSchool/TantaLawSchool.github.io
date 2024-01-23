@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt23177868",
+    "name": "Mummies",
+    "image": "https://m.media-amazon.com/images/M/MV5BZWU0ZjJiOGItZDUwNy00MDE1LTk2ZjEtY2YwMzQxZGJjYjFjXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_.jpg",
+    "description": "It follows three mummies as they end up in present-day London and embark on a journey in search of an old ring belonging to the Royal Family, stolen by the ambitious archaeologist Lord Carnaby.",
+    "rating": 5.9,
+    "certificate": "G",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "1h 28m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "خلال سلسلة من الأحداث المؤسفة، ينتهي المطاف بثلاث مومياوات في عصرنا الحالي بلندن، وينطلقوا في رحلة البحث عن خاتم ينتمي للعائلة الملكية سُرق عبر عالم الآثار اللورد كارنابي.",
+    "video": {},
+    "related": []
+}

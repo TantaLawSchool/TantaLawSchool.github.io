@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt7599146",
+    "name": "Sound of Freedom",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTAwNWQ1ZjQtZDFmMC00YjNlLWFlNjItMjJlYzZkMjJlNzkyXkEyXkFqcGdeQXVyNzc0MTgzMzU@._V1_.jpg",
+    "description": "The incredible true story of a former government agent turned vigilante who embarks on a dangerous mission to rescue hundreds of children from traffickers.",
+    "rating": 7.7,
+    "certificate": "PG-13",
+    "genre": [
+        "Biography",
+        "Crime",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "2h 11m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يدور العمل حول القصة الحقيقية لعميل حكومي سابق، حيث ينطلق في مغامرة محفوفة بالمخاطر في سبيل إنقاذ المئات من الأطفال من المتحرشين بالأطفال.",
+    "video": {},
+    "related": []
+}

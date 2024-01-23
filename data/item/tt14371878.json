@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt14371878",
+    "name": "Lift",
+    "image": "https://m.media-amazon.com/images/M/MV5BMWQ1NzViMTQtMjVhNy00YzA0LTg2MzYtZjUyOWNiNDI2MzhlXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+    "description": "Follows a master thief and her ex-boyfriend who team up to steal $100 million in gold bullion being transported on a 777 passenger flight.",
+    "rating": 5.1,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Comedy",
+        "Crime"
+    ],
+    "year": 2024,
+    "time": "1h 44m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور الأحداث حول لصة محترفة تتعاون مع حبيبها السابق في مغامرة للاستيلاء على سبائك ذهبية بقيمة 100 مليون دولار على متن طائرة ركاب مدنيين، وتتوالى الأحداث.",
+    "video": [],
+    "related": []
+}

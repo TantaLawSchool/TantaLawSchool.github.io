@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt4998632",
+    "name": "Ambulance",
+    "image": "https://m.media-amazon.com/images/M/MV5BYjUyN2VlZGEtNGEyZC00YjViLTgwYmQtZDJiM2FlOTU3Mjg2XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_.jpg",
+    "description": "Two robbers steal an ambulance after their heist goes awry.",
+    "rating": 6.1,
+    "certificate": "12+",
+    "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+    ],
+    "year": 2022,
+    "time": "2h 16m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الحركة والدراما، تسير خطة سرقة بشكل خاطئ، فيضطر اثنين من اللصوص إلى الاستيلاء على سيارة إسعاف في محاولة للهرب، ولكن سرعان ما تزداد الأمور تعقيدًا.",
+    "video": {},
+    "related": []
+}

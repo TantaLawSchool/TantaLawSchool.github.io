@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt3766354",
+    "name": "The Equalizer 2",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTU2OTYzODQyMF5BMl5BanBnXkFtZTgwNjU3Njk5NTM@._V1_.jpg",
+    "description": "Robert McCall serves an unflinching justice for the exploited and oppressed, but how far will he go when that is someone he loves?",
+    "rating": 6.7,
+    "certificate": "18+",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2018,
+    "time": "2h 1m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "من جديد، يعود (روبرت ماكوول) مكرسًا وقته لمهمته الدائمة: جلب العدالة للمقهورين والمنسحقين، ولكن إلى أي مدى سيجازف (ماكوول) في سبيل من يحب؟",
+    "video": {},
+    "related": [
+        "tt17024450",
+        "tt0455944"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt15789038",
+    "name": "Elemental",
+    "image": "https://m.media-amazon.com/images/M/MV5BZjYxYWVjMDMtZGRjZS00ZDE4LTk0OWUtMjUyOTI4MmYxNjgwXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "description": "Follows Ember and Wade, in a city where fire-, water-, earth- and air-residents live together.",
+    "rating": 7,
+    "certificate": "G",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "1h 41m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من المغامرات والكوميديا، يتناول العمل قصة إمبر وويد، واللذان يعيشان في مدينة يتكون سكانها من العناصر الأربعة (الماء والهواء والأرض والنار).",
+    "video": {},
+    "related": []
+}

@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt3291150",
+    "name": "Expend4bles",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDFhYjc2NmUtNDBlOC00NDE5LTk5YWYtYmM4ZmMxNTUxMGNjXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg",
+    "description": "Armed with every weapon they can get their hands on, the Expendables are the world&apos;s last line of defense and the team that gets called when all other options are off the table.",
+    "rating": 4.8,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعود فريق المرتزقة من جديد من أجل التصدي لتاجر أسلحة يمتلك جيشًا كبيرًا يسعى من خلاله لتدمير كل شيء.",
+    "video": {},
+    "related": [
+        "tt1320253",
+        "tt2333784",
+        "tt1764651"
+    ]
+}

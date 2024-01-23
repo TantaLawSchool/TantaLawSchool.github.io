@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt3402236",
+    "name": "Murder on the Orient Express",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTk5OGFiYzktMTkwNS00ZjQ5LWFkNGQtNGM0MjA4MWE2MDIwXkEyXkFqcGdeQXVyODY1NDk1NjE@._V1_.jpg",
+    "description": "When a murder occurs on the train on which he&apos;s travelling, celebrated detective Hercule Poirot is recruited to solve the case.",
+    "rating": 6.5,
+    "certificate": "PG-13",
+    "genre": [
+        "Crime",
+        "Drama",
+        "Mystery"
+    ],
+    "year": 2017,
+    "time": "1h 54m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يحقق المحقق الشهير هركيول بوارو (كينيث براناه) في جريمة قتل راح ضحيتها رجل أمريكي ثري كان يسافر على متن قطار الشرق السريع، الذي يعد هو أسرع قطارات العالم قاطبة، ويجري تحقيقات مكثفة مع كافة راكبي القطار الذين تزامن وجودهم وقت حدوث العملية، ويحاول هيركول التوصل لهوية الجاني.",
+    "video": {},
+    "related": [
+        "tt22687790",
+        "tt7657566"
+    ]
+}

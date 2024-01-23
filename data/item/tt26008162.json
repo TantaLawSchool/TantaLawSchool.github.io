@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt26008162",
+    "name": "نبيل الجميل أخصائي تجميل",
+    "image": "https://m.media-amazon.com/images/M/MV5BMWM3N2U5YmUtMDRmYS00NGQ5LWJmNjYtNjQ5NWJlYmEzYTU4XkEyXkFqcGdeQXVyMTYwNTM3MDUz._V1_.jpg",
+    "description": "Dr. Nabil, a cosmetic specialist, owns a beauty clinic. He is exposed to many situations through that clinic, and many comedic ironies occur between him and Nour.",
+    "rating": 4.1,
+    "certificate": "All ages",
+    "genre": [
+        "Comedy"
+    ],
+    "year": 2022,
+    "time": "1h 45m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار كوميدي تشويقي، يمتلك دكتور نبيل أخصائي التجميل (محمد هنيدي) عيادة للتجميل، ومن خلال تلك العيادة يتعرض للعديد من المواقف، وتحدث بينه وبين (نور اللبنانية) العديد من المفارقات الكوميدية.",
+    "video": [],
+    "related": []
+}

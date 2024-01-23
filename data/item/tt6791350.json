@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt6791350",
+    "name": "Guardians of the Galaxy Vol. 3",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDgxOTdjMzYtZGQxMS00ZTAzLWI4Y2UtMTQzN2VlYjYyZWRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "description": "Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe and one of their own - a mission that could mean the end of the Guardians if not successful.",
+    "rating": 7.9,
+    "certificate": "8+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "2h 30m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من المغامرة والحركة، يعود حراس المجرة في مغامرة أخيرة ختامية، حيث يتعرض روكيت لإصابة بالغة تُطلق العنان لماضيه المُظلم، فيكافح حراس المجرة الزمن لإنقاذه.",
+    "video": {},
+    "related": [
+        "tt2015381",
+        "tt3896198"
+    ]
+}

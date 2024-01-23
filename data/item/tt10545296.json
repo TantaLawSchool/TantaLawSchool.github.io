@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt10545296",
+    "name": "The Hunger Games: The Ballad of Songbirds & Snakes",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTZmMmY2MzctMjU2Yy00YjJlLTk1NjAtY2U4MmMxOWZkZWY4XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg",
+    "description": "Coriolanus Snow mentors and develops feelings for the female District 12 tribute during the 10th Hunger Games.",
+    "rating": 7.2,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "2h 37m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "قبل سنوات من تحوله إلى رئيس مستبد في بانيم، تدور الأحداث حول كوريولانوس سنو في سن الثامنة عشر، حيث يبحث عن المجد بعد اختياره ليكون مرشدًا لدورة ألعاب الجوع العاشرة.",
+    "video": {},
+    "related": []
+}

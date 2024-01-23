@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt21867434",
+    "name": "BlackBerry",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDNhZWU4NTQtYjk1NS00MTM1LTg3ODYtMzE0MjQ2YTI5MGM4XkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_.jpg",
+    "description": "The story of the meteoric rise and catastrophic demise of the world&apos;s first smartphone.",
+    "rating": 7.4,
+    "certificate": "R",
+    "genre": [
+        "Biography",
+        "Comedy",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "2h",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يحكي الفيلم عن تاريخ عملاق الأجهزة الإلكترونية الذي جاء صعوده سريعا ليتربع على عرش الهواتف المحمولة، ويسلط الضوء على كيفية التفوق على المنافسين ومن ثم الهبوط سريعا.",
+    "video": {},
+    "related": []
+}

@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2170283",
+    "name": "عنتر شايل سيفه",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDMyZWExODUtMDQ5MC00ZmM5LWJiYzQtZjViMjZiYzg3MjAxXkEyXkFqcGdeQXVyNjI3OTg1ODY@._V1_.jpg",
+    "description": "A poor farmer named Antar seeks employment in Italy to earn his living where he finds himself in awkward situations.",
+    "rating": 4.8,
+    "certificate": "",
+    "genre": [
+        "Comedy",
+        "Drama",
+        "Romance"
+    ],
+    "year": 1983,
+    "time": "1h 48m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في قرية بالصعيد، يعيش (عنتر) عالة على زوجته، التي تواجه ضغطا لبيع أرضها إلى (مدحت)، يسافر عنتر إلى إيطاليا لجمع ثروة بعقد عمل أعده له زميله متولي، يتضح له بعد وصوله إلى روما أنه عقد مزور",
+    "video": [],
+    "related": []
+}

@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt7954682",
+    "name": "البيه البواب",
+    "image": "https://m.media-amazon.com/images/M/MV5BOWI3MDJlNDUtMWY5OS00MTIwLWJlMGEtM2FhNjY3MTMzYjllXkEyXkFqcGdeQXVyMjY0NDI3MzY@._V1_.jpg",
+    "description": "Abdel Samea goes to Egypt with his wife and children looking for a job so he works as a doorman, and by being smart he works as a broker until he makes a lot of money.",
+    "rating": 7.1,
+    "certificate": "",
+    "genre": [
+        "Comedy",
+        "Drama"
+    ],
+    "year": 1987,
+    "time": "1h 59m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "ينزح (عبدالسميع) إلى القاهرة برفقة زوجته وأولاده للبحث عن لقمة العيش، فيعمل بوابًا بإحدى العمارات، وبذكائه يتمكن من العمل سمسار بجانب مهنة البواب حتى نجح في تحقيق نسبة ليست بقليلة من الأموال",
+    "video": [],
+    "related": []
+}

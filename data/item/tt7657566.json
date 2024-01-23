@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt7657566",
+    "name": "Death on the Nile",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjI4ZTQ1OTYtNTI0Yi00M2EyLThiNjMtMzk1MmZlOWMyMDQwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+    "description": "While on vacation on the Nile, Hercule Poirot must investigate the murder of a young heiress.",
+    "rating": 6.3,
+    "certificate": "12+",
+    "genre": [
+        "Crime",
+        "Drama",
+        "Mystery"
+    ],
+    "year": 2022,
+    "time": "2h 7m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "أثناء قضاء إجازته على نهر النيل على متن سفينة، يتعين على المحقق الشهير والحاذق (هيركيول بوارو) التحقيق في مقتل وريثة شابة، ويباشر تحقيقاته للوصول إلى القاتل.",
+    "video": {},
+    "related": [
+        "tt22687790",
+        "tt3402236"
+    ]
+}

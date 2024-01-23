@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2404233",
+    "name": "Gods of Egypt",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjExODg3MDUzNl5BMl5BanBnXkFtZTgwNjExMjE3NzE@._V1_.jpg",
+    "description": "Mortal hero Bek teams with the god Horus in an alliance against Set, the merciless god of darkness, who has usurped Egypt&apos;s throne, plunging the once peaceful and prosperous empire into chaos and conflict.",
+    "rating": 5.4,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2016,
+    "time": "2h 7m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "من وحي الأساطير المصرية القديمة، يقع صراع ضخم بين اﻹله ست (جيرارد بتلر)، وبين اﻹله حورس (نيكولاج كوستر-والدو) في مصر، وذلك في سبيل فرض السيطرة على دلتا النيل",
+    "video": {},
+    "related": []
+}

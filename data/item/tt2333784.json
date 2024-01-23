@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2333784",
+    "name": "The Expendables 3",
+    "image": "https://m.media-amazon.com/images/M/MV5BODU5ODMyMzg2MV5BMl5BanBnXkFtZTgwMTA2MTcxMjE@._V1_.jpg",
+    "description": "Barney augments his team with new blood for a personal battle: to take down Conrad Stonebanks, the Expendables co-founder and notorious arms trader who is hell bent on wiping out Barney and every single one of his associates.",
+    "rating": 6.1,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2014,
+    "time": "2h 6m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في جو من الحركة والتشويق، يرصد الفيلم عمليات فرقة المرتزقة بقيادة بارني روس (سيلفيستر ستالون)، حيث يجد بارني روس نفسه وجهًا لوجه ضد كونراد ستون بانكس (ميل جيبسون). كونراد كان أحد أعضاء الفرقة في الماضي",
+    "video": {},
+    "related": [
+        "tt3291150",
+        "tt1320253",
+        "tt1764651"
+    ]
+}

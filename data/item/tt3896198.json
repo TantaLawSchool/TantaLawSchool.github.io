@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt3896198",
+    "name": "Guardians of the Galaxy Vol. 2",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_.jpg",
+    "description": "The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord&apos;s encounter with his father, the ambitious celestial being Ego.",
+    "rating": 7.6,
+    "certificate": "PG-15",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2017,
+    "time": "2h 16m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعود فريق حراس المجرة من جديد في مهمة جديدة ضد قوى الشر التي تهدد المجرة من جهة، و(يوندا) الراغب في الانتقام من جهة أخرى، وفي نفس الوقت تتكشف أمام بيتر كويل (كريس برات) خزانة اﻷسرار الخاصة بمن يكون والده الحقيقي.",
+    "video": {},
+    "related": [
+        "tt2015381",
+        "tt6791350"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "Movie",
+    "imdbId": "tt9603212",
+    "name": "Mission: Impossible - Dead Reckoning Part One",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzFiZjc1YzctMDY3Zi00NGE5LTlmNWEtN2Q3OWFjYjY1NGM2XkEyXkFqcGdeQXVyMTUyMTUzNjQ0._V1_.jpg",
+    "description": "Ethan Hunt and his IMF team must track down a dangerous weapon before it falls into the wrong hands.",
+    "rating": 7.8,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "2h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعود العميل إيثان هانت لاستخدام قدراته وخبرته لحل المزيد من الجرائم العالمية، حيث يسعى رفقة زملاؤه لتعقب سلاح مميت قبل أن يقع في الأيدي المظلمة.",
+    "video": {},
+    "related": [
+        "tt0117060",
+        "tt4912910",
+        "tt0317919",
+        "tt0120755",
+        "tt2381249",
+        "tt1229238"
+    ]
+}

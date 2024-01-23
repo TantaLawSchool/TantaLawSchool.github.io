@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt19175696",
+    "name": "Hermana muerte",
+    "image": "https://m.media-amazon.com/images/M/MV5BZGEyZGQ3NzItOTM0ZS00ZDQzLWJjNmEtY2JhNzFlMmZjOWQ1XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+    "description": "After a childhood marked by a miracle, Narcisa, a novice nun joins a school to teach young girls.",
+    "rating": 5.7,
+    "certificate": "TV-MA",
+    "genre": [
+        "Horror",
+        "Mystery"
+    ],
+    "year": 2023,
+    "time": "1h 31m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد طفولة تميزت بمعجزة ، تنضم نارسيسا ، وهي راهبة مبتدئة ، إلى مدرسة لتعليم الفتيات الصغيرات.",
+    "video": {},
+    "related": []
+}

@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt5814060",
+    "name": "The Nun",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjM3NzQ5NDcxOF5BMl5BanBnXkFtZTgwNzM4MTQ5NTM@._V1_.jpg",
+    "description": "A priest with a haunted past and a novice on the threshold of her final vows are sent by the Vatican to investigate the death of a young nun in Romania and confront a malevolent force in the form of a demonic nun.",
+    "rating": 5.3,
+    "certificate": "16+",
+    "genre": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+    ],
+    "year": 2018,
+    "time": "1h 36m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في ظروف غامضة، تنتحر راهبة شابة في إحدى أديرة رومانيا، وعلى إثر هذه الحادثة يٌرسل كاهن يملك ماضيًا مظلمًا من قبل الفاتيكان بصحبة إحدى المتدربات في سلك الرهبنة للتحقيق في الحادثة، حيث يكشفان عن سر مظلم هناك، ويصيرا في مواجهة الراهبة فلاك ذات الكينونة الشيطانية، وتتحول اﻷمور إلى ساحة معركة بين قوتين غير متكافئتين.",
+    "video": {},
+    "related": [
+        "tt10160976"
+    ]
+}

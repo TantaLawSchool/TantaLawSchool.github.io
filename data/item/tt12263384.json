@@ -1,0 +1,22 @@
+{
+    "type": "Movie",
+    "imdbId": "tt12263384",
+    "name": "Extraction 2",
+    "image": "https://m.media-amazon.com/images/M/MV5BZjg5MTM4N2QtN2RlMS00NzBlLTg3NDktM2ExZDNmMmExMGU3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "description": "After barely surviving his grievous wounds from his mission in Dhaka, Bangladesh, Tyler Rake is back, and his team is ready to take on their next mission.",
+    "rating": 7,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "2h 2m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد نجاته بأعجوبة خلال مهمته في بنجلاديش، يعود تايلر ريك مع فريقه في مهمة جديدة أكثر صعوبة.",
+    "video": {},
+    "related": [
+        "tt8936646"
+    ]
+}

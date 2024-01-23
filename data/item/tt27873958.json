@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt27873958",
+    "name": "بيت الروبي",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTBjMWExMDItYmI2NC00NmY5LWExZDctMzY5NDM4YTg2OWM5XkEyXkFqcGdeQXVyMTYwNTM3MDUz._V1_.jpg",
+    "description": "When a private family event gets leaked on social media, Ibrahim Al Ruby decides to live in a village with his wife and children, far from people and the pressure of modern life. After his younger brother, Ihab, convinces Ibrahim ...",
+    "rating": 6.7,
+    "certificate": "G",
+    "genre": [
+        "Comedy",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "1h 41m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتناول العمل قصة المهندس إبراهيم الروبي الذي تتعرض زوجته لأزمة ضخمة يلجأ بعدها للهروب من المدينة والابتعاد إلى مكان منعزل، ويعيش لسنوات ولكنه يعود مجددا بسبب ظروف طارئة على حياته، مما يجعله يتعرض لكثير من المواقف الصعبة التي تغير مسارات حياته ويعود شبح الأزمة القديمة لمطاردته وزوجته.",
+    "video": [],
+    "related": []
+}

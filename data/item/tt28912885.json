@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt28912885",
+    "name": "Poison",
+    "image": "https://m.media-amazon.com/images/M/MV5BOWRiZThkYzMtOTM2MC00ZDhlLWFkNWMtNDZhMDYzZjkzZTYyXkEyXkFqcGdeQXVyNjc5NjEzNA@@._V1_.jpg",
+    "description": "When a poisonous snake slithers onto an Englishman&apos;s stomach in India, his associate and a doctor race to save him.",
+    "rating": 6.8,
+    "certificate": "PG",
+    "genre": [
+        "Short",
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "17m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عندما ينزلق ثعبان سام على معدة رجل إنجليزي في الهند ، يتسابق شريكه والطبيب لإنقاذه.",
+    "video": {},
+    "related": []
+}

@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt10160976",
+    "name": "The Nun II",
+    "image": "https://m.media-amazon.com/images/M/MV5BNmE5MmM2ZGEtNTVlNC00M2Q3LTliMjMtMzg5YjUyMjliZWIzXkEyXkFqcGdeQXVyMTAxNzQ1NzI@._V1_.jpg",
+    "description": "1956 - France. A priest is murdered. An evil is spreading. The sequel to the worldwide smash hit follows Sister Irene as she once again comes face-to-face with Valak, the demon nun.",
+    "rating": 5.6,
+    "certificate": "R",
+    "genre": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 50m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث الجزء الثاني في فرنسا عام 1956 حيث يُقتل كاهن ويبدو أن هناك شر ينتشر جراء موته. تجد الأخت أيرين نفسها في مواجهة وجهاً لوجه مع قوة شيطانية مرة أخرى.",
+    "video": {},
+    "related": [
+        "tt5814060"
+    ]
+}

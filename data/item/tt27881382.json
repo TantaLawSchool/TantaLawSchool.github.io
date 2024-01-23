@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt27881382",
+    "name": "تاج",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzFiNGFkYjctZDcwYS00OTFkLTllYTgtMTUyOGNhZTk1NGE4XkEyXkFqcGdeQXVyMTYwNTM3MDUz._V1_.jpg",
+    "description": "A music teacher suddenly begins displaying superpowers and attempts to hide them, until the public needs his help.",
+    "rating": 3,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "1h 52m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تتبع الأحداث حياة التوأم تاج وهارون، اللذان يمران بالعديد من الأزمات، ومع امتلاكهما لقدرات خارقة، تتسبب في وقوع العديد من المفارقات لهما.",
+    "video": [],
+    "related": []
+}

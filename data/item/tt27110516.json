@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt27110516",
+    "name": "One More Shot",
+    "image": "https://m.media-amazon.com/images/M/MV5BNWM5YmQ2NTMtOGExOS00NDcxLWEwNWQtMTlmNDkxZjA5MGM2XkEyXkFqcGdeQXVyNzUwMDA5NDE@._V1_.jpg",
+    "description": "Following the attack on the black site in Poland, Navy SEAL Jake Harris is ordered to escort terrorist suspect Amin Mansur to Washington D.C for interrogation.",
+    "rating": 5.2,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Thriller"
+    ],
+    "year": 2024,
+    "time": "1h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في أعقاب الهجوم على الموقع الأسود في بولندا ، أمر سلاح البحرية جيك هاريس بمرافقة المشتبه به في الإرهاب أمين منصور إلى واشنطن العاصمة للاستجواب.",
+    "video": [],
+    "related": []
+}

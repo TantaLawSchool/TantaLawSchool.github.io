@@ -1,0 +1,28 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2381249",
+    "name": "Mission: Impossible - Rogue Nation",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTFmNDA3ZjMtN2Y0MC00NDYyLWFlY2UtNTQ4OTQxMmY1NmVjXkEyXkFqcGdeQXVyNTg4NDQ4NDY@._V1_.jpg",
+    "description": "Ethan and his team take on their most impossible mission yet when they have to eradicate an international rogue organization as highly skilled as they are and committed to destroying the IMF.",
+    "rating": 7.4,
+    "certificate": "13+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2015,
+    "time": "2h 11m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد حل وحدة المهام المستحيلة (IMF) يجد العميل إيثان هانت (توم كروز) نفسه بمفرده، بينما يواجه فريقه شبكة خاصة من العملاء ذوي المهارات العالية تحمل اسم النقابة.",
+    "video": {},
+    "related": [
+        "tt9603212",
+        "tt0117060",
+        "tt4912910",
+        "tt0317919",
+        "tt0120755",
+        "tt1229238"
+    ]
+}

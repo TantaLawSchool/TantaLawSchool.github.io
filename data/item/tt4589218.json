@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt4589218",
+    "name": "Five Nights at Freddy's",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTI0ZmI4NDItZGFlZC00M2E4LWIyZWEtMTFhMjQwYmU4MGNlXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "description": "A troubled security guard begins working at Freddy Fazbear&apos;s Pizza. During his first night on the job, he realizes that the night shift won&apos;t be so easy to get through. Pretty soon he will unveil what actually happened at Freddy&apos;s.",
+    "rating": 5.5,
+    "certificate": "16+",
+    "genre": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 49m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يبدأ حارس أمن مضطرب نفسياً العمل في متجر فريدي فازبير للبيتزا. في أولى ليالي عمله، يكتشف أن العمل ليلاً في متجر فريدي ليس بالأمر السهل كما كان يتوقع.",
+    "video": {},
+    "related": []
+}

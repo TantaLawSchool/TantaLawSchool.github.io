@@ -1,0 +1,22 @@
+{
+    "type": "Movie",
+    "imdbId": "tt8936646",
+    "name": "Extraction",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDJiNzUwYzEtNmQ2Yy00NWE4LWEwNzctM2M0MjE0OGUxZTA3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "description": "Tyler Rake, a fearless black market mercenary, embarks on the most deadly extraction of his career when he&apos;s enlisted to rescue the kidnapped son of an imprisoned international crime lord.",
+    "rating": 6.8,
+    "certificate": "18+",
+    "genre": [
+        "Action",
+        "Thriller"
+    ],
+    "year": 2020,
+    "time": "1h 56m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يذهب تايلر تايك المجرم المرتزق في أكثر العمليات المهلكة، حينما يتعين عليه إنقاذ الابن المختطف لزعيم الجريمة الدولي عالميًا والذي يمكث في السجن، ليجد تايلر نفسه في مواجهة جيش كامل.",
+    "video": {},
+    "related": [
+        "tt12263384"
+    ]
+}

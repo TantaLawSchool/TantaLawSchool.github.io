@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2692250",
+    "name": "Night at the Museum: Secret of the Tomb",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjI1MzM2ODEyMV5BMl5BanBnXkFtZTgwNTIzODAwMzE@._V1_.jpg",
+    "description": "Larry spans the globe, uniting favorite and new characters while embarking on an epic quest to save the magic before it&apos;s gone forever.",
+    "rating": 6.2,
+    "certificate": "PG",
+    "genre": [
+        "Adventure",
+        "Comedy",
+        "Family"
+    ],
+    "year": 2014,
+    "time": "1h 38m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار درامي كوميدي ممزوج بالتشويق والإثارة تدور أحداث الفيلم ، حول لاري (بين ستيلر) حارس المتحف الذي يترك (نيويورك) ، ويذهب في رحلة حول الكرة الأرضية من أجل توحيد بعض الشخصيات الجديدة ، والمفضلة من خلال ملحمة تسعى لإنقاذ السحر قبل أن ينتهي إلى الأبد ، ويساعده في ذلك جميع أصدقائه بالمتحف .",
+    "video": {},
+    "related": [
+        "tt0477347",
+        "tt1078912"
+    ]
+}

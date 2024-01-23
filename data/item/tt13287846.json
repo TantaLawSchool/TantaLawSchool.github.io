@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt13287846",
+    "name": "Napoleon",
+    "image": "https://m.media-amazon.com/images/M/MV5BZWIzNDAxMTktMDMzZS00ZjJmLTlhNjYtOGUxYmZlYzVmOGE4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+    "description": "An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.",
+    "rating": 6.8,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Biography"
+    ],
+    "year": 2023,
+    "time": "2h 38m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يلقي الفيلم نظرة على القصة الحقيقية والشخصية لأصول القائد نابليون بونابرت وتسلقه السريع إلي الإمبراطورية، ويوضح علاقته المتقلبة بزوجته وحب حياته جوزفين.",
+    "video": {},
+    "related": []
+}

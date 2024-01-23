@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt16378034",
+    "name": "Tantura",
+    "image": "https://m.media-amazon.com/images/M/MV5BN2NhMDliMDctYmY0Zi00YzI5LTk4NjYtOTFlNjEzNWJkY2JlXkEyXkFqcGdeQXVyMjMyMzI4MzY@._V1_.jpg",
+    "description": "In the war of 1948 hundreds of Palestinian villages were depopulated. Israelis call it &apos;The War of Independence. Palestinians call it &apos;Nakba&quot;&apos;. The film examines one village- Tantura and why &quot;Nakba&quot; is taboo in Israeli society.",
+    "rating": 8.8,
+    "certificate": "",
+    "genre": [
+        "Documentary"
+    ],
+    "year": 2022,
+    "time": "1h 34m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في حرب عام 1948 تم إخلاء مئات القرى الفلسطينية من السكان. يسميها الإسرائيليون \"حرب الاستقلال\". يسميها الفلسطينيون \"النكبة\". يتناول الفيلم قرية واحدة - الطنطورة ولماذا تعتبر \"النكبة\" من المحرمات في المجتمع الإسرائيلي.",
+    "video": {},
+    "related": []
+}

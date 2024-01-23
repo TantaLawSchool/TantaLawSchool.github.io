@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt15398776",
+    "name": "Oppenheimer",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg",
+    "description": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",
+    "rating": 8.5,
+    "certificate": "16+",
+    "genre": [
+        "Biography",
+        "Drama",
+        "History"
+    ],
+    "year": 2023,
+    "time": "3h",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث العمل في إطار درامي حول السيرة الذاتية وقصة العالم الأمريكي روبرت أوبنهايمر ودوره في تطوير القنبلة الذرية، وكيف غير مشروع مانهاتن من كل شيء في العالم.",
+    "video": {},
+    "related": []
+}

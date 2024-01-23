@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt5537002",
+    "name": "Killers of the Flower Moon",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjE4ZTZlNDAtM2Q3YS00YjFhLThjN2UtODg2ZGNlN2E2MWU2XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "description": "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one - until the FBI steps in to unravel the mystery.",
+    "rating": 8,
+    "certificate": "R",
+    "genre": [
+        "Crime",
+        "Drama",
+        "History"
+    ],
+    "year": 2023,
+    "time": "3h 26m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تُقتل أعضاء قبيلة (الأوساج) في (الولايات المتحدة الأمريكية) تحت ظروف غامضة بأوائل العشرينات؛ فينطلق الرائد الفيدرالي (جيه. إدجار هوفر) لاستقصاء الأمر ومباشرة التحقيقات في القضية.",
+    "video": {},
+    "related": []
+}

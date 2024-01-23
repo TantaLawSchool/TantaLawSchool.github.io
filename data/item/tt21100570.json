@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt21100570",
+    "name": "المطاريد",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTRmZmU4NjMtZGRjNS00N2NiLTg4ZGEtNDlmYjliOWQyOWZkXkEyXkFqcGdeQXVyNTAyNzc0Nzc@._V1_.jpg",
+    "description": "Salah returns home from America after the death of his father to gain his inheritance and sell some properties, including a football club.",
+    "rating": 4.9,
+    "certificate": "All ages",
+    "genre": [
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "1h 50m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار كوميدي، يعود صلاح من أمريكا بعد وفاة والده لاستلام ميراثه، ويسعى لبيع الأملاك التي تتضمن نادي كرة قدم، فيمر بالعديد من المواقف الغير متوقعة.",
+    "video": [],
+    "related": []
+}
