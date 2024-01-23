@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0415306",
+    "name": "Talladega Nights: The Ballad of Ricky Bobby",
+    "image": "https://m.media-amazon.com/images/M/MV5BNzAzOTk1OTIyM15BMl5BanBnXkFtZTcwNDIzNTQzMQ@@._V1_.jpg",
+    "description": "Number one NASCAR driver Ricky Bobby stays atop the heap thanks to a pact with his best friend and teammate, Cal Naughton, Jr. But when a French Formula One driver, makes his way up the ladder, Ricky Bobby&apos;s talent and devotion ar...",
+    "rating": 6.6,
+    "certificate": "PG-13",
+    "genre": [
+        "Comedy",
+        "Sport"
+    ],
+    "year": 2006,
+    "time": "1h 48m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يبقى السائق (ريكي بوبي) على القمة بفضل اتفاق مع صديقه وزميله في الفريق (كال نوتون)، ولكن عندما يأتي سائق الفورمولا وان الفرنسي ليشق طريقه نحو القمة، توضع موهبة (ريكي بوبي) وتفانيه تحت الاختبار.",
+    "video": {},
+    "related": []
+}

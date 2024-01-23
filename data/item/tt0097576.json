@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0097576",
+    "name": "Indiana Jones and the Last Crusade",
+    "image": "https://m.media-amazon.com/images/M/MV5BY2Q0ODg4ZmItNDZiYi00ZWY5LTg2NzctNmYwZjA5OThmNzE1XkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_.jpg",
+    "description": "In 1938, after his father goes missing while pursuing the Holy Grail, Indiana Jones finds himself up against the Nazis again to stop them from obtaining its powers.",
+    "rating": 8.2,
+    "certificate": "Not Rated",
+    "genre": [
+        "Action",
+        "Adventure"
+    ],
+    "year": 1989,
+    "time": "2h 7m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يخوض المغامر وعالم الآثار (إنديانا جونز) مغامرة مثيرة من أجل الحصول على الكأس المقدس الأسطوري، ويصحبه في تلك المغامرة والده، وهذا الكأس الأسطوري يمتلك قدرة نادرة على شفاء من يشرب منه، ويروى عن هذا الكأس أن من يشرب منه ينال الخلود، ولأجل هذا الغرض يحارب إنديانا العديد من الأشرار ﻷجل هذا الكأس.",
+    "video": {},
+    "related": [
+        "tt1462764",
+        "tt0087469",
+        "tt0367882",
+        "tt0082971"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0104431",
+    "name": "Home Alone 2: Lost in New York",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDI1MzM0Y2YtYmIyMS00ODE3LTlhZjEtZTUyNmEzMTNhZWU5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    "description": "One year after Kevin McCallister was left home alone and had to defeat a pair of bumbling burglars, he accidentally finds himself stranded in New York City - and the same criminals are not far behind.",
+    "rating": 6.8,
+    "certificate": "R",
+    "genre": [
+        "Adventure",
+        "Comedy",
+        "Crime"
+    ],
+    "year": 1992,
+    "time": "2h",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "نعود بعد عام كامل لـ (كيفين) الذي وجد عائلته قررت قضاء فترة الكريسماس في فلوريدا ونتيجة لتأخرهم في الاستيقاظ يسارعون للحاق بالطائرة يفقدهم كيفين ويركب عن طريق الخطأ الطائرة إلى نيويورك",
+    "video": {},
+    "related": [
+        "tt0099785"
+    ]
+}

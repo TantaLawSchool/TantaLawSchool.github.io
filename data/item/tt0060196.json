@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0060196",
+    "name": "The Good, the Bad and the Ugly",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MjlmLTk5NmQtNjg1NmM2ODU4OTMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "description": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+    "rating": 8.8,
+    "certificate": "R",
+    "genre": [
+        "Adventure",
+        "Western"
+    ],
+    "year": 1966,
+    "time": "2h 41m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "الطيب هو (بلوندي)، الذي يتشارك مع صديقه القبيح (توكو) في لعبة صيد مجرمي الغرب الأمريكي، ويتقاسمان النقود سويًا، يقابلان (بيل) الذي يخبرهما، وهو يحتضر بأنه ورفاقه قد دفنا كنزًا ذهبيًا في أحد المقابر",
+    "video": {},
+    "related": [
+        "tt0058461",
+        "tt0059578"
+    ]
+}

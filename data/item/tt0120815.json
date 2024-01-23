@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0120815",
+    "name": "Saving Private Ryan",
+    "image": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg",
+    "description": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+    "rating": 8.6,
+    "certificate": "PG-13",
+    "genre": [
+        "Drama",
+        "War"
+    ],
+    "year": 1998,
+    "time": "2h 49m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث الفلم أثناء الحرب العالمية الثانية في معركة (نورماندي) تحديدا ، حيث يكلف الرئيس الأمريكي كتيبة بقيادة الكابتن ميلر (توم هانكس) بالذهاب إلى قلب المعركة وراء خطوط العدو ، والبحث عن الجندي ريان (مات ديمون)",
+    "video": {},
+    "related": []
+}

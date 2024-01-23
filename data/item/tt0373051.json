@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0373051",
+    "name": "Journey to the Center of the Earth",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTk1MzY1MzU1MF5BMl5BanBnXkFtZTcwOTQ2NjM3MQ@@._V1_.jpg",
+    "description": "On a quest to find out what happened to his missing brother, a scientist, his nephew and their mountain guide discover a fantastic and dangerous lost world in the center of the earth.",
+    "rating": 5.8,
+    "certificate": "Not Rated",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Family"
+    ],
+    "year": 2008,
+    "time": "1h 33m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "الفيلم مأخوذ عن قصة شهيرة للروائي الفرنسي \"جولي فيرن\"؛ رائد أدب الخيال العلمي، عن المراهق(شين أندرسون) الذي يذهب للبقاء مع عمه البروفيسير (تريفور أندرسون) في أثناء استكمال والدته لأوراق السفر إلى كندا، وتعطي (تريفور) صندوقاً يخص أخيه المفقود (ماكس) به تفصيل آخر رحلاته، يقرر (تريفور) تتبع خطوات الرحلة مع شين في أيسلندا، للبحث عن (ماكس)، ويستعين بالدليل (اسجيريسون)، وفي أثناء تسلقهم الجبال تهب عاصفة ثلجية تحبسهم في أحد الكهوف التي توصل إلى مركز الأرض",
+    "video": {},
+    "related": [
+        "tt1397514"
+    ]
+}

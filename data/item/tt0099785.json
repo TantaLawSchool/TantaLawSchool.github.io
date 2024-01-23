@@ -1,0 +1,22 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0099785",
+    "name": "Home Alone",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "description": "An eight-year-old troublemaker, mistakenly left home alone, must defend his home against a pair of burglars on Christmas eve.",
+    "rating": 7.7,
+    "certificate": "All ages",
+    "genre": [
+        "Comedy",
+        "Family"
+    ],
+    "year": 1990,
+    "time": "1h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث الفيلم حول كيفين الصبي ذو الثمانية أعوام الذي يتعلم كيفية الدفاع عن نفسه بعدما تنساه أسرته في المنزل عن طريق الخطأ وترحل لقضاء إجازة عيد الميلاد المجيد في فرنسا",
+    "video": {},
+    "related": [
+        "tt0104431"
+    ]
+}

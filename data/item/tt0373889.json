@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0373889",
+    "name": "Harry Potter and the Order of the Phoenix",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTA3MmRmZDgtOWU1Ny00ZDc5LWFkN2YtNzNlY2UxZmY0N2IyXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg",
+    "description": "With their warning about Lord Voldemort&apos;s return scoffed at, Harry and Dumbledore are targeted by the Wizard authorities as an authoritarian bureaucrat slowly seizes power at Hogwarts.",
+    "rating": 7.5,
+    "certificate": "13+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Family"
+    ],
+    "year": 2007,
+    "time": "2h 18m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تتلاشى الفواصل بين العالم العادي والعالم السحري، ويكتشف (هاري بوتر) المزيد من الحقائق التي كانت قد غابت عنه منذ ولادته، وذلك بالتزامن مع تنامي الخطر الذي يمثله عودة الساحر الشرير (فولدمورت).",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0295297",
+        "tt0304141",
+        "tt0330373",
+        "tt0417741",
+        "tt0926084",
+        "tt1201607"
+    ]
+}

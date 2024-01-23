@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1177159",
+    "name": "المتسول",
+    "image": "https://m.media-amazon.com/images/M/MV5BYmI4ZTg3OTUtNzBjMy00ZmRhLTg1MjItMmNlYTY5Y2NmMzA5XkEyXkFqcGdeQXVyNjU2ODIzOTY@._V1_.jpg",
+    "description": "Hassanein is a poor illiterate man who leaves his village and moves to the city to live with his maternal uncle and his family. However, he fails to keep a job and has no choice but to return to his hometown, and while he is sleep...",
+    "rating": 6.7,
+    "certificate": "",
+    "genre": [
+        "Action",
+        "Comedy",
+        "Crime"
+    ],
+    "year": 1983,
+    "time": "2h",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يفد حسنين البرطوشي (عادل إمام) من قريته إلى القاهرة بعد وفاة والده، ويقيم في منزل خاله، وبعد فشل حسنين في جميع الوظائف التي تسند إليه، يُطرد من منزل خاله ليجد نفسه مع مجموعة من المتسولين الذين يرأسهم سيد هاموش.",
+    "video": {},
+    "related": []
+}

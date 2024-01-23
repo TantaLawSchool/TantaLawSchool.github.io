@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0926084",
+    "name": "Harry Potter and the Deathly Hallows - Part 1",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_.jpg",
+    "description": "As Harry, Ron and Hermione race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.",
+    "rating": 7.7,
+    "certificate": "R",
+    "genre": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+    ],
+    "year": 2010,
+    "time": "2h 26m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يترك (هاري بوتر)، وأصدقائه في مدرسة (هوجورتس)، منازلهم بسبب اقتراب المواجهة المحتومة مع (لورد فولدمورت) المخيف، الذي يحاول السيطرة على كلٍ من في مدرسة (هووجورتس)، التي طرد منها من قبل وزارة السحر ليغرق العالم بأكمله في الظلام، ويكتشفوا خلال رحلتهم وجود أقوى ثلاثة أشياء في عالم السحر بأسره، وهى مقدسات الموت.",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0295297",
+        "tt0304141",
+        "tt0330373",
+        "tt0373889",
+        "tt0417741",
+        "tt1201607"
+    ]
+}

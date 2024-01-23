@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0075029",
+    "name": "The Outlaw Josey Wales",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjIxNDYxMTk2MF5BMl5BanBnXkFtZTgwMjQxNjU3MTE@._V1_.jpg",
+    "description": "Missouri farmer Josey Wales joins a Confederate guerrilla unit and winds up on the run from the Union soldiers who murdered his family.",
+    "rating": 7.8,
+    "certificate": "PG",
+    "genre": [
+        "Western"
+    ],
+    "year": 1976,
+    "time": "2h 15m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "ينضم مزارع ميسوري جوزي ويلز إلى وحدة حرب العصابات الكونفدرالية وينتهي به الأمر هاربا من جنود الاتحاد الذين قتلوا عائلته.",
+    "video": {},
+    "related": []
+}

@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1464335",
+    "name": "Uncharted",
+    "image": "https://m.media-amazon.com/images/M/MV5BMWEwNjhkYzYtNjgzYy00YTY2LThjYWYtYzViMGJkZTI4Y2MyXkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg",
+    "description": "Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor &quot;Sully&quot; Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.",
+    "rating": 6.3,
+    "certificate": "All ages",
+    "genre": [
+        "Action",
+        "Adventure"
+    ],
+    "year": 2022,
+    "time": "1h 56m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور الأحداث حول الفتى الشاب ناثان دريك، وعلاقته بفيكتور سوليفان، حيث يخوض الثنائي العديد من المغامرات بحثًا عن الكنوز المفقودة، بينما يسعى دريك لاسترداد إرث عائلته.",
+    "video": {},
+    "related": []
+}

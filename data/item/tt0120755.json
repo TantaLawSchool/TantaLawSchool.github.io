@@ -1,0 +1,28 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0120755",
+    "name": "Mission: Impossible II",
+    "image": "https://m.media-amazon.com/images/M/MV5BN2RkYWVkZDQtNTMxMi00NWQ4LWE2ODctNmQzOWM2NjQzYzdlXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "description": "IMF agent Ethan Hunt is sent to Sydney to find and destroy a genetically modified disease called &quot;Chimera&quot;.",
+    "rating": 6.1,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2000,
+    "time": "2h 3m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث القصة حول سرقة فيروس مميت يُدعى (كميرا) والمصل الخاص به، يتعين على العميل (إيثان هانت) منع انتشار الفيروس.",
+    "video": {},
+    "related": [
+        "tt9603212",
+        "tt0117060",
+        "tt4912910",
+        "tt0317919",
+        "tt2381249",
+        "tt1229238"
+    ]
+}

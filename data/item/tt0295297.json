@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0295297",
+    "name": "Harry Potter and the Chamber of Secrets",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjE0YjUzNDUtMjc5OS00MTU3LTgxMmUtODhkOThkMzdjNWI4XkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_.jpg",
+    "description": "An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.",
+    "rating": 7.4,
+    "certificate": "Not Rated",
+    "genre": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+    ],
+    "year": 2002,
+    "time": "2h 41m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتلقى (هاري بوتر) تحذيرًا من الجني المنزلي (دوبي) من العودة إلى مدرسة هوغوورتس، ويأتي (رون ويزلي) وشقيقاه لإنقاذ هاري بسيارتهم الطائرة، وتبدأ سلسلة من الهجمات على الطلبة من أبناء العامة غير السحرة، وهو اﻷمر ذو الصلة بحجرة اﻷسرار التي انفتحت.",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0304141",
+        "tt0330373",
+        "tt0373889",
+        "tt0417741",
+        "tt0926084",
+        "tt1201607"
+    ]
+}

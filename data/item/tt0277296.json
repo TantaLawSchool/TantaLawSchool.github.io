@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0277296",
+    "name": "The Scorpion King",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjkxNTAwNTQ0M15BMl5BanBnXkFtZTYwMTQwMjM3._V1_.jpg",
+    "description": "A desert warrior rises up against the evil army that is destroying his homeland. He captures the enemy&apos;s key sorcerer, takes her deep into the desert and prepares for a final showdown.",
+    "rating": 5.5,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2002,
+    "time": "1h 32m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يقوم (ماثيوز) وإخوته بحملة لقتل المشعوذ (ممنون) ﻷنه يثير الاضطرابات في الإمبراطورية، لكن (ممنون) يقوم بقتل إخوته، وعندما أراد قتل (ماثيوز) تتدخل (الساحرة) فيقوم بدفنه حيًا",
+    "video": {},
+    "related": []
+}

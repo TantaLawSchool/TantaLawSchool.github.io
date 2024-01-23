@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0241527",
+    "name": "Harry Potter and the Sorcerer's Stone",
+    "image": "https://m.media-amazon.com/images/M/MV5BNmQ0ODBhMjUtNDRhOC00MGQzLTk5MTAtZDliODg5NmU5MjZhXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg",
+    "description": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+    "rating": 7.6,
+    "certificate": "7+",
+    "genre": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+    ],
+    "year": 2001,
+    "time": "2h 32m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث الفلم في إطار خيالي استنادا إلى الرواية التي كتبتها الكاتبة البريطانية (ج . ك . رولينج) (هاري بوتر وحجر البروفسير) ، فتدور الأحداث حول الصغير (هاري بوتر) الذي يحتفل بعيد ميلاده الحادي عشر ، ويكتشف بالصدفة أنه ساحر فينتقل إلى مدرسة (هوجوارتس) ليتعلم هناك أعمال السحر والشعوذة .",
+    "video": {},
+    "related": [
+        "tt0295297",
+        "tt0304141",
+        "tt0330373",
+        "tt0373889",
+        "tt0417741",
+        "tt0926084",
+        "tt1201607"
+    ]
+}

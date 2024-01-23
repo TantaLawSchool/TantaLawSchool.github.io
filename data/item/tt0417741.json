@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0417741",
+    "name": "Harry Potter and the Half-Blood Prince",
+    "image": "https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_.jpg",
+    "description": "As Harry Potter begins his sixth year at Hogwarts, he discovers an old book marked as &quot;the property of the Half-Blood Prince&quot; and begins to learn more about Lord Voldemort&apos;s dark past.",
+    "rating": 7.6,
+    "certificate": "16+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Family"
+    ],
+    "year": 2009,
+    "time": "2h 33m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعود (هاري بوتر) إلى مدرسته ليلتقي مرة أخرى بأصدقائه المقربين، ويكتشف كتاب في المدرسة كان يمتلكه (الأمير الهجين) مليء بتعويذات غريبة، والتي تجعل (هاري) يبحث عن حقيقة شخصية صاحب الكتاب. في نفس الوقت يبذل الأستاذ دمبلدور مجهودًا كبيرًا مع (هاري) ليحضره للمعركة المؤكدة بينه وبين (لورد فولدمورت).",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0295297",
+        "tt0304141",
+        "tt0330373",
+        "tt0373889",
+        "tt0926084",
+        "tt1201607"
+    ]
+}

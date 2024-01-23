@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0209163",
+    "name": "The Mummy Returns",
+    "image": "https://m.media-amazon.com/images/M/MV5BY2U1NmZmYTUtZWVjNC00Zjk5LWI0YjAtOTc2NWVkMzE3ODYzXkEyXkFqcGdeQXVyOTYyMTY2NzQ@._V1_.jpg",
+    "description": "The mummified body of Imhotep is shipped to a museum in London, where he once again wakes and begins his campaign of rage and terror.",
+    "rating": 6.4,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2001,
+    "time": "2h 10m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتم شحن جثة إمحوتب المحنطة إلى متحف في لندن ، حيث يستيقظ مرة أخرى ويبدأ حملته من الغضب والإرهاب.",
+    "video": {},
+    "related": [
+        "tt0120616"
+    ]
+}

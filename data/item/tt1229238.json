@@ -1,0 +1,28 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1229238",
+    "name": "Mission: Impossible - Ghost Protocol",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTY4MTUxMjQ5OV5BMl5BanBnXkFtZTcwNTUyMzg5Ng@@._V1_.jpg",
+    "description": "The IMF is shut down when it&apos;s implicated in the bombing of the Kremlin, causing Ethan Hunt and his new team to go rogue to clear their organization&apos;s name.",
+    "rating": 7.4,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2011,
+    "time": "2h 12m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتورط صندوق النقد الدولي في تفجيرات بـ(الكرملين)، فيتوجه (إيثان هانت) وفريقه في محاولة منهم لإنقاذ الموقف.",
+    "video": {},
+    "related": [
+        "tt9603212",
+        "tt0117060",
+        "tt4912910",
+        "tt0317919",
+        "tt0120755",
+        "tt2381249"
+    ]
+}

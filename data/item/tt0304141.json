@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0304141",
+    "name": "Harry Potter and the Prisoner of Azkaban",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_.jpg",
+    "description": "Harry Potter, Ron and Hermione return to Hogwarts School of Witchcraft and Wizardry for their third year of study, where they delve into the mystery surrounding an escaped prisoner who poses a dangerous threat to the young wizard.",
+    "rating": 7.9,
+    "certificate": "PG-13",
+    "genre": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+    ],
+    "year": 2004,
+    "time": "2h 22m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في الجزء الثالث من سلسلة (هاري بوتر)، يعود الساحر الصغير مرة أخرى، وفي أثناء قضاء إجازته الصيفية مع أسرة (ديريسلي)، وتضطره حماقات الأسرة إلى ممارسة السحر الممنوع ممارسته خارج عالم السحرة، فيقرر الهروب من مدرسة (هووجوتس)، لمحاولة حل مشكلة مخالفته للقانون، ويتعقد الموقف بهروب (سيرس بلاك)؛ السجين الخطير من سجن أزكابان المخيف، ومحاولته الانتقام منه، وقتله، فهل سينجح (هاري بوتر) في النجاة من المأزق.",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0295297",
+        "tt0330373",
+        "tt0373889",
+        "tt0417741",
+        "tt0926084",
+        "tt1201607"
+    ]
+}

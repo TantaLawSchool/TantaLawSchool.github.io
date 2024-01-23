@@ -1,0 +1,26 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0449088",
+    "name": "Pirates of the Caribbean: At World's End",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjIyNjkxNzEyMl5BMl5BanBnXkFtZTYwMjc3MDE3._V1_.jpg",
+    "description": "Captain Barbossa, Will Turner and Elizabeth Swann must sail off the edge of the map, navigate treachery and betrayal, find Jack Sparrow, and make their final alliances for one last decisive battle.",
+    "rating": 7.1,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2007,
+    "time": "2h 49m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "الجزء الثالث من سلسلة قراصنة (الكاريبي) الشهيرة ، تدور أحداثه في جو من الحركة الممزوجة بالإثارة والتشويق ، حيث يقوم الكابتن (بارباروسا) مع أصدقائه (ويل) ، و(إليزابيث) بتحدي القرصان الشرير (ديفي جونز) ، من أجل تحرير صديقهما المختطف (جاك سبارو)، لكن المهمة أكثر من صعبة لتعاون (ديفي جونز) مع سفينة أشباح الهولندي الطائر للسيطرة على البحار السبع .",
+    "video": {},
+    "related": [
+        "tt0325980",
+        "tt1790809",
+        "tt1298650",
+        "tt0383574"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1298650",
+    "name": "Pirates of the Caribbean: On Stranger Tides",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjE5MjkwODI3Nl5BMl5BanBnXkFtZTcwNjcwMDk4NA@@._V1_.jpg",
+    "description": "Jack Sparrow and Barbossa embark on a quest to find the elusive fountain of youth, only to discover that Blackbeard and his daughter are after it too.",
+    "rating": 6.6,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2011,
+    "time": "2h 17m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في جوء مليء بالمغامرات يلتقي (جاك سبارو) بفتاة غامضة تٌدعى (أنجيليكا). تتوالى الأحداث بينهما عقب أن تجبره على الركوب على متن الباخرة (كوينز آن ريفنج)، وهي باخرة القرصان الشرير (اللحية السوداء) فيجد نفسه في مغامرة محفوفة بالمفاجآت، وبات محتاراً لا يدري إن كان عليه أن يخشى القرصان الشرير أو (آنجيليكا).",
+    "video": {},
+    "related": [
+        "tt0325980",
+        "tt1790809",
+        "tt0449088",
+        "tt0383574"
+    ]
+}

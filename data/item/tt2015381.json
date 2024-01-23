@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2015381",
+    "name": "Guardians of the Galaxy",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDIzMTk4NDYtMjg5OS00ZGI0LWJhZDYtMzdmZGY1YWU5ZGNkXkEyXkFqcGdeQXVyMTI5NzUyMTIz._V1_.jpg",
+    "description": "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
+    "rating": 8,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2014,
+    "time": "2h 1m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في أبعد مكان في الفضاء يرصد الفيلم قصة شاب أمريكي يُدعى (بيتر كويل)، يجد بيتر نفسه في مطاردة من قبل رونان (لي باس) بعد سرقته لجرم سماوي. من أجل التهرب من رونان، يضطر بيتر لعقد هدنة مع كل من جامورا (زوي سالدانا) وروكيت راكون (برادلي كوبر) ودراكس (ديف بويتسيتا) وجروت (فان ديزل). سرعان ما يكشتف بيتر القوة الحقيقة لذلك الجرم السماوي والخطر الذي يشكله على الكون كله.",
+    "video": {},
+    "related": [
+        "tt3896198",
+        "tt6791350"
+    ]
+}

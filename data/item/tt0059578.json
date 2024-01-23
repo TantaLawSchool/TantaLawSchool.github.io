@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0059578",
+    "name": "For a Few Dollars More",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzJlZTNkYjQtMTE1OS00YTJlLTgxNjItYzg4NTllODdkMzBiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "description": "Two bounty hunters with the same intentions team up to track down an escaped Mexican outlaw.",
+    "rating": 8.2,
+    "certificate": "R",
+    "genre": [
+        "Drama",
+        "Western"
+    ],
+    "year": 1965,
+    "time": "2h 12m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور الأحداث حول رجل لا اسم له و العقيد، لديهما النوايا نفسها وهى تعقب أحد الخارجين عن القانون في الغرب",
+    "video": {},
+    "related": [
+        "tt0060196",
+        "tt0058461"
+    ]
+}

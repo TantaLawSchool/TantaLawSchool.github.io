@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1390411",
+    "name": "In the Heart of the Sea",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjA5NzUwODExM15BMl5BanBnXkFtZTgwNjM0MzE4NjE@._V1_.jpg",
+    "description": "A recounting of a New England whaling ship&apos;s sinking by a giant whale in 1820, an experience that later inspired the great novel Moby-Dick.",
+    "rating": 6.9,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Biography"
+    ],
+    "year": 2015,
+    "time": "2h 2m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "استنادًا على قصة حقيقية، تدور أحداث الفيلم في شتاء عام 1820 في وسط البحر، حيث تتعرض سفينة صيد الحيتان إيسكس وطاقمها للهجوم والترصد بواسطة إحدى حيتان العنبر الضخمة، حيث يحتجزهم في البحر لمدة تزيد عن ثلاثة شهور على بُعْد آلاف الأميال من البر، فيصير طاقم السفينة في حالة صراع من أجل البقاء.",
+    "video": {},
+    "related": []
+}

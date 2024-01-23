@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1764651",
+    "name": "The Expendables 2",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDg1YWRhNmQtMGI5Ny00MTI3LTg2OTItZWEzZGE3OGZjZDNhXkEyXkFqcGdeQXVyNDc2NjEyMw@@._V1_.jpg",
+    "description": "Mr. Church reunites the Expendables for what should be an easy paycheck, but when one of their men is murdered on the job, their quest for revenge puts them deep in enemy territory and up against an unexpected threat.",
+    "rating": 6.6,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2012,
+    "time": "1h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تخرج فرقة المرتزقة في مهمة يظن الجميع أنها سهلة، لكنها غير ذلك تمامًا، حيث تواجههم الكثير من المتاعب التي تودي بروح أحدهم، الأمر الذي يشعل نار الثأر بقلوبهم من القاتل الذي يمتلك أكثر من ستة أرطال بلوتينيوم كافية لتغيير ميزان القوى بالعالم أجمع.",
+    "video": {},
+    "related": [
+        "tt3291150",
+        "tt1320253",
+        "tt2333784"
+    ]
+}

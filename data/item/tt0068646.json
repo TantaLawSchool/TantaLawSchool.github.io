@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0068646",
+    "name": "The Godfather",
+    "image": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+    "description": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
+    "rating": 9.2,
+    "certificate": "PG-13",
+    "genre": [
+        "Crime",
+        "Drama"
+    ],
+    "year": 1972,
+    "time": "2h 55m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "لا يريد الدون (فيتو كورليوني) كبير إحدى عائلات المافيا الخمس في نيويورك لابنه الأصغر (مايكل) أن ينخرط في حياة الإجرام المنظم التي يعيشها",
+    "video": {},
+    "related": [
+        "tt0071562",
+        "tt0099674"
+    ]
+}

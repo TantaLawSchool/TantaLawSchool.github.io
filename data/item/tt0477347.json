@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0477347",
+    "name": "Night at the Museum",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQyOTM4MDMxN15BMl5BanBnXkFtZTcwODg5NTQzMw@@._V1_.jpg",
+    "description": "A newly recruited night security guard at the Museum of Natural History discovers that an ancient curse causes the animals and exhibits on display to come to life and wreak havoc.",
+    "rating": 6.5,
+    "certificate": "Not Rated",
+    "genre": [
+        "Adventure",
+        "Comedy",
+        "Family"
+    ],
+    "year": 2006,
+    "time": "1h 48m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يكتشف حارس ليلي يعمل حديثًا في متحف التاريخ الطبيعي، أن لعنة قديمة تعيد الحياة للحيوانات والمعروضات وكافة النماذج، وتعيث فسادًا في المكان.",
+    "video": {},
+    "related": [
+        "tt1078912",
+        "tt2692250"
+    ]
+}

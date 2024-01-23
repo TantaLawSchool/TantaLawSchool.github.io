@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0455944",
+    "name": "The Equalizer",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQ2MzE2NTk0NF5BMl5BanBnXkFtZTgwOTM3NTk1MjE@._V1_.jpg",
+    "description": "A man who believes he has put his mysterious past behind him cannot stand idly by when he meets a young girl under the control of ultra-violent Russian gangsters.",
+    "rating": 7.2,
+    "certificate": "18+",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2014,
+    "time": "2h 12m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "(ماك كول) هو رجل كوماندوز متقاعد أمريكي من أصول أفريقية، يخترع حادثة لوفاته كي يعيش حياته في هدوء منتحلاً اسمًا جديدًا. يحاول بالمصادفة إنقاذ فتاة تدعى (تيري) من بعض الأشخاص، مما يورطه مع العديد من العصابات الروسية الخطيرة، لكنه يتغلب عليها مما يثير شهوته من جديد لمحاربة الشر وتحقيق العدالة.",
+    "video": {},
+    "related": [
+        "tt17024450",
+        "tt3766354"
+    ]
+}

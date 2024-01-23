@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1527202",
+    "name": "شمس الزناتي",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzYzZGIwZDctNWUzOC00ZGE2LTgyZDItZWFkODJkYjlkMDZkXkEyXkFqcGdeQXVyMTE1Nzc3NDM5._V1_.jpg",
+    "description": "During WW2, an oasis village is being under attacked every now and then by a group of robbers, led by a marshal. The village&apos;s old man Sheikh Othman travels to Cairo, Egypt, to buy weapons and men, Shams Elzanaty and his fellows, ...",
+    "rating": 6.6,
+    "certificate": "",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 1991,
+    "time": "2h 14m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "أثناء الحرب العالمية الثانية، تتعرض واحة نائية في الصحراء لهجوم مجموعة من المسلحين بقيادة المارشال برعي وسرقة خيراتها، يسافر عثمان شيخ القبيلة للقاهرة لشراء الأسلحة اللازمة، ويستعين بشخص يدعي شمس الزناتي",
+    "video": [],
+    "related": []
+}

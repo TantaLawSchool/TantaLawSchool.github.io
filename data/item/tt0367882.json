@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0367882",
+    "name": "Indiana Jones and the Kingdom of the Crystal Skull",
+    "image": "https://m.media-amazon.com/images/M/MV5BZmY5ZTk3ZDMtZjA1MS00NzU4LTk5ZDItYmNhOTkxMGYxMjRlXkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_.jpg",
+    "description": "In 1957, Indiana Jones becomes entangled in a Soviet plot to uncover the secret behind mysterious artifacts known as the Crystal Skulls.",
+    "rating": 6.2,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Adventure"
+    ],
+    "year": 2008,
+    "time": "2h 2m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في عام 1957، يتصارع (إنديانا)، الذي أصبح أكبر سنًا وأكثر حكمةً، مع عملاء الإتحاد السوفيتي الذين يقودهم (سبالكو) من أجل الحصول على الجمجمة البلورية، وتقود المغامرات (جونز) إلى أمريكا اللاتينية والجنوبية، ابتداءً من مدينة نيو مكسيكو، ثم كونيكتكت، والعاصمة المكسيكية ميكسيكو سيتي، وأدغال بيرو.",
+    "video": {},
+    "related": [
+        "tt1462764",
+        "tt0087469",
+        "tt0097576",
+        "tt0082971"
+    ]
+}

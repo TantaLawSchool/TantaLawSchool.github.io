@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0870154",
+    "name": "Jungle Cruise",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDE1MGRlNTQtZjc4ZC00MTI0LWEwY2MtODk1YTM2NmFmYTNmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+    "description": "Based on Disneyland&apos;s theme park ride where a small riverboat takes a group of travelers through a jungle filled with dangerous animals and reptiles but with a supernatural element.",
+    "rating": 6.6,
+    "certificate": "12+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2021,
+    "time": "2h 7m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "الفيلم يقوم على قصة (ديزني لاند) التي تدور أحداثها بحديقة الملاهي، حيث قارب نهري صغير يقل مجموعة من المسافرين عبر غابة مليئة بالحيوانات والزواحف الخطيرة.",
+    "video": {},
+    "related": []
+}

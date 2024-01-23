@@ -1,0 +1,28 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0117060",
+    "name": "Mission: Impossible",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTFhMWY3ZTctNTJlOC00Y2UwLThmOGUtMWU4NDI1Yzg4ODRkXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_.jpg",
+    "description": "An American agent, under false suspicion of disloyalty, must discover and expose the real spy without the help of his organization.",
+    "rating": 7.2,
+    "certificate": "18TC",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 1996,
+    "time": "1h 50m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عد التخطيط لتنفيذ إحدى المهام، يرسل (جيم فيليبس) مع زوجته (كلير) وشريكه (إيثان هانت) إلى مدينة (براغ)، وتفشل المهمة ولا ينجو سوى (إيثان هانت)، ويبدأ مدير الوكالة بالشك في (إيثان) بأنه السبب الرئيسي لفشل هذه المهمة، فيحاول إثبات براءته بمختلف الطرق والأساليب الممكنة واكتشاف المتورط الحقيقي.",
+    "video": {},
+    "related": [
+        "tt9603212",
+        "tt4912910",
+        "tt0317919",
+        "tt0120755",
+        "tt2381249",
+        "tt1229238"
+    ]
+}

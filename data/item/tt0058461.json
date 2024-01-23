@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0058461",
+    "name": "A Fistful of Dollars",
+    "image": "https://m.media-amazon.com/images/M/MV5BY2M5MDA1YjUtODQ1Yi00M2JlLTk2ZWQtYjI0NTEwZDk2NGNhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "description": "A wandering gunfighter plays two rival families against each other in a town torn apart by greed, pride, and revenge.",
+    "rating": 7.9,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Drama",
+        "Western"
+    ],
+    "year": 1964,
+    "time": "1h 39m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يدور الفيلم حول غريب يصل إلى بلدة (سان ميغيل) الصغيرة ليخبره صاحب الخان هناك عن العداوة والبغضاء بين عائلتين تسعيان للسيطرة على البلدة.",
+    "video": {},
+    "related": [
+        "tt0060196",
+        "tt0059578"
+    ]
+}

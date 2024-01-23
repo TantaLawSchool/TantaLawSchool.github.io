@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0071562",
+    "name": "The Godfather Part II",
+    "image": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+    "description": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+    "rating": 9,
+    "certificate": "PG-13",
+    "genre": [
+        "Crime",
+        "Drama"
+    ],
+    "year": 1974,
+    "time": "3h 22m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور أحداث الجزء الثاني حول قصتين متوازيتين؛ الأولى: تتعلق بالابن (مايكل كورليوني) في الخمسينيات من القرن الماضي , والثانية: عودة للماضي لتاريخ الأب (فيتو كورليوني) وطفولته في (صقلية) بإيطاليا في بداية القرن العشرين",
+    "video": {},
+    "related": [
+        "tt0068646",
+        "tt0099674"
+    ]
+}

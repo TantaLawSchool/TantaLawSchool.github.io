@@ -1,0 +1,31 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0325980",
+    "name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "image": "https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWUzM2VlNGVhMDNhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "description": "Blacksmith Will Turner teams up with eccentric pirate &quot;Captain&quot; Jack Sparrow to save his love, the governor&apos;s daughter, from Jack&apos;s former pirate allies, who are now undead.",
+    "arDescription": "تنقذ سفينة من البحرية الملكية صبيًا اسمه (ويليام ترنر)، وتعثر (إليزابيث) على قلادة ذهبية معلقة حول عنق (ويليام)، عندما تتعرض (إليزابيث) للغرق فتُطلق قلادة الجمجمة الذهبية نبضات غامضة تستدعي سفينة ذات طاقم ملعون لتختطف (إليزابيث)، تنطلق القوات البحرية بالتعاون مع الكابتن (جاك سبارو) للبحث عنها.",
+    "rating": "8.1",
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": "2003",
+    "time": "2h 23m",
+    "signed": "false",
+    "hasASubtitle": "false",
+    "video": [
+        {
+            "provider": "mediafire",
+            "url": ""
+        }
+    ],
+    "related": [
+        "tt1790809",
+        "tt0449088",
+        "tt1298650",
+        "tt0383574"
+    ]
+}

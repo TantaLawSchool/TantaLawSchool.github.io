@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0099674",
+    "name": "The Godfather Part III",
+    "image": "https://m.media-amazon.com/images/M/MV5BNWFlYWY2YjYtNjdhNi00MzVlLTg2MTMtMWExNzg4NmM5NmEzXkEyXkFqcGdeQXVyMDk5Mzc5MQ@@._V1_.jpg",
+    "description": "Follows Michael Corleone, now in his 60s, as he seeks to free his family from crime and find a suitable successor to his empire.",
+    "rating": 7.6,
+    "certificate": "R",
+    "genre": [
+        "Crime",
+        "Drama"
+    ],
+    "year": 1990,
+    "time": "2h 42m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في نهاية السبعينيات، نجد أن (فيتو كورليوني) قد شارف على الستينيات من عمره. يدمره الشعور بالذنب عن أفعاله القاسية والحادة، خصوصا قيامه بقتله أخيه (فريدو)",
+    "video": {},
+    "related": [
+        "tt0068646",
+        "tt0071562"
+    ]
+}

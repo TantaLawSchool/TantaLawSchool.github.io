@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0450259",
+    "name": "Blood Diamond",
+    "image": "https://m.media-amazon.com/images/M/MV5BZDMxOGZhNWYtMzRlYy00Mzk5LWJjMjEtNmQ4NDU4M2QxM2UzXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+    "description": "A fisherman, a smuggler, and a syndicate of businessmen match wits over the possession of a priceless diamond.",
+    "rating": 8,
+    "certificate": "16+",
+    "genre": [
+        "Adventure",
+        "Drama",
+        "Thriller"
+    ],
+    "year": 2006,
+    "time": "2h 23m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعيش (سلومون فاندي) في سيراليون، ويحلم بمستقبل أفضل لأسرته الصغيرة، لكن أحلامه تتبخر عندما يهاجم المتمردون قريته ويختطفونه ليعمل في مناجم الماس.",
+    "video": {},
+    "related": []
+}

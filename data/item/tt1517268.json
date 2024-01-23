@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1517268",
+    "name": "Barbie",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+    "description": "Barbie suffers a crisis that leads her to question her world and her existence.",
+    "rating": 7,
+    "certificate": "12+",
+    "genre": [
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+    ],
+    "year": 2023,
+    "time": "1h 54m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تعيش دمية في مدينة باربيلاند تُدعى باربي، وحينما تغادر عالمها بسبب عدم كونها مثالية، تنطلق باربي في مغامرة بالعالم الحقيقي على أمل إثبات جدارتها واستعادة جمالها والعودة إلى وطنها.",
+    "video": {},
+    "related": []
+}

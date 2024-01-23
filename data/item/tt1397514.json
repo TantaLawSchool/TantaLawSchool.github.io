@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1397514",
+    "name": "Journey 2: The Mysterious Island",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjA5MTE1MjQyNV5BMl5BanBnXkFtZTcwODI4NDMwNw@@._V1_.jpg",
+    "description": "Sean Anderson partners with his mom&apos;s husband on a mission to find his grandfather, who is thought to be missing on a mythical island.",
+    "rating": 5.7,
+    "certificate": "PG",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2012,
+    "time": "1h 34m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يخرج شاب في رحلة مع زوج والدته إلى جزيرة مجهولة من أجل اكتشافها والبحث عن جده المفقود بها، عقب تلقيه رسالة مشفرة بالروسية، ويتجها إلى جزيرة بالاو ويلتقيا هناك بالجد وابنته، ثم تسقط الطائرة على الجزيرة المفقودة بعد تحطمها لقاء إعصار عنيف، بعد ذلك يجد شون جده (مايكل كين) وتبدأ عدة مغامرات",
+    "video": {},
+    "related": [
+        "tt0373051"
+    ]
+}

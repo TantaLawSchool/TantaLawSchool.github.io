@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0087469",
+    "name": "Indiana Jones and the Temple of Doom",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzgzMTIzNzctNmNiZC00ZDYyLWJjNzktMmQ2MDM2ZDkwZGVhXkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_.jpg",
+    "description": "In 1935, Indiana Jones is tasked by Indian villagers with reclaiming a rock stolen from them by a secret cult beneath the catacombs of an ancient palace.",
+    "rating": 7.5,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Adventure"
+    ],
+    "year": 1984,
+    "time": "1h 58m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد وصوله إلى الهند، يطلب أهالي قرية يائسة من إنديانا جونز العثور على حجر غامض. يوافق إنديانا، وفي أثناء بحثه يصادف طائفة تخطط لشيء رهيب في سراديب قصر قديم.",
+    "video": {},
+    "related": [
+        "tt1462764",
+        "tt0097576",
+        "tt0367882",
+        "tt0082971"
+    ]
+}

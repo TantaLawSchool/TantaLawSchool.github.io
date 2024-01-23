@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1136617",
+    "name": "The Killer",
+    "image": "https://m.media-amazon.com/images/M/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+    "description": "After a fateful near-miss, an assassin battles his employers and himself, on an international manhunt he insists isn&apos;t personal.",
+    "rating": 6.8,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Crime"
+    ],
+    "year": 2023,
+    "time": "1h 58m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الحركة والمغامرات، تدور أحداث العمل حول قاتل مأجور يدخل في صدام مع أرباب عمله، ذلك خلال مطاردة دولية تتسبب بالكثير من الفوضى والجريمة.",
+    "video": {},
+    "related": []
+}

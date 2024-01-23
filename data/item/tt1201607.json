@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1201607",
+    "name": "Harry Potter and the Deathly Hallows - Part 2",
+    "image": "https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+    "description": "Harry, Ron, and Hermione search for Voldemort&apos;s remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+    "rating": 8.1,
+    "certificate": "R",
+    "genre": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+    ],
+    "year": 2011,
+    "time": "2h 10m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يحاول (هاري بوتر) برفقة (رون)، و(هيرميون) الفوز على قوى الشر، وهنا يحاول (هاري) العودة إلى (هوجوورتس) ﻹيجاد وتدمير (فولدمورت) نهائيًا الذي يكتشف مهمتهم وخطتهم فتبدأ أكبر المعارك بين (هاري) ورفاقه، وبين (فولدمورت)، حيث يستخدم تعويذة النار الشيطانية، والتي تتسبب في تدمير (الهوركروكس) السادس.",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0295297",
+        "tt0304141",
+        "tt0330373",
+        "tt0373889",
+        "tt0417741",
+        "tt0926084"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0120616",
+    "name": "The Mummy",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTJiYjBhZDgtMjhiOC00MTIzLThlNGMtMmI1NjIwM2M3YTI5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    "description": "At an archaeological dig in the ancient city of Hamunaptra, an American serving in the French Foreign Legion accidentally awakens a mummy who begins to wreak havoc as he searches for the reincarnation of his long-lost love.",
+    "rating": 7.1,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 1999,
+    "time": "2h 4m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في حفريات أثرية في مدينة هامونابترا القديمة ، يوقظ أمريكي يخدم في الفيلق الأجنبي الفرنسي عن طريق الخطأ مومياء تبدأ في إحداث الفوضى أثناء بحثه عن حبه المفقود منذ فترة طويلة.",
+    "video": {},
+    "related": [
+        "tt0209163"
+    ]
+}

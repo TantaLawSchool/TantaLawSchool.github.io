@@ -1,0 +1,29 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0330373",
+    "name": "Harry Potter and the Goblet of Fire",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_.jpg",
+    "description": "Harry Potter finds himself competing in a hazardous tournament between rival schools of magic, but he is distracted by recurring nightmares.",
+    "rating": 7.7,
+    "certificate": "13+",
+    "genre": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+    ],
+    "year": 2005,
+    "time": "2h 37m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعود لورد فولدمورت من جديد بعد أن استعاد جسده، ويقع عالم السحر في مفترق طرق. ويُفاجأ هاري بوتر بضمه إلى دورة السحرة الثلاثة ليصبح الساحر الرابع، وعليه تأدية مهام خطيرة، تقوده في النهاية عبر كأس النار إلى فولدمورت ليهرب منه حيًا.",
+    "video": {},
+    "related": [
+        "tt0241527",
+        "tt0295297",
+        "tt0304141",
+        "tt0373889",
+        "tt0417741",
+        "tt0926084",
+        "tt1201607"
+    ]
+}

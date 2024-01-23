@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1529230",
+    "name": "الهلفوت",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjhmOTc1YTEtOTQ1My00MTMwLTg1YWEtMzMxY2E1YzljMWYxXkEyXkFqcGdeQXVyNTA2NzkwNTc@._V1_.jpg",
+    "description": "A young naive man decides to overcome his fears and reckons a strong personality, to clash with a lot of strange things",
+    "rating": 5.9,
+    "certificate": "",
+    "genre": [
+        "Comedy",
+        "Drama"
+    ],
+    "year": 1985,
+    "time": "",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عرفة مشاوير يعمل حمالًا في منطقة فقيرة، يعاني من الكبت الجنسي إلى أن يتزوج من وردة ويقضي جل وقته معها، لكنه يقع في ورطة لا يحسد عليها حين ينتحل شخصية الفتوة عسران.",
+    "video": {},
+    "related": []
+}

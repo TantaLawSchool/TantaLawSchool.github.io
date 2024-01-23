@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0082971",
+    "name": "Raiders of the Lost Ark",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTU2ODkyY2MtMjU1NC00NjE1LWEzYjgtMWQ3MzRhMTE0NDc0XkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_.jpg",
+    "description": "In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before the Nazis can obtain its awesome powers.",
+    "rating": 8.4,
+    "certificate": "12+",
+    "genre": [
+        "Action",
+        "Adventure"
+    ],
+    "year": 1981,
+    "time": "1h 55m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تقوم الحكومة الأمريكية بتكليف عالم آثار يدعى إنديانا جونز بمهمة لاستعادة تابوت ضائع قبل أن يعثر عليه النازيون.",
+    "video": {},
+    "related": [
+        "tt1462764",
+        "tt0087469",
+        "tt0097576",
+        "tt0367882"
+    ]
+}

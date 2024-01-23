@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1320253",
+    "name": "The Expendables",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTUwODQyNjM0NF5BMl5BanBnXkFtZTcwNDMwMTU1Mw@@._V1_.jpg",
+    "description": "A CIA operative hires a team of mercenaries to eliminate a Latin dictator and a renegade CIA agent.",
+    "rating": 6.4,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+    ],
+    "year": 2010,
+    "time": "1h 43m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بارني روس (سيلفستر ستالوني) يقود عصابة من المرتزقة ذوي المهارات العالية، لإغتيال دكتاتور لا يرحم يحكم جزيرة صغيرة \"وهمية\" في أمريكا الجنوبية. ",
+    "video": {},
+    "related": [
+        "tt3291150",
+        "tt2333784",
+        "tt1764651"
+    ]
+}
