@@ -1,0 +1,34 @@
+
+body{
+    background-color: #000;
+}
+
+
+.Msg{
+    position: fixed;
+    top:50%;
+    left:50%;
+    background: #131419;
+    border-radius: 10px;
+    font-family:arab_;
+    text-align: center;
+    
+    background-color: #131419;
+    border-bottom: solid #ffb92a;
+    border-left: solid #ffb92a;
+    transform: translate(-50%,-50%);
+}
+
+.Msg h2{
+    
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+
+
+.Msg img{
+    width: 30%;
+    height: 50%;
+}

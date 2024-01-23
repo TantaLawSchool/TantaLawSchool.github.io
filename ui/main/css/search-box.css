@@ -1,0 +1,41 @@
+
+
+.search-box{
+    position: absolute;
+    left: 50%;
+    right: 0%;
+    height: 50px;
+}
+
+.search-input {
+    position: absolute;
+    padding: 10px;
+    
+    height: 100%;
+    width: 100%;
+    
+    border: 1px solid #25241c;
+    
+    
+    background: #2a292b;
+    border-radius: 0px;
+
+    box-sizing: border-box;
+    font-family: Comic Sans MS;
+    font-size: 14px;
+    color: #ffd52d;
+    outline: none;
+    transition: .5s;
+}
+
+.search-box i{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: #ffd52d;
+    transition: .2s;
+}
+
+

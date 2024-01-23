@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/stars.css" />
+  <link rel="stylesheet" href="./css/toolbar.css" />
+  <link rel="stylesheet" href="./css/genres.css" />
+  <link rel="stylesheet" href="./css/categories.css" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/tonight.css" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/search-box.css"/>
+
+
+  <script src="./js/translation.js" charset="utf-8" type="text/javascript"></script>
+  <title></title>
+</head>
+
+<body>
+ 
+
+  
+  
+ 
+  
+
+
+  <!-- Used in the displacement of wrapper -->
+  <div class="relative-toolbar-space"></div>
+
+
+  <!-- tonight -->
+  <div class="tonight"></div>
+
+
+
+  <!-- Categories -->
+  <!-- category ( The best ) -->
+
+
+  <div class="category" id="the_best_cat">
+    <div class="category-description">
+      <div class="category-tex">
+     الأفضل فى تاريخ السينما  | <span style="color:rgb(255, 255, 255)"> The best </span>
+      </div>
+    </div>
+    <div class="category-content" id="category-content"></div>
+  </div>
+
+
+  <!-- category ( Egyptian Classic )-->
+
+  <div class="category" id="egy_classic_cat">
+    <div class="category-description">
+      <div class="category-tex">
+     كلاسيكيات السينما المصرية | <span style="color:rgb(255, 255, 255)"> Classic </span>
+      </div>
+    </div>
+    <div class="category-content" id="category-content"></div>
+  </div>
+
+
+
+  <!-- category ( Egyptian Latest )-->
+
+  <div class="category" id="egy_latest_cat">
+    <div class="category-description">
+      <div class="category-tex">
+      <span style="color:rgb(255, 255, 255)"> آخر الأعمال المصرية </span>
+      </div>
+    </div>
+    <div class="category-content" id="category-content"></div>
+  </div>
+
+
+  
+  <!-- wrapper intro -->
+  <div class="wrapper-intro">
+    <div class="wrapper-intro-tex"> شاهد | Watch</div>
+  </div>
+
+  <!-- Infinite scroll -->
+  <div class="wrapper">
+
+    <div class="row" id="root"></div>
+
+  </div>
+
+
+  <!-- toolbar -->
+  <div class="toolbar">
+    <!-- search-box -->
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="Search" id="cepret-search">
+      <i class="fa fa-search" onclick="let f_p = window.location.origin+'/ui/find/find.html?q='+$('cepret-search').value; Tree.Find(f_p);"></i>
+      <script>
+        document.getElementById("cepret-search").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          let f_p = window.location.origin+'/ui/find/find.html?q='+$('cepret-search').value; 
+          Tree.Find(f_p);
+        }
+        });
+     </script>
+    </div>
+
+    <div class="credit">Watch | كبريت</div>
+
+  </div>
+ 
+  
+  
+  <!-- genres -->
+  <div class="genres" id="genres">
+        
+   
+  </div>
+  <script>
+    function $(id){return document.getElementById(id);}
+
+    fetch("/data/items-map/mapper.json")
+      .then((resp) => resp.json())
+      .then((data) => {
+              g = data.genre;
+              /*$("genres").innerHTML=`<div class="genre">${translate_list(g).join("</div><div class='genre'>")}</div>`;*/
+              for (var i in g){
+                $("genres").innerHTML = $("genres").innerHTML + `<div class="genre" id="${g[i]}" onclick="genreListener(this)">${"#"+translate(g[i])}</div>`;
+              }
+      })
+      .catch(() => {
+       
+      });
+
+  </script>
+  
+  
+  
+
+  <script src="./js/api.js" charset="utf-8" type="text/javascript"></script>
+  <script src="./js/main.js" charset="utf-8" type="text/javascript"></script>
+  <script src="./js/listener.js" charset="utf-8" type="text/javascript"></script>
+  <script src="./js/category.js" charset="utf-8" type="text/javascript"></script>
+  <script src="./js/tonight.js" charset="utf-8" type="text/javascript"></script>
+</body>
+
+</html>

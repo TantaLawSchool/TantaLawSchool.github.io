@@ -1,0 +1,59 @@
+
+
+.play-button{
+    position :absolute;
+    width:250px;
+    height:40px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:#5f5d5d;
+    background-color: #ffb92a;
+  }
+  
+  
+  .play-btn {
+    position :absolute;
+    left:0%;
+    width: 20%;
+    height: 100%;
+    background: #29291c;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+  }
+  .play-btn span {
+    display: block;
+    width:0;
+    height:0;
+    top:50%;
+    left:50%;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid #ffb92a;
+    position: relative;
+    /*margin: 18px auto;*/
+    transform:translate(-50%,-50%)rotateY(180deg);;
+  }
+
+
+  .play-btn-text{
+
+    position :absolute;
+    right:0%;
+    width: 80%;
+    top:50%;
+    
+
+    display: table-cell;
+    text-align: center;
+
+    font-size: larger;
+    font-weight:bolder;
+    vertical-align: middle;
+    color: #000;
+    
+    
+    transform: translate(0%,-50%);
+
+  }

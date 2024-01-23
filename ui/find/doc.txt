@@ -1,0 +1,4 @@
+we will use MiniSearch project
+MiniSearch is a tiny but powerful in-memory fulltext search engine written in JavaScript.
+github : 
+https://github.com/lucaong/minisearch
