@@ -84,6 +84,8 @@ let getTitle = () => {
             
           }
 
+          $("type_id").innerHTML = `<span>${data.type}</span> &nbsp; &nbsp; &nbsp; <span>${data.imdbId}</span>`;
+
           result.innerHTML = `
           <div class="info">
             <img src="/data/media/image/${data.imdbId}.jpg" class='poster'>
