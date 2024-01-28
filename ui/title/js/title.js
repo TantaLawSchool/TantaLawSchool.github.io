@@ -125,7 +125,7 @@ let getTitle = () => {
           <div class="download-button-space">
           
           <div class="download-button" onclick="downloadButtonListener(this)">
-               <div class="download-btn"> <span></span> </div>
+               <div class="download-btn"> <div class="dbimg"> <img src="./images/down.png" width="100%" height="100%"><img></div> </div>
                 <div class="download-btn-text">
             تنزيل
                 </div>
