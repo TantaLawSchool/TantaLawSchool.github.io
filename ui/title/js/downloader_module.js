@@ -1,7 +1,6 @@
 
 
-/* initialize */
-let netscape_url = window.location.origin+"/ui/player/netscape/netscape.txt";
+
 
 
 
