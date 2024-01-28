@@ -1,5 +1,19 @@
 
 
+
+let bl = ["tt1529230","tt0342556",
+           "tt1177159","tt2170283",
+           "tt7954682","tt1527202",
+           "tt0191771","tt27123044",
+           "tt28752516","tt27547524",
+           "tt21100570","tt27492818",
+           "tt26008162","tt27881382",
+           "tt27873958"]
+
+
+
+
+
 function $(id){return document.getElementById(id);}
 
 let params = new URLSearchParams(window.location.search);
@@ -28,6 +42,11 @@ function drawResults(imdbIdsList){
 
     </div>
     `;
+
+    /* filter */
+    let sub_imdbIdsList = [];
+    for (var k in imdbIdsList){if (bl.includes(imdbIdsList[k])){/*dont push*/}else{/*push*/ sub_imdbIdsList.push(imdbIdsList[k]);}}
+    imdbIdsList = sub_imdbIdsList;
 
     for (var i in imdbIdsList){
 
