@@ -8,8 +8,8 @@
 function Downloader(fname,download_name){
     v_url = downloader_downloadURL(downloader_genesis(fname));
     v_name = download_name;
-    c_url = netscape_url;
-    Tree.Downloader(v_url,v_name,c_url);
+    cookie = Requests.GET(netscape_url);
+    Tree.Downloader(v_url,v_name,cookie);
 
     
 }
