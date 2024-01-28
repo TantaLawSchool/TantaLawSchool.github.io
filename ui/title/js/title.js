@@ -90,14 +90,14 @@ let getTitle = () => {
           <div class="info">
             <img src="/data/media/image/${data.imdbId}.jpg" class='poster'>
             <div>
-              <h2>${data.name}</h2>
+              <h2 id="title_name">${data.name}</h2>
               <div class="rating">
                 <img src="./images/star-icon.svg">
                 <h4>${data.rating}</h4>
               </div> 
               <div class="details">
                 <span>${data.certificate}</span>
-                <span style="color:yellow">${data.year}</span>
+                <span style="color:yellow" id="title_year">${data.year}</span>
                 <span>${data.time}</span>
               </div>
               <div class="genre">
@@ -117,6 +117,26 @@ let getTitle = () => {
 
           
           </div>
+
+
+
+
+
+          <div class="download-button-space">
+          
+          <div class="download-button" onclick="downloadButtonListener(this)">
+               <div class="download-btn"> <span></span> </div>
+                <div class="download-btn-text">
+            تنزيل
+                </div>
+          </div>
+
+          
+          </div>
+
+
+
+
 
           <h3>${Ar_Story}</h3>
           <p>${data.arDescription}</p>

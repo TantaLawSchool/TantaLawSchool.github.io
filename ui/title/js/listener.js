@@ -32,4 +32,18 @@ function playButtonListener(e){
 
 
 
+function downloadButtonListener(e){
+
+
+    console.log("start download..");
+    
+    doawnload_name = document.getElementById("title_name").innerText+document.getElementById("title_year").innerText+".mp4";
+
+    console.log(doawnload_name);
+
+    Downloader(params.get("imdbId"),doawnload_name);
+
+
+}
+
 

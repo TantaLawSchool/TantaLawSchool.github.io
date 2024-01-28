@@ -124,6 +124,14 @@
 
 
 
+  .download-button-space{
+    position: relative;
+    min-height: 60px;
+    
+    
+    /*background-color: #ffb92a;*/
+  }
+
 
 
 
