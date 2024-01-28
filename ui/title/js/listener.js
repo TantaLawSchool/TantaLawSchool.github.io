@@ -41,8 +41,16 @@ function downloadButtonListener(e){
 
     console.log(doawnload_name);
 
-    Downloader(params.get("imdbId"),doawnload_name);
+    
 
+    Msg();
+    Ads.showRewardedAd();
+    setTimeout(function() {
+        
+        Downloader(params.get("imdbId"),doawnload_name);
+
+    }, 1000);
+    
 
 }
 

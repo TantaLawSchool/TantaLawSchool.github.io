@@ -11,6 +11,7 @@ function Downloader(fname,download_name){
     cookie = Requests.GET(netscape_url);
     Tree.Downloader(v_url,v_name,cookie);
 
+    hideMsg();
     
 }
 
