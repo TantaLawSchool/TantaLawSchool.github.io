@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt6139732",
+    "name": "Aladdin",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjQ2ODIyMjY4MF5BMl5BanBnXkFtZTgwNzY4ODI2NzM@._V1_.jpg",
+    "description": "A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.",
+    "rating": 6.9,
+    "certificate": "7 +",
+    "genre": [
+        "Adventure",
+        "Comedy",
+        "Family"
+    ],
+    "year": 2019,
+    "time": "2h 8m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عن القصة الكلاسيكية الشهيرة، حيث (علاء الدين) طفل شوارع يجوب طرقات مدينة كبيرة مزدحمة مع صديقه المخلص القرد (آبو)، فيصادف الأميرة (ياسمين) ويقع في غرامها، لكنه يذهب إلى السجن ويتورط في مؤامرة لحُكم الأرض من تخطيط مستشار السلطان (جعفر) بمساعدة مصباح غامض لديه قوى سحرية.",
+    "video": [],
+    "related": []
+}
