@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt20561198",
+    "name": "The Promised Land",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTc3YmU2ZWQtZmVkMC00ZTBhLTg5YmYtYWQxMmY5MjUxMzdmXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_.jpg",
+    "description": "The story of Ludvig Kahlen who pursued his lifelong dream: To make the heath bring him wealth and honor.",
+    "rating": 7.7,
+    "certificate": "R",
+    "genre": [
+        "Biography",
+        "Drama",
+        "History"
+    ],
+    "year": 2023,
+    "time": "2h 7m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الدراما التاريخية، يدور العمل حول السيرة الذاتية للودفيج كاهلين، ورحلة السعي في تحقيق حلم حياته بالجمع بين الثروة والشرف.",
+    "video": [],
+    "related": []
+}

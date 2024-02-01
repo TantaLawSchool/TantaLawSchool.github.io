@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2310332",
+    "name": "The Hobbit: The Battle of the Five Armies",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTYzNDE3OTQ3MF5BMl5BanBnXkFtZTgwODczMTg4MjE@._V1_.jpg",
+    "description": "Bilbo and company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.",
+    "rating": 7.4,
+    "certificate": "PG-13",
+    "genre": [
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2014,
+    "time": "2h 24m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يسعى الأقزام الثلاثة عشر بقيادة المحارب الأسطوري (ثورين أوكنشيلد) إلى استعادة المملكة المسلوبة، وذلك بعد أن آلت رحلتهم السابقة إلى الفشل، وتسببوا في إيقاظ التنين (سموج). ترى هل سيتمكنوا من ذلك رغم رحلتهم المكتظة بالأحداث، واستعداد الأورك واﻷقزام، والجن لمعركة الجيوش الخمسة؟",
+    "video": [],
+    "related": [
+        "tt0903624",
+        "tt1170358"
+    ]
+}

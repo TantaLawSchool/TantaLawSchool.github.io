@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1448754",
+    "name": "Thanksgiving",
+    "image": "https://m.media-amazon.com/images/M/MV5BOGZhOGJjZTAtOTJmYS00ZTk2LTgxYWEtNjM3ZmUxMjY2NWFiXkEyXkFqcGdeQXVyNjU2NTI4MjE@._V1_.jpg",
+    "description": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts - the birthplace of the infamous holiday.",
+    "rating": 6.4,
+    "certificate": "R",
+    "genre": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 46m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور الأحداث في إطار من الرعب حول قاتل يقوم بصناعة رسومات النحت الخاصة به عن سكان بلدة، مما يثير العديد من التساؤلات والضجة عندما يأتي يوم عيد الشكر في كل سنة.",
+    "video": [],
+    "related": []
+}

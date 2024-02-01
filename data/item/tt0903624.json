@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0903624",
+    "name": "The Hobbit: An Unexpected Journey",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_.jpg",
+    "description": "A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug.",
+    "rating": 7.8,
+    "certificate": "PG-13",
+    "genre": [
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2012,
+    "time": "2h 49m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في عالم اﻷرض الوسطى، يروي الفيلم قصة الهوبيت (بيلبو باجنز) الذي يجد نفسه دون حسابات جزء من مغامرة كبرى مع الساحر (جاندالف) وثلاثة عشر قزمًا يقودهم (ثورين أوكنشيلد)، وذلك بهدف استعادة مملكة اﻷقزام المفقودة التي يحرسها التنين (سموج)، والحصول على الكنز الدفين الكامن في قلبها.",
+    "video": [],
+    "related": [
+        "tt1170358",
+        "tt2310332"
+    ]
+}

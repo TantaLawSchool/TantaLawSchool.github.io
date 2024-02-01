@@ -1,0 +1,24 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1170358",
+    "name": "The Hobbit: The Desolation of Smaug",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_.jpg",
+    "description": "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.",
+    "rating": 7.8,
+    "certificate": "PG-13",
+    "genre": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+    ],
+    "year": 2013,
+    "time": "2h 41m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يستكمل بيلبو باجينز رحلته الملحمية إلى الجبل مصحوبًا بـ 13 قزمًا يقودهم ثورين أوكينشيلد وجاندالف الرمادي، لاستعادة مملكة الأقزام المفقودة إيريبور. بعد نجاتهم. في بداية رحلتهم غير المتوقعة يواصل شركاء الرحلة التقدم إلى الشرق، ويواجهون على طول الطريق الكثير من الأعداء في غابة ميركوود الغادرة.",
+    "video": [],
+    "related": [
+        "tt0903624",
+        "tt2310332"
+    ]
+}

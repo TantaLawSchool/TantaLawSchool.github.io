@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt29722855",
+    "name": "Badland Hunters",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTNiYmEyNmMtMzI4OS00OWEyLTg2N2EtNTE1YzgxZmNiOTA4XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+    "description": "When an earthquake turns Seoul into a lawless badland, a fearless huntsman goes on to rescue a teenager from a mad doctor who held the teenager captive in a camp full of dangerous cultists.",
+    "rating": 6,
+    "certificate": "TV-MA",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2024,
+    "time": "1h 47m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عندما يحول زلزال (سيول) إلى أرض وعرة ، يستمر صياد شجاع في إنقاذ مراهق من طبيب مجنون احتجز المراهق أسيرا في معسكر مليء بالكائنات الخطرة.",
+    "video": [],
+    "related": []
+}
