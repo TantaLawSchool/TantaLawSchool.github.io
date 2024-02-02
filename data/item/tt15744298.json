@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt15744298",
+    "name": "Freelance",
+    "image": "https://m.media-amazon.com/images/M/MV5BZmM2ZGU1NGUtNjhiYy00YzEwLWE0MDctNGRlZmZiY2E5ZTY0XkEyXkFqcGdeQXVyMjI0NjI0Nw@@._V1_.jpg",
+    "description": "An ex-special forces operative takes a job to provide security for a journalist as she interviews a dictator, but when a military coup breaks out in the middle of the interview, they are forced to escape into the jungle.",
+    "rating": 5.4,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Comedy"
+    ],
+    "year": 2023,
+    "time": "1h 48m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتولى ضابط عمليات خاصة متقاعد مسؤولية حماية وتأمين صحافية خلال قيامها بإجراء حوارًا صحفيًا مع زعيم وطاغية شهير، وحينما يقع إنقلاب عسكري صادم، يصبح على الثلاثي الهرب عبر الأدغال في محاولة للنجاة.",
+    "video": [],
+    "related": []
+}

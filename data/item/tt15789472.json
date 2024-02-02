@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt15789472",
+    "name": "Nowhere",
+    "image": "https://m.media-amazon.com/images/M/MV5BNmEyOWU2NjctMzY0Zi00NzBkLTg3YzAtNDI3MGE4ZTkyZTQ0XkEyXkFqcGdeQXVyMzQyMDgzOTU@._V1_.jpg",
+    "description": "A young pregnant woman named Mia escapes from a country at war by hiding in a maritime container aboard a cargo ship. After a violent storm, Mia gives birth to her child while lost at sea, where she must fight to survive.",
+    "rating": 6.3,
+    "certificate": "TV-MA",
+    "genre": [
+        "Drama",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 49m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الإثارة، تكافح امرأة شابة للبقاء على قيد الحياة هي وطفلتها، بعد أن اضطرت للهرب على متن سفينة شحن في أثناء عاصفة عنيفة، وتتوالى بعدها الأحداث.",
+    "video": [],
+    "related": []
+}

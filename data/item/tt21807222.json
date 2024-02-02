@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt21807222",
+    "name": "Saw X",
+    "image": "https://m.media-amazon.com/images/M/MV5BMmJhYjBkMzgtZGIwMC00YTAzLWE4NTQtYzVkNDVmYjIzODI0XkEyXkFqcGdeQXVyODQxMTI4MjM@._V1_.jpg",
+    "description": "A sick and desperate John travels to Mexico for a risky and experimental medical procedure in hopes of a miracle cure for his cancer only to discover the entire operation is a scam to defraud the most vulnerable.",
+    "rating": 6.6,
+    "certificate": "R",
+    "genre": [
+        "Horror",
+        "Mystery",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 58m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور الأحداث حول جون كرامر، والذي يسافر إلى المكسيك بحثًا عن علاج لحالته المتأخرة بسبب السرطان، ولكن سرعان ما يكتشف تعرضه للخداع من قبل مجموعة من المحتالين؛ فيقرر جون الانتقام منهم.",
+    "video": [],
+    "related": []
+}

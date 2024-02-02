@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt12921446",
+    "name": "The Exorcist: Believer",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTNkYjc4YTYtZTVjNS00ZWI5LWI3MjItMWZiYTYzNTVmMWVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+    "description": "When two girls disappear into the woods and return three days later with no memory of what happened to them, the father of one girl seeks out Chris MacNeil, who&apos;s been forever altered by what happened to her daughter fifty years ago.",
+    "rating": 4.8,
+    "certificate": "R",
+    "genre": [
+        "Horror"
+    ],
+    "year": 2023,
+    "time": "1h 51m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "استكمالًا لأحداث الجزء الأول الذي عرض عام 1973، تلجأ أم يائسة إلى اثنين من طاردي الأرواح الشريرة لإنقاذ ابنتها البالغة من العمر 12 عامًا; من المس الشيطاني الذي تعرضت له.",
+    "video": [],
+    "related": []
+}

@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt14509110",
+    "name": "No One Will Save You",
+    "image": "https://m.media-amazon.com/images/M/MV5BMGNhZDczNTUtOWEzZS00ZjEyLTkzODQtOGM1MTZiMGY2ODIyXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
+    "description": "An exiled anxiety-ridden homebody must battle an alien who&apos;s found its way into her home.",
+    "rating": 6.3,
+    "certificate": "PG-13",
+    "genre": [
+        "Horror",
+        "Sci-Fi",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 33m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يدور العمل احول امرأة تعيش في عزلة وعالم من القلق بمنزلها، وتجد نفسها مجبرة على مقاتلة كائن فضائي اقتحم المنزل.",
+    "video": [],
+    "related": []
+}

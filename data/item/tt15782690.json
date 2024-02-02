@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt15782690",
+    "name": "In the Land of Saints and Sinners",
+    "image": "https://m.media-amazon.com/images/M/MV5BNGUzOTdjMGEtMGI1Yi00ZTBlLTk3NDctMThkYjkzNGY0OTg3XkEyXkFqcGdeQXVyMzE2MDIwMg@@._V1_.jpg",
+    "description": "In a remote Irish village, a damaged Finbar is forced to fight for redemption after a lifetime of sins, but what price is he willing to pay? In the land of saints and sinners, some sins can&apos;t be buried.",
+    "rating": 6.1,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2023,
+    "time": "1h 46m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في قرية أيرلندية بعيدة، يكافح رجل من أجل الخلاص وتخطي كافة الأخطاء التي ارتكبها طيلة حياته، ولكنه يكتشف أن الأمر ليس بهذا السهولة، وأن هناك أخطاء لا يمكن تكفيرها.",
+    "video": [],
+    "related": []
+}
