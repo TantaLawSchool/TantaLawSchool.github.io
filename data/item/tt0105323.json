@@ -1,0 +1,19 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0105323",
+    "name": "Scent of a Woman",
+    "image": "https://m.media-amazon.com/images/M/MV5BZTM3ZjA3NTctZThkYy00ODYyLTk2ZjItZmE0MmZlMTk3YjQwXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+    "description": "A prep school student needing money agrees to &quot;babysit&quot; a blind man, but the job is not at all what he anticipated.",
+    "rating": 8,
+    "certificate": "PG",
+    "genre": [
+        "Drama"
+    ],
+    "year": 1992,
+    "time": "2h 36m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "الكولونيل المتقاعد فرانك سليد فقد بصره أثناء الخدمة في جيش الولايات المتحدة، تبحث ابنة أخته عن مرافق له ويتقدم طالب فقير لهذه الوظيفة، ويدخل معه في سلسلة من المغامرات غير المتوقعة.",
+    "video": [],
+    "related": []
+}

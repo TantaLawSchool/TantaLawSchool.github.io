@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt14846026",
+    "name": "Sisu",
+    "image": "https://m.media-amazon.com/images/M/MV5BMWYwMzNkOWEtNjA3YS00YjE5LTlkMjYtMmRjMjExNjA1NDM0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg",
+    "description": "When an ex-soldier who discovers gold in the Lapland wilderness tries to take the loot into the city, Nazi soldiers led by a brutal SS officer battle him.",
+    "rating": 6.9,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "War"
+    ],
+    "year": 2022,
+    "time": "1h 31m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الحركة، يدور العمل حول جندي سابق يعثر على كنز ثمين في إقليم لابي الفنلندي، وفي طريقه للمدينة يجد نفسه في معركة ضد الجنود النازيين.",
+    "video": [],
+    "related": []
+}
