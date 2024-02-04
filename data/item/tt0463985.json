@@ -1,0 +1,32 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0463985",
+    "name": "The Fast and the Furious: Tokyo Drift",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQ2NTMxODEyNV5BMl5BanBnXkFtZTcwMDgxMjA0MQ@@._V1_.jpg",
+    "description": "A teenager becomes a major competitor in the world of drift racing after moving in with his father in Tokyo to avoid a jail sentence in America.",
+    "rating": 6,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2006,
+    "time": "1h 44m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يصبح مراهق منافسا رئيسيا في عالم سباقات الانجراف بعد انتقاله للعيش مع والده في طوكيو لتجنب عقوبة السجن في أمريكا.",
+    "video": [],
+    "related": [
+        "tt0232500",
+        "tt0322259",
+        "tt1013752",
+        "tt1596343",
+        "tt1905041",
+        "tt2820852",
+        "tt4630562",
+        "tt6806448",
+        "tt5433138",
+        "tt5433140"
+    ]
+}

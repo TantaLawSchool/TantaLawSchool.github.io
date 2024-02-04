@@ -1,0 +1,32 @@
+{
+    "type": "Movie",
+    "imdbId": "tt2820852",
+    "name": "Fast & Furious 7",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_.jpg",
+    "description": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
+    "rating": 7.1,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2015,
+    "time": "2h 17m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يسعى ديكارد شو للانتقام من دومينيك توريتو وعائلته بسبب شقيقه المصاب بالغيبوبة.",
+    "video": [],
+    "related": [
+        "tt0232500",
+        "tt0322259",
+        "tt0463985",
+        "tt1013752",
+        "tt1596343",
+        "tt1905041",
+        "tt4630562",
+        "tt6806448",
+        "tt5433138",
+        "tt5433140"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "type": "Movie",
+    "imdbId": "tt4630562",
+    "name": "The Fate of the Furious",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjMxODI2NDM5Nl5BMl5BanBnXkFtZTgwNjgzOTk1MTI@._V1_.jpg",
+    "description": "When a mysterious woman seduces Dominic Toretto into the world of terrorism and a betrayal of those closest to him, the crew face trials that will test them as never before.",
+    "rating": 6.6,
+    "certificate": "G",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2017,
+    "time": "2h 16m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عندما تغوي امرأة غامضة دومينيك توريتو في عالم الإرهاب وخيانة المقربين منه ، يواجه الطاقم تحديات ستختبرهم كما لم يحدث من قبل.",
+    "video": [],
+    "related": [
+        "tt0232500",
+        "tt0322259",
+        "tt0463985",
+        "tt1013752",
+        "tt1596343",
+        "tt1905041",
+        "tt2820852",
+        "tt6806448",
+        "tt5433138",
+        "tt5433140"
+    ]
+}
