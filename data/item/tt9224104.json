@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt9224104",
+    "name": "Meg 2: The Trench",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTM2NTU1ZTktNjc4YS00NjNhLWE4NmYtOTM2YjFjOGUzNmYzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+    "description": "A research team encounters multiple threats while exploring the depths of the ocean, including a malevolent mining operation.",
+    "rating": 5,
+    "certificate": "12+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Horror"
+    ],
+    "year": 2023,
+    "time": "1h 56m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في الجزء الثاني من الفيلم يستمر تتبع قصة جوناس حيث يقرر دراسة ميجالودون بعد اكتشافه أنه ما زال موجود، لكن المفاجأة التي لم يتوقعها جوناس هي مواجهة ديناصور غريب يعيش في الماء.",
+    "video": [],
+    "related": [
+        "tt4779682"
+    ]
+}

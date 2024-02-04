@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt4779682",
+    "name": "The Meg",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTAxMGRmODYtM2NkYS00ZGRlLWE1MWItYjI1MzIwNjQwN2RiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "description": "A group of scientists exploring the Marianas Trench encounter the largest marine predator that has ever existed - the Megalodon.",
+    "rating": 5.7,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Horror",
+        "Sci-Fi"
+    ],
+    "year": 2018,
+    "time": "1h 53m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد مرور خمس سنوات على هروبه من هجوم قرش عملاق يبلغ طوله السبعين قدمًا، يصبح لزامًا على الغواص الخبير وقبطان البحرية جوناس تايلور (جيسون ستاثام) أن يواجه مخاوفه حتى يتمكن من إنقاذ هؤلاء المُحاصرين في غواصة غارقة.",
+    "video": [],
+    "related": [
+        "tt9224104"
+    ]
+}
