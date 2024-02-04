@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt15257160",
+    "name": "Pain Hustlers",
+    "image": "https://m.media-amazon.com/images/M/MV5BNWMxYjNhZmEtNDBjZi00ZjFmLWJlZDMtYTVlYjljMmNkZWFhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+    "description": "Liza dreams of a better life for herself and her daughter. Hired to work for a bankrupt pharmaceutical company, Liza skyrockets with sales and into the high life, putting her in the middle of a federal criminal conspiracy.",
+    "rating": 6.5,
+    "certificate": "R",
+    "genre": [
+        "Crime",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "2h 3m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد أن قبلت بتولي إدارة شركة أدوية ناشئة، تنقلب حياة امرأة تكافح من أجل تربية ابنتها رأسًا على عقب بعدما تورطت في مخطط ابتزاز خطير يهدد سلامة عائلتها.",
+    "video": [],
+    "related": []
+}

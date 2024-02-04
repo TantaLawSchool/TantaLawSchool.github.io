@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt11858890",
+    "name": "The Creator",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDUyNTIzNDQtYTZmMi00M2FlLTgyZjUtYWViZWNhMDYzMjE4XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "description": "Against the backdrop of a war between humans and robots with artificial intelligence, a former soldier finds the secret weapon, a robot in the form of a young child.",
+    "rating": 6.8,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "2h 13m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الحركة والمغامرات، يدور العمل في المستقبل القريب بعد نهاية العالم، حيث يخوض ما تبقى من البشر حربًا كبيرة ضد الذكاء الاصطناعي.",
+    "video": [],
+    "related": []
+}

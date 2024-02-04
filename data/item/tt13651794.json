@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt13651794",
+    "name": "May December",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTc1ODM5YjQtMmQzNS00Y2FkLWJhNTgtYTE5ZDY0NjQyNmRjXkEyXkFqcGdeQXVyMTY3ODE5NTY1._V1_.jpg",
+    "description": "Twenty years after their notorious tabloid romance gripped the nation, a married couple buckles under pressure when an actress arrives to do research for a film about their past.",
+    "rating": 6.9,
+    "certificate": "R",
+    "genre": [
+        "Comedy",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "1h 57m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد مرور 20 عامًا على علاقتهما الرومانسية التي نالت شهرة واسعة، يصبح زوجان تحت ضغط كبير تزامنًا مع وصول ممثلة شهيرة تسعى لتقديم عمل فني عن قصتهما.",
+    "video": [],
+    "related": []
+}
