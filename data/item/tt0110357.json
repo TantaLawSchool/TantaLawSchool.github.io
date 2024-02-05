@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0110357",
+    "name": "The Lion King",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg",
+    "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+    "rating": 8.5,
+    "certificate": "G",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 1994,
+    "time": "1h 28m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "سمبا ولي العهد المنتظر بعد موفاسا، يخطط عمه ﻹبعاده عن العرش، محاولًا نفيه عقب وفاة والده الملك، فيتعرف سمبا على تيمون وبومبا اللذان يحاولان مساعدته في استعادة عرشه والتغلب على عمه الشرس وأتباعه من الضباع.",
+    "video": [],
+    "related": []
+}

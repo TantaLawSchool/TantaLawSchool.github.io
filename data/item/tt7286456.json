@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt7286456",
+    "name": "Joker",
+    "image": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "description": "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.",
+    "rating": 8.4,
+    "certificate": "16+",
+    "genre": [
+        "Crime",
+        "Drama",
+        "Thriller"
+    ],
+    "year": 2019,
+    "time": "2h 2m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "رويدًا رويدًا، تتكاتف الضغوظ والظروف على فنان كوميدي فاشل حتى يصيبه الجنون ويتحول إلى مجرم وقاتل مهووس.",
+    "video": [],
+    "related": []
+}

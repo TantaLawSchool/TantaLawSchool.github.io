@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1587310",
+    "name": "Maleficent",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjAwMzAzMzExOF5BMl5BanBnXkFtZTgwOTcwMDA5MTE@._V1_.jpg",
+    "description": "A vengeful fairy is driven to curse an infant princess, only to discover that the child could be the one person who can restore peace to their troubled land.",
+    "rating": 6.9,
+    "certificate": "PG",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2014,
+    "time": "1h 37m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في عهدٍ بعيدٍ للغاية كانت هناك فتاةٌ جميلةٌ يدق قلبها بالحب والنقاء والبراءة، تلك الفتاة كانت تُدعى ماليفسنت (أنجيلينا جولي). تلك الفتاة كانت تعيش في مملكتها بسلامٍ ،لكن في يومٍ من الأيام جاءت جماعةٌ من الغزاة وهددوا أمن وسلام المملكة. هبت ماليفسنت بقوةٍ وجبروتٍ من أجل حماية مملكتها ووطنها",
+    "video": [],
+    "related": [
+        "tt4777008"
+    ]
+}

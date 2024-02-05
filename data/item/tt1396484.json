@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1396484",
+    "name": "It",
+    "image": "https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_.jpg",
+    "description": "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
+    "rating": 7.3,
+    "certificate": "R",
+    "genre": [
+        "Horror"
+    ],
+    "year": 2017,
+    "time": "2h 15m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في مدينة (ديري)، الأطفال المحليين يختفون واحدًا تلو الآخر، تاركين خلفهم أجساد ممزقة أو أشلاء.. بينما في مكان معروف بإسم (The Barrens) تتكون مجموعة من سبع أطفال من خلال لقاءات مرعبة وعجيبة مع مهرج يُدعى (بيني وايز)، ويظل لـ(بيل دينيبروه) ثأر شخصي مع هذا المهرج.",
+    "video": [],
+    "related": [
+        "tt7349950"
+    ]
+}
