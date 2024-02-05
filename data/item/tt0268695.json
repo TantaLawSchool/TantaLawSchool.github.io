@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0268695",
+    "name": "The Time Machine",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTM4YTViNGMtYTYyOS00MTViLWEyYTgtNGM0OTIwMWRmYzdhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    "description": "Hoping to alter the events of the past, a 19th century inventor instead travels 800,000 years into the future, where he finds humankind divided into two warring races.",
+    "rating": 6,
+    "certificate": "PG-13",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+    ],
+    "year": 2002,
+    "time": "1h 36m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يحاول العالم والمخترع أليكساندر هارتجين أن يثبت إمكانية السفر عبر الزمن. ثم يتحول تصميمه إلى اندفاع يائس حين تقع له مأساة شخصية تدفعه لمحاولة تغيير الماضي. وهكذا يبدأ باختبار نظريته بنفسه باستخدام آلة سفر عبر الزمن اخترعها، ليجد نفسه انتقل 800 ألف عام في المستقبل إلى الأرض بعد اندثار الحضارات.",
+    "video": [],
+    "related": []
+}
