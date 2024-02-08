@@ -145,7 +145,8 @@
     font-weight: 300;
     line-height: 1.8em;
     text-align: justify;
-    color: rgb(243, 173, 43);
+    color: white;
+    background-color:  #0a0a05;;
     direction: rtl;
     border-bottom: solid #ffb92a;
   }
