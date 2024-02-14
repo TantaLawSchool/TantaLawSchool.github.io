@@ -8,12 +8,11 @@ body{
     position: fixed;
     top:50%;
     left:50%;
-    background: #131419;
     border-radius: 10px;
-    font-family:arab_;
+    font-family:Arial, Helvetica, sans-serif;
     text-align: center;
     
-    background-color: #131419;
+    background-color: #111111;
     border-bottom: 5px solid #ffb92a;
     
     transform: translate(-50%,-50%);
