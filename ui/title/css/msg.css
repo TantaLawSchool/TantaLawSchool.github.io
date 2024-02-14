@@ -14,8 +14,8 @@ body{
     text-align: center;
     
     background-color: #131419;
-    border-bottom: solid #ffb92a;
-    border-left: solid #ffb92a;
+    border-bottom: 5px solid #ffb92a;
+    
     transform: translate(-50%,-50%);
 }
 

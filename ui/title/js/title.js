@@ -69,8 +69,25 @@ let getTitle = () => {
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
-        //If title IS Movie
+        
         console.log(data);
+        /* save acopy of data */
+        var script = document.createElement("script");
+        script.type = "application/json";
+        script.id = "data";
+        script.textContent = JSON.stringify(data);
+        document.body.appendChild(script);
+
+
+        /* inject tvSeriesP */
+        var script = document.createElement("script");
+        script.type = "application/json";
+        script.id = "tvSeriesP";
+        script.textContent = JSON.stringify({season_val:"1",episode_val:"1"});
+        document.body.appendChild(script);
+
+
+        //If title IS Movie
         if (data.type == "Movie") {
           parts_flag = false;
 
@@ -147,35 +164,107 @@ let getTitle = () => {
           $("wrapper").style.transform="translate(-50%,-50%)";
                          }
         }
-        //If title does NOT Movie 
+        else if(data.type=="TVSeries"){
+
+
+
+          /* processing TVSeries */
+
+          
+          $("type_id").innerHTML = `<span>${data.type}</span> &nbsp; &nbsp; &nbsp; <span>${data.imdbId}</span>`;
+
+          result.innerHTML = `
+          <div class="info">
+            <img src="/data/media/image/${data.imdbId}.jpg" class='poster'>
+            <div>
+              <h2 id="title_name">${data.name}</h2>
+              <div class="rating">
+                <img src="./images/star-icon.svg">
+                <h4>${data.rating}</h4>
+              </div> 
+              <div class="details">
+                <span>${data.certificate}</span>
+                <span style="color:yellow" id="title_year">${data.year}</span>
+                <span>${data.time}</span>
+              </div>
+              <div class="genre">
+                <div>${translate_list(data.genre).join("</div><div>")}</div>
+              </div>   
+            </div>
+          </div>
+
+          <div class="play-button-space">
+          
+          <div class="play-button" onclick="tvSeriesplayButtonListener(this)">
+               <div class="play-btn"> <span></span> </div>
+                <div class="play-btn-text">
+            تشغيل
+                </div>
+          </div>
+
+          
+          </div>
+
+
+
+
+
+          <div class="download-button-space">
+          
+          <div class="download-button" onclick="tvSeriesdownloadButtonListener(this)">
+               <div class="download-btn"> <div class="dbimg"> <img src="./images/down.png" width="100%" height="100%"><img></div> </div>
+                <div class="download-btn-text">
+            تنزيل
+                </div>
+          </div>
+
+          
+          </div>
+
+
+
+
+
+          <h3>${Ar_Story}</h3>
+          <p>${data.arDescription}</p>
+
+          ${seasons_html_template(data.seasons)}
+
+          `;
+
+
+          $("e_content").innerHTML = ` 
+          <!--episodes_title-->
+          <div class="episodes_title" id="episodes_title">الحلقات</div>
+        
+          <!--episodes-->
+          <div class="episodes" id="episodes"></div>
+          `;
+
+
+          /* default 1st season */
+          episodes_n = JSON.parse(document.getElementById('data').textContent).episodeGuide[1];
+          drawEpisodes(episodes_n);
+
+        }
+
+        //If title does NOT Movie || TVSeries
         else {
-          result.innerHTML = `<h3 class="msg">Not Movie</h3>`;
+          result.innerHTML = `<h3 class="msg">Not Movie or TVSeries</h3>`;
         }
       })
       //If error occurs
-      .catch(() => {
+      .catch((err) => {
         result.innerHTML = `<h3 class="msg">!حدث خطأ ما</h3>`;
+        console.log(err);
       });
   
 
 
 };
 
+
 //Call the getTitle()
 getTitle();
 
 
-
-
-
-/* Dev */
-/* for developing purpose */
-
-/*
-
-player_url = window.location.origin+"/ui/player/player.html";
-
-Tree.Player(player_url);
-
-
-*/
