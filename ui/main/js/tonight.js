@@ -1,12 +1,12 @@
 var movieDB = [
     {
-     imdbId:"tt13287846",
-     name: "Napoleon",
-     rating: 6.6,
+     imdbId:"tt0903747",
+     name: "Breaking Bad",
+     rating: 9.5,
      
-     runtime: "2h 38m",
-     description: "ملحمة تفصل صعود وسقوط الإمبراطور الفرنسي نابليون بونابرت ورحلته الدؤوبة إلى السلطة من خلال منظور علاقته المدمنة والمتقلبة مع زوجته جوزفين.",
-     background: "url('https://m.media-amazon.com/images/M/MV5BZWIzNDAxMTktMDMzZS00ZjJmLTlhNjYtOGUxYmZlYzVmOGE4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg')"
+     runtime: "45m",
+     description: "بعد اكتشافه لإصابته بسرطان الرئة، يقرر مدرس كيمياء الاستعانة بجيسي بينكمان طالبه السابق بفصل العلوم، من أجل مساعدته على طبخ مخدر الميث وبيعه في نيو ميكسيكو، ليمر والت بالعديد من التغيرات بشخصيته الجديدة.",
+     background: "url('https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg')"
     },
     {
     imdbId:"tt5537002",
