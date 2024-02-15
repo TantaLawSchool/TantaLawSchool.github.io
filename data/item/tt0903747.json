@@ -1,0 +1,31 @@
+{
+    "type": "TVSeries",
+    "imdbId": "tt0903747",
+    "name": "Breaking Bad",
+    "image": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+    "description": "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family&apos;s future.",
+    "rating": 9.5,
+    "certificate": "18+",
+    "genre": [
+        "Crime",
+        "Drama",
+        "Thriller"
+    ],
+    "year": 2008,
+    "time": "45m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد اكتشافه لإصابته بسرطان الرئة، يقرر مدرس كيمياء الاستعانة بجيسي بينكمان طالبه السابق بفصل العلوم، من أجل مساعدته على طبخ مخدر الميث وبيعه في نيو ميكسيكو، ليمر والت بالعديد من التغيرات بشخصيته الجديدة.",
+    "video": [],
+    "related": [],
+    "seasons":5,
+    "episodeGuide":{
+
+        "1":"7",
+        "2":"13",
+        "3":"13",
+        "4":"13",
+        "5":"16"
+
+    }
+}
