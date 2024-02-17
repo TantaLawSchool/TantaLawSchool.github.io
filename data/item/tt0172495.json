@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0172495",
+    "name": "Gladiator",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+    "description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    "rating": 8.5,
+    "certificate": "16+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2000,
+    "time": "2h 35m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في عصر الامبراطورية الرومانية، يحاول القيصر (ماركوس أوريليوس) تسليم سلطاته إلى قائد الجيوش (ماكسيموس) إلا أن ابنه (كومودوس) يقتله قبل أن ينفذ مهمته ويصبح الابن قيصر روما خلفًا لأبيه، كما يحاول كومودوس قتل ماكسيموس إلا أنه هذا الأخير يهرب ويصير أسيرًا ويتحول إلى مصارعًا يشهد له الجميع بالبطولة.",
+    "video": [],
+    "related": []
+}
