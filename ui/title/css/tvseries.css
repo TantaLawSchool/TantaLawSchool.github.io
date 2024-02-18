@@ -4,9 +4,9 @@
   /* custome select */
   .custome-select{
     margin-top: 10px;
-    background-color:#0a0808;
+    background-color:#111111;
     position:relative;
-    width:300px;
+    
     height:40px;
     z-index:3;
     
@@ -29,7 +29,7 @@
       }
     }
     option{
-        background-color: #0a0808;
+        background-color: #111111;
     }
     option:checked {
         background-color: rgb(142, 145, 100);
