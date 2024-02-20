@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0079116",
+    "name": "Escape from Alcatraz",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzI0NTIzM2QtZDBkZC00N2JjLWI5OGMtMzg2YjFjODI2ZTkwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "description": "Alcatraz is the most secure prison of its time. It is believed that no one can ever escape from it, until three daring men make a possibly successful attempt at escaping from one of the most infamous prisons in the world.",
+    "rating": 7.6,
+    "certificate": "PG",
+    "genre": [
+        "Action",
+        "Biography",
+        "Crime"
+    ],
+    "year": 1979,
+    "time": "1h 52m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "(الكاتراز) هو السجن الأمريكي الشهير الذي يقع في جزيرة تحمل نفس الاسم، ويحكي محاولة هروب حقيقية قام بها ثلاثة سجناء في عام 1962 للهروب من السجن الشهير، يخطط لها اللص سارق البنوك (فرانك موريس) الذي درس الأمور بعناية كبيرة، والذي ينجح في أمر فشل فيه العديد من كبار رجال العصابات مثل:(آل كابوني)، و(روبرت ستراود)، وغيرهم.",
+    "video": [],
+    "related": []
+}
