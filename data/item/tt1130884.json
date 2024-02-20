@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt1130884",
+    "name": "Shutter Island",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "description": "Teddy Daniels and Chuck Aule, two US marshals, are sent to an asylum on a remote island in order to investigate the disappearance of a patient, where Teddy uncovers a shocking truth about the place.",
+    "rating": 8.2,
+    "certificate": "15",
+    "genre": [
+        "Mystery",
+        "Thriller"
+    ],
+    "year": 2010,
+    "time": "2h 18m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في عام 1954، يسافر الضابط الفيدرالي، (إدوارد دانيلز) وشريكه الجديد (تشاك)، إلى إحدى المستشفيات للمجرمين المختلين عقلياً في جزيرة (شاتر)، من أجل التحقيق في قضية أختفاء المريضة (رايتشل)، المسجونة بسبب أغراقها لأطفالها الثلاثة، يقابل (دانيلز) رئيس المشفى الدكتور (جون كولي) الذي يرفض تسليم ملفات العاملين في المستشفى ويمنعهم من تفتيش الجناح (سي) للخطرين، ولكن يحدث ما لم يكن في الحسبان.",
+    "video": [],
+    "related": []
+}
