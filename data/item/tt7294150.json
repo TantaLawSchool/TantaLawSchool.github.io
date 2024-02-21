@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt7294150",
+    "name": "The Eight Hundred",
+    "image": "https://m.media-amazon.com/images/M/MV5BZDNmODAxZDAtODczZS00NDI2LThhYTQtMjAzNjgyMGQxN2NjXkEyXkFqcGdeQXVyMTIyNjI1ODc5._V1_.jpg",
+    "description": "In 1937, 800 Chinese soldiers fight under siege from a warehouse in the middle of the Shanghai battlefield, completely surrounded by the Japanese army.",
+    "rating": 6.7,
+    "certificate": "Not Rated",
+    "genre": [
+        "Action",
+        "Drama",
+        "History"
+    ],
+    "year": 2020,
+    "time": "2h 29m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "خلال عام 1937، يقاتل ثمانمائة جندي صيني من أجل الانتصار أو الموت، خلال معركة بشنغهاي ضد الجيش الياباني الذي فرض عليهم الحصار ووضع حياتهم على المحك.",
+    "video": [],
+    "related": []
+}
