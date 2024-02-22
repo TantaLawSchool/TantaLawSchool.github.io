@@ -1,0 +1,27 @@
+{
+    "type": "TVSeries",
+    "imdbId": "tt16288804",
+    "name": "Berlin",
+    "image": "https://m.media-amazon.com/images/M/MV5BNTkzMGQ4NTMtZGY2Ny00YjgyLTk2MGMtYjhkNDQ2OGRjMzczXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "description": "Back to his golden age before the events of &quot;Money Heist,&quot; Berlin and a masterful gang gather in Paris to plan one of his most ambitious robberies ever.",
+    "rating": 7,
+    "certificate": "TV-MA",
+    "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+    ],
+    "year": 2023,
+    "time": "1h",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بالعودة إلى عصره الذهبي قبل أحداث \"سرقة الأموال\" ، يجتمع برلين وعصابة بارعة في باريس للتخطيط لواحدة من أكثر عمليات السطو طموحا على الإطلاق.",
+    "video": [],
+    "related": [],
+    "seasons":1,
+    "episodeGuide":{
+
+        "1":"8"
+
+    }
+}
