@@ -142,7 +142,7 @@
   }
   p {
     font-size: 1em;
-    font-weight: 300;
+    font-weight:bold;
     line-height: 1.8em;
     text-align: justify;
     color: white;
@@ -169,6 +169,17 @@
   }
 
 
+  
+ .related_title{
+    position: relative;
+    /*background-color: #201f28;*/
+    direction: rtl;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 1.9em;
+  
+    color:#ffffff;
+ }
 
 
 

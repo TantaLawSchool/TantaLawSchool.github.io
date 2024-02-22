@@ -96,6 +96,9 @@ let getTitle = () => {
             parts_flag = false;
           }else{
             parts_flag = true;
+
+            $("related_title").innerHTML = `<div class="related_title"> أجزاء أخرى  <span style="color:#ffb92a;">|</span></div>`;
+
             /* draw cards */
             drawCards(data.related);
             
@@ -160,8 +163,8 @@ let getTitle = () => {
          
           `;
           if(!parts_flag){
-          $("wrapper").style.top="50%";
-          $("wrapper").style.transform="translate(-50%,-50%)";
+          //$("wrapper").style.top="50%";
+          //$("wrapper").style.transform="translate(-50%,-50%)";
                          }
         }
         else if(data.type=="TVSeries"){

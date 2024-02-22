@@ -1,7 +1,7 @@
 
-var Ar_Story = " القصة : "; 
+var Ar_Story = " القصة -- "; 
 
-var Ar_Cast = " طاقم العمل : ";
+var Ar_Cast = " طاقم العمل -- ";
 
 
 
