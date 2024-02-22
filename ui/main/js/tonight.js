@@ -9,13 +9,13 @@ var movieDB = [
      background: "url('https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg')"
     },
     {
-    imdbId:"tt5537002",
-    name: "Killers of the Flower Moon",
-    rating: 7.8,
+    imdbId:"tt2442560",
+    name: "Peaky Blinders",
+    rating: 8.8,
     
-    runtime: "3h 26m",
-    description: "عندما يتم اكتشاف النفط في عشرينيات القرن العشرين أوكلاهوما تحت أرض أوساج الأمة ، يتم قتل شعب أوساج واحدا تلو الآخر - حتى يتدخل مكتب التحقيقات الفيدرالي لكشف اللغز.",
-    background: "url('https://m.media-amazon.com/images/M/MV5BMjE4ZTZlNDAtM2Q3YS00YjFhLThjN2UtODg2ZGNlN2E2MWU2XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_QL75_UX380_CR0,4,380,562_.jpg')"
+    runtime: "35h 9m",
+    description: "تجري أحداث المسلسل في بدايات القرن العشرين في إنجلترا حيث يتعرض ﻷفراد عائلة إجرامية، وما يخوضه زعيمها تومي شيلبي من تحديات عديدة في هذا العالم السفلي.",
+    background: "url(../../data/media/poster/tt2442560.jpg)"
    }
 
 ];
