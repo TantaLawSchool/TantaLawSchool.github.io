@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0499549",
+    "name": "Avatar",
+    "image": "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+    "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "rating": 7.9,
+    "certificate": "12+",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+    ],
+    "year": 2009,
+    "time": "2h 42m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عندما يكتشف البشر (القمر الفريد باندورا) الذي يحتوي على معدن فائق الأهمية من الناحية الاقتصادية، يقومون بتنفيذ خطة محكمة لغزوه على الفور. لكن على هذا القمر تعيش كائنات زرقاء البشرة تٌدعى (نافي) يتمتعون بحب جارف لكوكبهم وطبيعته المدهشة، ويتصلون معه جسديًا ونفسيًا.. لذا عندما يبدأ هؤلاء في الدفاع عن كوكبهم، ينضم إليهم بعض البشر ليواجهوا قادة الغزو في معركة طاحنة ستحدد مصير باندورا والبشر إلى الأبد.",
+    "video": [],
+    "related": [
+        "tt1630029"
+    ]
+}
