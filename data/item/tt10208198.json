@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt10208198",
+    "name": "The Gangster, the Cop, the Devil",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTdjNDZmNjgtZTI2Mi00OWJkLWI3ODItNzA5YjQ4MTczMTdjXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "description": "A crime boss teams up with a cop to track down a serial killer.",
+    "rating": 6.9,
+    "certificate": "Not Rated",
+    "genre": [
+        "Action",
+        "Crime",
+        "Thriller"
+    ],
+    "year": 2019,
+    "time": "1h 49m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتعاون زعيم الجريمة مع شرطي لتعقب قاتل متسلسل.",
+    "video": [],
+    "related": []
+}
