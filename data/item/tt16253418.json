@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt16253418",
+    "name": "No Way Up",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTEyOTQzZjgtMDM1OC00MWMxLWI2ZGUtYWUwOTQxNTRmZTU0XkEyXkFqcGdeQXVyNTU1MDIzMzg@._V1_.jpg",
+    "description": "Characters from different backgrounds are thrown together when the plane they&apos;re travelling on crashes into the Pacific Ocean. A nightmare fight for survival ensues with the air supply running out and dangers creeping in from all ...",
+    "rating": 4.5,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+    ],
+    "year": 2024,
+    "time": "1h 30m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يجمع القدر مجموعة من الشخصيات بجنسيات مختلفة في قاع المحيط الأطلنطي حينما تتحط طائرتهم، ويصبح عليهم الكفاح ضد نقص الأكسجين وأسماك القرش في سبيل النجاة.",
+    "video": [],
+    "related": []
+}

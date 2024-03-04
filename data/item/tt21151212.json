@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt21151212",
+    "name": "Cult Killer",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzQ4MDQ2MzYtMmM0NS00ZjdkLTk2NTYtNTkxOTI3M2YyYjA5XkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_.jpg",
+    "description": "When a renowned private investigator is murdered, his protege takes on the case. As her investigation unfolds, she is forced into a dangerous alliance with his killer to uncover the town&apos;s grisly secrets and bring justice to its v...",
+    "rating": 4.5,
+    "certificate": "R",
+    "genre": [
+        "Adventure",
+        "Crime",
+        "Drama"
+    ],
+    "year": 2024,
+    "time": "1h 45m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عندما يُقتل محقق خاص شهير في ظروف غامضة، تتولى تلميذته التحقيق بالأمر، وبمرور الوقت تكتشف العديد من الأسرار المروعة بالمدينة وتسعى لتحقيق العدالة.",
+    "video": [],
+    "related": []
+}

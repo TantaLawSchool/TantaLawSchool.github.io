@@ -1,0 +1,20 @@
+{
+    "type": "Movie",
+    "imdbId": "tt16368898",
+    "name": "Lights Out",
+    "image": "https://m.media-amazon.com/images/M/MV5BYjBiNzJhYmItN2FlNi00NjA1LWIzOWYtYTdkZjcyOTdhMmMwXkEyXkFqcGdeQXVyMzQwMTY2Nzk@._V1_.jpg",
+    "description": "A drifting ex-soldier turns underground fighter with the help of a just released ex-con, pitting them both against a crime boss, corrupt cops and hired killers.",
+    "rating": 4.9,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Thriller"
+    ],
+    "year": 2024,
+    "time": "1h 30m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتحول جندي سابق إلى مقاتل في النزالات القتالية الغير قانونية بمساعدة رجل محتال، ويصبح الثنائي في مواجهة رجال الشرطة الفاسدين والقتلة المأجورين في معركة مميتة.",
+    "video": [],
+    "related": []
+}

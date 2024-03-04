@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt13923456",
+    "name": "Mafia Mamma",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDg0YmQ0NDMtNzdmYi00OTA5LWFjZDEtMWQ5NTQ0NjM4YTRlXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg",
+    "description": "An American mom inherits her grandfather&apos;s mafia empire in Italy. Guided by the firm&apos;s consigliere, she hilariously defies everyone&apos;s expectations as the new head of the family business.",
+    "rating": 5.4,
+    "certificate": "R",
+    "genre": [
+        "Action",
+        "Comedy",
+        "Crime"
+    ],
+    "year": 2023,
+    "time": "1h 41m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "في إطار من الكوميديا والجريمة، يتناول العمل قصة امرأة تنقلب حياتها حينما ترث إمبراطورية المافيا التي أسسها جدها في إيطاليا، وتجد نفسها في عالم الجريمة الغير مألوف.",
+    "video": [],
+    "related": []
+}

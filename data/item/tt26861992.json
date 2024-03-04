@@ -1,0 +1,21 @@
+{
+    "type": "Movie",
+    "imdbId": "tt26861992",
+    "name": "Mea Culpa",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTJlMDQxOWUtMWM0NC00YjI2LTk0ZmEtYmU0MWYzMjU1NTgyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "description": "Follows an ambitious criminal defense attorney that, in her aspiration to be named partner, takes on the case of an artist accused of murdering his girlfriend.",
+    "rating": 4.1,
+    "certificate": "R",
+    "genre": [
+        "Crime",
+        "Drama",
+        "Thriller"
+    ],
+    "year": 2024,
+    "time": "2h",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تتولى محامية الدفاع الجنائي (ميا هاربر) قضية تتعلق بفنان يُدعى (زيار مالوي)، وبينما تسعى لكشف غموض القضية وتحديد براءة أو تورط موكلها في القضية، تظهر الحقائق الصادمة أمامها تباعًا.",
+    "video": [],
+    "related": []
+}
