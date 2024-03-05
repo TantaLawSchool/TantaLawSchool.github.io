@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0892791",
+    "name": "Shrek Forever After",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTY0OTU1NzkxMl5BMl5BanBnXkFtZTcwMzI2NDUzMw@@._V1_.jpg",
+    "description": "Rumpelstiltskin tricks a mid-life crisis burdened Shrek into allowing himself to be erased from existence and cast in a dark alternate timeline where Rumpelstiltskin rules supreme.",
+    "rating": 6.3,
+    "certificate": "PG",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2010,
+    "time": "1h 33m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "خلال احتفاله بعيد ميلاد أبنائه مع زوجته فيونا، يشعر الغول شريك بالشوق إلى حياته السابقة قبل كل هذا حين كان أكثر حرية وانطلاقًا، ويحاول شريك البحث عما فقد منه.",
+    "video": [],
+    "related": [
+        "tt0126029",
+        "tt0298148",
+        "tt0413267"
+    ]
+}

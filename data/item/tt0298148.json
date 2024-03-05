@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0298148",
+    "name": "Shrek 2",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDJhMGRjN2QtNDUxYy00NGM3LThjNGQtMmZiZTRhNjM4YzUxL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    "description": "Shrek and Fiona travel to the Kingdom of Far Far Away, where Fiona&apos;s parents are King and Queen, to celebrate their marriage. When they arrive, they find they are not as welcome as they thought they would be.",
+    "rating": 7.3,
+    "certificate": "PG",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2004,
+    "time": "1h 33m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تتحول الأميرة (فيونا) إلى غولة قبيحة وتتزوج (شريك) ويعيشا معا في مستنقعه، ويتوجب على (فيونا) و(شريك) زيارة والديها الملك والملكة بعد فترة غياب طويلة، اللذان يصابان بصدمة كبيرة بعد لقائهما مع ابنتهما، تتقبل الملكة الأم الواقع الجديد، بينما يرفضه الملك، ويلجأ إلى الجنية العرابة لتعيد له ابنته.",
+    "video": [],
+    "related": [
+        "tt0126029",
+        "tt0413267",
+        "tt0892791"
+    ]
+}

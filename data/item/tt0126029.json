@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0126029",
+    "name": "Shrek",
+    "image": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    "description": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+    "rating": 7.9,
+    "certificate": "7+",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2001,
+    "time": "1h 30m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "(شريك) غول أخضر يعيش في المستنقع وحيدًا مستمتعًا بعزلته، إلى أن يجد في يوم ما كل شخصيات القصص الخيالية ينامون في مستنقعه، فيذهب إلى اللورد فركواد ومعه الحمار مساعده كي يأمرهم بالرحيل، فيطلب منه فركواد أن يذهب لعرين التنين لينقذ الأميرة فيونا.",
+    "video": [],
+    "related": [
+        "tt0298148",
+        "tt0413267",
+        "tt0892791"
+    ]
+}

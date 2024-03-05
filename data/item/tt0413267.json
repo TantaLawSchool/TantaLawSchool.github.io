@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt0413267",
+    "name": "Shrek the Third",
+    "image": "https://m.media-amazon.com/images/M/MV5BOTgyMjc3ODk2MV5BMl5BanBnXkFtZTcwMjY0MjEzMw@@._V1_.jpg",
+    "description": "Reluctantly designated as the heir to the land of Far, Far Away, Shrek hatches a plan to install the rebellious Artie as the new king while Princess Fiona tries to fend off a coup d&apos;état by the jilted Prince Charming.",
+    "rating": 6.1,
+    "certificate": "PG",
+    "genre": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2007,
+    "time": "1h 33m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "عندما يسقط حماه -الملك هارولد- مريضًا، يصبح شريك الوريث المنتظر للأرض البعيدة، من أجل عدم التخلي عن حبيبته، يجند شريك أصدقائه الحمار والقط لتثبيت أرتي المتمرد الملك الجديد، ولكن الأميرة فيونا، تنظم مسيرات مجموعة من الصديقات الملكية لدرء انقلاب من قبل الأمير الساحر.",
+    "video": [],
+    "related": [
+        "tt0126029",
+        "tt0298148",
+        "tt0892791"
+    ]
+}
