@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt6644200",
+    "name": "A Quiet Place",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjI0MDMzNTQ0M15BMl5BanBnXkFtZTgwMTM5NzM3NDM@._V1_.jpg",
+    "description": "A family struggles for survival in a world where most humans have been killed by blind but noise-sensitive creatures. They are forced to communicate in sign language to keep the creatures at bay.",
+    "rating": 7.5,
+    "certificate": "16+",
+    "genre": [
+        "Drama",
+        "Horror",
+        "Sci-Fi"
+    ],
+    "year": 2018,
+    "time": "1h 30m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تدور الأحداث في مرزعة هادئة تسكنها أسرة صغيرة متحابة. تتعرض هذه الأسرة للترهيب والرعب - مِن قِبَل كائنات مخيفة - لبعض الوقت. وعلى هذه اﻷسرة أن تظل طوال الوقت في صمت تام ودون إصدار أدني صوت ﻷن هذه الكائنات تصطاد ضحاياها من خلال اﻷصوات التي يحدثوها أو يصدروها.",
+    "video": [],
+    "related": [
+        "tt8332922"
+    ]
+}

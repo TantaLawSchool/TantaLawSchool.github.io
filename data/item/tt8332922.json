@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt8332922",
+    "name": "A Quiet Place Part II",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTE2ODU4NDEtNmRjNS00OTk1LTg4NmMtNTAzYzVlNzJmYjgzXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+    "description": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize the creatures that hunt by sound are not the only threats lurking beyond the sand path.",
+    "rating": 7.2,
+    "certificate": "PG-13",
+    "genre": [
+        "Drama",
+        "Horror",
+        "Sci-Fi"
+    ],
+    "year": 2020,
+    "time": "1h 37m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "تستكمل العائلة رحلتها في العالم المروع، حيث يعيش الجميع في صمت خوفًا على حياتهم، ولكن تظهر بارقة الأمل بالعثور على أهم سلاح وهو نقطة ضعف المخلوقات المرعبة.",
+    "video": [],
+    "related": [
+        "tt6644200"
+    ]
+}
