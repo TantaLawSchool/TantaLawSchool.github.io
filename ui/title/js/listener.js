@@ -19,7 +19,7 @@ function playButtonListener(e){
     */
 
     Msg();
-    Ads.showRewardedAd();
+    
     setTimeout(function() {
         
         customp3_play(params.get("imdbId"));
@@ -44,7 +44,7 @@ function downloadButtonListener(e){
     
 
     Msg();
-    Ads.showRewardedAd();
+    
     setTimeout(function() {
         
         Downloader(params.get("imdbId"),doawnload_name);
