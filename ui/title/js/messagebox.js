@@ -2,13 +2,13 @@
 class messagebox {
     defaultSettings = {
         messagebox_background: "#493313",
-        messagebox_color: "#000",
+        messagebox_color: "#ffff",
         title_background: "#111",
         title_color: "#ffff",
         controls_background: "#1111",
-        controls_color: "#000",
+        controls_color: "#ffff",
         showcontrols: true,
-        controls_text: "OK",
+        controls_text: " موافق ",
         messagebox_posx: "center",
         messagebox_posy: "center",
         show_close: true,
