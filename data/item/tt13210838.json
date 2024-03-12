@@ -1,0 +1,27 @@
+{
+    "type": "TVSeries",
+    "imdbId": "tt13210838",
+    "name": "The Gentlemen",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjZkYWU0M2EtMTM5ZS00NzgzLTlkN2EtMDZmNDZkNDk5ODllXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "description": "Eddie Horniman inherits a family estate, initially unaware its home to a drug empire run by a syndicate that has no plans to vacate.",
+    "rating": 8.4,
+    "certificate": "TV-MA",
+    "genre": [
+        "Action",
+        "Comedy",
+        "Crime"
+    ],
+    "year": 2024,
+    "time": "50m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يرث (إيدي هالستيد) تركة كبيرة من والده، ويجد نفسه بمرور الوقت في مواجهة إمبراطورية من تجار المخدرات الذين يسعون للهيمنة على تركة والده، وتتوالى اﻷحداث.",
+    "video": [],
+    "related": [],
+    "seasons":1,
+    "episodeGuide":{
+        
+        "1":"8"
+    
+    }
+}

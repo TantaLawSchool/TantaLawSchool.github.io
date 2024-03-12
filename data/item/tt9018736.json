@@ -1,0 +1,27 @@
+{
+    "type": "TVSeries",
+    "imdbId": "tt9018736",
+    "name": "Avatar: The Last Airbender",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTViNTY2MjMtYmUwOC00ZGYxLThjOWEtYjNjZWU3MTYwYzZmXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+    "description": "A young boy known as the Avatar must master the four elemental powers to save the world, and fight against an enemy bent on stopping him.",
+    "rating": 7.3,
+    "certificate": "TV-PG",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+    ],
+    "year": 2024,
+    "time": "55m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يتتبع العمل قصة الطفل (أنج)، والذي يُصبح مجبرًا على التعاون مع أصدقائه في سبيل إنقاذ العالم والتصدي لأمة النار التي تسعى لفرض سيطرتها وطغيانها على باقي الأمم.",
+    "video": [],
+    "related": [],
+    "seasons":1,
+    "episodeGuide":{
+        
+        "1":"8"
+    
+    }
+}
