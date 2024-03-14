@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt6823368",
+    "name": "Glass",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTY1OTA2MjI5OV5BMl5BanBnXkFtZTgwNzkxMjU4NjM@._V1_.jpg",
+    "description": "Security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities.",
+    "rating": 6.6,
+    "certificate": "Not Rated",
+    "genre": [
+        "Drama",
+        "Horror",
+        "Sci-Fi"
+    ],
+    "year": 2019,
+    "time": "2h 9m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد نهاية أحداث فيلم Split، يستخدم حارس الأمن (ديفيد دان) قوته الخارقة؛ للعثور على المضطرب نفسيًا (كيفين كيندل كرامب) ذو الأربعة وعشرين شخصية مختلفة، ويتقابلا مع السيد جلاس الذي يدبر مؤامرة خطيرة.",
+    "video": [],
+    "related": [
+        "tt4972582"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "type": "Movie",
+    "imdbId": "tt4972582",
+    "name": "Split",
+    "image": "https://m.media-amazon.com/images/M/MV5BZTJiNGM2NjItNDRiYy00ZjY0LTgwNTItZDBmZGRlODQ4YThkL2ltYWdlXkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_.jpg",
+    "description": "Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.",
+    "rating": 7.3,
+    "certificate": "16+",
+    "genre": [
+        "Horror",
+        "Thriller"
+    ],
+    "year": 2016,
+    "time": "1h 57m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "(كيفين) رجل لديه - على الأقل - ثلاث وعشرين شخصية مختلفة في داخله، يقوم باختطاف ثلاث فتيات مراهقات، وبينما هن محتجزات أسرى، تبدأ شخصيته الأخيرة (الوحش) في التحرر من أجل السيطرة والاستحواذ على بقية الشخصيات في حوزة كيفين، حيث تتصارع جميع هذه الشخصيات الداخلية فيما بينها حول مصير الفتيات الثلاث.",
+    "video": [],
+    "related": [
+        "tt6823368"
+    ]
+}

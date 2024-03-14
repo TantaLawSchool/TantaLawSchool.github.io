@@ -1,0 +1,23 @@
+{
+    "type": "Movie",
+    "imdbId": "tt11564570",
+    "name": "Glass Onion",
+    "image": "https://m.media-amazon.com/images/M/MV5BYmJkZDc3ZTgtZWQzNi00OTg5LWJmMTYtNDNiMGE3ZDdkNjgzXkEyXkFqcGdeQXVyMTUzNzc3NDAz._V1_.jpg",
+    "description": "Tech billionaire Miles Bron invites his friends for a getaway on his private Greek island. When someone turns up dead, Detective Benoit Blanc is put on the case.",
+    "rating": 7.1,
+    "certificate": "16+",
+    "genre": [
+        "Comedy",
+        "Crime",
+        "Drama"
+    ],
+    "year": 2022,
+    "time": "2h 19m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "يعود المحقق المخضرم بينوا بلانك على طريق العمل مجددًا، حينما يسافر إلى اليونان ويتولى التحقيق في قضية قتل غامضة تتضمن العديد من الأشخاص المتورطين.",
+    "video": [],
+    "related": [
+        "tt8946378"
+    ]
+}

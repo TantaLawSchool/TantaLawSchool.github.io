@@ -1,0 +1,25 @@
+{
+    "type": "Movie",
+    "imdbId": "tt13070038",
+    "name": "After Ever Happy",
+    "image": "https://m.media-amazon.com/images/M/MV5BYWUwMjZmZGYtYjIyOS00YTY2LWFiMjMtNWYyMjdlNmUwY2FmXkEyXkFqcGdeQXVyMTUzNDkzNDY@._V1_.jpg",
+    "description": "As a shocking truth about a couple&apos;s families emerges, the two lovers discover they are not so different from each other.",
+    "rating": 4.6,
+    "certificate": "R",
+    "genre": [
+        "Drama",
+        "Romance"
+    ],
+    "year": 2022,
+    "time": "1h 35m",
+    "signed": false,
+    "hasASubtitle": "",
+    "arDescription": "بعد اكتشاف العديد من الحقائق المروعة حول عائلتهما، يكتشف الحبيبان تيسا وهاردين أنهما ليسا مختلفين عن بعضهما البعض، وأنهما تعرضا للعديد من التغيرات في شخصيتهما.",
+    "video": [],
+    "related": [
+        "tt4126476",
+        "tt10362466",
+        "tt13069986",
+        "tt15334488"
+    ]
+}
