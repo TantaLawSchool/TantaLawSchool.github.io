@@ -1,0 +1,56 @@
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    
+<script>
+        
+
+    function handleResult(e){
+ 
+     sframe_href = document.getElementById("sframe").contentWindow.location.href;
+ 
+ 
+     console.log(sframe_href);
+ 
+     let params = new URLSearchParams(sframe_href);
+ 
+     
+ 
+     if(params.get("showResult")==0){
+         /*first time*/
+         console.log("showResult : "+params.get("showResult"));
+     }
+     else{
+ 
+         /*show result*/
+         console.log("showResult : "+params.get("showResult"));
+         console.log("nationalNumber : "+params.get("nationalNumber"));
+ 
+         if(params.get("nationalNumber")=="30303271601813"){
+
+         document.getElementById("mframe").src="result_Data.html";
+
+         }else{
+            document.getElementById("mframe").src="default_law.html";
+         }
+ 
+     }
+ 
+ 
+    }
+ 
+ 
+ 
+ </script>
+ 
+ 
+ <FRAMESET cols="70%,*" NAME="sub_frame">
+     <FRAME FRAMEBORDER=0 MARGINHEIGHT=5 MARGINWIDTH=5 SRC="default_law.html" NAME="main" id="mframe">
+     <FRAME FRAMEBORDER=0 MARGINHEIGHT=5 MARGINWIDTH=5 SRC="Search.html?trush=0&showResult=0&nationalNumber=0" NAME="sub" id="sframe" onLoad="handleResult(event)">
+     
+     </FRAMESET>
+ 
+ 
+     
+
+
