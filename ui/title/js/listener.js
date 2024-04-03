@@ -10,6 +10,35 @@ function cardListener(e){
 
 
 
+
+function favButtonListener(e){
+
+
+    if(isFav(params.get("imdbId"))){
+
+        delFav(params.get("imdbId"));
+        $("fav-btn-text").innerText="اضافة الى المفضلة";
+        $("fimg").src="../ue/a/love.png";
+        $("fav-button").style.borderRadius="0";
+
+
+    }else{
+
+        setFav(params.get("imdbId"));
+        $("fav-btn-text").innerText="مفضلة";
+        $("fimg").src="../ue/a/loved.png";
+        $("fav-button").style.borderRadius="0.5em";
+
+
+    }
+
+
+}
+
+
+
+
+
 function playButtonListener(e){
 
     /*
@@ -17,6 +46,12 @@ function playButtonListener(e){
 
     Tree.Player(player_url);
     */
+
+    /* history */
+    if(isHistory(params.get("imdbId"))){
+        delHistory(params.get("imdbId"));setHistory(params.get("imdbId"));
+    }else{setHistory(params.get("imdbId"));}
+
 
     Msg();
     
@@ -33,6 +68,11 @@ function playButtonListener(e){
 
 
 function downloadButtonListener(e){
+
+    /* history */
+    if(isHistory(params.get("imdbId"))){
+        delHistory(params.get("imdbId"));setHistory(params.get("imdbId"));
+    }else{setHistory(params.get("imdbId"));}
 
 
     console.log("start download..");
@@ -102,12 +142,18 @@ function episodeListener(e){
     Tree.Player(player_url);
     */
 
+    /* history */
+    if(isHistory(params.get("imdbId"))){
+        delHistory(params.get("imdbId"));setHistory(params.get("imdbId"));
+    }else{setHistory(params.get("imdbId"));}
+
+
     s = JSON.parse($("tvSeriesP").textContent).season_val;
     e = JSON.parse($("tvSeriesP").textContent).episode_val;
     console.log(`play season: ${s} episode: ${e}`);
 
     Msg();
-    Ads.showRewardedAd();
+    
     setTimeout(function() {
         
         customp3_play(`${params.get("imdbId")}/${s}/${e}`);
@@ -122,6 +168,11 @@ function episodeListener(e){
 
 function tvSeriesdownloadButtonListener(e){
 
+    /* history */
+    if(isHistory(params.get("imdbId"))){
+        delHistory(params.get("imdbId"));setHistory(params.get("imdbId"));
+    }else{setHistory(params.get("imdbId"));}
+    
 
     s = JSON.parse($("tvSeriesP").textContent).season_val;
     e = JSON.parse($("tvSeriesP").textContent).episode_val;
@@ -134,7 +185,7 @@ function tvSeriesdownloadButtonListener(e){
     
 
     Msg();
-    Ads.showRewardedAd();
+    
     setTimeout(function() {
         
         Downloader(`${params.get("imdbId")}/${s}/${e}`,doawnload_name);

@@ -14,6 +14,37 @@ let params = new URLSearchParams(window.location.search);
  */
 
 
+function checkFav(id){
+  
+  if(isFav(id)){
+
+    
+    $("fav-btn-text").innerText="مفضلة";
+    $("fimg").src="../ue/a/loved.png";
+    $("fav-button").style.borderRadius="0.5em";
+
+    
+
+
+}else{
+
+
+    $("fav-btn-text").innerText="اضافة الى المفضلة";
+    $("fimg").src="../ue/a/love.png";
+    $("fav-button").style.borderRadius="0";
+    
+   
+
+}
+}
+
+
+
+
+
+
+
+
 function drawCards(related_data){
 
   for (var i in related_data){
@@ -126,6 +157,23 @@ let getTitle = () => {
             </div>
           </div>
 
+
+          <div class="fav-button-space">
+          
+          <div class="fav-button" id="fav-button" onclick="favButtonListener(this)">
+               <div class="fav-btn"> <div class="fimg"> <img id="fimg" src="../ue/a/love.png" width="100%" height="100%"><img></div> </div>
+                <div class="fav-btn-text" id="fav-btn-text">
+            اضافة الى المفضلة
+                </div>
+          </div>
+
+          
+          </div>
+
+          
+
+
+
           <div class="play-button-space">
           
           <div class="play-button" onclick="playButtonListener(this)">
@@ -162,6 +210,9 @@ let getTitle = () => {
           <p>${data.arDescription}</p>
          
           `;
+
+          checkFav(params.get("imdbId"));
+
           if(!parts_flag){
           //$("wrapper").style.top="50%";
           //$("wrapper").style.transform="translate(-50%,-50%)";
@@ -195,6 +246,23 @@ let getTitle = () => {
               </div>   
             </div>
           </div>
+
+
+
+          <div class="fav-button-space">
+          
+          <div class="fav-button" id="fav-button" onclick="favButtonListener(this)">
+               <div class="fav-btn"> <div class="fimg"> <img id="fimg" src="../ue/a/love.png" width="100%" height="100%"><img></div> </div>
+                <div class="fav-btn-text" id="fav-btn-text">
+            اضافة الى المفضلة
+                </div>
+          </div>
+
+          
+          </div>
+
+          
+
 
           <div class="play-button-space">
           
@@ -235,6 +303,7 @@ let getTitle = () => {
 
           `;
 
+          checkFav(params.get("imdbId"));
 
           $("e_content").innerHTML = ` 
           <!--episodes_title-->

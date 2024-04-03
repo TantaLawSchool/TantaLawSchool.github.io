@@ -1,31 +1,32 @@
 
 
-.download-button{
+.save-button{
     position :absolute;
-    width:250px;
+    width:200px;
     height:40px;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    background:#5f5d5d;
-    background-color: #ffb92a;
+    
+    border: solid #fff;
+
     cursor: pointer;
+
   }
   
   
-  .download-btn {
+  .save-btn {
     position :absolute;
     left:0%;
     width: 20%;
     height: 100%;
-    background: #29291c;
     display: inline-block;
     box-sizing: border-box;
     transition: all .3s ease-in-out;
     
   }
  
-  .dbimg{
+  .simg{
     position: absolute;
     top:0%;
     bottom: 0%;
@@ -33,7 +34,7 @@
     left:0%;
   }
 
-  .download-btn-text{
+  .save-btn-text{
 
     position :absolute;
     right:0%;
@@ -44,10 +45,11 @@
     display: table-cell;
     text-align: center;
 
-    font-size: larger;
-    font-weight:bolder;
-    vertical-align: middle;
-    color: #000;
+    
+    
+    color: #fff;
+    font-size: large;
+    
     
     
     transform: translate(0%,-50%);

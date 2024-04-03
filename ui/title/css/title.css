@@ -30,10 +30,10 @@
     position: relatives;
     /*background-color: #201f28;*/
     padding: 3em 1.8em;
-    border-radius: 0.6em;
+    /*border-radius: 0.6em;*/
     -webkit-box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
     box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
-    border-top: 10px solid #ffb92a;
+    border-top: 3px solid #ffb92a;
   }
   
 
@@ -111,6 +111,16 @@
     border-radius: 0.4em;
     font-weight: 300;
     color:yellow;
+  }
+
+
+  .fav-button-space{
+
+    position: relative;
+    min-height: 60px;
+    
+    
+    
   }
 
 
@@ -215,7 +225,7 @@
   .credit{
     position: relative;
     /*background-color: #201f28;*/
-    background: linear-gradient(to right, rgb(95, 100, 52) 0%,rgba(247, 203, 9, 0.027) 90%);
+    /*background: linear-gradient(to right, rgb(95, 100, 52) 0%,rgba(247, 203, 9, 0.027) 90%);*/
     display: block;
     text-align: center;
     font-size: 2em;
@@ -224,6 +234,7 @@
     /*margin-bottom: 3em;*/
     border-radius: 0.6em;
     color: #ffb92a;
+    border: solid #ffb92a;
   }
   
   

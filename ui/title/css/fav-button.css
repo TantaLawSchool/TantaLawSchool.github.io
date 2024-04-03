@@ -1,44 +1,39 @@
 
 
-.play-button{
+.fav-button{
     position :absolute;
-    width:250px;
+    width: 160px;
     height:40px;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    background:#5f5d5d;
-    background-color: #ffb92a;
+    
+    border: solid #ffb92a;
     cursor: pointer;
   }
   
   
-  .play-btn {
+  .fav-btn {
     position :absolute;
     left:0%;
     width: 20%;
     height: 100%;
-    background: #29291c;
+    
     display: inline-block;
     box-sizing: border-box;
     transition: all .3s ease-in-out;
+    
   }
-  .play-btn span {
-    display: block;
-    width:0;
-    height:0;
-    top:50%;
-    left:50%;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 30px solid #ffb92a;
-    position: relative;
-    /*margin: 18px auto;*/
-    transform:translate(-50%,-50%)rotateY(180deg);;
+ 
+  .fimg{
+    position: absolute;
+    top:0%;
+    bottom: 0%;
+    right: 0%;
+    left:0%;
   }
 
-
-  .play-btn-text{
+  .fav-btn-text{
 
     position :absolute;
     right:0%;
@@ -52,7 +47,7 @@
     font-size: larger;
     font-weight:bolder;
     vertical-align: middle;
-    color: #000;
+    color: #ffff;
     
     
     transform: translate(0%,-50%);
