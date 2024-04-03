@@ -4,7 +4,7 @@
     box-sizing: border-box;
     width: 50%;
     max-width: 800px;
-    height: 300px;
+    height: 200px;
     background-position: center;
     background-size: cover;
     margin: 4vh auto;
@@ -24,6 +24,7 @@
     border-radius: 4px;
     /*native gradient*/
     /*background: linear-gradient(to right, rgba(40,40,60,1) 0%,rgba(40,0,60,0) 90%);*/
+    /*background: linear-gradient(to right, rgb(139, 150, 39) 0%,rgba(247, 203, 9, 0.027) 90%);*/
     background: linear-gradient(to right, rgb(139, 150, 39) 0%,rgba(247, 203, 9, 0.027) 90%);
     background-blend-mode: multiply;
     will-change: transform;
@@ -43,9 +44,15 @@
     position: relative;
     z-index: 10;
     margin-right: 80px;
-    color: rgb(255, 175, 2);
+    color: rgb(251, 255, 0);
     background-color: rgb(48, 45, 45);
   }
+
+
+  .tonight-star img {
+    width: 20px;
+  }
+
   .watch {
     display: block;
     border: 1px solid white;
@@ -60,6 +67,7 @@
     outline: none;
     box-shadow: 0 0 10px rgba(0,0,0,.5);
     transition: all .2s;
+    cursor: pointer;
   }
   
   
@@ -74,11 +82,11 @@
     height: 35%;
   }
   
+
   
   @media (max-width: 768px) {
-    body {
-  /*     background: none; */
-    }
+    
+
     .tonight-card {
       width: 75%;
       height: 200px;
@@ -96,9 +104,10 @@
       margin: 5% auto;
     }
   }
-  @media (max-width: 500px) {
+
+  @media (max-width: 600px) {
     .tonight-card {
-      width: 100%;
+      width: 95%;
     }
   }
 

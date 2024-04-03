@@ -24,18 +24,90 @@
 
     color: #ffd52d;
     font-weight: bolder;
+    
+    direction: rtl;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
     align-content: center;
+    
+
+    cursor: pointer;
+
 
 }
 
 
+/* 5px space */
+.ue-toolbar{
+    position:fixed;
+    top:65px;
+    left:0%;
+    right: 0%;
+    height: 25px;
+    
+   /*
+    background-color: #3a3b3d;
+    box-shadow:  -2px -2px 6px rgba(255,255,255,.05),
+                 2px 2px 6px rgba(0,0,0,.8) ;
+    
+    */
+    z-index: 10;
 
 
 
+    align-items: center;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    /* right to left */
+    direction: rtl;
+
+    /* put spaces between elements */
+    column-gap: 20px;
 
 
+
+}
+#ue-toolbar::-webkit-scrollbar
+{
+	display: none;
+    
+}
+
+
+.ue-toolbar .ue-box{
+    flex-grow: 0;
+    flex-shrink: 0;
+
+
+    background-color: #3a3b3d;
+    box-shadow:  -2px -2px 6px rgba(255,255,255,.05),
+                 2px 2px 6px rgba(0,0,0,.8) ;
+    color: #ffff;
+    font-weight: bold;
+
+    height: 25px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0.5em;
+    
+
+    cursor: pointer;
+
+    /* make text in the middle (horizontally and vertically) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.ue-toolbar .ue-box img{
+    height: 25px;
+}

@@ -3,10 +3,10 @@
 .genres{
     position: fixed;
     
-    bottom: 0%;
+    bottom: 5px;
     left:0%;
     right: 0%;
-	height: 80px;
+	height: 25px;
 
 	/*background-color: #3a3b3d;*/
     
@@ -22,7 +22,7 @@
     direction: rtl;
 
     /* put spaces between elements */
-    column-gap: 20px;
+    column-gap: 15px;
 
 }
 
@@ -37,22 +37,25 @@
 
 .genre{
     
-    height: 36px;
+    height: 25px;
     
-    min-width: 100px;
+    min-width: 90px;
     
     flex-grow: 0;
     flex-shrink: 0;
 
     font-size: larger;
-    
+    text-decoration: underline;
+
+    cursor: pointer;
+
     padding: 5px;
     /*border: solid #515357;*/
     
     border-radius: 10px;
     /*background-color: #171718;*/
     background: linear-gradient(to right, rgb(15, 15, 5) 0%,rgb(48, 45, 31) 90%);
-    color: yellow;
+    color:#ffd52d;
     /* make text in the middle (horizontally and vertically) */
     display: flex;
     align-items: center;

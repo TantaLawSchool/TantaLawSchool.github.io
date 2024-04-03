@@ -1,0 +1,32 @@
+
+.full-star:before {
+  color: #f2b01e;
+  content: "\2605";
+  font-size: large;
+  overflow: hidden;
+}
+
+.empty-star:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.half-star:before {
+  color: #f2b01e;
+  content: "\2605";
+  width: 50%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.half-star:after {
+  content: '\2605';
+  position: absolute;
+  left: 1.5rem;
+  width: 50%;
+  text-indent: -1.5rem;
+  overflow: hidden;
+}

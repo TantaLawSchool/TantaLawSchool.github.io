@@ -11,16 +11,19 @@
   <link rel="stylesheet" href="./css/genres.css" />
   <link rel="stylesheet" href="./css/categories.css" />
 
+  <!--
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  -->
   <link rel="stylesheet" href="./css/tonight.css" />
 
-
+   <!--
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   -->
   <link rel="stylesheet" href="./css/search-box.css"/>
 
   <!-- ue -->
-  <script src="https://sarhne.com/assets/js/socket.io/4.3.1/socket.io.min.js"></script>
-  <script src="../ue/j.js"></script>
+  <script src="../ue/ue.js"></script>
+  <script src="../ue/uei.js"></script>
 
   <script src="./js/translation.js" charset="utf-8" type="text/javascript"></script>
   <title></title>
@@ -50,7 +53,7 @@
   <div class="category" id="series_suggestions_cat">
     <div class="category-description">
       <div class="category-tex">
-     ترشيحات | <span style="color:rgb(255, 255, 255)"> المسلسلات </span>
+     ترشيحات | <span style="color:rgb(255, 255, 255)"> المسلسلات </span> <img src="../ue/a/tv-show.png" height="25px"></img>
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -63,7 +66,7 @@
   <div class="category" id="the_best_cat">
     <div class="category-description">
       <div class="category-tex">
-     الأفضل فى تاريخ السينما  | <span style="color:rgb(255, 255, 255)"> The best </span>
+     الأفضل | <span style="color:rgb(255, 255, 255)"> The best </span> <img src="./images/star-icon.svg" height="20px"></img>
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -106,7 +109,7 @@
   <div class="category" id="suggestions_cat">
     <div class="category-description">
       <div class="category-tex">
-     اقتراحات | <span style="color:rgb(255, 255, 255)"> suggestions </span>
+     اقتراحات | <span style="color:rgb(255, 255, 255)"> suggestions </span> <img src="../ue/a/hh.png" height="25px"></img>
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -134,18 +137,32 @@
     <!-- search-box -->
     <div class="search-box">
       <input type="text" class="search-input" placeholder="Search" id="cepret-search">
-      <i class="fa fa-search" onclick="let f_p = window.location.origin+'/ui/find/find.html?q='+$('cepret-search').value; Tree.Find(f_p);"></i>
+      <i class="fa fa-search" onclick="let f_p = window.location.origin+'/ui/find/find.html?q='+$('cepret-search').value; UI.Find(f_p);"></i>
       <script>
         document.getElementById("cepret-search").addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
           let f_p = window.location.origin+'/ui/find/find.html?q='+$('cepret-search').value; 
-          Tree.Find(f_p);
+          UI.Find(f_p);
         }
         });
      </script>
     </div>
 
-    <div class="credit">Watch | كبريت</div>
+    <div class="credit">
+      <img src="../ue/a/a.png" height="50px"></img> 
+      <!--<img src="../ue/a/p.png" height="25px"></img>--> &nbsp; 
+      <img src="../ue/a/w.png" height="50px"></img> 
+    </div>
+
+  </div>
+
+  <!-- ue-toolbar -->
+  <div class="ue-toolbar" id="ue-toolbar">
+
+    <div class="ue-box" onclick="UI.Fav()"><img src="../ue/a/loved.png"></img>  المفضلة </div>
+    <div class="ue-box" onclick="UI.Profile()"><img src="../ue/a/account.png"></img>  الملف الشخصى </div>
+    <div class="ue-box" onclick="UI.History()"><img src="../ue/a/m-history.png"></img> السجل </div>
+    <div class="ue-box" onclick="UI.Ask()"><img src="../ue/a/send.png"></img> طلب فيلم </div>
 
   </div>
  

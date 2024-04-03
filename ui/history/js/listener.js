@@ -15,3 +15,8 @@ function cardListener(e){
 }
 
 
+function clearHistoryListener(e){
+    clearHistory();
+    refreshHistory();
+}
+

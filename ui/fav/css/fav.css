@@ -1,25 +1,87 @@
 
- *{
-
+* {
   margin: 0;
   box-sizing: border-box;
   outline: none;
+}
 
- }
+body {
+    color: white;
+    font-family: "microsoft yahei", arial, -apple-system, BlinkMacSystemFont,
+      "segoe ui", roboto, oxygen, cantarell, "helvetica neue", ubuntu, sans-serif;
+    background-color: #0f0a05;
+    
+  }
 
 
-body{
-  color: white;
-  font-family: "microsoft yahei", arial, -apple-system, BlinkMacSystemFont,
-    "segoe ui", roboto, oxygen, cantarell, "helvetica neue", ubuntu, sans-serif;
-  background-color: #0f0a05;
-  
+.header_top_space{
+    position: relative;
+    width: 100%;
+    min-height: 50px;
+}
 
+
+.fav_header {
+    position: relative;
+    
+    width: 100%;
+    min-height: 50px;
+
+    right: 5%;
+
+    direction: rtl;
+    font-size: larger;
+    font-weight: bolder;
+
+    display: flex;
+    justify-content: start; /* X Coord */ 
+    align-items:center;     /* Y Coord */
+    align-content:center;
+    
+
+    cursor: pointer;
+    /*color: #ffb92a;*/
+
+    margin-bottom: 50px;
+    border-bottom: solid #ffb92a;
 }
 
 
 
+
+.no_fav{
+  position: relative;
+  margin-top: 10px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  height: 50px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: #ffd52d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  column-gap: 5px;
+  
+  cursor:default;
+  
+  direction: rtl;
+}
+
+
+
+/* cards segment */
+
+
+
 .row {
+
   display: flex;
   max-width: 100%;
   gap: 15px;
@@ -30,36 +92,6 @@ body{
 }
 
 
-
-.relative-toolbar-space{
-  position: relative;
-  height: 90px;
-  width: 100%;
-}
-
-
-/* start wrapper with intro Watch | */
-
-.wrapper-intro{
-  position: relative;
-  width: 100%;
-  min-height: 50px;
-
-  direction: rtl;
-  font-size: larger;
-  font-weight: bolder;
-  color: #ffb92a;
-  
-}
-
-.wrapper-intro-tex{
-  position: absolute;
-  width: 100%;
-  top:50%;
-  right: 5%;
-  transform: translate(0,-50%);
-  /*background-color: chartreuse; /*croma*/ 
-}
 
 
 
@@ -96,6 +128,16 @@ body{
   background-color: chocolate;
 }
 
+
+.wrapper .card .title_poster .fav_logo_space{
+  position: absolute;
+  top:0%;
+  left: 0;
+
+  width: 30px;
+  height: 35px;
+  
+}
 
 
 
@@ -143,7 +185,7 @@ body{
 
 #title_genre::-webkit-scrollbar
 {
-	display: none;
+    display: none;
     
 }
 
@@ -249,4 +291,5 @@ body{
   
 
 }
+
 

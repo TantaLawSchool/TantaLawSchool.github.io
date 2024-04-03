@@ -9,7 +9,7 @@ function cardListener(e){
     */
 
     title_url = window.location.origin+"/ui/title/title.html?imdbId="+e.parentNode.id;
-    Tree.Title(title_url);
+    UI.Title(title_url);
 
 }
 
