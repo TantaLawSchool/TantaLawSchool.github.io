@@ -53,9 +53,9 @@
     /*border: solid #515357;*/
     
     border-radius: 10px;
-    /*background-color: #171718;*/
-    background: linear-gradient(to right, rgb(15, 15, 5) 0%,rgb(48, 45, 31) 90%);
-    color:#ffd52d;
+    background-color:#ffd52d;
+    color:black;
+    
     /* make text in the middle (horizontally and vertically) */
     display: flex;
     align-items: center;
