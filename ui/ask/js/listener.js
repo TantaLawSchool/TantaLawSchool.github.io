@@ -15,6 +15,11 @@ function askButtonListener(e){
 
     }else{
         setAsk($("ask_content").value);
+
+        /*send ask*/
+        send_ask($("ask_content").value);
+
+
     }
 
 
