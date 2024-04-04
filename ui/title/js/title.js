@@ -328,6 +328,7 @@ let getTitle = () => {
       //If error occurs
       .catch((err) => {
         result.innerHTML = `<h3 class="msg">!حدث خطأ ما</h3>`;
+        new messagebox("Error", err).show();
         console.log(err);
       });
   
