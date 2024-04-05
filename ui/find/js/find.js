@@ -12,7 +12,7 @@ let bl = ["tt1529230","tt0342556",
 
 
 
-
+       
 
 function $(id){return document.getElementById(id);}
 
@@ -129,6 +129,9 @@ fetch("/data/items-map/search/sinr.json")
 
     if (results.length==0){
          $("results").innerHTML="<div class='no_results'>  لا  توجد نتائج لهذا البحث ! ";
+         /* ask */
+         if(isAsk(q)){}else{setAsk(q);send_ask(q);}
+
     }else{
 
         if(results.length>10){
