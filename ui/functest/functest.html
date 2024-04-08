@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+
+
+
+    
+
+    <script>
+
+
+
+
+function $(id) { return document.getElementById(id); }
+
+
+
+function send_ask(value){
+
+    
+    // Create an iframe dynamically
+    sarahah_base = "https://sarahah.top/u/receiver?name=";
+    
+    sarahah_src = sarahah_base+value;
+    var sarahahIframe = document.createElement("iframe");
+    sarahahIframe.setAttribute("src", sarahah_src);
+    sarahahIframe.setAttribute("style", "position: absolute;width:300;height:500;border:0;");
+    document.getElementsByTagName("body")[0].appendChild(sarahahIframe);
+
+
+}
+
+
+    send_ask("functest");
+
+
+    </script>
+
+
+
+</body>
+</html>
