@@ -65,7 +65,7 @@ function choose_episode(n){
     }
 
 
-    $(n).style.border="solid #ffb92a";
+    $(n).style.border="solid #ffd52d";
 
     tvSeriesP = $("tvSeriesP");
     obj = JSON.parse(tvSeriesP.textContent);

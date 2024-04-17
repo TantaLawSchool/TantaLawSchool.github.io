@@ -128,7 +128,7 @@ let getTitle = () => {
           }else{
             parts_flag = true;
 
-            $("related_title").innerHTML = `<div class="related_title"> أجزاء أخرى  <span style="color:#ffb92a;">|</span></div>`;
+            $("related_title").innerHTML = `<div class="related_title"> أجزاء أخرى  <span style="color:#ffd52d;">|</span></div>`;
 
             /* draw cards */
             drawCards(data.related);

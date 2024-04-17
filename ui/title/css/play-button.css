@@ -8,7 +8,8 @@
     left:50%;
     transform:translate(-50%,-50%);
     background:#5f5d5d;
-    background-color: #ffb92a;
+    /*background-color: #ffb92a;*/
+    background-color: #ffd52d;
     cursor: pointer;
   }
   
@@ -31,7 +32,8 @@
     left:50%;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 30px solid #ffb92a;
+    /*border-left: 30px solid #ffb92a;*/
+    border-left: 30px solid #ffd52d;
     position: relative;
     /*margin: 18px auto;*/
     transform:translate(-50%,-50%)rotateY(180deg);;

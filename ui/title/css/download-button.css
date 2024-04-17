@@ -8,7 +8,8 @@
     left:50%;
     transform:translate(-50%,-50%);
     background:#5f5d5d;
-    background-color: #ffb92a;
+    /*background-color: #ffb92a;*/
+    background-color: #ffd52d;
     cursor: pointer;
   }
   
