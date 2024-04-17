@@ -1,7 +1,4 @@
 
-body{
-    background-color: #000;
-}
 
 
 .Msg{
@@ -13,7 +10,7 @@ body{
     text-align: center;
     
     background-color: #111111;
-    border-bottom: 5px solid #ffb92a;
+    
     
     transform: translate(-50%,-50%);
 }
