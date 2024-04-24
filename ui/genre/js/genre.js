@@ -10,7 +10,7 @@ let bl = ["tt1529230","tt0342556",
            "tt26008162","tt27881382",
            "tt27873958"]
 
-
+bl=[];
 
 function $(id){return document.getElementById(id);}
 
