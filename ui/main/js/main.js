@@ -9,6 +9,7 @@ let bl = ["tt1529230","tt0342556",
            "tt26008162","tt27881382",
            "tt27873958"]
 
+bl = [];
 
 const root = document.getElementById("root")
 let movies = [],
