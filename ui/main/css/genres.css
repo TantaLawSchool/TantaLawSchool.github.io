@@ -3,13 +3,14 @@
 .genres{
     position: fixed;
     
-    bottom: 5px;
+    bottom: 0px;
     left:0%;
     right: 0%;
-	height: 25px;
+	height: 50px;
 
-	/*background-color: #3a3b3d;*/
-    
+	background-color: #0f0a05;
+
+    border-top: 1px solid #ffff;
     
     align-items: center;
     display: flex;
@@ -29,10 +30,18 @@
 
 #genres::-webkit-scrollbar
 {
-	display: none;
+    background:transparent;
+    height: 10px;
     
 }
 
+
+#genres::-webkit-scrollbar-thumb{
+    background-color:olivedrab;
+    border-radius: 0.5em;
+    
+  }
+  
 
 
 .genre{
@@ -45,16 +54,10 @@
     flex-shrink: 0;
 
     font-size: larger;
-    text-decoration: underline;
-
     cursor: pointer;
-
     padding: 5px;
-    /*border: solid #515357;*/
-    
     border-radius: 10px;
-    background-color:#ffd52d;
-    color:black;
+    border: 1px solid #ffff;
     
     /* make text in the middle (horizontally and vertically) */
     display: flex;
@@ -63,3 +66,15 @@
 }
 
 
+
+
+
+@media screen and (max-width: 800px) {
+    
+    
+    #genres{
+        visibility: hidden;
+    }
+  
+  }
+  

@@ -5,6 +5,7 @@
     left: 50%;
     right: 0%;
     height: 50px;
+
 }
 
 .search-input {
@@ -12,12 +13,14 @@
     padding: 10px;
     
     height: 100%;
-    width: 100%;
+    
+    left:0%;
+    right: 40px;
     
     border: 1px solid #25241c;
+    background-color: #2a292b;
     
     
-    background: #2a292b;
     border-radius: 0px;
 
     box-sizing: border-box;
@@ -26,16 +29,39 @@
     color: #ffff;
     outline: none;
     transition: .5s;
+
 }
+
+
+
 
 .search-box i{
     position: absolute;
     top: 50%;
     right: 5px;
-    transform: translate(-50%,-50%);
+    transform: translate(0%,-50%);
     font-size: 26px;
-    color: #ffd52d;
+    color: #ffff;
     transition: .2s;
 }
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    
+    .search-box{
+      left: 35%;
+      
+      
+    }
+    
+    
+  
+  }
+  
+
 
 

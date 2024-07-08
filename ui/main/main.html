@@ -11,14 +11,12 @@
   <link rel="stylesheet" href="./css/genres.css" />
   <link rel="stylesheet" href="./css/categories.css" />
 
-  <!--
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  -->
-  <link rel="stylesheet" href="./css/tonight.css" />
+ 
+  <link rel="stylesheet" href="./css/worlds.css" />
 
-   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../3rdparty/font-awesome.min/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="./css/search-box.css"/>
+
 
   <!-- ue -->
   <script src="../ue/ue.js"></script>
@@ -26,18 +24,39 @@
 
   <script src="./js/translation.js" charset="utf-8" type="text/javascript"></script>
   <title></title>
+
 </head>
 
 <body>
- 
-
   
+
+
   <!-- Used in the displacement of wrapper -->
   <div class="relative-toolbar-space"></div>
 
 
   <!-- tonight -->
-  <div class="tonight"></div>
+  <div class="worlds">
+    <div class="world HarryWorld" onclick="UI.Title('/ui/title/title.html?imdbId=tt0241527')">
+      <div class="worldName">
+        هارى بوتر
+      </div>
+    </div>
+
+    <div class="world BreakingWorld" onclick="UI.Title('/ui/title/title.html?imdbId=tt0903747')">
+      <div class="worldName">
+        بريكنج باد
+      </div>
+    </div>
+  
+
+   <div class="world MarvelWorld" onclick="">
+     <div class="worldName">
+      مارفل 
+     </div>
+   </div>
+
+</div>
 
 
 
@@ -47,7 +66,7 @@
   <div class="category" id="series_suggestions_cat">
     <div class="category-description">
       <div class="category-tex">
-     ترشيحات | <span style="color:rgb(255, 255, 255)"> المسلسلات </span> <img src="../ue/a/tv-show.png" height="25px"></img>
+       ترشيحات المسلسلات </span> <img src="../ue/a/tv-show.png" height="25px"></img>
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -60,7 +79,7 @@
   <div class="category" id="the_best_cat">
     <div class="category-description">
       <div class="category-tex">
-     الأفضل | <span style="color:rgb(255, 255, 255)"> The best </span> <img src="./images/star-icon.svg" height="20px"></img>
+       أفضل الأعمال <img src="./images/star-icon.svg" height="20px"></img>
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -73,7 +92,7 @@
   <div class="category" id="egy_classic_cat">
     <div class="category-description">
       <div class="category-tex">
-     كلاسيكيات السينما المصرية | <span style="color:rgb(255, 255, 255)"> Classic </span>
+     كلاسيكيات السينما المصرية  Classic 
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -103,7 +122,7 @@
   <div class="category" id="suggestions_cat">
     <div class="category-description">
       <div class="category-tex">
-     اقتراحات | <span style="color:rgb(255, 255, 255)"> suggestions </span> <img src="../ue/a/hh.png" height="25px"></img>
+       اقتراحات  suggestions 
       </div>
     </div>
     <div class="category-content" id="category-content"></div>
@@ -113,10 +132,6 @@
 
 
   
-  <!-- wrapper intro -->
-  <div class="wrapper-intro">
-    <div class="wrapper-intro-tex"> شاهد | Watch</div>
-  </div>
 
   <!-- Infinite scroll -->
   <div class="wrapper">
@@ -142,25 +157,26 @@
      </script>
     </div>
 
-    <div class="credit">
-      <img src="../ue/a/a.png" height="50px"></img> 
-      <!--<img src="../ue/a/p.png" height="25px"></img>--> &nbsp; 
-      <img src="../ue/a/w.png" height="50px"></img> 
+    <div class="topToolbar" id="topToolbar">
+    
+      <div class="topToolbar-box"><img src="../ue/a/a.png"></img> </div>
+
+      <div class="topToolbar-box" onclick="UI.Fav()" id="FavID"><img src="../ue/a/loved.png"></img>  المفضلة </div>
+      <div class="topToolbar-box" onclick="UI.Profile()" id="ProfileID"><img src="../ue/a/account.png"></img>  الملف الشخصى </div>
+      <div class="topToolbar-box" onclick="UI.History()" id="HistoryID"><img src="../ue/a/m-history.png"></img> السجل </div>
+      <div class="topToolbar-box" onclick="UI.Ask()" id="AskID"><img src="../ue/a/send.png"></img> طلب فيلم </div>
+
     </div>
 
   </div>
 
-  <!-- ue-toolbar -->
-  <div class="ue-toolbar" id="ue-toolbar">
 
-    <div class="ue-box" onclick="UI.Fav()"><img src="../ue/a/loved.png"></img>  المفضلة </div>
-    <div class="ue-box" onclick="UI.Profile()"><img src="../ue/a/account.png"></img>  الملف الشخصى </div>
-    <div class="ue-box" onclick="UI.History()"><img src="../ue/a/m-history.png"></img> السجل </div>
-    <div class="ue-box" onclick="UI.Ask()"><img src="../ue/a/send.png"></img> طلب فيلم </div>
-    
+  <div class="menu" onclick="showSideToolbarListener(this)">
+    <img src="../ue/a/menu.png"></img>
   </div>
- 
-  
+
+
+
   
   <!-- genres -->
   <div class="genres" id="genres">
@@ -186,15 +202,43 @@
   </script>
   
   
+
+  <!-- stop screen -->
+  <div class="sideToolbarStopScreen" id="sideToolbarStopScreen" onclick="hideSideToolbarListener(this)"></div>
+  <div class="sideToolbar" id="sideToolbar">
+      <div class="sideToolbar-box" onclick="UI.Fav()" ><img src="../ue/a/loved.png"></img>  المفضلة </div>
+      <div class="sideToolbar-box" onclick="UI.Profile()" ><img src="../ue/a/account.png"></img>  الملف الشخصى </div>
+      <div class="sideToolbar-box" onclick="UI.History()" ><img src="../ue/a/m-history.png"></img> السجل </div>
+      <div class="sideToolbar-box" onclick="UI.Ask()" ><img src="../ue/a/send.png"></img> طلب فيلم </div>
+      <div class=".sideToolbar line" ></div>
+   </div>
+
+   <script>
+    function $(id){return document.getElementById(id);}
+
+    fetch("/data/items-map/mapper.json")
+      .then((resp) => resp.json())
+      .then((data) => {
+              g = data.genre;
+              for (var i in g){
+                $("sideToolbar").innerHTML = $("sideToolbar").innerHTML + `<div class="sideGenre" id="${g[i]}" onclick="genreListener(this)">${"#"+translate(g[i])}</div>`;
+              }
+      })
+      .catch(() => {
+       
+      });
+
+  </script>
+  
+    
+
   
 
   <script src="./js/api.js" charset="utf-8" type="text/javascript"></script>
   <script src="./js/main.js" charset="utf-8" type="text/javascript"></script>
   <script src="./js/listener.js" charset="utf-8" type="text/javascript"></script>
   <script src="./js/category.js" charset="utf-8" type="text/javascript"></script>
-  <script src="./js/tonight.js" charset="utf-8" type="text/javascript"></script>
-
-
+  
 </body>
 
 </html>

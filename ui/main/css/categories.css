@@ -13,9 +13,7 @@
     direction: rtl;
     font-size: larger;
     font-weight: bolder;
-    /*color: #ffb92a;*/
-    color:#ffd52d;
-    
+    color:#ffff;
 }
 
 .category-tex{
@@ -28,15 +26,12 @@
     align-items: center;
     justify-content: center;
     column-gap: 5px;
-    /*background-color: chartreuse; /*croma*/ 
 }
 
 
 
 .category .category-content{
     position: relative;
-    /*background-color: rgb(24, 17, 17);*/
-    background-color: #0f0a05;
     display: block;
     text-align: center;
     font-size: 2em;
@@ -44,8 +39,6 @@
     min-height: 390px;
     
     margin-bottom: 15px;
-    /*border-radius: 0.6em;*/
-
     
     align-items: center;
     display: flex;
@@ -57,16 +50,28 @@
 
     color: #ffd52d;
 
-    border-top: 2px solid #3b3737;
+    
 }
+
+
 
 
 #category-content::-webkit-scrollbar
 {
-  display: none;
+  
+  background-color:#0f0a05;
+  height: 15px;
+ 
+  
   
 } 
 
+
+#category-content::-webkit-scrollbar-thumb{
+  background-color: #ffd52d;
+  border-radius: 0.5em;
+  
+}
 
 
 /* category cards */
@@ -77,7 +82,7 @@
     position: relative;
     font-size: 14px;
     line-height: 21px;
-    width: 100px; /*200*/
+    width: 200px; /*200*/
     height: 390px; /*390*/
     overflow: hidden;
     transition: 0.5s ease all;
@@ -264,4 +269,18 @@
 
 
 
+@media screen and (max-width: 800px) {
+    
+  .cat_card{
+    width: 100px; 
+    height: 390px; 
+  }
+  
+  
+  #category-content::-webkit-scrollbar{
+  display: none;
+  
+  } 
+
+}
 

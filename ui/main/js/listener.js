@@ -21,3 +21,15 @@ function genreListener(e){
 }
 
 
+
+function showSideToolbarListener(e){
+    $("sideToolbarStopScreen").style.visibility="visible";
+    $("sideToolbar").style.visibility="visible";
+}
+
+
+function hideSideToolbarListener(e){
+    $("sideToolbarStopScreen").style.visibility="hidden";
+    $("sideToolbar").style.visibility="hidden";
+}
+

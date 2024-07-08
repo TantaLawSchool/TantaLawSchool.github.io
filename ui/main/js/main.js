@@ -13,10 +13,8 @@ bl = [];
 
 const root = document.getElementById("root")
 let movies = [],
-    page = 1,
-    inSearchPage = false
-
-
+    page = 1
+    
 
     /* get data from api and recieve it to (html)rendrer */
 const fetchAndShowResults = async (URL) => {
@@ -63,7 +61,7 @@ const movieCard = (title) =>
         /* render received data */
 const showResults = (items) => {
     console.log(items);
-    let content = !inSearchPage ? root.innerHTML : ""
+    let content =  root.innerHTML;
     if (items && items.length > 0) {
         items.map((item) => {
             
@@ -124,13 +122,11 @@ const detectEndAndLoadMore = (e) => {
     /*
 
     let el = document.documentElement
-    if (
-        !inSearchPage &&
-        el.scrollTop + el.clientHeight == el.scrollHeight
-    ) {
-        
+    if ( el.scrollTop + el.clientHeight == el.scrollHeight ) {
+
         console.log("BINGO!")
         handleLoadMore()
+        
     }
 
 
@@ -143,7 +139,7 @@ const detectEndAndLoadMore = (e) => {
 window.addEventListener("scroll", detectEndAndLoadMore);
 
 function init() {
-    inSearchPage = false
+    
     fetchAndShowResults(URL)
 }
 

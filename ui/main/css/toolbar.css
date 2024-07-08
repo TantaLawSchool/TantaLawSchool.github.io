@@ -12,51 +12,17 @@
     box-shadow:  -2px -2px 6px rgba(255,255,255,.05),
                  2px 2px 6px rgba(0,0,0,.8) ;
     
-    z-index: 10;
 }
 
 
-.credit{
+.topToolbar{
+    
     position: absolute;
     left: 0%;
     right: 50%;
     height: 50px;
 
-    color: #ffd52d;
-    font-weight: bolder;
     
-    direction: rtl;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    
-
-    cursor: pointer;
-
-
-}
-
-
-/* 5px space */
-.ue-toolbar{
-    position:fixed;
-    top:65px;
-    left:0%;
-    right: 0%;
-    height: 25px;
-    
-   /*
-    background-color: #3a3b3d;
-    box-shadow:  -2px -2px 6px rgba(255,255,255,.05),
-                 2px 2px 6px rgba(0,0,0,.8) ;
-    
-    */
-    z-index: 10;
-
-
-
     align-items: center;
     display: flex;
     flex-direction:row;
@@ -65,33 +31,34 @@
     overflow-y: hidden;
     
     /* right to left */
-    direction: rtl;
+    direction: ltr;
 
     /* put spaces between elements */
     column-gap: 20px;
 
 
-
 }
-#ue-toolbar::-webkit-scrollbar
+
+
+
+#topToolbar::-webkit-scrollbar
 {
 	display: none;
     
 }
 
 
-.ue-toolbar .ue-box{
+
+.topToolbar .topToolbar-box{
     flex-grow: 0;
     flex-shrink: 0;
 
 
-    background-color: #3a3b3d;
-    box-shadow:  -2px -2px 6px rgba(255,255,255,.05),
-                 2px 2px 6px rgba(0,0,0,.8) ;
+   
     color: #ffff;
     font-weight: bold;
 
-    height: 25px;
+    height: 50px;
 
     padding-left: 5px;
     padding-right: 5px;
@@ -108,6 +75,176 @@
 }
 
 
-.ue-toolbar .ue-box img{
+.topToolbar .topToolbar-box img{
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+.menu{
+    position:fixed;
+    top:65px;
+    right:5px;
+    height: 25px;
+    width: 35px;
+    cursor: pointer;
+    visibility: hidden;
+}
+.menu img{
+    width: 35px;
     height: 25px;
 }
+
+.menu:active{
+    transform: translateY(4px);
+}
+
+
+
+
+.sideToolbarStopScreen{
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    visibility: hidden;
+    
+}
+
+
+.sideToolbar{
+    position: fixed;
+    top:65px;
+    right: 0px;
+    bottom: 0px;
+    min-width: 200px;
+    background-color: #3a3b3d;
+    visibility: hidden;
+
+
+    align-items: center;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+
+    /* put spaces between elements */
+    row-gap: 10px;
+
+}
+
+
+
+.sideToolbar .sideToolbar-box{
+    flex-grow: 0;
+    flex-shrink: 0;
+   
+    color: #ffff;
+    font-weight: bold;
+
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    cursor: pointer;
+
+    /* make text in the middle (horizontally and vertically) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.sideToolbar .sideGenre{
+    flex-grow: 0;
+    flex-shrink: 0;
+   
+    color: #ffffff;
+    font-weight: bold;
+
+    height: 25px;
+    min-width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #ffff;
+    
+    cursor: pointer;
+    direction: rtl;
+
+    /* make text in the middle (horizontally and vertically) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sideToolbar .line{
+    
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: 100%;
+    background-color: #ffff;
+    height: 2px;
+}
+
+
+
+.sideToolbar .sideToolbar-box img{
+    height: 25px;
+}
+
+
+
+#sideToolbar::-webkit-scrollbar
+{
+    background:transparent;
+    width: 5px;
+    
+}
+
+
+#sideToolbar::-webkit-scrollbar-thumb{
+    background-color:rgb(112, 112, 112);
+    border-radius: 0.5em;
+    
+  }
+  
+
+
+
+
+@media screen and (max-width: 800px) {
+    
+    .topToolbar{
+      right: 65%;
+      
+      
+    }
+    #FavID,#ProfileID,#HistoryID,#AskID{
+        visibility: hidden;
+    }
+    
+    
+    .topToolbar .topToolbar-box img{
+        height: 50px;
+    }
+
+    .menu{
+        visibility: visible;
+    }
+  
+  }
+  
+
+
