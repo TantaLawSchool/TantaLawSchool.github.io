@@ -25,7 +25,7 @@ let q = params.get("q");
 
 $("cepret-search").value = q;
 
-$("results_of").innerHTML = `<span style="color:rgb(255,255,255);"> نتائج البحث عن :  </span> <span style="color:orange;">${q}</span>`;
+$("results_of").innerHTML = `<span style="color:rgb(255,255,255);"> نتائج البحث عن :  </span> <span style="color:#ffff;">${q}</span>`;
 
 
 

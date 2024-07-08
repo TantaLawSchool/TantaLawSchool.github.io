@@ -18,7 +18,7 @@ let params = new URLSearchParams(window.location.search);
 
 
 
-$("genre_header").innerHTML = $("genre_header").innerHTML + `<span style="color: #ffd52d">${translate(params.get("genreId"))}</span>` ; 
+$("genre_header").innerHTML = $("genre_header").innerHTML + `<span style="color: #ffff;border:1px solid #ffff;padding:5px;">${translate(params.get("genreId"))}</span>` ; 
 
 
 

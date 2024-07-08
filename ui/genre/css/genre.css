@@ -35,7 +35,7 @@ body {
     /*color: #ffb92a;*/
 
     margin-bottom: 50px;
-    border-bottom: solid #ffd52d;
+    border-bottom: solid #ffff;
 }
 
 
@@ -64,8 +64,6 @@ body {
   }
   
   
-  /* start wrapper with intro Watch | */
-  
   .wrapper-intro{
     position: relative;
     width: 100%;
@@ -74,8 +72,7 @@ body {
     direction: rtl;
     font-size: larger;
     font-weight: bolder;
-    color: #ffd52d;
-    
+    color: #ffff;
   }
   
   .wrapper-intro-tex{
@@ -104,7 +101,7 @@ body {
     position: relative;
     font-size: 14px;
     line-height: 21px;
-    width: 100px; /*200*/
+    width: 200px; /*200*/
     height: 390px; /*390*/
     overflow: hidden;
     transition: 0.5s ease all;
@@ -276,4 +273,17 @@ body {
   
   }
   
+  
+
+
+
+  @media screen and (max-width: 800px) {
+    
+    .wrapper .card{
+      width: 100px; 
+      height: 390px; 
+    }
+    
+  
+  }
   

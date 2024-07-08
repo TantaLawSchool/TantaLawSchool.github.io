@@ -43,7 +43,7 @@ body {
     /*color: #ffb92a;*/
 
     margin-bottom: 50px;
-    border-bottom: solid #ffd52d;
+    border-bottom: solid #ffff;
 }
 
 
@@ -64,7 +64,7 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  color: #ffd52d;
+  color: #ffff;
 
 
   display: flex;
@@ -91,7 +91,7 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
-  color: #ffd52d;
+  color: #ffff;
 
   display: flex;
   justify-content: center;
@@ -141,7 +141,7 @@ body {
   position: relative;
   font-size: 14px;
   line-height: 21px;
-  width: 100px; /*200*/
+  width: 200px; /*200*/
   height: 390px; /*390*/
   overflow: hidden;
   transition: 0.5s ease all;
@@ -324,3 +324,15 @@ body {
 }
 
 
+
+
+
+@media screen and (max-width: 800px) {
+    
+  .wrapper .card{
+    width: 100px; 
+    height: 390px; 
+  }
+  
+
+}

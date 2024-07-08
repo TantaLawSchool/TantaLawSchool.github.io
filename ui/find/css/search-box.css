@@ -6,7 +6,7 @@
     right: 0%;
     height: 100%;
 
-    border: 1px solid #ffd52d;
+    border: 1px solid #ffff;
 }
 
 .search-input {
@@ -25,7 +25,7 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color: #ffd52d;
+    color: #ffff;
     outline: none;
     transition: .5s;
 }
@@ -36,7 +36,7 @@
     left: 90%;
     transform: translate(0%,-50%);
     font-size: 26px;
-    color: #ffd52d;
+    color: #ffff;
     transition: .2s;
 }
 
