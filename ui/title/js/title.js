@@ -322,12 +322,12 @@ let getTitle = () => {
 
         //If title does NOT Movie || TVSeries
         else {
-          result.innerHTML = `<h3 class="msg">Not Movie or TVSeries</h3>`;
+          result.innerHTML = `<h3 class="msg"> Not Movie or TVSeries </h3>`;
         }
       })
       //If error occurs
       .catch((err) => {
-        result.innerHTML = `<h3 class="msg">!حدث خطأ ما</h3>`;
+        result.innerHTML = `<h3 class="msg">  حدث خطأ ما ! </h3>`;
         new messagebox("Error", err).show();
         console.log(err);
       });

@@ -77,9 +77,9 @@ function downloadButtonListener(e){
 
     console.log("start download..");
     
-    doawnload_name = document.getElementById("title_name").innerText+"_"+document.getElementById("title_year").innerText+".mp4";
+    download_name = document.getElementById("title_name").innerText+"_"+document.getElementById("title_year").innerText+".mp4";
 
-    console.log(doawnload_name);
+    console.log(download_name);
 
     
 
@@ -87,7 +87,7 @@ function downloadButtonListener(e){
     
     setTimeout(function() {
         
-        Downloader(params.get("imdbId"),doawnload_name);
+        Downloader(params.get("imdbId"),download_name);
 
     }, 1000);
     
@@ -178,9 +178,9 @@ function tvSeriesdownloadButtonListener(e){
     e = JSON.parse($("tvSeriesP").textContent).episode_val;
     console.log(`download season: ${s} episode: ${e}`);
     
-    doawnload_name = document.getElementById("title_name").innerText+"_"+`S${s}E${e}`+".mp4";
+    download_name = document.getElementById("title_name").innerText+"_"+`S${s}E${e}`+".mp4";
 
-    console.log(doawnload_name);
+    console.log(download_name);
 
     
 
@@ -188,7 +188,7 @@ function tvSeriesdownloadButtonListener(e){
     
     setTimeout(function() {
         
-        Downloader(`${params.get("imdbId")}/${s}/${e}`,doawnload_name);
+        Downloader(`${params.get("imdbId")}/${s}/${e}`,download_name);
 
     }, 1000);
     

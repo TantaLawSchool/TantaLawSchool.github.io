@@ -8,9 +8,20 @@ function Msg(){
 
   arabic_msg = "جارى تحضير الفيديو";
 
-  Msg_div = `
+  Msg_div = document.createElement("div");
+  Msg_div.innerHTML = `
   <div class="Msg" id="Msg-id">
-    <img src="./g/ZNeT.gif"></img>
+    
+     <div class="topSpace">
+
+      <div class="loadingBoard">
+          <div class="_1stbox"></div>
+          <div class="_2stbox"></div>
+          <div class="_3stbox"></div>
+          <div class="_4stbox"></div>
+      </div>
+
+     </div>
 
      <h2>${arabic_msg}</h2> 
 
@@ -24,7 +35,7 @@ function Msg(){
 
      }
      else{
-      document.body.innerHTML = document.body.innerHTML + Msg_div;
+      document.body.appendChild(Msg_div);
      }
 
 }

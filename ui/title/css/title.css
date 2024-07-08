@@ -28,12 +28,7 @@
 
   .container {
     position: relatives;
-    /*background-color: #201f28;*/
     padding: 3em 1.8em;
-    /*border-radius: 0.6em;*/
-    -webkit-box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
-    box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
-    border-top: 3px solid #ffd52d;
   }
   
 
@@ -52,7 +47,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-top: 1.2em;
   }
   .poster {
     width: 100%;
@@ -119,17 +113,12 @@
     position: relative;
     min-height: 60px;
     
-    
-    
   }
 
 
   .play-button-space{
     position: relative;
     min-height: 60px;
-    
-    
-    /*background-color: #ffb92a;*/
   }
 
 
@@ -137,9 +126,6 @@
   .download-button-space{
     position: relative;
     min-height: 60px;
-    
-    
-    /*background-color: #ffb92a;*/
   }
 
 
@@ -156,9 +142,7 @@
     line-height: 1.8em;
     text-align: justify;
     color: white;
-    background-color:  #0a0a05;;
     direction: rtl;
-    border-bottom: solid #ffd52d;
   }
   .msg {
     text-align: center;
@@ -175,7 +159,7 @@
     padding: 0.2em 0;
     margin-top: 1em;
     border-radius: 0em;
-    color: #ffd52d;
+    color: #ffff;
   }
 
 
@@ -233,7 +217,7 @@
     margin-top: 1em;
     /*margin-bottom: 3em;*/
     border-radius: 0.6em;
-    color: #ffd52d;
+    color: #ffff;
     text-decoration: underline;
   }
   
