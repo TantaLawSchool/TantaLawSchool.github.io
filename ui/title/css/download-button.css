@@ -7,9 +7,7 @@
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    background:#5f5d5d;
     /*background-color: #ffb92a;*/
-    background-color: #ffd52d;
     cursor: pointer;
   }
   
@@ -19,11 +17,6 @@
     left:0%;
     width: 20%;
     height: 100%;
-    background: #29291c;
-    display: inline-block;
-    box-sizing: border-box;
-    transition: all .3s ease-in-out;
-    
   }
  
   .dbimg{
@@ -39,8 +32,8 @@
     position :absolute;
     right:0%;
     width: 80%;
-    top:50%;
-    
+    height: 100%;
+    border-radius: 0.5em;
 
     display: table-cell;
     text-align: center;
@@ -48,9 +41,10 @@
     font-size: larger;
     font-weight:bolder;
     vertical-align: middle;
-    color: #000;
+    color: #000000;
+    background-color: #FFD52D;
     
-    
-    transform: translate(0%,-50%);
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

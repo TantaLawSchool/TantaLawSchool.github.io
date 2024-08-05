@@ -150,7 +150,7 @@
 
   font-size: medium;
   text-align: center;
-  color: rgb(252, 165, 4);
+  gap: 5px;
   
 }
 
@@ -167,9 +167,9 @@
     border-radius: 10px;
     font-size:small;
     
-    
-    background-color: #404247;
-    color: yellow;
+    color:#ffff;
+    border-radius: 0.4em;
+    border:1px solid #ffff;
     
     text-align: center;
 }

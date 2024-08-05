@@ -194,9 +194,24 @@
     flex-shrink: 0;
 
     width: 100%;
-    background-color: #ffff;
+    background: linear-gradient(90deg,#FA5252 50%,  #FFD52D 50%);
     height: 2px;
 }
+
+
+.sideToolbar .coloredLine{
+    
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: 100%;
+    background: linear-gradient(90deg,#FA5252 100%,#FFD52D 0%);
+    height: 25px;
+}
+
+
+
+
 
 
 
@@ -215,7 +230,7 @@
 
 
 #sideToolbar::-webkit-scrollbar-thumb{
-    background-color:rgb(112, 112, 112);
+    background-color:#FA5252;
     border-radius: 0.5em;
     
   }
