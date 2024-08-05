@@ -1,6 +1,6 @@
 
 .full-star:before {
-  color: #f2b01e;
+  color: #ffd52d;
   content: "\2605";
   font-size: large;
   overflow: hidden;
@@ -14,7 +14,7 @@
 }
 
 .half-star:before {
-  color: #f2b01e;
+  color: #ffd52d;
   content: "\2605";
   width: 50%;
   position: absolute;
