@@ -1,0 +1,93 @@
+
+.toolbar{
+    position:fixed;
+    top:10px;
+    left:0%;
+    right: 0%;
+    height: 50px;
+    z-index: 10;
+    box-shadow:  -2px -2px 6px rgba(255,255,255,.05),
+                 2px 2px 6px rgba(0,0,0,.8) ;
+    
+}
+
+
+.topToolbar{
+    
+    position: absolute;
+    left: 0%;
+    right: 50%;
+    height: 50px;
+
+    
+    align-items: center;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    /* right to left */
+    direction: ltr;
+
+    /* put spaces between elements */
+    column-gap: 20px;
+
+
+}
+
+
+
+#topToolbar::-webkit-scrollbar
+{
+	display: none;
+    
+}
+
+
+
+.topToolbar .topToolbar-box{
+    flex-grow: 0;
+    flex-shrink: 0;
+
+
+   
+    color: #ffff;
+    font-weight: bold;
+
+    height: 50px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0.5em;
+    
+
+    cursor: pointer;
+
+    /* make text in the middle (horizontally and vertically) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.topToolbar .topToolbar-box img{
+    height: 50px;
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    
+    .topToolbar{
+      right: 65%;
+  }
+
+}
+  

@@ -1,0 +1,66 @@
+
+
+.searchBox{
+    position: absolute;
+    left: 50%;
+    right: 0%;
+    height: 50px;
+
+}
+
+.searchInput {
+    position: absolute;
+    padding: 10px;
+    
+    height: 100%;
+    
+    left:0%;
+    right: 40px;
+    
+    border: 1px transparent;
+    background: transparent;
+    
+    
+    border-radius: 0px;
+    border-left: 1px solid #ffff;
+    border-top: 1px solid #ffff;
+
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ffff;
+    outline: none;
+    transition: .5s;
+
+}
+
+
+
+
+.searchBox i{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translate(0%,-50%);
+    font-size: 26px;
+    color: #ffff;
+    transition: .2s;
+}
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    
+    .searchBox{
+      left: 35%;
+      
+      
+    }
+    
+    
+  
+  }
+  

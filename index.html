@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حقوق طنطا Tanta Law School</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/toolbar.css"/>
+    <link rel="stylesheet" href="./3rdparty/font-awesome.min/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./css/searchBox.css"/>
+</head>
+<body>
+
+    <!-- toolbar -->
+  <div class="toolbar">
+    <!-- search-box -->
+    <div class="searchBox">
+      <input type="text" class="searchInput" placeholder="Search" id="searchID">
+      <i class="fa fa-search" onclick="let f_p = window.location.origin+'/ui/find/find.html?q='+$('searchID').value; UI.Find(f_p);"></i>
+      <script>
+        document.getElementById("searchID").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          let f_p = window.location.origin+'/ui/find/find.html?q='+$('searchID').value; 
+          UI.Find(f_p);
+        }
+        });
+     </script>
+    </div>
+
+    <div class="topToolbar" id="topToolbar">
+    
+        
+      <div class="topToolbar-box"><img src="./assets/images/AnimationBalanceOfJustice-ffd52d.gif"></img> </div>
+    
+
+    </div>
+
+  </div>
+
+
+  <div class="schoolMessage"> مُجتمع وَجُهد طُلابى لتبسيط المادة العلمية </div>
+
+
+  <div class="cardsContainer">
+    <div class="card explainBackgroundClass" onclick="window.location.href='explain.html'"><div class="cardName"> شرح </div></div>
+    <div class="card testBackgroundClass" onclick="window.location.href='exams.html'"><div class="cardName"> Exams اختبارات </div> </div>
+    <div class="card booksBackgroundClass"> <div class="cardName"> Books كتب دراسية </div></div>
+  </div>
+    
+
+  <div class="whiteLine"></div>
+
+  <div class="about">
+    <img src="./assets/images/dot-100px-FA5252-pure.png" height="25px">
+    تابع محاضراتك مع  Tanta Law School . شرح تفاعلى وتفصيلى لأجزاء المنهج والتركيز على أهم النقاط ثم الحل والتطبيق
+    وتقييم مستواك والاستفادة من الأخطاء باحالتك الى مصادر المعلومة للتركيز عليها.
+    </br>
+    <img src="./assets/images/dot-100px-5C7CFA-pure.png" height="25px">
+     التعلم والاستذكار يتم باستخدام الثلاث طرق , مرئى وسمعى وبصرى.
+  </div>
+
+  <div class="credit"> <span style="color:#FA5252;"> Tanta </span> &nbsp; <span style="color:#FFD52D;"> Law </span> &nbsp; <span> School </span> </div>
+
+  <script src="./js/index.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
