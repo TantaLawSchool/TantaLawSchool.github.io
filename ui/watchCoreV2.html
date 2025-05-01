@@ -63,6 +63,7 @@
             overflow-x: hidden; /* منع التمرير الأفقي للصفحة */
             padding-top: var(--navbar-height); /* إضافة مساحة للشريط العلوي الثابت */
         }
+        
 
         /* --- الشريط العلوي --- */
         .main-header {
@@ -386,6 +387,8 @@
 </head>
 <body>
 
+    
+
     <!-- الشريط العلوي -->
     <header class="main-header">
         <div class="header-left">
@@ -447,9 +450,9 @@
              <div class="movie-info">
                  <h2 class="movie-title"> بريستيج </h2>
                  <p class="movie-details">
-                     <span><i class="fas fa-film" style="margin-left: 5px;"></i> كوميدي,دراما </span> |
-                     <span><i class="fas fa-calendar-alt" style="margin-left: 5px;"></i> 2025 </span> |
-                     <span><i class="fas fa-clock" style="margin-left: 5px;"></i> 24 دقيقة</span>
+                     <span><i class="fas fa-grip-horizontal" style="margin-left: 5px;"></i> كوميدي,دراما </span>
+                     <span><i class="fas fa-calendar-alt" style="margin-left: 5px;"></i> 2025 </span>
+                     <span><i class="fas fa-star" style="margin-left: 5px;"></i> 4.4 </span>
                  </p>
                  <p class="movie-synopsis">
                     عاصفة قوية تضرب شوارع القاهرة، مما يجبر 14 شخصًا من خلفيات اجتماعية مختلفة على اللجوء إلى مقهى في وسط البلد، وبينما يحاول الجميع الاحتماء من العاصفة، ينقطع التيار الكهربائي فجأة، ليكتشفوا أن أحدهم قد قُتل، ومع تصاعد التوترات، يدركون أن القاتل بينهم.
@@ -506,6 +509,31 @@
 
     <script>
         // === JavaScript Logic ===
+        function $(id){return document.getElementById(id);}
+
+        
+        
+        const detectEndAndLoadMore = (e) => {
+                scrollHeight = document.documentElement.scrollHeight;
+                scrollTop = document.documentElement.scrollTop;
+                clientHeight = document.documentElement.clientHeight;
+
+                //console.log(`main scrollHeight: ${scrollHeight}`);
+                //console.log(`main scrollTop: ${scrollTop}`);
+                //console.log(`main clientHeight: ${clientHeight}`);
+                if( (scrollHeight-scrollTop) ==clientHeight){
+                    /* load more */
+                    console.log("end detected.");
+                    if (isOk()){
+                        loadMore();
+                    }else{
+                        console.log("index data has not fetched.");
+                    }
+
+                }
+            }
+
+        window.addEventListener("scroll",detectEndAndLoadMore);
 
         // --- بيانات الأفلام (مثال) ---
         const sampleMoviesData = [

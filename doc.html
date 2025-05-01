@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>توثيق رفع مشروع باستخدام Git على لينكس</title>
+  <style>
+    body { font-family: Arial, sans-serif; direction: rtl; background: #f9f9f9; padding: 20px; }
+    code { background: #eee; padding: 4px 6px; border-radius: 4px; display: inline-block; }
+    pre { background: #eee; padding: 10px; border-radius: 5px; direction: ltr; overflow-x: auto; }
+    h2 { color: #333; }
+    ul { line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+  <h1>توثيق رفع مشروع باستخدام Git من لينكس إلى GitHub</h1>
+
+  <h2>الخطوة 1: تهيئة المشروع كمستودع Git</h2>
+  <pre>git init</pre>
+  <p>تهيئة مجلد المشروع كمستودع Git.</p>
+
+  <h2>الخطوة 2: ربط المشروع بالمستودع على GitHub</h2>
+  <pre>git remote add origin https://github.com/username/repo.git</pre>
+  <p>ربط المستودع المحلي بالمستودع البعيد على GitHub.</p>
+
+  <h2>الخطوة 3: إضافة كل الملفات إلى Git</h2>
+  <pre>git add .</pre>
+  <p>إضافة جميع الملفات لتتبعها في commit القادم.</p>
+
+  <h2>الخطوة 4: إنشاء commit محلي</h2>
+  <pre>git commit -m "أول رفع للمشروع"</pre>
+  <p>إنشاء نقطة حفظ للتغييرات.</p>
+
+  <h2>الخطوة 5: تحديد اسم الفرع ورفعه</h2>
+  <pre>git branch -M main</pre>
+  <pre>git push -u origin main</pre>
+  <p>تحديد اسم الفرع الرئيسي ورفعه للمستودع البعيد.</p>
+
+  <h2>💥 مشكلة 1: Authentication Failed</h2>
+  <p>ظهر الخطأ:</p>
+  <pre>fatal: Authentication failed</pre>
+  <p><strong>الحل:</strong> استخدام <strong>Personal Access Token (PAT)</strong> بدلاً من كلمة المرور.</p>
+  <p>أدخل التوكن في مكان كلمة السر عند الطلب.</p>
+
+  <h2>💥 مشكلة 2: رفض Git الدفع لأن المستودع يحتوي على ملفات</h2>
+  <pre>
+! [rejected]        main -> main (fetch first)
+error: failed to push some refs to ...
+  </pre>
+  <p><strong>الحل:</strong>  إجبار Git على استبدال ما في GitHub بمشروعك المحلي بالكامل </p>
+  <pre>git push --force origin main</pre>
+  
+
+  <h2>✅ في النهاية: تم رفع الملفات بنجاح</h2>
+  <p>بعد تجاوز مشاكل المصادقة والتعارض بين الملفات المحلية والبعيدة، تم رفع آلاف الملفات الصغيرة من نظام لينكس إلى GitHub باستخدام الطرفية (Git Bash أو Terminal)، وتم تجنب قيود GitHub Desktop.</p>
+
+</body>
+</html>
