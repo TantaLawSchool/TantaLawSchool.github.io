@@ -1,0 +1,129 @@
+{
+    "entry-info":{
+        "items-count":2,
+        "pages-count":1,
+        "genres-count":3,
+        "genres-list":["Action","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","Film-Noir","History","Horror","Music","Musical","Mystery","Romance","Sci-Fi","Short","Sport","Thriller","War","Western"]
+    },
+    "page":[
+        [
+           
+            {
+                "type": "TVSeries",
+                "imdbId": "tt0903747",
+                "name": "Breaking Bad",
+                "year": 2008,
+                "rate": 9.5,
+                "genres": ["Crime", "Drama", "Thriller"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0068646",
+                "name": "The Godfather",
+                "year": 1972,
+                "rate": 9.2,
+                "genres": ["Crime", "Drama"]
+            },
+            {
+                "type": "TVSeries",
+                "imdbId": "tt3032476",
+                "name": "Better Call Saul",
+                "year": 2015,
+                "rate": 8.9,
+                "genres": ["Crime", "Drama"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0120815",
+                "name": "Saving Private Ryan",
+                "year": 1998,
+                "rate": 8.6,
+                "genres": ["Drama", "War"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0268380",
+                "name": "Ice Age",
+                "year": 2002,
+                "rate": 7.5,
+                "genres": ["Animation", "Adventure", "Comedy"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0126029",
+                "name": "Shrek",
+                "year": 2001,
+                "rate": 7.9,
+                "genres": ["Animation", "Adventure", "Comedy", "Fantasy"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt5537002",
+                "name": "Killers of the Flower Moon",
+                "year": 2023,
+                "rate": 8.1,
+                "genres": ["Crime", "Drama", "History"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt5814060",
+                "name": "The Nun",
+                "year": 2018,
+                "rate": 5.3,
+                "genres": ["Horror", "Mystery", "Thriller"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt15398776",
+                "name": "Oppenheimer",
+                "year": 2023,
+                "rate": 8.4,
+                "genres": ["Biography", "Drama", "History"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0325980",
+                "name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+                "year": 2003,
+                "rate": 8.1,
+                "genres": ["Action", "Adventure", "Fantasy"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0120737",
+                "name": "The Lord of the Rings: The Fellowship of the Ring",
+                "year": 2001,
+                "rate": 8.8,
+                "genres": ["Action", "Adventure", "Drama"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt0241527",
+                "name": "Harry Potter and the Sorcerer's Stone",
+                "year": 2001,
+                "rate": 7.6,
+                "genres": ["Adventure", "Family", "Fantasy"]
+            },
+            {
+                "type": "Movie",
+                "imdbId": "tt8337264",
+                "name": "Chicken Run: Dawn of the Nugget",
+                "year": 2023,
+                "rate": 6.9,
+                "genres": ["Animation", "Adventure", "Comedy"]
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+              
+            
+            
+            
+        ]
+    ]
+}

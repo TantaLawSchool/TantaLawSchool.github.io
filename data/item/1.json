@@ -1,0 +1,14 @@
+{
+  "type": "Foreign-Movie",
+  "reference": "IMDB",
+  "referenceLink": "https://imdb.com/title/tt0325980",
+  "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+  "rating": "8.1",
+  "year": "2003",
+  "genre": [
+    "Action",
+    "Adventure",
+    "Fantasy"
+  ],
+  "description": "الحداد ويل ترنر يتعاون مع القرصان الغريب \"القبطان\" جاك سبارو لإنقاذ إليزابيث سوان، ابنة الحاكم وحبيبته، من حلفاء جاك السابقين من القراصنة الذين أصبحوا الآن أمواتًا أحياء."
+}

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/js/WatchSTLFuncs.js" charset="UTF-8" type="text/javascript"></script>
+    <title>Title</title>
+    <style>
+        *{
+            --desktop-left-right-margin: 200px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        @font-face {
+            font-family: 'MyBoldFont';
+            src: url('./assets/fonts/bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+      
+        body {
+            background-color: rgb(28, 32, 16);
+            background-color: #000;
+            
+           
+            
+            color: white;
+            overflow: hidden;
+            margin: 0;
+        }
+        #main{
+            position: absolute;
+            top:0%;
+            left:0%;
+            bottom: 0%;
+            right: 0%;
+            overflow-y: auto;
+        }
+        #main::-webkit-scrollbar{
+            background-color:transparent;
+            width: 0px;
+        }
+        
+        #info {
+            position: relative;
+            margin-left: var(--desktop-left-right-margin);
+            margin-right: var(--desktop-left-right-margin);
+            background: transparent;
+            
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 4fr 8fr;
+            grid-template-columns: 4fr 8fr;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+       
+        .poster {
+           max-width: 150px;
+           height: auto;
+           border-radius: 10px;
+        }
+        h2 {
+           text-align: center;
+           color: #ffff;
+           font-family: 'MyBoldFont';
+           font-size: 1.5em;
+           font-weight: 600;
+           letter-spacing: 0.06em;
+        }
+        .rating {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-align: center;
+           -ms-flex-align: center;
+           align-items: center;
+           -webkit-box-pack: center;
+           -ms-flex-pack: center;
+           justify-content: center;
+           gap: 0.6em;
+           margin: 0.6em 0 0.9em 0;
+        }
+        .rating img {
+           width: 25px;
+        }
+       .rating h4 {
+           display: inline-block;
+           font-size: 1.1em;
+           font-weight: 500;
+        }
+       .details {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           gap: 1em;
+           -webkit-box-pack: center;
+           -ms-flex-pack: center;
+           justify-content: center;
+           color: #ffff;
+           margin: 0.1em 0;
+           font-size: 1.5em;
+           font-weight: 600;
+           letter-spacing: 0.06em;
+        }
+       .genre {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -ms-flex-pack: distribute;
+           justify-content: space-around;
+        }
+       .genre div {
+           font-family: 'MyBoldFont';
+           font-size: 12px;
+           padding: 0.4em 1.6em;
+           border-radius: 0.4em;
+           font-weight: 300;
+           color:#ffff;
+           background-color: #0f0a05;
+        }
+        #control{
+            position: relative;
+            min-height: 50px;
+            margin-top: 5px;
+            margin-left: var(--desktop-left-right-margin);
+            margin-right: var(--desktop-left-right-margin);
+            background-color: #0f0a05;
+            border-radius: 10px;
+
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #control button{
+            background-color: yellow;
+            background-color: #ffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-family: 'MyBoldFont';
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+        #control button:active{
+            scale: 0.95;
+        }
+        
+        #description{
+            position: relative;
+            min-height: 50px;
+            margin-top: 10px;
+            margin-left: var(--desktop-left-right-margin);
+            margin-right: var(--desktop-left-right-margin);
+            background-color:#0f0a05;
+            color:#ffff;
+            font-family: 'MyBoldFont';
+            font-size: 25px;
+            font-weight: 500;
+            direction: rtl;
+            padding: 10px;
+            border-radius: 10px;
+
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #seasons-container{
+            visibility:hidden;
+            position: relative;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: var(--desktop-left-right-margin);
+            margin-right: var(--desktop-left-right-margin);
+            border-radius: 10px;
+            &:after{
+              content: '\25bc';
+              font-size:25px;
+              width:50px;
+              height:30px;
+              position : absolute;
+              background-color:#ffff;
+              color:#0f0a05;
+              left:20px;
+              top:50%;
+              transform: translate(0%,-50%);
+              text-align:center;
+              border-radius: 10px;
+      
+            }
+        }
+        
+        #seasons{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            font-size:25px;
+            padding:0 10px;
+            position : relative;
+            color: #ffff;
+            background-color: #0f0a05;
+            direction: rtl;
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            appearance:none;
+            
+        }
+        #seasons option:checked{
+            background-color: #ffff;
+            color: #000;
+        }
+        
+        #episodes{
+            visibility:hidden;
+            position: relative;
+            margin-top: 5px;
+            margin-left: var(--desktop-left-right-margin);
+            margin-right: var(--desktop-left-right-margin);
+
+            height: 225px;
+            /* 150,225 */
+            display: flex;
+            flex-direction:row;
+            flex-wrap: nowrap;
+            overflow-x:scroll; /*make scrollable*/
+            overflow-y: hidden;
+            gap: 5px;
+
+        }
+        #episodes::-webkit-scrollbar{
+            background-color:transparent;
+            height: 5px;
+            cursor: pointer;
+        }
+        #episodes::-webkit-scrollbar-thumb{
+            background-color: #ffd52d;
+            border-radius: 0.5em;
+            cursor: pointer;
+        }
+
+        .episode{
+            position: relative;
+            width: 150px; 
+            height: 225px;
+            transition: 0.5s ease all;
+            background-color: #332f27;
+            flex-grow: 0;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .episode img{
+            position: absolute;
+            width: 150px;
+            height: 225px;
+        }
+        .episode:active{
+            scale:0.95;
+        }
+        .episode .epiLabel{
+            position: absolute;
+            top:0%;
+            right:0%;
+            width: 50px;
+            height:25px;
+            color:#000000;
+            font-family: 'MyBoldFont';
+            background-color:#ffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .episode .episodeNumber{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            font-size: 25px;
+            font-weight: 600;
+            color: #ffff;
+            background-color: #0f0a05;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        .episode.selected{
+            .episodeNumber{
+                background-color: #ffd52d;
+                color:#000;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .videoPlayerEnvironment{
+            position: absolute;
+            top:0%;
+            bottom: 0%;
+            left:0%;
+            right:0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .videoPlayer{
+            width: 90%;
+            max-width: 600px;
+            background: #111111;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .videoPlayer video{
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            outline: none;
+        }
+        .videoPlayer h2{
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+    
+        
+  
+
+
+
+
+        @media screen and (max-width: 600px) {
+            #info{
+                margin-left: 5px;
+                margin-right: 5px;
+                -ms-grid-columns: 1fr;
+                grid-template-columns: 1fr;
+              }
+            .poster {
+                    margin: auto;
+                    width: auto;
+                    max-width: 140px;
+                      }
+            h2 {
+                    font-size: 1.3em;
+                    margin: 0.5em 0;
+                   }
+            .rating {
+                    margin: 0;
+                   }
+            #control{
+                   margin-left: 5px;
+                   margin-right: 5px;
+              }
+            #control button{
+                padding: 5px 10px;
+                margin: 5px;
+            }
+            #description{
+                   margin-left: 5px;
+                   margin-right: 5px;
+                   font-size: 18px;
+                   font-weight: 100;
+              }
+            #seasons-container{
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            #seasons{
+                font-size: 18px;
+            }
+            #episodes{
+                height: 210px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            .episode{
+                width: 140px;
+                height:210px;
+            }
+            .episode img{
+                position: absolute;
+                width: 140px;
+                height: 210px;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <script>
+        function $(id){return document.getElementById(id);}
+    </script>
+    <div id="main">
+    <div id="info">
+        
+    </div>
+
+    <div id="control">
+        <button onclick="Play()">&#9654; تشغيل</button>
+        <button onclick="Download()">&#x21D3; تنزيل</button>
+        <button onclick="">&#9733; إضافة إلى المفضلة</button>
+    </div>
+
+    <div id="description">
+        ...
+    </div>
+
+    <div id="seasons-container">
+        <select id="seasons" onchange="changeSeason();">
+            
+        </select>
+    </div>
+
+    <div id="episodes">
+
+    </div>
+    
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const Id = urlParams.get("id");
+            
+            if (!Id) {
+                
+                return;
+            }
+            
+           
+            
+            fetch(`/data/item/${Id}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    let title_element = document.createElement("script");
+                    title_element.type = "application/json";
+                    title_element.id = "title";
+                    data["id"]=Id;
+                    title_element.textContent = JSON.stringify(data);
+                    document.body.appendChild(title_element);
+                    drawTitle("title");
+                    
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        });
+
+
+        function drawTitle(t){
+            title = JSON.parse($(t).textContent);
+            $("info").innerHTML = `
+                    <img src="/data/media/${title.id}.jpg" class='poster'>
+                    <div>
+                       <h2 id="title_name">${title.title}</h2>
+                       <div class="rating">
+                            <img src="/ui/assets/star.svg">
+                            <h4>${title.rating}</h4>
+                       </div> 
+                      <div class="details">
+                           <span id="title_year">${title.year}</span>
+                      </div>
+                      <div class="genre">
+                          <div>${i18n.translateList(title.genre).join("</div><div>")}</div>
+                      </div>   
+                    </div>
+                    `;
+            $("description").innerText=title.description;
+
+            if(title.type=="Arabic-TVSeries" || title.type=="Foreign-TVSeries"){
+                $("seasons-container").style.visibility="visible";
+                $("episodes").style.visibility="visible";
+
+                options_template = ``;
+                option_t = ``;
+                for (var i=1;i<=Number(title.seasons);i++){
+                    if(i==Number(localStorageManager.getResume(title.id)["season"])){
+                        option_t = `<option value="${i}" episodes="${title["season"][i]}" selected> الموسم ${i} </option>`;
+                    }else {
+                        option_t = `<option value="${i}" episodes="${title["season"][i]}"> الموسم ${i} </option>`;
+                    }
+                    options_template = options_template + option_t;
+                }
+                $("seasons").innerHTML=options_template;
+                drawEpisodes(Number(title.season[localStorageManager.getResume(title.id)["season"]]),Number($("seasons").options[$("seasons").selectedIndex].getAttribute("value")));
+
+
+            }else if(title.type=="Arabic-Movie" || title.type=="Foreign-Movie"){
+                $("seasons-container").remove();
+                $("episodes").remove();
+
+            }
+           }
+        
+        function changeSeason(){
+            drawEpisodes(Number($("seasons").options[$("seasons").selectedIndex].getAttribute("episodes")),Number($("seasons").options[$("seasons").selectedIndex].getAttribute("value")));
+        }
+        function drawEpisodes(n,for_season){
+            $("episodes").innerHTML="";
+            for(var i=1;i<=n;i++){
+                div = document.createElement("div");
+                div.setAttribute("class","episode");
+                if(i==Number(localStorageManager.getResume(title.id)["episode"]) && for_season==Number(localStorageManager.getResume(title.id)["season"])){
+                    div.classList.add('selected');
+                }
+                div.setAttribute("id",i);
+                div.setAttribute("onclick","chooseEpisode(this)");
+                div.innerHTML = `
+                        <img src="/data/media/${JSON.parse($("title").textContent).id}.jpg"></img>
+                        <div class="epiLabel">الحلقة</div>
+                        <div class="episodeNumber">${i}</div>
+                   `;
+
+                $("episodes").appendChild(div);
+
+                    }
+            $("episodes").scrollLeft = 0;
+            if(for_season==Number(localStorageManager.getResume(title.id)["season"])){
+                $("episodes").scrollBy({
+                  left:150*(Number(localStorageManager.getResume(title.id)["episode"])-1),
+                  behavior:"smooth"
+                });
+
+            }
+            
+
+        }
+        function chooseEpisode(e){
+            e.classList.toggle('selected');
+            document.querySelectorAll('.episode').forEach(el => el.classList.remove('selected'));
+            e.classList.add('selected');
+        }
+
+        function buildPlayEnvironment(id,season,episode){
+            div = document.createElement("div");
+            div.setAttribute("class","videoPlayerEnvironment");
+            div.setAttribute("id","videoPlayerEnvironment");
+            div.innerHTML = `
+                <div class="videoPlayer">
+                    <h2>${id}/${season}/${episode}</h2>
+                    <video controls>
+                        <source src="https://flawtantaedu-my.sharepoint.com/personal/ug_31146395_f-law_tanta_edu_eg/_layouts/15/download.aspx?SourceUrl=/personal/ug_31146395_f-law_tanta_edu_eg/Documents/d/${id}/${season}/${episode}" type="video/mp4">
+                    </video>
+                </div>
+            
+            `;
+            document.body.appendChild(div);
+
+
+
+        }
+
+
+        function Play(){
+            title = JSON.parse($("title").textContent);
+            if(title.type=="Arabic-TVSeries" || title.type=="Foreign-TVSeries"){
+                
+                if(document.querySelector(".episode.selected")){
+                    season = $("seasons").value;
+                    episode = document.querySelector(".episode.selected").id;
+                    localStorageManager.setResume(title.id,season,episode);
+                }else{
+                    for(var i=0;i<$("seasons").options.length;i++){
+                        $("seasons").options[i].selected = false;
+                    }
+                    for(var i=0;i<$("seasons").options.length;i++){
+                        if(Number($("seasons").options[i].value) == Number(localStorageManager.getResume(title.id)["season"])) {
+                            $("seasons").options[i].selected = true;
+                            break;
+                        }
+                            
+                    }
+                    $("seasons").dispatchEvent(new Event('change'));
+                    season = $("seasons").value;
+                    episode = document.querySelector(".episode.selected").id;
+
+
+                }
+                console.log("Play");
+                console.log(season,episode);
+                buildPlayEnvironment(title.id,season,episode);
+
+                
+
+            }else if(title.type=="Arabic-Movie" || title.type=="Foreign-Movie"){
+
+            }
+
+
+        }
+
+        function Download(){
+            title = JSON.parse($("title").textContent);
+            if(title.type=="Arabic-TVSeries" || title.type=="Foreign-TVSeries"){
+                if(document.querySelector(".episode.selected")){
+                    season = $("seasons").value;
+                    episode = document.querySelector(".episode.selected").id;
+                    localStorageManager.setResume(title.id,season,episode);
+                }else{
+                    for(var i=0;i<$("seasons").options.length;i++){
+                        $("seasons").options[i].selected = false;
+                    }
+                    for(var i=0;i<$("seasons").options.length;i++){
+                        if(Number($("seasons").options[i].value) == Number(localStorageManager.getResume(title.id)["season"])) {
+                            $("seasons").options[i].selected = true;
+                            break;
+                        }
+                            
+                    }
+                    $("seasons").dispatchEvent(new Event('change'));
+                    season = $("seasons").value;
+                    episode = document.querySelector(".episode.selected").id;
+
+
+                }
+                console.log("Download");
+                console.log(season,episode);
+                
+            }else if(title.type=="Arabic-Movie" || title.type=="Foreign-Movie"){
+
+            }
+
+        }
+
+        
+
+
+
+    </script>
+</body>
+</html>

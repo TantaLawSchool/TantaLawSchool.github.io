@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة معلومات الفيلم</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+            
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            background: none;
+        }
+        label {
+            font-weight: bold;
+            color: #ddd;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background: #444;
+            color: white;
+            font-size:18px;
+        }
+        #reference-link{
+            direction: ltr;
+        }
+        textarea{
+            height:100px;
+        }
+        #export {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        #export:hover {
+            background: #218838;
+        }
+
+        #import {
+            margin-top: 5px;
+            background: #ffd52d;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        #import:hover {
+            background: #ceab1e;
+        }
+
+
+
+        .genre-container, .type-container, .part-type-container , .reference-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .genre-item, .type-item, .part-type-item, .reference-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: #444;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+            color: #ddd;
+        }
+        .genre-item:hover, .type-item:hover, .part-type-item:hover, .reference-item:hover {
+            background: #fff;
+            color: #000;
+        }
+        .genre-item input, .type-item input, .part-type-item input, .reference-item input {
+            display: none;
+        }
+        .genre-item.selected, .type-item.selected, .part-type-item.selected, .reference-item.selected {
+            background: #007bff;
+            background: #ffd52d;
+            color: black;
+        }
+        .seasons-container {
+            display: none;
+            margin-top: 10px;
+        }
+        .season-card {
+            background: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 800px;
+            }
+            .genre-container, .type-container, .part-type-container, .reference-container {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //define
+        function $(id){return document.getElementById(id);}
+    </script>
+    <div class="container">
+        <h2>إضافة معلومات الفيلم أو المسلسل</h2>
+        
+        <label>النوع:</label>
+        <div class="type-container" id="type">
+            <label class="type-item" data-value="Arabic-Movie"> فيلم عربي</label>
+            <label class="type-item" data-value="Foreign-Movie"> فيلم أجنبي</label>
+            <label class="type-item" data-value="Arabic-TVSeries"> مسلسل عربي</label>
+            <label class="type-item" data-value="Foreign-TVSeries"> مسلسل أجنبي</label>
+        </div>
+
+        <!--
+        <div id="parts-number-container" style="display:none;" class="parts-number-container">
+            <label for="part-type-container">عدد الأجزاء:</label>
+            <div id="part-type-container" class="part-type-container">
+                <label class="part-type-item" data-value="single">جزء واحد</label>
+                <label class="part-type-item" data-value="multiple">عدة أجزاء</label>
+            </div>
+            <select id="partsNumber" style="display: none;"></select>
+        </div>
+        -->
+
+        <label>المرجع:</label>
+        <div class="reference-container" id="reference">
+            <label class="reference-item" data-value="IMDB"> IMDB</label>
+            <label class="reference-item" data-value="Elcinema"> Elcinema</label>
+        </div>
+
+        <label for="reference-link">رابط المرجع:</label>
+        <input type="text" id="reference-link">
+
+        <label for="title">عنوان الفيلم أو المسلسل:</label>
+        <input type="text" id="title">
+        
+        <div id="seasons-section" class="seasons-container">
+            <label for="seasons">عدد المواسم:</label>
+            <select id="seasons"></select>
+            <div id="season-cards"></div>
+        </div>
+        
+
+        <label for="rating">التقييم:</label>
+        <select id="rating"></select>
+
+        <label for="year">سنة الإنتاج:</label>
+        <select id="year"></select>
+
+        <label>التصنيف:</label>
+        <div class="genre-container" id="genre">
+            
+        </div>
+        <script>
+            genres_list = ["Action","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","Film-Noir","History","Horror","Music","Musical","Mystery","Romance","Sci-Fi","Short","Sport","Thriller","War","Western"];
+            var en_ar_dic = {"Action":"أكشن","Adventure":"مغامرة","Animation":"رسوم متحركة","Biography":"سيرة ذاتية","Comedy":"كوميدى","Crime":"جريمة","Documentary":"وثائقى","Drama":"دراما","Family":"عائلى","Fantasy":"خيال","Film-Noir":"Film-Noir","History":"تاريخ","Horror":"رعب","Music":"موسيقى","Musical":"موسيقي","Mystery":"لغز","Romance":"رومانسى","Sci-Fi":"خيال علمى","Short":"قصير","Sport":"رياضة","Thriller":"اثارة","War":"حرب","Western":"غرب أمريكى"};
+            function translate(k){
+
+                     if(k in en_ar_dic){
+                        return en_ar_dic[k];
+                     }else{
+                        return k;
+                    }
+            }
+            for ( var g in genres_list ){
+                    const tempE = document.createElement('label');
+                    tempE.setAttribute('class','genre-item');
+                    tempE.setAttribute('data-value',genres_list[g]);
+                    tempE.innerText=`${translate(genres_list[g])}`;
+                    $("genre").appendChild(tempE);
+                }
+        </script>
+
+        <label for="description">الوصف:</label>
+        <textarea id="description"></textarea>
+
+        <button id="export" onclick="exportJSON()">تصدير كـ JSON</button>
+        <button id="import" onclick="">استيراد Import</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('.genre-item, .type-item, .part-type-item, .reference-item').forEach(label => {
+            label.addEventListener('click', () => {
+                label.classList.toggle('selected');
+            });
+        });
+        
+        
+        
+        document.querySelectorAll('.reference-item').forEach(label => {
+            label.addEventListener('click', () => {
+                document.querySelectorAll('.reference-item').forEach(el => el.classList.remove('selected'));
+                label.classList.add('selected');
+                });
+        });
+
+        document.querySelectorAll('.part-type-item').forEach(label => {
+            label.addEventListener('click', () => {
+                document.querySelectorAll('.part-type-item').forEach(el => el.classList.remove('selected'));
+                label.classList.add('selected');
+                });
+        });
+
+
+        
+        
+        
+        document.querySelectorAll('.type-item').forEach(label => {
+            label.addEventListener('click', () => {
+                document.querySelectorAll('.type-item').forEach(el => el.classList.remove('selected'));
+                label.classList.add('selected');
+                
+                if (label.dataset.value=="Foreign-TVSeries" || label.dataset.value=="Arabic-TVSeries") {
+                    document.getElementById('seasons-section').style.display = 'block';
+
+                    //document.getElementById('parts-number-container').style.display = 'none';
+                }
+                else if(label.dataset.value=="Foreign-Movie" || label.dataset.value=="Arabic-Movie"){
+                    document.getElementById('seasons-section').style.display = 'none';
+                    document.getElementById('season-cards').innerHTML = '';
+
+                    //document.getElementById('parts-number-container').style.display = 'block';
+                }
+            });
+        });
+
+
+        document.querySelectorAll('.part-type-item').forEach(label => {
+            label.addEventListener('click', () => {
+                if (label.dataset.value=="single"){
+                    $("partsNumber").style.display = 'none';
+
+                }else if(label.dataset.value=="multiple"){
+                    $("partsNumber").style.display = 'block';
+                    populatePartsDropdown();
+
+                }
+            });
+        });
+
+        function populateYearDropdown() {
+            const yearSelect = document.getElementById('year');
+            for (let year = 2026; year >= 1914; year--) {
+                let option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+        }
+        populateYearDropdown();
+
+        function populateRatingDropdown() {
+            const ratingSelect = document.getElementById('rating');
+            for (let i = 1; i <= 10; i += 0.1) {
+                let option = document.createElement('option');
+                option.value = i.toFixed(1).replace(/\.0$/, '');
+                option.textContent = i.toFixed(1).replace(/\.0$/, '');
+                ratingSelect.appendChild(option);
+            }
+        }
+        populateRatingDropdown();
+
+        
+        function populateSeasonsDropdown() {
+            const seasonsSelect = document.getElementById('seasons');
+            seasonsSelect.innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                let option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                seasonsSelect.appendChild(option);
+            }
+            seasonsSelect.addEventListener('change', generateSeasonCards);
+            seasonsSelect.addEventListener('click', generateSeasonCards);
+        }
+        populateSeasonsDropdown();
+
+        function generateSeasonCards() {
+            const seasonCount = parseInt(document.getElementById('seasons').value);
+            const seasonCardsContainer = document.getElementById('season-cards');
+            seasonCardsContainer.innerHTML = '';
+            for (let i = 1; i <= seasonCount; i++) {
+                let card = document.createElement('div');
+                card.classList.add('season-card');
+                card.setAttribute("season",i);
+                card.innerHTML = `<label>الموسم ${i}</label><input type='text' placeholder='عدد الحلقات'>`;
+                seasonCardsContainer.appendChild(card);
+            }
+        }
+
+
+
+        function populatePartsDropdown() {
+            const partsSelect = $('partsNumber');
+            partsSelect.innerHTML = '';
+            for (let i = 1; i <= 10; i++) {
+                let option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                partsSelect.appendChild(option);
+            }
+            partsSelect.addEventListener('change', generatePartsCards);
+            partsSelect.addEventListener('click', generatePartsCards);
+        }
+        
+
+        function generatePartsCards(){
+
+        }
+
+
+        function start_export(jsObj){
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsObj, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "movie.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+
+
+        }
+
+
+
+        
+        function exportJSON() {
+            const types = Array.from(document.querySelectorAll('.type-item.selected')).map(el => el.getAttribute('data-value'));
+            const references = Array.from(document.querySelectorAll('.reference-item.selected')).map(el => el.getAttribute('data-value'));
+            const referenceLink = document.getElementById('reference-link').value;
+            const title = document.getElementById('title').value;
+            const genres = Array.from(document.querySelectorAll('.genre-item.selected')).map(el => el.getAttribute('data-value'));
+            const description = document.getElementById('description').value
+
+            if(types.length>0 && references.length>0 && genres.length>0 && genres.length<=3 && referenceLink.replaceAll(" ","").length>0 && title.replaceAll(" ","").length>0 && description.replaceAll(" ","").length>0){
+                if(types[0]=="Arabic-Movie" || types[0]=="Foreign-Movie"){
+                    const movie = {
+                          type: types[0],
+                          reference: references[0],
+                          referenceLink: referenceLink,
+                          title: title,
+                          rating: document.getElementById('rating').value,
+                          year: document.getElementById('year').value,
+                          genre: genres,
+                          description: description
+                                  };
+
+                console.log(movie);
+                start_export(movie);
+
+                }else if(types[0]=="Arabic-TVSeries" || types[0]=="Foreign-TVSeries"){
+                    const season = Array.from(document.querySelectorAll('.season-card')).reduce((acc, el) => {
+                            const season = el.getAttribute('season');
+                            const text = el.querySelector('input') ? el.querySelector('input').value : '';
+                            acc[season] = text;
+                            return acc;
+                            }, {});
+                    const series = {
+                          type: types[0],
+                          reference: references[0],
+                          referenceLink: referenceLink,
+                          title: title,
+                          seasons: document.getElementById('seasons').value,
+                          season:season,
+                          rating: document.getElementById('rating').value,
+                          year: document.getElementById('year').value,
+                          genre: genres,
+                          description: description
+                                  };
+
+                    console.log(series);
+                    start_export(series);
+
+                } 
+                
+
+            }else{
+                // Error details
+                alert("Error");
+            }
+            
+
+            
+        }
+        
+    </script>
+</body>
+</html>

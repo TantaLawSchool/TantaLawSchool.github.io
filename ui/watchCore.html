@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./3rdparty/fontawesome-free-6.7.2-web/css/all.min.css"/>
+    <title>STLWatchEngine</title>
+    <style>
+        /* === CSS Styles === */
+        :root {
+            --watchCore-bg: #0f1014; /* خلفية داكنة جداً */
+            --watchCore-navbar: #1a1c22; /* خلفية شريط التنقل */
+            --watchCore-card: #2c2f3a; /* خلفية البطاقة (أفتح قليلاً) */
+            --watchCore-primary: #00a4e4; /* لون مميز (أزرق سماوي/سيان) */
+            --watchCore-primary-hover: #00bfff; /* أزرق أفتح عند المرور */
+            --watchCore-text: #ffffff;
+            --watchCore-text-muted: #a0a3af; /* رمادي للنص الثانوي */
+            --watchCore-border: #3a3d4a;
+            --sidebar-width: 260px;
+        }
+
+        :root {
+            --watchCore-bg: #101820;              /* خلفية داكنة أزرق رمادي */
+            --watchCore-navbar: #1b2a41;          /* شريط تنقل أزرق داكن مع تدرجات */
+            --watchCore-card: #27333f;            /* بطاقات بلون أزرق رمادي غامق */
+            --watchCore-primary: #1e90ff;         /* أزرق كهربائي مميز */
+            --watchCore-primary-hover: #4682b4;   /* أزرق متوسط عند المرور */
+            --watchCore-text: #f0f8ff;            /* أبيض خفيف، هادئ للعين */
+            --watchCore-text-muted: #b0c4de;      /* نص ثانوي أزرق باهت */
+            --watchCore-border: #2c3e50;          /* حدود داكنة مزرقّة */
+            --sidebar-width: 260px;
+        }
+
+       
+
+
+
+        
+
+        @font-face {
+            font-family: 'MyBoldFont';
+            src: url('./assets/fonts/bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            font-family: 'MyBoldFont';
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--watchCore-primary) var(--watchCore-navbar); /* Firefox */
+        }
+
+        /* تخصيص شريط التمرير لـ WebKit (Chrome, Safari) */
+         ::-webkit-scrollbar {
+             width: 8px;
+             height: 8px; /* لشريط التمرير الأفقي */
+         }
+         ::-webkit-scrollbar-track {
+             background: var(--watchCore-navbar);
+             border-radius: 4px;
+         }
+         ::-webkit-scrollbar-thumb {
+             background-color: var(--watchCore-primary);
+             border-radius: 4px;
+             border: 2px solid var(--watchCore-navbar); /* لخلق بعض المساحة */
+         }
+         ::-webkit-scrollbar-thumb:hover {
+             background-color: var(--watchCore-primary-hover);
+         }
+
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif; /* استخدام خط Cairo إذا كان متاحًا */
+            background-color: var(--watchCore-bg);
+            color: var(--watchCore-text);
+            line-height: 1.6;
+            overflow-x: hidden; /* منع التمرير الأفقي للصفحة */
+        }
+
+        /* --- الشريط العلوي --- */
+        .main-header {
+            background-color: var(--watchCore-navbar);
+            padding: 12px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--watchCore-border);
+        }
+
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--watchCore-primary);
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-left: 20px; /* مسافة بعد القائمة */
+        }
+
+        /* --- قائمة التنقل سطح المكتب --- */
+        .desktop-nav {
+            list-style: none;
+            display: flex;
+            margin-right: 30px; /* مسافة عن الشعار */
+        }
+
+        .desktop-nav li { margin-left: 25px; } /* مسافة بين العناصر */
+
+        .desktop-nav a {
+            color: var(--watchCore-text-muted);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .desktop-nav a:hover,
+        .desktop-nav a.active {
+            color: var(--watchCore-text);
+        }
+         /* خط سفلي بسيط للتأكيد */
+         .desktop-nav a.active::after {
+             content: '';
+             position: absolute;
+             width: 60%;
+             height: 2px;
+             bottom: -5px;
+             right: 20%; /* لتوسيط الخط */
+             background-color: var(--watchCore-primary);
+         }
+
+
+        /* --- أيقونات الرأس (بحث، ملف شخصي) --- */
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+        .header-icons a,button {
+             background: transparent;
+             border: none;
+             color: var(--watchCore-text-muted);
+             font-size: 1.4rem; /* حجم الأيقونات */
+             margin-right: 20px;
+             cursor: pointer;
+             transition: color 0.3s ease;
+             text-decoration: none;
+         }
+         .header-icons a:hover, .header-icons button:hover {
+             color: var(--watchCore-text);
+         }
+         .header-icons a:last-child, .header-icons button:last-child {
+             margin-right: 20px;
+         }
+
+        /* --- زر تبديل القائمة الجانبية (الهاتف) --- */
+        #sidebar-toggle {
+            display: none; /* مخفي افتراضياً */
+            margin-right: 15px; /* مسافة عن الشعار في الهاتف */
+            font-size: 1.6rem;
+             /* الأيقونات تأتي من الأزرار أعلاه */
+        }
+
+        /* --- القائمة الجانبية (الهاتف) --- */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: calc(-1 * var(--sidebar-width));
+            width: var(--sidebar-width);
+            height: 100%;
+            background-color: var(--watchCore-navbar);
+            padding: 70px 25px 25px;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+            z-index: 1100;
+            transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* انتقال انسيابي */
+            overflow-y: auto;
+        }
+
+        #sidebar.open { right: 0; }
+
+        #sidebar .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            color: var(--watchCore-text-muted);
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+             /* استخدام زر من الأيقونات */
+        }
+         #sidebar .close-btn:hover { color: var(--watchCore-text); }
+
+        .mobile-nav { list-style: none; }
+        .mobile-nav li { margin-bottom: 10px; }
+        .mobile-nav a {
+            color: var(--watchCore-text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 15px;
+            display: block;
+            border-radius: 6px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .mobile-nav a:hover, .mobile-nav a.active {
+            color: var(--watchCore-text);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* --- الغطاء --- */
+         #overlay {
+             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+             background-color: rgba(0, 0, 0, 0.7);
+             z-index: 1050; display: none; opacity: 0;
+             transition: opacity 0.35s ease-in-out;
+         }
+         #overlay.show { display: block; opacity: 1; }
+
+        /* --- المحتوى الرئيسي --- */
+        #main-content {
+            padding: 90px 30px 30px; /* مساحة للشريط العلوي */
+        }
+
+        /* --- صفوف المحتوى الأفقية --- */
+        .content-row {
+            margin-bottom: 40px;
+        }
+
+        .content-row h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--watchCore-text);
+            margin-bottom: 15px;
+            padding-right: 5px; /* محاذاة مع بداية البطاقات */
+        }
+
+        .movie-carousel {
+            display: flex;
+            overflow-x: auto; /* السماح بالتمرير الأفقي */
+            overflow-y: hidden; /* منع التمرير الرأسي داخل الشريط */
+            padding-bottom: 20px; /* مساحة لشريط التمرير إن ظهر */
+            /* لجعل التمرير انسيابي على أجهزة اللمس */
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory; /* جعل التمرير يقف عند بداية كل بطاقة */
+        }
+
+        /* إخفاء شريط التمرير بصرياً (مع الحفاظ على وظيفته) */
+         .movie-carousel::-webkit-scrollbar {
+             height: 6px; /* جعله رفيعاً */
+         }
+         .movie-carousel::-webkit-scrollbar-thumb {
+              background-color: rgba(0, 164, 228, 0.5); /* لون شريط التمرير شبه شفاف */
+              border-radius: 3px;
+         }
+         .movie-carousel::-webkit-scrollbar-track {
+             background: transparent; /* إخفاء خلفية الشريط */
+         }
+          /* For Firefox */
+          .movie-carousel {
+              scrollbar-width: thin;
+              scrollbar-color: rgba(0, 164, 228, 0.5) transparent;
+          }
+
+
+        /* --- بطاقة الفيلم/المسلسل --- */
+        .movie-card {
+            flex: 0 0 auto; /* منع البطاقة من التمدد أو الانكماش */
+            width: 170px; /* عرض ثابت للبطاقة */
+            margin-left: 15px; /* مسافة بين البطاقات */
+            background-color: var(--watchCore-card);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            scroll-snap-align: start; /* محاذاة بداية البطاقة مع بداية العرض عند التمرير */
+        }
+         .movie-card:first-child {
+             margin-right: 0; /* إزالة المسافة الأولى في RTL */
+             margin-left: 15px; /* يجب التأكد من الاتجاه */
+         }
+         /* تعديل للمسافات في RTL */
+         .movie-carousel > .movie-card {
+             margin-right: 0;
+             margin-left: 15px;
+         }
+          .movie-carousel > .movie-card:first-child {
+              margin-left: 15px; /* أول عنصر لا يحتاج مسافة يسار */
+          }
+
+
+        .movie-card:hover {
+            transform: scale(1.06); /* تكبير عند المرور */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            z-index: 10; /* لضمان ظهوره فوق البطاقات المجاورة */
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 255px; /* ارتفاع ثابت للبوستر */
+            object-fit: cover;
+            display: block;
+            background-color: #222; /* لون احتياطي */
+        }
+
+        /* --- الاستجابة --- */
+        @media (max-width: 992px) {
+            .desktop-nav { display: none; }
+            #sidebar-toggle { display: block; }
+            .main-header { padding: 10px 20px; }
+             .logo a { margin-left: 0; } /* إزالة المسافة الإضافية في الهاتف */
+             #main-content { padding: 80px 20px 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .content-row h2 { font-size: 1.4rem; }
+            .movie-card { width: 150px; margin-left: 12px; }
+            .movie-card img { height: 225px; }
+             .header-icons a, .header-icons button { font-size: 1.3rem; margin-right: 15px; }
+        }
+
+        @media (max-width: 576px) {
+             #main-content { padding: 75px 15px 15px; }
+            .content-row h2 { font-size: 1.2rem; }
+            .movie-card { width: 130px; margin-left: 10px; }
+            .movie-card img { height: 195px; }
+            /* إخفاء بعض الأيقونات إذا لزم الأمر لتوفير المساحة */
+             .header-icons .profile-icon { margin-right: 0; } /* إزالة المسافة لآخر أيقونة */
+        }
+
+         @media (max-width: 400px) {
+             .movie-card { width: 110px; margin-left: 8px; }
+             .movie-card img { height: 165px; }
+         }
+
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header class="main-header">
+        <div class="header-left">
+            <button id="sidebar-toggle" aria-label="فتح القائمة">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+            </button>
+            <div class="logo">
+                <a href="#">
+                   كبريت
+                </a>
+            </div>
+            <nav>
+                <ul class="desktop-nav">
+                    <li><a href="#" class="active">
+                        <i class="fas fa-home"></i>
+                        الرئيسية
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fas fa-tv"></i>
+                        مسلسلات
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fas fa-video"></i>
+                        أفلام
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fas fa-theater-masks"></i>
+                        مسرحيات
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fas fa-child"></i>
+                        أطفال
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-border-all"></i>
+                        تصنيفات
+                    </a></li>
+               
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right header-icons">
+             <button aria-label="بحث">
+                <i class="fas fa-search"></i>
+            </button>
+             <a href="#" aria-label="الملف الشخصي" class="profile-icon">
+                <i class="fas fa-user"></i>
+             </a>
+        </div>
+    </header>
+
+    <!-- القائمة الجانبية (للهاتف) -->
+    <aside id="sidebar">
+        <button id="sidebar-close-btn" class="close-btn" aria-label="إغلاق القائمة">
+             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+        </button>
+        <nav>
+            <ul class="mobile-nav">
+                <li><a href="#" class="active">
+                    <i class="fas fa-home"></i>
+                    الرئيسية
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-tv"></i>
+                    مسلسلات
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-video"></i>
+                    أفلام
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-theater-masks"></i>
+                    مسرحيات
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-child"></i>
+                    أطفال
+                </a></li>
+                <li><a href="#">
+                    <i class="fa-solid fa-border-all"></i>
+                    تصنيفات
+                </a></li>
+                <li><hr style="border-color: var(--watchCore-border); margin: 15px 0;"></li>
+                <li><a href="#">
+                    <i class="fas fa-user"></i>
+                    حسابي
+                </a></li>
+                <li><a href="#">
+                    <i class="fas fa-gear"></i>
+                    الإعدادات
+                </a></li>
+                <li><a href="#">تسجيل الخروج</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- الغطاء -->
+     <div id="overlay"></div>
+
+    <!-- المحتوى الرئيسي -->
+    <main id="main-content">
+
+        <section class="content-row">
+            <h2>أنيميشن</h2>
+            <div class="movie-carousel" id="animation-carousel">
+
+            </div>
+        </section>
+
+        <!-- صف: الأكثر مشاهدة -->
+        <section class="content-row">
+            <h2>الأكثر مشاهدة</h2>
+            <div class="movie-carousel" id="trending-carousel">
+                <!-- البطاقات تضاف هنا بواسطة JS -->
+            </div>
+        </section>
+
+        <!-- صف: أضيف حديثاً -->
+        <section class="content-row">
+            <h2>أضيف حديثاً</h2>
+            <div class="movie-carousel" id="new-releases-carousel">
+                <!-- البطاقات تضاف هنا بواسطة JS -->
+            </div>
+        </section>
+
+         <!-- صف: مسلسلات رمضان -->
+        <section class="content-row">
+            <h2>مسلسلات رمضان 2024</h2>
+            <div class="movie-carousel" id="ramadan-series-carousel">
+                <!-- البطاقات تضاف هنا بواسطة JS -->
+            </div>
+        </section>
+
+        <!-- صف: أفلام عربية -->
+        <section class="content-row">
+            <h2>أفلام عربية</h2>
+            <div class="movie-carousel" id="arabic-movies-carousel">
+                <!-- البطاقات تضاف هنا بواسطة JS -->
+            </div>
+        </section>
+
+        <!-- يمكنك إضافة المزيد من الصفوف هنا -->
+
+    </main>
+
+    <script>
+        // === JavaScript Logic ===
+
+        // --- بيانات الأفلام (مثال - يجب أن تكون الروابط حقيقية) ---
+        // يمكنك تقسيمها لكل صف أو استخدام نفس البيانات كمثال
+        const sampleMoviesData = [
+            { id: 1, title: "فيلم 1", posterUrl: "/data/customMedia/1.jpg" },
+            { id: 2, title: "مسلسل 2", posterUrl: "/data/customMedia/2.jpg" },
+            { id: 3, title: "فيلم 3", posterUrl: "/data/customMedia/3.jpg" },
+            { id: 4, title: "مسلسل 4", posterUrl: "/data/customMedia/4.jpg" },
+            { id: 5, title: "فيلم 5", posterUrl: "/data/customMedia/5.jpg" },
+            { id: 6, title: "مسلسل 6", posterUrl: "/data/customMedia/6.jpg" },
+            { id: 7, title: "فيلم 7", posterUrl: "/data/customMedia/7.jpg" },
+            { id: 8, title: "مسلسل 8", posterUrl: "/data/customMedia/8.jpg" },
+            { id: 9, title: "فيلم 9", posterUrl: "/data/customMedia/9.jpg" },
+            { id: 10, title: "مسلسل 10", posterUrl: "/data/customMedia/10.jpg" }
+        ];
+
+        const sampleAnimationData = [
+            
+            { id: 2, title: "مسلسل 2", posterUrl: "/data/customMedia/2.jpg" },
+            { id: 8, title: "مسلسل 8", posterUrl: "/data/customMedia/8.jpg" },
+            { id: 10, title: "مسلسل 10", posterUrl: "/data/customMedia/10.jpg" },
+            { id: 11, title: "مسلسل 10", posterUrl: "/data/customMedia/11.jpg" },
+            { id: 12, title: "مسلسل 10", posterUrl: "/data/customMedia/12.jpg" },
+            { id: 13, title: "مسلسل 10", posterUrl: "/data/customMedia/13.jpg" },
+            { id: 14, title: "مسلسل 10", posterUrl: "/data/customMedia/14.jpg" },
+            { id: 15, title: "مسلسل 10", posterUrl: "/data/customMedia/15.jpg" },
+            { id: 16, title: "مسلسل 10", posterUrl: "/data/customMedia/16.jpg" },
+        ];
+
+
+        // --- عناصر DOM ---
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+        const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+        const overlay = document.getElementById('overlay');
+
+        // --- وظيفة عرض الأفلام في صف معين ---
+        function displayMoviesInRow(movies, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return; // تأكد من وجود الحاوية
+
+            container.innerHTML = ''; // مسح المحتوى الحالي
+
+            movies.forEach(movie => {
+                const movieCard = document.createElement('div');
+                movieCard.classList.add('movie-card');
+                movieCard.dataset.movieId = movie.id;
+
+                const posterImg = new Image(); // استخدام Image object للتحميل المسبق والتحكم بالخطأ
+                posterImg.src = movie.posterUrl;
+                posterImg.alt = movie.title; // استخدام عنوان الفيلم كنص بديل
+                 posterImg.loading = "lazy"; // تحميل الصور عند الاقتراب منها (Lazy Loading)
+
+                // صورة احتياطية عند الخطأ
+                posterImg.onerror = function() {
+                    this.src = `https://via.placeholder.com/170x255/2c2f3a/a0a3af?text=${encodeURIComponent(movie.title || 'Error')}`;
+                    this.alt = `فشل تحميل صورة: ${movie.title}`;
+                };
+
+                movieCard.appendChild(posterImg);
+                container.appendChild(movieCard);
+            });
+        }
+
+        // --- وظائف القائمة الجانبية والغطاء ---
+         function openSidebar() {
+             sidebar.classList.add('open');
+             overlay.classList.add('show');
+             document.body.style.overflow = 'hidden';
+         }
+
+         function closeSidebar() {
+             sidebar.classList.remove('open');
+             overlay.classList.remove('show');
+             document.body.style.overflow = '';
+         }
+
+        // --- ربط الأحداث ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // عرض الأفلام في كل الصفوف (استخدام نفس البيانات كمثال)
+            displayMoviesInRow(sampleMoviesData, 'trending-carousel');
+            // يمكن استخدام بيانات مختلفة لكل صف إذا أردت
+             displayMoviesInRow([...sampleMoviesData].reverse(), 'new-releases-carousel'); // مثال ببيانات معكوسة
+             displayMoviesInRow(sampleMoviesData.slice(0, 5), 'ramadan-series-carousel'); // مثال بجزء من البيانات
+             displayMoviesInRow(sampleMoviesData.filter((m, i) => i % 2 === 0), 'arabic-movies-carousel'); // مثال ببيانات مفلترة
+
+             displayMoviesInRow(sampleAnimationData,'animation-carousel');
+            // أحداث القائمة الجانبية
+            sidebarToggleBtn.addEventListener('click', openSidebar);
+            sidebarCloseBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+            document.addEventListener('keydown', (e) => {
+                 if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+                     closeSidebar();
+                 }
+             });
+        });
+
+    </script>
+
+</body>
+</html>

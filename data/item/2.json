@@ -1,0 +1,14 @@
+{
+  "type": "Foreign-Movie",
+  "reference": "IMDB",
+  "referenceLink": "https://m.imdb.com/title/tt0120623/",
+  "title": "A Bug's Life",
+  "rating": "7.2",
+  "year": "1998",
+  "genre": [
+    "Adventure",
+    "Animation",
+    "Comedy"
+  ],
+  "description": "تدور القصة حول مستعمرة نمل تواجه تهديدًا من مجموعة من الدبابير وقائدهم الشرير، ويقوم بطل الفيلم، النملة فليك، بمحاولة إنقاذ المستعمرة من هذا التهديد من خلال جمع مجموعة من الحشرات الأخرى لمساعدتهم."
+}

@@ -1,0 +1,23 @@
+{
+  "type": "Foreign-TVSeries",
+  "reference": "IMDB",
+  "referenceLink": "https://www.imdb.com/title/tt3032476/",
+  "title": "Better Call Saul",
+  "seasons": "6",
+  "season": {
+    "1": "10",
+    "2": "10",
+    "3": "10",
+    "4": "10",
+    "5": "10",
+    "6": "13"
+  },
+  "rating": "9",
+  "year": "2015",
+  "genre": [
+    "Crime",
+    "Drama",
+    "Thriller"
+  ],
+  "description": "تجارب وصعوبات المحامي الجنائي جيمي مكغيل في السنوات التي سبقت ومرّت بعد مواجهته المصيرية مع والتر وايت وجيسي بينكمان."
+}
