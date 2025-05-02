@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الفيلم/المسلسل</title>
+
+    <!-- استيراد Font Awesome -->
+    <link rel="stylesheet" href="./3rdparty/fontawesome-free-6.7.2-web/css/all.min.css"/>
+
+    <style>
+        /* === تعريف الخط المخصص === */
+        @font-face {
+            font-family: 'MyBoldFont';
+            /* تأكد من صحة المسار للخط */
+            src: url('./assets/fonts/bold.ttf') format('truetype');
+            font-weight: normal; /* أو 700 إذا كان غامقًا فقط */
+            font-style: normal;
+        }
+
+        /* === تعريف الثيم اللوني === */
+        :root {
+            --watchCore-bg: #101820;              /* خلفية داكنة أزرق رمادي */
+            --watchCore-navbar: #1b2a41;          /* شريط تنقل أزرق داكن مع تدرجات */
+            --watchCore-card: #27333f;            /* بطاقات بلون أزرق رمادي غامق */
+            --watchCore-primary: #1e90ff;         /* أزرق كهربائي مميز */
+            --watchCore-primary-hover: #4682b4;   /* أزرق متوسط عند المرور */
+            --watchCore-text: #f0f8ff;            /* أبيض خفيف، هادئ للعين */
+            --watchCore-text-muted: #b0c4de;      /* نص ثانوي أزرق باهت */
+            --watchCore-border: #2c3e50;          /* حدود داكنة مزرقّة */
+            --sidebar-width: 260px;
+            --navbar-height: 65px; /* ارتفاع تقريبي للشريط العلوي للتنسيق */
+        }
+
+        /* === تنسيقات أساسية === */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px; /* أساس حجم الخط */
+        }
+
+        body {
+            font-family: 'MyBoldFont', sans-serif; /* تطبيق الخط المخصص */
+            background-color: var(--watchCore-bg);
+            color: var(--watchCore-text);
+            line-height: 1.6;
+            
+            padding-bottom: 40px;
+        }
+
+        /* === حاوية التفاصيل الرئيسية === */
+        .movie-details-container {
+            max-width: 900px; /* أقصى عرض للمحتوى */
+            margin: 0 auto; /* توسيط الحاوية */
+            padding: 20px;
+            background-color: var(--watchCore-card);
+            border-radius: 8px;
+            border: 1px solid var(--watchCore-border);
+            display: flex;
+            flex-direction: column; /* تخطيط عمودي افتراضي للهواتف */
+            gap: 20px; /* مسافة بين العناصر */
+        }
+
+        /* === البوستر === */
+        .poster-container {
+            text-align: center; /* توسيط البوستر في الوضع العمودي */
+        }
+
+        .movie-poster {
+            max-width: 150px; /* أقصى عرض للبوستر */
+            width: 100%; /* يأخذ العرض المتاح حتى 200px */
+            height: auto;
+            border-radius: 6px;
+            border: 2px solid var(--watchCore-border);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px; /* مسافة سفلية في الوضع العمودي */
+        }
+
+        /* === معلومات الفيلم (النص) === */
+        .movie-info {
+            flex: 1; /* يأخذ المساحة المتبقية في الوضع الأفقي */
+        }
+
+        .movie-title {
+            font-size: 1.8rem;
+            color: var(--watchCore-primary);
+            margin-bottom: 15px;
+        }
+
+        .movie-meta {
+            display: flex;
+            flex-wrap: wrap; /* السماح بالالتفاف في الشاشات الصغيرة */
+            gap: 15px; /* مسافة بين عناصر الميتا */
+            margin-bottom: 20px;
+            color: var(--watchCore-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .movie-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* مسافة بين الأيقونة والنص */
+        }
+
+        .movie-meta i {
+            color: var(--watchCore-primary); /* لون الأيقونات */
+        }
+
+        .movie-genres span {
+            background-color: var(--watchCore-border);
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: var(--watchCore-text);
+            font-size: 0.85rem;
+        }
+
+        /* === أزرار الإجراءات === */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap; /* التفاف الأزرار عند الحاجة */
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .action-buttons button {
+            padding: 10px 18px;
+            background-color: var(--watchCore-primary);
+            color: var(--watchCore-text);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'MyBoldFont', sans-serif; /* تطبيق الخط على الأزرار */
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-buttons button:hover {
+            background-color: var(--watchCore-primary-hover);
+            transform: translateY(-1px); /* تأثير رفع بسيط عند المرور */
+        }
+
+        .action-buttons button i {
+            font-size: 1em; /* حجم الأيقونة متناسب مع الزر */
+        }
+
+        /* === الوصف === */
+        .description-section h2 {
+            font-size: 1.3rem;
+            color: var(--watchCore-text);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--watchCore-border);
+        }
+
+        .movie-description {
+            color: var(--watchCore-text-muted);
+            font-size: 0.95rem;
+            text-align: justify; /* ضبط النص */
+        }
+
+         /* === رسالة الخطأ === */
+         #error-message {
+            display: none; /* مخفية افتراضيًا */
+            color: #ff6b6b; /* لون أحمر للخطأ */
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            background-color: var(--watchCore-card);
+            border: 1px solid var(--watchCore-border);
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 20px auto;
+         }
+
+        /* === التجاوب مع الشاشات الأكبر (سطح المكتب) === */
+        @media (min-width: 768px) {
+            .movie-details-container {
+                flex-direction: row; /* تخطيط أفقي للشاشات الأكبر */
+                align-items: flex-start; /* محاذاة العناصر للأعلى */
+                gap: 30px; /* زيادة المسافة بين البوستر والمعلومات */
+            }
+
+            .poster-container {
+                 text-align: right; /* محاذاة لليمين في الوضع الأفقي (بسبب dir=rtl) */
+                 margin-bottom: 0; /* إزالة المسافة السفلية */
+            }
+
+            .movie-poster {
+                 margin-bottom: 0; /* إزالة المسافة السفلية للبوستر نفسه */
+            }
+
+            .movie-title {
+                font-size: 2.2rem;
+            }
+
+            .action-buttons button {
+                 font-size: 1rem;
+                 padding: 12px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="movie-details-container" class="movie-details-container">
+        <!-- سيتم ملء هذا القسم بواسطة JavaScript -->
+        <div class="poster-container">
+            <img id="movie-poster" src="" alt="بوستر الفيلم" class="movie-poster">
+        </div>
+        <div class="movie-info">
+            <h1 id="movie-title" class="movie-title"></h1>
+            <div class="movie-meta">
+                <span id="rating-info"><i class="fas fa-star"></i> <span id="movie-rating"></span></span>
+                <span id="year-info"><i class="fas fa-calendar-alt"></i> <span id="movie-year"></span></span>
+                <span id="genres-info" class="movie-genres">
+                    <!-- التصنيفات سيتم إضافتها هنا -->
+                </span>
+            </div>
+            <div class="action-buttons">
+                <button id="fav-button"><i class="fas fa-heart"></i> أضف للمفضلة</button>
+                <button id="play-button"><i class="fas fa-play"></i> تشغيل</button>
+                <button id="download-button"><i class="fas fa-download"></i> تنزيل</button>
+            </div>
+            <div class="description-section">
+                <h2><i class="fas fa-info-circle"></i> الوصف</h2>
+                <p id="movie-description" class="movie-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- حاوية رسالة الخطأ -->
+    <div id="error-message"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- بيانات الأفلام/المسلسلات (مثال) ---
+            // في تطبيق حقيقي، قد تأتي هذه من API أو ملف JSON
+            const movieData = [
+                {
+                    id: 1,
+                    title: "المطارد: الجزء الأول",
+                    rating: 8.7,
+                    year: 2024,
+                    genres: ["أكشن", "مغامرات", "خيال علمي"],
+                    description: "في عالم مستقبلي مدمر، يجب على محارب وحيد أن يطارد منظمة شريرة استولت على التكنولوجيا القديمة لإنقاذ ما تبقى من البشرية. رحلة مليئة بالمخاطر والتحالفات غير المتوقعة."
+                },
+                {
+                    id: 2,
+                    title: "أسرار المدينة الهادئة",
+                    rating: 9.1,
+                    year: 2023,
+                    genres: ["دراما", "غموض", "تشويق"],
+                    description: "مسلسل يتبع محققة تعود إلى مسقط رأسها الهادئ للتحقيق في سلسلة من حالات الاختفاء الغامضة التي تكشف عن أسرار دفينة ومؤامرات معقدة بين سكان البلدة."
+                },
+                {
+                    id: 3,
+                    title: "رحلة عبر الزمن",
+                    rating: 7.9,
+                    year: 2022,
+                    genres: ["خيال علمي", "كوميديا"],
+                    description: "عالمان غريبان يخترعان آلة زمن بالصدفة وينطلقان في مغامرات فوضوية عبر عصور مختلفة، محاولين إصلاح التاريخ دون التسبب في كوارث أكبر."
+                },
+                 {
+                    id: 4,
+                    title: "الهمس في الظلال",
+                    rating: 8.2,
+                    year: 2024,
+                    genres: ["رعب", "نفسي"],
+                    description: "عائلة تنتقل إلى منزل قديم منعزل لتكتشف أنه مسكون بكيانات غامضة تتلاعب بعقولهم وتستدرجهم نحو الجنون ببطء."
+                }
+                // أضف المزيد من الأفلام/المسلسلات هنا بنفس التنسيق
+            ];
+
+            // --- عناصر الـ DOM ---
+            const posterElement = document.getElementById('movie-poster');
+            const titleElement = document.getElementById('movie-title');
+            const ratingElement = document.getElementById('movie-rating');
+            const yearElement = document.getElementById('movie-year');
+            const genresElement = document.getElementById('genres-info');
+            const descriptionElement = document.getElementById('movie-description');
+            const favButton = document.getElementById('fav-button');
+            const playButton = document.getElementById('play-button');
+            const downloadButton = document.getElementById('download-button');
+            const detailsContainer = document.getElementById('movie-details-container');
+            const errorMessageElement = document.getElementById('error-message');
+            const ratingInfoElement = document.getElementById('rating-info');
+            const yearInfoElement = document.getElementById('year-info');
+
+
+            // --- الحصول على ID من الرابط ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieIdParam = urlParams.get('id');
+            const movieId = movieIdParam ? parseInt(movieIdParam, 10) : null; // تحويل ID إلى رقم
+
+            // --- البحث عن الفيلم/المسلسل المطابق ---
+            const movie = movieId !== null ? movieData.find(item => item.id === movieId) : null;
+
+            // --- عرض البيانات أو رسالة الخطأ ---
+            if (movie) {
+                // إخفاء رسالة الخطأ (إذا كانت ظاهرة) وإظهار التفاصيل
+                errorMessageElement.style.display = 'none';
+                detailsContainer.style.display = 'flex'; // تأكد من أن الحاوية ظاهرة
+
+                // تحديث محتوى العناصر
+                posterElement.src = `/data/media/${movie.id}.jpg`; // مسار البوستر
+                posterElement.alt = `بوستر ${movie.title}`;
+                titleElement.textContent = movie.title;
+                ratingElement.textContent = movie.rating.toFixed(1); // تقريب التقييم لمنزلة عشرية واحدة
+                yearElement.textContent = movie.year;
+                descriptionElement.textContent = movie.description;
+
+                // عرض التصنيفات (بحد أقصى 3)
+                genresElement.innerHTML = ''; // مسح التصنيفات القديمة
+                movie.genres.slice(0, 3).forEach(genre => { // أخذ أول 3 تصنيفات فقط
+                    const genreSpan = document.createElement('span');
+                    genreSpan.textContent = genre;
+                    genresElement.appendChild(genreSpan);
+                });
+
+                // إضافة وظائف الأزرار (مثال)
+                favButton.addEventListener('click', () => {
+                    console.log(`تم النقر على إضافة للمفضلة للفيلم ID: ${movie.id}`);
+                    alert(`تمت إضافة "${movie.title}" للمفضلة (وظيفة تجريبية)`);
+                });
+
+                playButton.addEventListener('click', () => {
+                    console.log(`تم النقر على تشغيل للفيلم ID: ${movie.id}`);
+                    alert(`جاري تشغيل "${movie.title}" (وظيفة تجريبية)`);
+                    // هنا يمكنك إضافة الكود لفتح مشغل فيديو أو صفحة أخرى
+                });
+
+                downloadButton.addEventListener('click', () => {
+                    console.log(`تم النقر على تنزيل للفيلم ID: ${movie.id}`);
+                    alert(`جاري تنزيل "${movie.title}" (وظيفة تجريبية)`);
+                    // هنا يمكنك إضافة الكود لبدء التنزيل
+                });
+
+                 // إخفاء عنصر التقييم أو السنة إذا لم تكن البيانات متوفرة
+                 ratingInfoElement.style.display = movie.rating ? 'flex' : 'none';
+                 yearInfoElement.style.display = movie.year ? 'flex' : 'none';
+
+
+            } else {
+                // إخفاء حاوية التفاصيل وإظهار رسالة الخطأ
+                detailsContainer.style.display = 'none';
+                errorMessageElement.textContent = movieIdParam
+                    ? `عفواً، لم يتم العثور على فيلم أو مسلسل بالمعرف ID: ${movieIdParam}`
+                    : 'لم يتم تحديد معرف الفيلم أو المسلسل في الرابط.';
+                errorMessageElement.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "type": "Foreign-TVSeries",
+  "reference": "IMDB",
+  "referenceLink": "https://www.imdb.com/title/tt0903747",
+  "title": "كسر سيئ",
+  "seasons": "5",
+  "season": {
+    "1": "7",
+    "2": "13",
+    "3": "13",
+    "4": "13",
+    "5": "16"
+  },
+  "rating": "9.5",
+  "year": "2008",
+  "genre": [
+    "Crime",
+    "Drama",
+    "Thriller"
+  ],
+  "description": "معلم كيمياء تم تشخيصه بسرطان الرئة غير القابل للجراحة، يقرر أن يتحول إلى تصنيع وبيع الميثامفيتامين مع أحد طلابه السابقين لتأمين مستقبل عائلته."
+}
