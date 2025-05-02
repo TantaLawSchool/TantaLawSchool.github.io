@@ -35,8 +35,31 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--watchCore-primary) var(--watchCore-navbar); /* Firefox */
         }
 
+        /* تخصيص شريط التمرير لـ WebKit (Chrome, Safari) */
+        ::-webkit-scrollbar {
+             width: 8px;
+             height: 8px; /* لشريط التمرير الأفقي */
+         }
+         ::-webkit-scrollbar-track {
+             background: var(--watchCore-navbar);
+             border-radius: 4px;
+         }
+         ::-webkit-scrollbar-thumb {
+             background-color: var(--watchCore-primary);
+             border-radius: 4px;
+             border: 2px solid var(--watchCore-navbar); /* لخلق بعض المساحة */
+         }
+         ::-webkit-scrollbar-thumb:hover {
+             background-color: var(--watchCore-primary-hover);
+         }
+
+
+        /* html */
         html {
             font-size: 16px; /* أساس حجم الخط */
         }
@@ -214,9 +237,12 @@
             visibility:hidden;
             position: relative;
             height: 50px;
+
+            
+            max-width: 900px;
+            margin: 0 auto;
             margin-top: 5px;
-            margin-left: var(--desktop-left-right-margin);
-            margin-right: var(--desktop-left-right-margin);
+
             border-radius: 10px;
             &:after{
               content: '\25bc';
@@ -260,9 +286,10 @@
         #episodes{
             visibility:hidden;
             position: relative;
+            
+            max-width: 900px;
+            margin: 0 auto;
             margin-top: 5px;
-            margin-left: var(--desktop-left-right-margin);
-            margin-right: var(--desktop-left-right-margin);
 
             height: 225px;
             /* 150,225 */
@@ -274,16 +301,7 @@
             gap: 5px;
 
         }
-        #episodes::-webkit-scrollbar{
-            background-color:transparent;
-            height: 5px;
-            cursor: pointer;
-        }
-        #episodes::-webkit-scrollbar-thumb{
-            background-color: var(--watchCore-primary);
-            border-radius: 0.5em;
-            cursor: pointer;
-        }
+        
 
         .episode{
             position: relative;
@@ -386,18 +404,12 @@
 
 
         @media screen and (max-width: 600px) {
-           
-            #seasons-container{
-                margin-left: 5px;
-                margin-right: 5px;
-            }
+          
             #seasons{
                 font-size: 18px;
             }
             #episodes{
                 height: 210px;
-                margin-left: 5px;
-                margin-right: 5px;
             }
             .episode{
                 width: 140px;
@@ -513,7 +525,11 @@
             const errorMessageElement = $('error-message');
             const ratingInfoElement = $('rating-info');
             const yearInfoElement = $('year-info');
+
             title = JSON.parse($(t).textContent);
+
+            // إخفاء رسالة الخطأ (إذا كانت ظاهرة) وإظهار التفاصيل
+            $("error-message").style.display = 'none';
 
             posterElement.src = `/data/media/${title.id}.jpg`;
             posterElement.alt = `بوستر ${title.title}`;

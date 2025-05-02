@@ -67,9 +67,38 @@
             gap: 20px; /* مسافة بين العناصر */
         }
 
+
+        /* === حاوية التفاصيل الرئيسية === */
+.movie-details-container {
+    max-width: 900px; /* أقصى عرض للمحتوى */
+    margin: 40px auto 20px auto; /* زيادة الهامش العلوي قليلاً لإظهار الخلفية */
+    padding: 25px; /* زيادة الحشو الداخلي قليلاً */
+    background-color: var(--watchCore-card); /* لون أساسي كاحتياط */
+    border-radius: 10px; /* زيادة استدارة الحواف */
+    border: 1px solid var(--watchCore-border);
+    display: flex;
+    flex-direction: column; /* تخطيط عمودي افتراضي للهواتف */
+    gap: 25px; /* زيادة المسافة بين العناصر */
+    position: relative; /* ضروري إذا أردت وضع عناصر فوق الخلفية بدقة */
+    overflow: hidden; /* يضمن أن الخلفية لا تتجاوز الحدود المستديرة */
+
+    /* خصائص خلفية الغلاف */
+    background-size: cover; /* تغطية كامل المساحة */
+    background-position: center center; /* توسيط الصورة */
+    background-repeat: no-repeat; /* عدم تكرار الصورة */
+    /* سنضبط background-image عبر JavaScript */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* ظل أكبر لإبراز الحاوية */
+}
+
+
+
+
+
         /* === البوستر === */
         .poster-container {
             text-align: center; /* توسيط البوستر في الوضع العمودي */
+            position: relative;
+    z-index: 1;
         }
 
         .movie-poster {
@@ -85,6 +114,8 @@
         /* === معلومات الفيلم (النص) === */
         .movie-info {
             flex: 1; /* يأخذ المساحة المتبقية في الوضع الأفقي */
+            position: relative;
+    z-index: 1;
         }
 
         .movie-title {
@@ -325,6 +356,17 @@
                     genreSpan.textContent = genre;
                     genresElement.appendChild(genreSpan);
                 });
+
+
+
+                const coverImageUrl = `/data/media/${movie.id}.jpg`;
+                const gradientOverlay = `linear-gradient(to top, var(--watchCore-bg) 10%, rgba(16, 24, 32, 0.6) 60%)`;
+                detailsContainer.style.backgroundImage = `${gradientOverlay}, url('${coverImageUrl}')`;
+
+
+
+
+
 
                 // إضافة وظائف الأزرار (مثال)
                 favButton.addEventListener('click', () => {
