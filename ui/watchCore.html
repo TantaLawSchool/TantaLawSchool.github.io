@@ -384,6 +384,129 @@
               .movie-carousel { gap: 8px; padding-left: 8px; }
          }
 
+
+
+
+
+
+         /* --- Search Bar Styles --- */
+        #search-bar-container {
+            display: none; /* Hidden by default */
+            align-items: center;
+            width: 100%;
+            height: 100%; /* Take full height of header */
+            padding: 0 15px; /* Add some padding */
+            position: relative; /* For positioning the icon inside */
+            background-color: var(--watchCore-navbar); /* Match header background */
+        }
+
+        /* Styles when search is active */
+        .main-header.search-active .header-left,
+        .main-header.search-active .header-right {
+            display: none; /* Hide original header content */
+        }
+
+        .main-header.search-active #search-bar-container {
+            display: flex; /* Show the search bar */
+        }
+
+        #search-bar-container .search-icon-inside {
+            position: absolute;
+            right: 25px; /* Position inside input padding (adjust with padding) */
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--watchCore-text-muted);
+            font-size: 1rem; /* Adjust size as needed */
+            pointer-events: none; /* Make icon non-interactive */
+        }
+
+        #search-input {
+            flex-grow: 1; /* Take available space */
+            height: 40px; /* Adjust height as needed */
+            padding: 5px 40px 5px 15px; /* Right padding for icon, left for close btn */
+            background-color: var(--watchCore-bg); /* Darker background for input */
+            border: 1px solid var(--watchCore-border);
+            border-radius: 20px; /* Rounded corners */
+            color: var(--watchCore-text);
+            font-size: 1rem;
+            outline: none;
+            box-shadow: none;
+            margin-left: 10px; /* Space before close button */
+        }
+
+        #search-input::placeholder {
+            color: var(--watchCore-text-muted);
+            opacity: 0.8;
+        }
+
+        /* Clear default search input cancel button in Webkit */
+        #search-input::-webkit-search-cancel-button {
+            display: none;
+        }
+
+
+        #search-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--watchCore-text-muted);
+            font-size: 1.6rem; /* Larger close icon */
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.3s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        #search-close-btn:hover {
+            color: var(--watchCore-text);
+        }
+
+        /* --- Responsive Adjustments for Search --- */
+        @media (max-width: 576px) {
+            #search-bar-container {
+                padding: 0 10px;
+            }
+            #search-input {
+                height: 38px;
+                font-size: 0.9rem;
+                padding-right: 35px; /* Adjust icon padding */
+            }
+             #search-bar-container .search-icon-inside {
+                 right: 20px;
+             }
+            #search-close-btn {
+                font-size: 1.4rem;
+            }
+        }
+
+
+        /* --- MORE Responsive Adjustments for Search --- */
+        @media (max-width: 400px) {
+            #search-bar-container {
+                padding: 0 4px; /* تقليل المسافة البادئة للحاوية أكثر */
+            }
+            #search-input {
+                width: 250px;
+                height: 38px; /* يمكن تقليل الارتفاع قليلاً */
+                font-size: 0.85rem; /* تصغير حجم الخط أكثر */
+                padding-right: 35px; /* تقليل المسافة لأيقونة البحث الداخلية */
+                padding-left: 10px;
+                margin-left: 5px; /* تقليل المسافة قبل زر الإغلاق */
+            }
+            #search-bar-container .search-icon-inside {
+                right: 15px; /* تحريك أيقونة البحث لتناسب المسافة البادئة الجديدة */
+                font-size: 0.9rem; /* تصغير أيقونة البحث قليلاً */
+            }
+            #search-close-btn {
+                font-size: 1.3rem; /* تصغير أيقونة الإغلاق قليلاً */
+                padding: 2px 4px; /* تقليل المساحة حول الأيقونة */
+            }
+        }
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -397,7 +520,7 @@
                 <i class="fas fa-bars"></i> <!-- استخدام أيقونة Font Awesome -->
             </button>
             <div class="logo">
-                <a href="#"> صوديوم <i class="fas fa-play"></i> </a>
+                <a href="#"> 65px </a>
             </div>
             <nav>
                 <ul class="desktop-nav">
@@ -411,9 +534,20 @@
             </nav>
         </div>
         <div class="header-right header-icons">
-             <button aria-label="بحث"><i class="fas fa-search"></i></button>
+             <button aria-label="بحث" id="search-trigger-btn"><i class="fas fa-search"></i></button>
              <a href="#" aria-label="الملف الشخصي" class="profile-icon"><i class="fas fa-user-circle"></i></a>
         </div>
+
+        <!-- NEW: Search Bar Container (Initially Hidden) -->
+        <div id="search-bar-container">
+            <i class="fas fa-search search-icon-inside"></i>
+            <input type="search" id="search-input" placeholder="ابحث عن فيلم، مسلسل، ممثل..." aria-label="Search input">
+            <button id="search-close-btn" aria-label="إغلاق البحث">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+
     </header>
 
     <!-- القائمة الجانبية (للهاتف) -->
@@ -669,6 +803,92 @@
 
         // --- ربط الأحداث ---
         document.addEventListener('DOMContentLoaded', () => {
+
+            
+
+             // --- Search Bar Logic ---
+             const mainHeader = document.querySelector('.main-header');
+             const searchTriggerBtn = document.getElementById('search-trigger-btn');
+             const searchBarContainer = document.getElementById('search-bar-container');
+             const searchInput = document.getElementById('search-input');
+             const searchCloseBtn = document.getElementById('search-close-btn');
+
+        function openSearch() {
+            if (mainHeader && searchBarContainer && searchInput) {
+                mainHeader.classList.add('search-active');
+                searchInput.focus(); // Focus the input field immediately
+                searchTriggerBtn.setAttribute('aria-expanded', 'true'); // Accessibility
+            } else {
+                console.error("Search elements not found for opening.");
+            }
+        }
+
+        function closeSearch() {
+            if (mainHeader && searchInput) {
+                mainHeader.classList.remove('search-active');
+                searchInput.value = ''; // Clear input on close
+                searchTriggerBtn.setAttribute('aria-expanded', 'false'); // Accessibility
+            } else {
+                console.error("Search elements not found for closing.");
+            }
+        }
+
+        function performSearch(query) {
+            if (!query || query.trim() === '') {
+                console.log("Search query is empty.");
+                return; // Don't search if empty
+            }
+            console.log(`Performing search for: ${query}`);
+            alert(`البحث عن: ${query}`);
+            // In a real application, you would navigate to a search results page
+            // or make an API call here.
+            // Example navigation:
+            // window.location.href = `/search?q=${encodeURIComponent(query)}`;
+
+            // Optional: close search after performing search
+            // closeSearch();
+        }
+
+        // Event Listeners for Search
+        if (searchTriggerBtn) {
+            searchTriggerBtn.addEventListener('click', openSearch);
+        } else {
+            console.error("Search trigger button not found.");
+        }
+
+        if (searchCloseBtn) {
+            searchCloseBtn.addEventListener('click', closeSearch);
+        } else {
+            console.error("Search close button not found.");
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent potential form submission
+                    performSearch(searchInput.value.trim());
+                } else if (e.key === 'Escape') {
+                     // Optional: Close search on Escape key press
+                     if (mainHeader.classList.contains('search-active')) {
+                         closeSearch();
+                     }
+                 }
+            });
+        } else {
+            console.error("Search input field not found.");
+        }
+
+        // --- End of Search Bar Logic ---
+
+
+
+
+
+
+
+
+
+
             // إظهار محتوى قسم الهيرو
             if (heroContentContainer) {
                 setTimeout(() => {

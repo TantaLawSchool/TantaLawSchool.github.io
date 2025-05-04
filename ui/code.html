@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchCore - جاري التحميل...</title>
+    <!-- رابط Font Awesome المحلي -->
+    <link rel="stylesheet" href="./3rdparty/fontawesome-free-6.7.2-web/css/all.min.css"/>
+
+    <style>
+        /* تعريف متغيرات الألوان */
+        :root {
+            --watchCore-bg: #101820;              /* خلفية داكنة أزرق رمادي */
+            --watchCore-navbar: #1b2a41;          /* شريط تنقل أزرق داكن مع تدرجات */
+            --watchCore-card: #27333f;            /* بطاقات بلون أزرق رمادي غامق */
+            --watchCore-primary: #1e90ff;         /* أزرق كهربائي مميز */
+            --watchCore-primary-hover: #4682b4;   /* أزرق متوسط عند المرور */
+            --watchCore-text: #f0f8ff;            /* أبيض خفيف، هادئ للعين */
+            --watchCore-text-muted: #b0c4de;      /* نص ثانوي أزرق باهت */
+            --watchCore-border: #2c3e50;          /* حدود داكنة مزرقّة */
+            --sidebar-width: 260px;
+            --navbar-height: 65px; /* ارتفاع تقريبي للشريط العلوي للتنسيق */
+
+            /* ألوان لأنيميشن RGB */
+            --color-red: #ff4136;
+            --color-green: #3dff57;
+            --color-blue: #0074d9;
+        }
+
+        /* تعريف الخط المخصص */
+        @font-face {
+            font-family: 'MyBoldFont';
+            /* تأكد من صحة المسار للخط نسبةً لمكان ملف الـ HTML هذا */
+            src: url('./assets/fonts/bold.ttf') format('truetype');
+            font-weight: bold; /* يمكن استخدام bold أو 700 */
+            font-style: normal;
+        }
+
+        /* إعادة تعيين أساسي وتنسيق الجسم */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* منع التمرير أثناء ظهور شاشة البداية */
+            background-color: var(--watchCore-bg);
+            color: var(--watchCore-text);
+            font-family: 'MyBoldFont', Arial, sans-serif; /* استخدام الخط المخصص مع بدائل */
+        }
+
+        /* تنسيق حاوية شاشة البداية */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--watchCore-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out; /* تأثير التلاشي للخارج */
+        }
+
+        /* تنسيق أيقونة الفيلم */
+        #splash-screen .tv-icon {
+            font-size: 5rem; /* حجم كبير للأيقونة */
+            color: var(--watchCore-primary);
+            margin-bottom: 25px;
+            animation: icon-pulse 2s infinite ease-in-out; /* أنيميشن نبض للأيقونة */
+        }
+
+        /* أنيميشن نبض الأيقونة */
+        @keyframes icon-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); color: var(--watchCore-primary-hover); }
+            100% { transform: scale(1); }
+        }
+
+        /* تنسيق اسم التطبيق */
+        #splash-screen h1 {
+            font-size: 2.8rem;
+            color: var(--watchCore-text);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* تنسيق نص التحميل */
+        #splash-screen .loading-text {
+            font-size: 1.2rem;
+            color: var(--watchCore-text-muted);
+            margin-bottom: 40px;
+        }
+
+        /* تنسيق حاوية أنيميشن RGB */
+        .rgb-animation-container {
+            width: 180px;
+            height: 10px;
+            background-color: var(--watchCore-card); /* خلفية خافتة للشريط */
+            border-radius: 5px;
+            overflow: hidden; /* لإخفاء الأجزاء الزائدة من الشريط المتحرك */
+            position: relative; /* لتحديد موضع الشريط المتحرك */
+            border: 1px solid var(--watchCore-border);
+        }
+
+        /* شريط الألوان المتحرك داخل الحاوية */
+        .rgb-bar {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(
+                90deg,
+                var(--color-red),
+                var(--color-green),
+                var(--color-blue),
+                var(--color-red) /* تكرار اللون الأول لضمان الانتقال السلس */
+            );
+            background-size: 300% 100%; /* حجم الخلفية أكبر لتوفير مساحة للحركة */
+            animation: rgb-flow 2.5s linear infinite; /* تطبيق أنيميشن تدفق الألوان */
+        }
+
+        /* أنيميشن تدفق ألوان RGB */
+        @keyframes rgb-flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; } /* تحريك الخلفية لليسار */
+        }
+
+        /* حالة إخفاء شاشة البداية */
+        #splash-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* تصميم متجاوب للهواتف */
+        @media (max-width: 600px) {
+            #splash-screen .tv-icon {
+                font-size: 4rem;
+                margin-bottom: 20px;
+            }
+
+            #splash-screen h1 {
+                font-size: 2.2rem;
+            }
+
+            #splash-screen .loading-text {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .rgb-animation-container {
+                width: 150px;
+                height: 8px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- شاشة البداية -->
+    <div id="splash-screen">
+        <i class="fas fa-tv tv-icon"></i> <!-- استخدام أيقونة فيلم من Font Awesome -->
+        <h1> Pixel toon </h1>
+        <p class="loading-text">جاري تهيئة تجربة المشاهدة...</p>
+        <div class="rgb-animation-container">
+            <div class="rgb-bar"></div> <!-- شريط الألوان المتحرك -->
+        </div>
+    </div>
+
+    <!-- هنا يمكنك وضع محتوى تطبيقك الرئيسي الذي سيظهر بعد إخفاء شاشة البداية -->
+    <!-- <div id="app-content" style="display: none;">
+        <h1>مرحباً بك في WatchCore!</h1>
+        <p>محتوى التطبيق يظهر هنا...</p>
+    </div> -->
+
+    <script>
+        // الانتظار حتى يتم تحميل الصفحة بالكامل (بما في ذلك الخطوط والصور)
+        window.addEventListener('load', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            // const appContent = document.getElementById('app-content'); // إذا كان لديك محتوى رئيسي
+
+            // مدة عرض شاشة البداية بالمللي ثانية (مثلاً 3.5 ثواني)
+            const splashDuration = 60500;
+            // مدة تأثير التلاشي بالمللي ثانية (مطابقة لوقت الانتقال في CSS)
+            const fadeOutDuration = 800;
+
+            // إخفاء شاشة البداية بعد المدة المحددة
+            setTimeout(() => {
+                splashScreen.classList.add('hidden'); // إضافة كلاس الإخفاء لبدء التلاشي
+
+                 // السماح بالتمرير في الصفحة بعد انتهاء التلاشي
+                 setTimeout(() => {
+                     document.body.style.overflow = 'auto';
+                     // splashScreen.style.display = 'none'; // إخفاء العنصر تماماً من التخطيط (اختياري)
+                     // if(appContent) appContent.style.display = 'block'; // إظهار محتوى التطبيق الرئيسي
+                 }, fadeOutDuration);
+
+            }, splashDuration);
+        });
+    </script>
+
+</body>
+</html>
