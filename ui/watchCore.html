@@ -188,8 +188,8 @@
             padding: 50px 7%;
             text-align: right;
             /* !! استبدل بمسار البوستر الرئيسي الفعلي !! */
-            background-image: linear-gradient(to top, var(--watchCore-bg) 5%, rgba(16, 24, 32, 0) 40%), /* تدرج سفلي للدمج */
-                              url('/data/customMedia/main-hero-poster.jpg'); /* مثال لمسار البوستر */
+            /*background-image: linear-gradient(to top, var(--watchCore-bg) 5%, rgba(16, 24, 32, 0) 40%), 
+                              url('/data/customMedia/main-hero-poster.jpg');*/
             background-size: cover;
             background-position: center center; /* يمكن تعديله لـ top center إذا كان الجزء العلوي أهم */
             background-repeat: no-repeat;
@@ -449,14 +449,14 @@
              <!-- !! عدّل هذه المعلومات للفيلم المميز !! -->
              <h1 class="main-title">شاهد الليلة</h1>
              <div class="movie-info">
-                 <h2 class="movie-title"> بريستيج </h2>
+                 <h2 class="movie-title" id="hero-title"> إسم </h2>
                  <p class="movie-details">
-                     <span><i class="fas fa-grip-horizontal" style="margin-left: 5px;"></i> كوميدي,دراما </span>
-                     <span><i class="fas fa-calendar-alt" style="margin-left: 5px;"></i> 2025 </span>
-                     <span><i class="fas fa-star" style="margin-left: 5px;"></i> 4.4 </span>
+                     <span><i class="fas fa-grip-horizontal" style="margin-left: 5px;"></i> <span id="hero-genre"> تصنيف 2 ,تصنيف 1 </span></span>
+                     <span><i class="fas fa-calendar-alt" style="margin-left: 5px;"></i> <span id="hero-year"> العام </span></span>
+                     <span><i class="fas fa-star" style="margin-left: 5px;"></i> <span id="hero-rating"> تقييم </span></span>
                  </p>
-                 <p class="movie-synopsis">
-                    عاصفة قوية تضرب شوارع القاهرة، مما يجبر 14 شخصًا من خلفيات اجتماعية مختلفة على اللجوء إلى مقهى في وسط البلد، وبينما يحاول الجميع الاحتماء من العاصفة، ينقطع التيار الكهربائي فجأة، ليكتشفوا أن أحدهم قد قُتل، ومع تصاعد التوترات، يدركون أن القاتل بينهم.
+                 <p class="movie-synopsis" id="hero-description">
+                    القصة
                  </p>
                  <button class="watch-button" id="hero-watch-button">
                      <i class="fas fa-play"></i>
@@ -512,6 +512,37 @@
         // === JavaScript Logic ===
         function $(id){return document.getElementById(id);}
 
+        //$("watch-tonight-hero").style.backgroundImage="linear-gradient(to top, var(--watchCore-bg) 5%, rgba(16, 24, 32, 0) 40%),url('/data/customMedia/main-hero-poster2.jpg')";
+
+        fetch('manifest.json')
+                .then(response => response.json())
+                .then(data => {
+                    const MANIFEST_ELEMENT = document.createElement("script");
+                    MANIFEST_ELEMENT.type = "application/json";
+                    MANIFEST_ELEMENT.id = "manifest";
+                    MANIFEST_ELEMENT.textContent = JSON.stringify(data);
+                    document.body.appendChild(MANIFEST_ELEMENT);
+                    handleManifest("manifest");
+                    
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+        function handleManifest(MANIFEST_POINTER){
+            const MANIFEST = JSON.parse($(MANIFEST_POINTER).textContent);
+            handelHero(MANIFEST);
+        }
+
+        function handelHero(MANIFEST){
+            $("watch-tonight-hero").style.backgroundImage=`linear-gradient(to top, var(--watchCore-bg) 5%, rgba(16, 24, 32, 0) 40%),url('${MANIFEST["watch-tonight-hero"]["poster"]}')`;
+            $("hero-title").innerHTML = MANIFEST["watch-tonight-hero"]["title"];
+            $("hero-genre").innerHTML = `${i18n.translateList(MANIFEST["watch-tonight-hero"]["genre"]).join(' , ')}`;
+            $("hero-year").innerHTML = MANIFEST["watch-tonight-hero"]["year"];
+            $("hero-rating").innerHTML = MANIFEST["watch-tonight-hero"]["rating"];
+            $("hero-description").innerHTML = MANIFEST["watch-tonight-hero"]["description"];
+
+        }
         
         
         const detectEndAndLoadMore = (e) => {

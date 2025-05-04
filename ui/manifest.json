@@ -1,6 +1,15 @@
 {
-    "name":"كبريت Play",
-    "version":1,
-    "versionName":"Sloth",
-    "start_url":"/ui/main.html"
+    "name":"watchCore",
+    "watch-tonight-hero":{
+        "poster":"/data/customMedia/main-hero-poster.jpg",
+        "title":"بريستيج",
+        "genre":[
+            "Crime",
+            "Comedy",
+            "Mystery"
+        ],
+        "year":"2025",
+        "rating":"3.3",
+        "description":"عاصفة قوية تضرب شوارع القاهرة، مما يجبر 14 شخصًا من خلفيات اجتماعية مختلفة على اللجوء إلى مقهى في وسط البلد، وبينما يحاول الجميع الاحتماء من العاصفة، ينقطع التيار الكهربائي فجأة، ليكتشفوا أن أحدهم قد قُتل، ومع تصاعد التوترات، يدركون أن القاتل بينهم."
+    }
 }
