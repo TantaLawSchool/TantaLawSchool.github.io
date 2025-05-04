@@ -5,118 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إضافة معلومات الفيلم</title>
     <style>
+        /* --- Base Styles --- */
         body {
-            font-family: Arial, sans-serif;
-            direction: rtl;
-            text-align: right;
-            margin: 20px;
-            background-color: #000;
-            color: #fff;
-            
+            font-family: Arial, sans-serif; direction: rtl; text-align: right; margin: 20px;
+            background-color: #000; color: #fff;
         }
         .container {
-            width: 90%;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            background: none;
+            width: 90%; max-width: 800px; margin: auto; padding: 20px;
+            border: 2px solid #fff; border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); background: none;
         }
         label {
-            font-weight: bold;
-            color: #ddd;
+            font-weight: bold; color: #ddd; display: block; margin-top: 15px;
         }
         input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0px;
-            border: 1px solid #555;
-            border-radius: 5px;
-            background: #444;
-            color: white;
-            font-size:18px;
+            width: 100%; padding: 10px; margin: 5px 0 10px 0;
+            border: 1px solid #555; border-radius: 5px; background: #444;
+            color: white; font-size: 16px; box-sizing: border-box;
         }
-        #reference-link{
-            direction: ltr;
+        input[type="text"][name$="_link[]"],
+        input#reference-link {
+             direction: ltr; text-align: left;
         }
-        textarea{
-            height:100px;
+        textarea { height: 100px; }
+        .part-entry textarea[name="part_description[]"] {
+            height: 100px; font-size: 14px;
         }
-        #export {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
+        button {
+            color: white; border: none; padding: 10px 15px; cursor: pointer;
+            border-radius: 5px; width: 100%; margin-top: 10px; font-size: 16px;
         }
-        #export:hover {
-            background: #218838;
+        button:hover { opacity: 0.9; }
+        #export { background: #28a745; }
+        #export:hover { background: #218838; }
+        #import { background: #ffd52d; color: black; }
+        #import:hover { background: #ceab1e; }
+        #add-part-btn {
+            background: #007bff; width: auto; padding: 8px 12px;
+            margin-top: 15px; display: block;
+        }
+        #add-part-btn:hover { background: #0056b3; }
+        .remove-part-btn {
+            background-color: #dc3545; width: auto; padding: 5px 10px;
+            font-size: 12px; margin-right: 10px; margin-top: 0; float: left;
+        }
+        .remove-part-btn:hover { background-color: #c82333; }
+
+        /* --- Container Styles --- */
+        .genre-container, .type-container, .part-type-container, .reference-container, .reference-container-part {
+            display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+            padding: 10px 0; border-bottom: 1px solid #444; margin-bottom: 15px;
+        }
+        .reference-container, .type-container { justify-content: flex-start; }
+        .reference-container-part {
+             border-bottom: none; padding: 5px 0 10px 0;
+             margin-bottom: 5px; justify-content: flex-start;
         }
 
-        #import {
-            margin-top: 5px;
-            background: #ffd52d;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
-        }
-        #import:hover {
-            background: #ceab1e;
-        }
-
-
-
-        .genre-container, .type-container, .part-type-container , .reference-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .genre-item, .type-item, .part-type-item, .reference-item {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            background: #444;
-            padding: 5px 10px;
-            border-radius: 5px;
+        /* --- Item Styles (Buttons) --- */
+        .genre-item, .type-item, .part-type-item, .reference-item, .reference-item-part {
+            display: flex; align-items: center; cursor: pointer; background: #444;
+            padding: 8px 15px; border-radius: 20px;
             transition: background 0.3s, color 0.3s;
-            color: #ddd;
+            color: #ddd; font-size: 14px;
         }
-        .genre-item:hover, .type-item:hover, .part-type-item:hover, .reference-item:hover {
-            background: #fff;
-            color: #000;
+        .genre-item:hover, .type-item:hover, .part-type-item:hover, .reference-item:hover, .reference-item-part:hover {
+            background: #666;
         }
-        .genre-item input, .type-item input, .part-type-item input, .reference-item input {
+        .genre-item input, .type-item input, .part-type-item input, .reference-item input, .reference-item-part input {
             display: none;
         }
-        .genre-item.selected, .type-item.selected, .part-type-item.selected, .reference-item.selected {
-            background: #007bff;
-            background: #ffd52d;
-            color: black;
+        .genre-item.selected, .type-item.selected, .part-type-item.selected, .reference-item.selected, .reference-item-part.selected {
+            background: #ffd52d; color: black; font-weight: bold;
         }
-        .seasons-container {
-            display: none;
-            margin-top: 10px;
+        .reference-item-part {
+             padding: 6px 12px; font-size: 13px;
         }
-        .season-card {
-            background: #222;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 5px;
+
+        /* --- Section Styles --- */
+        .seasons-container, #parts-number-container, #parts-section {
+            display: none; margin-top: 20px; padding-top: 15px;
+            border-top: 1px dashed #555;
         }
-        
+        .season-card, .part-entry {
+            background: #222; padding: 15px; border-radius: 8px;
+            margin-bottom: 10px; border: 1px solid #444; overflow: hidden;
+        }
+         .part-entry label {
+              margin-top: 10px; font-size: 14px; color: #bbb;
+         }
+         .part-entry select, .part-entry input, .part-entry textarea {
+              font-size: 14px; padding: 8px;
+         }
+         .part-entry h4 {
+            margin-top: 0; margin-bottom: 15px; color: #ffd52d;
+            border-bottom: 1px solid #444; padding-bottom: 5px;
+         }
+         .season-episode-count {
+             font-size: 14px; padding: 8px;
+         }
+
+        /* --- Media Query --- */
         @media (min-width: 768px) {
-            .container {
-                max-width: 800px;
-            }
-            .genre-container, .type-container, .part-type-container, .reference-container {
+            .container { max-width: 800px; }
+            .genre-container, .type-container, .part-type-container, .reference-container, .reference-container-part {
                 justify-content: flex-start;
             }
         }
@@ -124,293 +116,847 @@
 </head>
 <body>
     <script>
-        //define
-        function $(id){return document.getElementById(id);}
+        // Simple helper function
+        function $(id){ return document.getElementById(id); }
+        console.log("Helper function $ defined."); // Log helper definition
     </script>
     <div class="container">
         <h2>إضافة معلومات الفيلم أو المسلسل</h2>
-        
+
+        <canvas id="mainPoster" width="150" height="225" style="border: 1px solid #ffffff;" onclick="loadPoster()"></canvas>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;"/>
+
+        <!-- Main Information Section -->
         <label>النوع:</label>
         <div class="type-container" id="type">
-            <label class="type-item" data-value="Arabic-Movie"> فيلم عربي</label>
-            <label class="type-item" data-value="Foreign-Movie"> فيلم أجنبي</label>
-            <label class="type-item" data-value="Arabic-TVSeries"> مسلسل عربي</label>
-            <label class="type-item" data-value="Foreign-TVSeries"> مسلسل أجنبي</label>
+             <label class="type-item" data-value="Arabic-Movie"> فيلم عربي</label>
+             <label class="type-item" data-value="Foreign-Movie"> فيلم أجنبي</label>
+             <label class="type-item" data-value="Arabic-TVSeries"> مسلسل عربي</label>
+             <label class="type-item" data-value="Foreign-TVSeries"> مسلسل أجنبي</label>
         </div>
-
-        <!--
-        <div id="parts-number-container" style="display:none;" class="parts-number-container">
-            <label for="part-type-container">عدد الأجزاء:</label>
-            <div id="part-type-container" class="part-type-container">
-                <label class="part-type-item" data-value="single">جزء واحد</label>
-                <label class="part-type-item" data-value="multiple">عدة أجزاء</label>
-            </div>
-            <select id="partsNumber" style="display: none;"></select>
-        </div>
-        -->
-
-        <label>المرجع:</label>
+        <label>المرجع الرئيسي:</label>
         <div class="reference-container" id="reference">
-            <label class="reference-item" data-value="IMDB"> IMDB</label>
-            <label class="reference-item" data-value="Elcinema"> Elcinema</label>
+             <label class="reference-item" data-value="IMDB"> IMDB</label>
+             <label class="reference-item" data-value="Elcinema"> Elcinema</label>
         </div>
+        <label for="reference-link">رابط المرجع الرئيسي:</label>
+        <input type="text" id="reference-link" placeholder="https://...">
 
-        <label for="reference-link">رابط المرجع:</label>
-        <input type="text" id="reference-link">
-
-        <label for="title">عنوان الفيلم أو المسلسل:</label>
+        <label for="title">العنوان الرئيسي:</label>
         <input type="text" id="title">
-        
-        <div id="seasons-section" class="seasons-container">
-            <label for="seasons">عدد المواسم:</label>
-            <select id="seasons"></select>
-            <div id="season-cards"></div>
-        </div>
-        
-
-        <label for="rating">التقييم:</label>
+        <label for="rating">التقييم الرئيسي:</label>
         <select id="rating"></select>
-
-        <label for="year">سنة الإنتاج:</label>
+        <label for="year">سنة الإنتاج الرئيسية:</label>
         <select id="year"></select>
-
-        <label>التصنيف:</label>
+        <label>التصنيف (اختر حتى 3):</label>
         <div class="genre-container" id="genre">
-            
+            <!-- Genres populated by JS -->
         </div>
         <script>
-            genres_list = ["Action","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","Film-Noir","History","Horror","Music","Musical","Mystery","Romance","Sci-Fi","Short","Sport","Thriller","War","Western"];
-            var en_ar_dic = {"Action":"أكشن","Adventure":"مغامرة","Animation":"رسوم متحركة","Biography":"سيرة ذاتية","Comedy":"كوميدى","Crime":"جريمة","Documentary":"وثائقى","Drama":"دراما","Family":"عائلى","Fantasy":"خيال","Film-Noir":"Film-Noir","History":"تاريخ","Horror":"رعب","Music":"موسيقى","Musical":"موسيقي","Mystery":"لغز","Romance":"رومانسى","Sci-Fi":"خيال علمى","Short":"قصير","Sport":"رياضة","Thriller":"اثارة","War":"حرب","Western":"غرب أمريكى"};
-            function translate(k){
-
-                     if(k in en_ar_dic){
-                        return en_ar_dic[k];
-                     }else{
-                        return k;
-                    }
+            // This inline script populates genres. Ensure it runs AFTER the #genre div exists.
+            console.log("Populating genres...");
+            const genres_list_inline = ["Action","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","Film-Noir","History","Horror","Music","Musical","Mystery","Romance","Sci-Fi","Short","Sport","Thriller","War","Western"];
+            const en_ar_dic_inline = {"Action":"أكشن","Adventure":"مغامرة","Animation":"رسوم متحركة","Biography":"سيرة ذاتية","Comedy":"كوميدى","Crime":"جريمة","Documentary":"وثائقى","Drama":"دراما","Family":"عائلى","Fantasy":"خيال","Film-Noir":"Film-Noir","History":"تاريخ","Horror":"رعب","Music":"موسيقى","Musical":"موسيقي","Mystery":"لغز","Romance":"رومانسى","Sci-Fi":"خيال علمى","Short":"قصير","Sport":"رياضة","Thriller":"اثارة","War":"حرب","Western":"غرب أمريكى"};
+            function translate_inline(k){ if(k in en_ar_dic_inline){ return en_ar_dic_inline[k]; } else { return k; } }
+            const genreContainerElement_inline = document.getElementById("genre"); // Use getElementById here
+            if (genreContainerElement_inline) {
+                for (const genreValue of genres_list_inline ){
+                     const tempE = document.createElement('label');
+                     tempE.className = 'genre-item';
+                     tempE.dataset.value = genreValue;
+                     tempE.textContent = translate_inline(genreValue);
+                     genreContainerElement_inline.appendChild(tempE);
+                 }
+                 console.log("Genres populated.");
+            } else {
+                console.error("#genre container not found when trying to populate!");
             }
-            for ( var g in genres_list ){
-                    const tempE = document.createElement('label');
-                    tempE.setAttribute('class','genre-item');
-                    tempE.setAttribute('data-value',genres_list[g]);
-                    tempE.innerText=`${translate(genres_list[g])}`;
-                    $("genre").appendChild(tempE);
-                }
         </script>
-
-        <label for="description">الوصف:</label>
+        <label for="description">الوصف الرئيسي:</label>
         <textarea id="description"></textarea>
 
+        <!-- Section for TV Series Seasons (Initially Hidden) -->
+        <div id="seasons-section" class="seasons-container">
+             <h3>تفاصيل المواسم</h3>
+             <label for="seasons">عدد المواسم:</label>
+             <select id="seasons"></select>
+             <div id="season-cards"></div>
+        </div>
+
+        <!-- Section for Movie Parts (Initially Hidden) -->
+        <div id="parts-number-container">
+             <label>هل الفيلم جزء واحد أم عدة أجزاء؟</label>
+             <div id="part-type-container" class="part-type-container">
+                 <label class="part-type-item" data-value="single">جزء واحد</label>
+                 <label class="part-type-item" data-value="multiple">عدة أجزاء</label>
+             </div>
+             <div id="parts-section">
+                  <h3>تفاصيل الأجزاء</h3>
+                  <div id="parts-container"></div>
+                  <button type="button" id="add-part-btn">إضافة جزء جديد</button>
+             </div>
+        </div>
+
+        <!-- Action Buttons -->
         <button id="export" onclick="exportJSON()">تصدير كـ JSON</button>
-        <button id="import" onclick="">استيراد Import</button>
+        <button id="import" onclick="importJSON()">استيراد Import</button>
+        <input type="file" id="fileInput" accept=".json" style="display: none;" />
     </div>
 
+    <!-- Hidden Template for a single Movie Part -->
+    <div id="part-template" style="display: none;">
+        <div class="part-entry">
+             <button type="button" class="remove-part-btn">إزالة</button>
+             <h4>الجزء <span class="part-number">{N}</span></h4>
+
+             <canvas id="subPoster" width="150" height="225" style="border: 1px solid #ffffff;" onclick="loadSubPoster(this)"></canvas>
+             <input type="file" id="subImageInput" onclick="this.value = '';" onchange="changeSubImageInput(this,event);" accept="image/*" style="display: none;"/>
+
+             <label>اسم الجزء:</label>
+             <input type="text" name="part_title[]" placeholder="مثال: الجزء الثاني: العودة">
+             <label>مرجع الجزء:</label>
+             <div class="reference-container-part">
+                 <label class="reference-item-part" data-value="IMDB">IMDB</label>
+                 <label class="reference-item-part" data-value="Elcinema">Elcinema</label>
+             </div>
+             <input type="hidden" name="part_reference[]">
+             <label>رابط مرجع الجزء:</label>
+             <input type="text" name="part_reference_link[]" placeholder="https://...">
+             <label>تقييم الجزء:</label>
+             <select name="part_rating[]" class="part-rating-select"></select>
+             <label>سنة إنتاج الجزء:</label>
+             <select name="part_year[]" class="part-year-select"></select>
+             <label>وصف الجزء (اختياري):</label>
+             <textarea name="part_description[]" rows="2" placeholder="وصف مختصر للجزء..."></textarea>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Logic -->
     <script>
-        document.querySelectorAll('.genre-item, .type-item, .part-type-item, .reference-item').forEach(label => {
-            label.addEventListener('click', () => {
-                label.classList.toggle('selected');
-            });
-        });
-        
-        
-        
-        document.querySelectorAll('.reference-item').forEach(label => {
-            label.addEventListener('click', () => {
-                document.querySelectorAll('.reference-item').forEach(el => el.classList.remove('selected'));
-                label.classList.add('selected');
-                });
-        });
+        console.log("Main script executing..."); // Log script start
 
-        document.querySelectorAll('.part-type-item').forEach(label => {
-            label.addEventListener('click', () => {
-                document.querySelectorAll('.part-type-item').forEach(el => el.classList.remove('selected'));
-                label.classList.add('selected');
-                });
-        });
+        // --- Element References ---
+        // Ensure DOM is ready, or place this script at the end of <body>
+        const typeContainer = $('type');
+        const referenceContainer = $('reference');
+        const genreContainer = $('genre'); // Get #genre again for the main script
+        const seasonsSection = $('seasons-section');
+        const partsNumberContainer = $('parts-number-container');
+        const partTypeContainer = $('part-type-container');
+        const partsSection = $('parts-section');
+        const partsContainer = $('parts-container');
+        const addPartBtn = $('add-part-btn');
+        const partTemplate = $('part-template');
+        const seasonsSelect = $('seasons');
+        const seasonCardsContainer = $('season-cards');
+        let partCounter = 0;
 
+        console.log("Element references obtained.");
 
-        
-        
-        
-        document.querySelectorAll('.type-item').forEach(label => {
-            label.addEventListener('click', () => {
-                document.querySelectorAll('.type-item').forEach(el => el.classList.remove('selected'));
-                label.classList.add('selected');
-                
-                if (label.dataset.value=="Foreign-TVSeries" || label.dataset.value=="Arabic-TVSeries") {
-                    document.getElementById('seasons-section').style.display = 'block';
+        // --- Pre-populate Template Dropdowns ---
+        function populateTemplateDropdowns() {
+            console.log("Populating template dropdowns...");
+            const templateRatingSelect = partTemplate.querySelector('.part-rating-select');
+            const templateYearSelect = partTemplate.querySelector('.part-year-select');
 
-                    //document.getElementById('parts-number-container').style.display = 'none';
-                }
-                else if(label.dataset.value=="Foreign-Movie" || label.dataset.value=="Arabic-Movie"){
-                    document.getElementById('seasons-section').style.display = 'none';
-                    document.getElementById('season-cards').innerHTML = '';
-
-                    //document.getElementById('parts-number-container').style.display = 'block';
-                }
-            });
-        });
-
-
-        document.querySelectorAll('.part-type-item').forEach(label => {
-            label.addEventListener('click', () => {
-                if (label.dataset.value=="single"){
-                    $("partsNumber").style.display = 'none';
-
-                }else if(label.dataset.value=="multiple"){
-                    $("partsNumber").style.display = 'block';
-                    populatePartsDropdown();
-
-                }
-            });
-        });
-
-        function populateYearDropdown() {
-            const yearSelect = document.getElementById('year');
-            for (let year = 2026; year >= 1914; year--) {
-                let option = document.createElement('option');
-                option.value = year;
-                option.textContent = year;
-                yearSelect.appendChild(option);
+            if (!templateRatingSelect || !templateYearSelect) {
+                console.error("Template dropdowns not found!");
+                return;
             }
-        }
-        populateYearDropdown();
 
-        function populateRatingDropdown() {
-            const ratingSelect = document.getElementById('rating');
-            for (let i = 1; i <= 10; i += 0.1) {
+            // Populate Template Rating Dropdown
+            templateRatingSelect.innerHTML = ''; // Clear existing options first
+            let defaultRatingOption = document.createElement('option');
+            defaultRatingOption.value = ""; defaultRatingOption.textContent = "-- اختر --";
+            templateRatingSelect.appendChild(defaultRatingOption);
+            for (let i = 10; i >= 1; i -= 0.1) {
                 let option = document.createElement('option');
-                option.value = i.toFixed(1).replace(/\.0$/, '');
-                option.textContent = i.toFixed(1).replace(/\.0$/, '');
+                let val = i.toFixed(1); option.value = val; option.textContent = val;
+                templateRatingSelect.appendChild(option);
+             }
+
+            // Populate Template Year Dropdown
+            templateYearSelect.innerHTML = ''; // Clear existing options first
+            let defaultYearOption = document.createElement('option');
+            defaultYearOption.value = ""; defaultYearOption.textContent = "-- اختر --";
+            templateYearSelect.appendChild(defaultYearOption);
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear + 2; year >= 1914; year--) {
+                let option = document.createElement('option');
+                option.value = year; option.textContent = year;
+                templateYearSelect.appendChild(option);
+            }
+            console.log("Template dropdowns populated.");
+        }
+
+        // --- Helper Functions to Populate Main Dropdowns ---
+        function populateMainYearDropdown() {
+             const yearSelect = $('year');
+             if (!yearSelect) { console.error("#year select not found"); return; }
+             yearSelect.innerHTML = ''; // Clear first
+             let defaultOption = document.createElement('option');
+             defaultOption.value = ""; defaultOption.textContent = "-- اختر --";
+             yearSelect.appendChild(defaultOption);
+             const currentYear = new Date().getFullYear();
+             for (let year = currentYear + 2; year >= 1914; year--) {
+                 let option = document.createElement('option');
+                 option.value = year; option.textContent = year;
+                 yearSelect.appendChild(option);
+             }
+             console.log("Main year dropdown populated.");
+        }
+
+        function populateMainRatingDropdown() {
+            const ratingSelect = $('rating');
+            if (!ratingSelect) { console.error("#rating select not found"); return; }
+            ratingSelect.innerHTML = ''; // Clear first
+            let defaultOption = document.createElement('option');
+            defaultOption.value = ""; defaultOption.textContent = "-- اختر --";
+            ratingSelect.appendChild(defaultOption);
+            for (let i = 10; i >= 1; i -= 0.1) {
+                let option = document.createElement('option');
+                let val = i.toFixed(1); option.value = val; option.textContent = val;
                 ratingSelect.appendChild(option);
             }
+            console.log("Main rating dropdown populated.");
         }
-        populateRatingDropdown();
 
-        
         function populateSeasonsDropdown() {
-            const seasonsSelect = document.getElementById('seasons');
+            if (!seasonsSelect) { console.error("#seasons select not found"); return; }
             seasonsSelect.innerHTML = '';
-            for (let i = 1; i <= 20; i++) {
+            for (let i = 1; i <= 30; i++) {
                 let option = document.createElement('option');
-                option.value = i;
-                option.textContent = i;
+                option.value = i; option.textContent = i;
                 seasonsSelect.appendChild(option);
             }
-            seasonsSelect.addEventListener('change', generateSeasonCards);
-            seasonsSelect.addEventListener('click', generateSeasonCards);
+            seasonsSelect.value = "1";
+            console.log("Seasons dropdown populated.");
         }
-        populateSeasonsDropdown();
 
+        // --- Function to Generate Season Input Cards ---
         function generateSeasonCards() {
-            const seasonCount = parseInt(document.getElementById('seasons').value);
-            const seasonCardsContainer = document.getElementById('season-cards');
-            seasonCardsContainer.innerHTML = '';
-            for (let i = 1; i <= seasonCount; i++) {
-                let card = document.createElement('div');
-                card.classList.add('season-card');
-                card.setAttribute("season",i);
-                card.innerHTML = `<label>الموسم ${i}</label><input type='text' placeholder='عدد الحلقات'>`;
-                seasonCardsContainer.appendChild(card);
-            }
-        }
+             if (!seasonsSelect || !seasonCardsContainer) return; // Safety check
+             const seasonCount = parseInt(seasonsSelect.value) || 0;
+             console.log(`Generating ${seasonCount} season cards.`);
+             seasonCardsContainer.innerHTML = '';
+             for (let i = 1; i <= seasonCount; i++) {
+                 let card = document.createElement('div');
+                 card.className = 'season-card';
+                 card.dataset.seasonNumber = i;
+                 card.innerHTML = `<label for="season-ep-${i}">الموسم ${i} - عدد الحلقات:</label>
+                                   <input type='number' id="season-ep-${i}" min='0' placeholder='مثال: 10' class='season-episode-count'>`;
+                 seasonCardsContainer.appendChild(card);
+             }
+         }
+
+        // --- Functions for Adding/Managing Movie Parts ---
+        function addPartFields() {
+             console.log("Adding new part fields...");
+             partCounter++;
+             if (!partTemplate) { console.error("#part-template not found!"); return;}
+             const newPart = partTemplate.firstElementChild.cloneNode(true);
+
+             newPart.querySelector('.part-number').textContent = partCounter;
+
+             // Set unique IDs (Optional)
+             const partIdSuffix = `-part${partCounter}`;
+             // ... (ID setting logic - kept concise for clarity) ...
+
+             // Clear default/cloned values
+             newPart.querySelector('input[name="part_title[]"]').value = "";
+             newPart.querySelector('input[name="part_reference[]"]').value = "";
+             newPart.querySelector('input[name="part_reference_link[]"]').value = "";
+             newPart.querySelectorAll('.reference-item-part.selected').forEach(btn => btn.classList.remove('selected'));
+             newPart.querySelector('select[name="part_rating[]"]').value = "";
+             newPart.querySelector('select[name="part_year[]"]').value = "";
+             newPart.querySelector('textarea[name="part_description[]"]').value = "";
+
+             if (!partsContainer) { console.error("#parts-container not found!"); return; }
+             partsContainer.appendChild(newPart);
+             console.log(`Part ${partCounter} added.`);
+         }
+
+        // --- Event Listeners ---
+        console.log("Attaching event listeners...");
+
+        // Genre Selection
+        if (genreContainer) {
+            genreContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('genre-item')) {
+                    console.log("Genre item clicked:", event.target.dataset.value); // Log click
+                    const label = event.target;
+                    const selectedCount = genreContainer.querySelectorAll('.genre-item.selected').length;
+                    if (!label.classList.contains('selected') && selectedCount >= 3) {
+                        alert('يمكنك اختيار 3 تصنيفات بحد أقصى.');
+                        event.preventDefault();
+                        return;
+                    }
+                    label.classList.toggle('selected');
+                }
+            });
+            console.log("Genre listener attached.");
+        } else { console.error("#genre container not found for listener."); }
+
+        // Main Reference Selection
+        if (referenceContainer) {
+            referenceContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('reference-item')) {
+                     console.log("Main reference item clicked:", event.target.dataset.value);
+                    referenceContainer.querySelectorAll('.reference-item').forEach(el => el.classList.remove('selected'));
+                    event.target.classList.add('selected');
+                }
+            });
+            console.log("Main reference listener attached.");
+        } else { console.error("#reference container not found for listener."); }
+
+        // Part Type Selection (Single/Multiple)
+        if (partTypeContainer) {
+             partTypeContainer.addEventListener('click', (event) => {
+                 if (event.target.classList.contains('part-type-item')) {
+                    console.log("Part type item clicked:", event.target.dataset.value);
+                     const label = event.target;
+                     partTypeContainer.querySelectorAll('.part-type-item').forEach(el => el.classList.remove('selected'));
+                     label.classList.add('selected');
+                     if (label.dataset.value === "multiple") {
+                        if(partsSection) partsSection.style.display = 'block';
+                         if (partsContainer && partsContainer.children.length === 0) {
+                             addPartFields();
+                         }
+                     } else {
+                        if(partsSection) partsSection.style.display = 'none';
+                        if(partsContainer) partsContainer.innerHTML = '';
+                         partCounter = 0;
+                     }
+                 }
+            });
+            console.log("Part type listener attached.");
+        } else { console.error("#part-type-container not found for listener."); }
 
 
+        // Main Type Selection (Movie/TVSeries)
+        if (typeContainer) {
+            typeContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('type-item')) {
+                    console.log("Type item clicked:", event.target.dataset.value); // Log click
+                    const label = event.target;
+                    typeContainer.querySelectorAll('.type-item').forEach(el => el.classList.remove('selected'));
+                    label.classList.add('selected');
+                    const typeValue = label.dataset.value;
 
-        function populatePartsDropdown() {
-            const partsSelect = $('partsNumber');
-            partsSelect.innerHTML = '';
-            for (let i = 1; i <= 10; i++) {
-                let option = document.createElement('option');
-                option.value = i;
-                option.textContent = i;
-                partsSelect.appendChild(option);
-            }
-            partsSelect.addEventListener('change', generatePartsCards);
-            partsSelect.addEventListener('click', generatePartsCards);
-        }
-        
+                    // Show/Hide Sections - Add null checks for elements
+                    const displaySeasons = typeValue.includes('TVSeries');
+                    const displayParts = typeValue.includes('Movie');
 
-        function generatePartsCards(){
+                    if (seasonsSection) seasonsSection.style.display = displaySeasons ? 'block' : 'none';
+                    if (partsNumberContainer) partsNumberContainer.style.display = displayParts ? 'block' : 'none';
+                    if (partsSection) partsSection.style.display = 'none'; // Always hide dynamic parts initially on type change
 
-        }
+                    if (displaySeasons) {
+                        if (partsContainer) partsContainer.innerHTML = ''; // Clear parts if switching to series
+                         partCounter = 0;
+                         if(partTypeContainer) partTypeContainer.querySelectorAll('.part-type-item').forEach(el => el.classList.remove('selected'));
+                        generateSeasonCards(); // Generate season cards
+                    }
+                    if (displayParts) {
+                        if (seasonCardsContainer) seasonCardsContainer.innerHTML = ''; // Clear seasons if switching to movie
+                        if (seasonsSelect && seasonsSelect.options.length > 0) seasonsSelect.value = "1";
+                         if(partTypeContainer) partTypeContainer.querySelectorAll('.part-type-item').forEach(el => el.classList.remove('selected')); // Reset part type
+                         if (partsContainer) partsContainer.innerHTML = ''; // Clear parts container too
+                         partCounter = 0;
+                    }
+                }
+            });
+            console.log("Type listener attached.");
+        } else { console.error("#type container not found for listener."); }
 
+        // Add Part Button Click
+        if (addPartBtn) {
+            addPartBtn.addEventListener('click', addPartFields);
+            console.log("Add part button listener attached.");
+        } else { console.error("#add-part-btn not found for listener."); }
 
+        // Event Delegation on Parts Container
+        if (partsContainer) {
+            partsContainer.addEventListener('click', function(event) {
+                // Handle Remove Button Click
+                if (event.target.classList.contains('remove-part-btn')) {
+                     console.log("Remove part button clicked.");
+                    const partToRemove = event.target.closest('.part-entry');
+                    if (partToRemove) { partToRemove.remove(); }
+                }
+                // Handle Per-Part Reference Button Click
+                else if (event.target.classList.contains('reference-item-part')) {
+                      console.log("Part reference item clicked:", event.target.dataset.value);
+                      const clickedLabel = event.target;
+                      const partEntry = clickedLabel.closest('.part-entry');
+                      if (!partEntry) return; // Safety check
+                      const referenceContainerPart = clickedLabel.closest('.reference-container-part');
+                      const hiddenInput = partEntry.querySelector('input[name="part_reference[]"]');
+                      if (!referenceContainerPart || !hiddenInput) return; // Safety check
+                      referenceContainerPart.querySelectorAll('.reference-item-part').forEach(label => label.classList.remove('selected'));
+                      clickedLabel.classList.add('selected');
+                      hiddenInput.value = clickedLabel.dataset.value;
+                 }
+            });
+            console.log("Parts container listener attached.");
+        } else { console.error("#parts-container not found for listener."); }
+
+        // Season Dropdown Change
+        if (seasonsSelect) {
+            seasonsSelect.addEventListener('change', generateSeasonCards);
+            console.log("Seasons select listener attached.");
+        } else { console.error("#seasons select not found for listener."); }
+
+        console.log("Event listeners attachment process completed.");
+
+        // --- JSON Export Logic ---
         function start_export(jsObj){
+            console.log("Starting JSON export download...");
+             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsObj, null, 2));
+             const downloadAnchor = document.createElement('a');
+             downloadAnchor.setAttribute("href", dataStr);
+             const safeTitle = (jsObj.title || 'export').replace(/[^a-z0-9\u0600-\u06FF_-]/gi, '_').toLowerCase();
+             downloadAnchor.setAttribute("download", `${safeTitle}.json`);
+             document.body.appendChild(downloadAnchor);
+             downloadAnchor.click();
+             downloadAnchor.remove();
+             console.log("Export download triggered.");
+         }
 
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsObj, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "movie.json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
+        function exportJSON() {
+            console.log("exportJSON function called.");
+            // --- Gather Main Information ---
+            const selectedTypeLabel = typeContainer ? typeContainer.querySelector('.type-item.selected') : null;
+            const selectedReferenceLabel = referenceContainer ? referenceContainer.querySelector('.reference-item.selected') : null;
+            const selectedGenreLabels = genreContainer ? genreContainer.querySelectorAll('.genre-item.selected') : []; // Default to empty array
+            const selectedPartTypeLabel = partTypeContainer ? partTypeContainer.querySelector('.part-type-item.selected') : null;
+
+            const type = selectedTypeLabel ? selectedTypeLabel.dataset.value : null;
+            const mainReference = selectedReferenceLabel ? selectedReferenceLabel.dataset.value : null;
+            const mainReferenceLink = $('reference-link') ? $('reference-link').value.trim() : '';
+            const title = $('title') ? $('title').value.trim() : '';
+            const mainRating = $('rating') ? $('rating').value : '';
+            const mainYear = $('year') ? $('year').value : '';
+            const genres = Array.from(selectedGenreLabels).map(el => el.dataset.value);
+            const description = $('description') ? $('description').value.trim() : '';
+
+            console.log("Main data gathered:", {type, mainReference, title, mainRating, mainYear, genres: genres.length});
+
+            // --- Validation ---
+            let errors = [];
+            if (!type) errors.push("الرجاء اختيار النوع.");
+            if (!mainReference) errors.push("الرجاء اختيار المرجع الرئيسي.");
+            if (!mainReferenceLink) errors.push("الرجاء إدخال رابط المرجع الرئيسي.");
+            if (!title) errors.push("الرجاء إدخال العنوان الرئيسي.");
+            if (!mainRating) errors.push("الرجاء اختيار التقييم الرئيسي.");
+            if (!mainYear) errors.push("الرجاء اختيار سنة الإنتاج الرئيسية.");
+            if (genres.length === 0) errors.push("الرجاء اختيار تصنيف واحد على الأقل.");
+            // if (genres.length > 3) errors.push("الرجاء اختيار 3 تصنيفات بحد أقصى."); // Already handled by listener
+            if (!description) errors.push("الرجاء إدخال الوصف الرئيسي.");
+
+            let outputData = null;
+
+            // --- Process based on Type ---
+            if (type && type.includes('Movie')) {
+                 console.log("Processing as Movie...");
+                 const isMultiPart = selectedPartTypeLabel && selectedPartTypeLabel.dataset.value === 'multiple';
+                 if (!selectedPartTypeLabel) {
+                     errors.push("للفيلم: الرجاء تحديد ما إذا كان جزء واحد أم عدة أجزاء.");
+                 }
+                 let partsData = [];
+                 if (isMultiPart && partsContainer) {
+                     const partEntries = partsContainer.querySelectorAll('.part-entry');
+                     console.log(`Found ${partEntries.length} part entries.`);
+                     if (partEntries.length === 0) {
+                         errors.push("للفيلم متعدد الأجزاء: الرجاء إضافة تفاصيل جزء واحد على الأقل.");
+                     } else {
+                         partEntries.forEach((partEntry, index) => {
+                             const partNum = index + 1;
+                             const partTitle = partEntry.querySelector('input[name="part_title[]"]').value.trim();
+                             const partRef = partEntry.querySelector('input[name="part_reference[]"]').value;
+                             const partRefLink = partEntry.querySelector('input[name="part_reference_link[]"]').value.trim();
+                             const partRating = partEntry.querySelector('select[name="part_rating[]"]').value;
+                             const partYear = partEntry.querySelector('select[name="part_year[]"]').value;
+                             const partDescription = partEntry.querySelector('textarea[name="part_description[]"]').value.trim();
+
+                             if (!partTitle) errors.push(`الجزء ${partNum}: الرجاء إدخال اسم الجزء.`);
+                             if (!partRef) errors.push(`الجزء ${partNum}: الرجاء اختيار مرجع.`);
+                             if (!partRefLink) errors.push(`الجزء ${partNum}: الرجاء إدخال رابط المرجع.`);
+                             if (!partRating) errors.push(`الجزء ${partNum}: الرجاء اختيار التقييم.`);
+                             if (!partYear) errors.push(`الجزء ${partNum}: الرجاء اختيار سنة الإنتاج.`);
+
+                             partsData.push({ part: partNum, poster:partEntry.querySelector('canvas').toDataURL('image/png'), title: partTitle, description: partDescription, reference: partRef, referenceLink: partRefLink, rating: partRating, year: partYear });
+                         });
+                     }
+                 }
+                 if (errors.length === 0) {
+                     outputData = { poster:$("mainPoster").toDataURL('image/png'), type: type, title: title, description: description, rating: mainRating, year: mainYear, genre: genres, mainReference: mainReference, mainReferenceLink: mainReferenceLink, isMultiPart: isMultiPart, parts: partsData };
+                 }
+
+            } else if (type && type.includes('TVSeries')) {
+                console.log("Processing as TVSeries...");
+                 const seasonsCount = seasonsSelect ? parseInt(seasonsSelect.value) || 0 : 0;
+                 const seasonCards = seasonCardsContainer ? seasonCardsContainer.querySelectorAll('.season-card') : [];
+                 let seasonEpisodes = {};
+                  if (seasonCards.length !== seasonsCount) {
+                      errors.push("عدد بطاقات المواسم لا يطابق العدد المختار. حاول تغيير عدد المواسم وتصدير مرة أخرى.");
+                  } else {
+                     seasonCards.forEach(card => {
+                         const seasonNum = card.dataset.seasonNumber;
+                         const episodeCountInput = card.querySelector('.season-episode-count');
+                         const episodes = episodeCountInput ? episodeCountInput.value.trim() : '';
+                         if (episodes === "" || !/^\d+$/.test(episodes) || parseInt(episodes) < 0) {
+                              errors.push(`الموسم ${seasonNum}: يرجى إدخال عدد حلقات صحيح (رقم موجب أو صفر).`);
+                         }
+                         seasonEpisodes[seasonNum] = episodes;
+                     });
+                  }
+                  if (errors.length === 0) {
+                     outputData = { poster:$("mainPoster").toDataURL('image/png'), type: type, title: title, description: description, rating: mainRating, year: mainYear, genre: genres, mainReference: mainReference, mainReferenceLink: mainReferenceLink, seasonsCount: seasonsCount, seasonEpisodes: seasonEpisodes };
+                  }
+            }
+
+            // --- Final Action: Export or Show Errors ---
+            if (errors.length > 0) {
+                 console.warn("Validation errors:", errors);
+                 alert("الرجاء تصحيح الأخطاء التالية:\n- " + errors.join("\n- "));
+             } else if (outputData) {
+                 console.log("Validation successful. Exporting data:", outputData);
+                 start_export(outputData);
+             } else {
+                 console.error("Export failed. Output data is null and no errors were recorded.");
+                 alert("حدث خطأ غير متوقع. لم يتم تحديد نوع المحتوى أو حدث خطأ في التحقق.");
+             }
+        }
+
+
+        function loadPoster(){
+            $('imageInput').click();
+        }
+
+        function loadSubPoster(subCanvasElement){
+            console.log(`Sub canvas clicked: ${subCanvasElement.parentNode.querySelector('input[type="file"]')}`);
+            const SubImageInput = subCanvasElement.parentNode.querySelector('input[type="file"]');
+            SubImageInput.click();
+        }
+
+        // التعامل مع اختيار الملف وتحليله
+        $('imageInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const ctx = $("mainPoster").getContext('2d');
+                    const img = new Image();
+                    img.onload = function(){
+                        ctx.clearRect(0, 0, $("mainPoster").width, $("mainPoster").height);
+                        ctx.drawImage(img, 0, 0, $("mainPoster").width, $("mainPoster").height);
+                    }
+                    // تحميل الصورة
+                    img.src = e.target.result;
+                };
+
+                reader.onerror = function() {
+                    alert("حدث خطأ أثناء قراءة الملف.");
+                };
+
+                // قراءة محتوى الملف
+                reader.readAsDataURL(file);
+            } else {
+                alert("الرجاء اختيار صورة");
+            }
+        });
+
+        $('imageInput').addEventListener('click', function() {
+            this.value = ''; // إعادة تعيين قيمة الـ input
+        });
+
+
+        function changeSubImageInput(subImageInput,event){
+            const SubCanvasElement = subImageInput.parentNode.querySelector('canvas');
+            //console.log(event.target.files[0]);
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const ctx = SubCanvasElement.getContext('2d');
+                    const img = new Image();
+                    img.onload = function(){
+                        ctx.clearRect(0, 0, SubCanvasElement.width, SubCanvasElement.height);
+                        ctx.drawImage(img, 0, 0, SubCanvasElement.width, SubCanvasElement.height);
+                    }
+                    // تحميل الصورة
+                    img.src = e.target.result;
+                };
+
+                reader.onerror = function() {
+                    alert("حدث خطأ أثناء قراءة الملف.");
+                };
+
+                // قراءة محتوى الملف
+                reader.readAsDataURL(file);
+            } else {
+                alert("الرجاء اختيار صورة");
+            }
+
 
 
         }
 
 
 
+
+
+
+
+
+
+
+
+
+
+        /*================================Import==========================
+        =================================================================*/
+
+        function importJSON(){
+            $('fileInput').click();
+        }
         
-        function exportJSON() {
-            const types = Array.from(document.querySelectorAll('.type-item.selected')).map(el => el.getAttribute('data-value'));
-            const references = Array.from(document.querySelectorAll('.reference-item.selected')).map(el => el.getAttribute('data-value'));
-            const referenceLink = document.getElementById('reference-link').value;
-            const title = document.getElementById('title').value;
-            const genres = Array.from(document.querySelectorAll('.genre-item.selected')).map(el => el.getAttribute('data-value'));
-            const description = document.getElementById('description').value
+        // التعامل مع اختيار الملف وتحليله
+        $('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
 
-            if(types.length>0 && references.length>0 && genres.length>0 && genres.length<=3 && referenceLink.replaceAll(" ","").length>0 && title.replaceAll(" ","").length>0 && description.replaceAll(" ","").length>0){
-                if(types[0]=="Arabic-Movie" || types[0]=="Foreign-Movie"){
-                    const movie = {
-                          type: types[0],
-                          reference: references[0],
-                          referenceLink: referenceLink,
-                          title: title,
-                          rating: document.getElementById('rating').value,
-                          year: document.getElementById('year').value,
-                          genre: genres,
-                          description: description
-                                  };
+            // التأكد من أن الملف المختار هو JSON
+            if (file && file.type === "application/json") {
+                const reader = new FileReader();
 
-                console.log(movie);
-                start_export(movie);
+                reader.onload = function(e) {
+                    try {
+                        // تحليل محتوى الملف
+                        const jsonData = JSON.parse(e.target.result);
+                        console.log("Start parsing json data.");
+                        console.log(jsonData);
+                        parseData(jsonData);
+                    } catch (error) {
+                        alert("خطأ في تحليل الملف: " + error.message);
+                    }
+                };
 
-                }else if(types[0]=="Arabic-TVSeries" || types[0]=="Foreign-TVSeries"){
-                    const season = Array.from(document.querySelectorAll('.season-card')).reduce((acc, el) => {
-                            const season = el.getAttribute('season');
-                            const text = el.querySelector('input') ? el.querySelector('input').value : '';
-                            acc[season] = text;
-                            return acc;
-                            }, {});
-                    const series = {
-                          type: types[0],
-                          reference: references[0],
-                          referenceLink: referenceLink,
-                          title: title,
-                          seasons: document.getElementById('seasons').value,
-                          season:season,
-                          rating: document.getElementById('rating').value,
-                          year: document.getElementById('year').value,
-                          genre: genres,
-                          description: description
-                                  };
+                reader.onerror = function() {
+                    alert("حدث خطأ أثناء قراءة الملف.");
+                };
 
-                    console.log(series);
-                    start_export(series);
+                // قراءة محتوى الملف
+                reader.readAsText(file);
+            } else {
+                alert("الرجاء اختيار ملف JSON.");
+            }
+        });
 
-                } 
+        $('fileInput').addEventListener('click', function() {
+            this.value = ''; // إعادة تعيين قيمة الـ input
+        });
+
+
+        function parseData(jd){
+            if(jd["type"] == "Foreign-Movie" || jd["type"] == "Arabic-Movie"){
+
+                const img = new Image();
+                img.onload = function(){
+                    $("mainPoster").getContext('2d').clearRect(0, 0, $("mainPoster").width, $("mainPoster").height);
+                    $("mainPoster").getContext('2d').drawImage(img,0,0,$("mainPoster").width, $("mainPoster").height);
+                }
+                img.src = jd["poster"];
+
+                typeContainer.querySelectorAll('.type-item').forEach(el => {
+                    if (el.getAttribute("data-value") == jd["type"]){
+                        el.click();
+                    }
+                });
+
+                referenceContainer.querySelectorAll('.reference-item').forEach(el => {
+                    if (el.getAttribute("data-value") == jd["mainReference"]){
+                        el.click();
+                        $('reference-link').value = jd["mainReferenceLink"];
+                    }
+                });
+
+                $('title').value = jd["title"];
+
+                $("rating").value = jd["rating"];
+                $("rating").dispatchEvent(new Event('change'));
+
+                $("year").value = jd["year"];
+                $("year").dispatchEvent(new Event('change'));
+
+                // Remove all previous selected genres.
+                genreContainer.querySelectorAll('.genre-item').forEach(el => {
+                    el.classList.remove("selected");
+                });
+                // Re-Select
+                for (var g in jd["genre"]){
+                    genreContainer.querySelectorAll('.genre-item').forEach(el => {
+                        if (el.getAttribute("data-value") == jd["genre"][g]){
+                            el.click();
+                        }
+                    });
+
+                }
+
+                $('description').value = jd["description"];
+
+                // Parts processing
+                //partCounter = 0;
+                //partsContainer.innerHTML = "";
+
+                partTypeContainer.querySelectorAll('.part-type-item').forEach(el => {
+                    if (jd["isMultiPart"] == true){
+                        if(el.getAttribute("data-value")=="multiple"){
+                            el.click();
+                        }
+                    }
+                    
+                    else if(jd["isMultiPart"] == false){
+                        if(el.getAttribute("data-value")=="single"){
+                            el.click();
+                        }
+                    }
+                    
+                });
+
+                if (jd["isMultiPart"] == true){
+                    // -1 because first is already exist.
+                    for(var i = 0 ; i < jd["parts"].length-1 ; i++){
+                        addPartFields();
+                    }
+                }
+
+                if(jd["isMultiPart"] == true){
+                    partsContainer.querySelectorAll('.part-entry').forEach((partEntry, index) => {
+                        /*
+
+                        const partTitle = partEntry.querySelector('input[name="part_title[]"]').value.trim();
+                        const partRef = partEntry.querySelector('input[name="part_reference[]"]').value;
+                        const partRefLink = partEntry.querySelector('input[name="part_reference_link[]"]').value.trim();
+                        const partRating = partEntry.querySelector('select[name="part_rating[]"]').value;
+                        const partYear = partEntry.querySelector('select[name="part_year[]"]').value;
+                        const partDescription = partEntry.querySelector('textarea[name="part_description[]"]').value.trim();
+
+                        */
+                        
+                        const img = new Image();
+                        img.onload = function(){
+                            
+                            partEntry.querySelector('canvas').getContext('2d').clearRect(0, 0, partEntry.querySelector('canvas').width, partEntry.querySelector('canvas').height);
+                            partEntry.querySelector('canvas').getContext('2d').drawImage(img,0,0,partEntry.querySelector('canvas').width, partEntry.querySelector('canvas').height);
+                        }
+                        img.src = jd["parts"][index]["poster"];
+
+                        partEntry.querySelector('input[name="part_title[]"]').value = jd["parts"][index]["title"];
+                        
+                        partEntry.querySelectorAll('.reference-item-part').forEach(el => {
+                            if (el.getAttribute("data-value") == jd["parts"][index]["reference"]){
+                                el.click();
+                                partEntry.querySelector('input[name="part_reference_link[]"]').value = jd["parts"][index]["referenceLink"];
+                            }
+                        });
+                        
+                        partEntry.querySelector('select[name="part_rating[]"]').value = jd["parts"][index]["rating"];
+                        partEntry.querySelector('select[name="part_year[]"]').value = jd["parts"][index]["year"];
+                        partEntry.querySelector('textarea[name="part_description[]"]').value = jd["parts"][index]["description"];
+                    });
+
+                }
+
+
+
                 
 
-            }else{
-                // Error details
-                alert("Error");
-            }
-            
 
-            
+
+                
+
+
+
+
+
+            }
+            else if(jd["type"] == "Foreign-TVSeries" || jd["type"] == "Arabic-TVSeries"){
+
+                const img = new Image();
+                img.onload = function(){
+                    $("mainPoster").getContext('2d').clearRect(0, 0, $("mainPoster").width, $("mainPoster").height);
+                    $("mainPoster").getContext('2d').drawImage(img,0,0,$("mainPoster").width, $("mainPoster").height);
+                }
+                img.src = jd["poster"];
+
+                typeContainer.querySelectorAll('.type-item').forEach(el => {
+                    if (el.getAttribute("data-value") == jd["type"]){
+                        el.click();
+                    }
+                });
+
+                referenceContainer.querySelectorAll('.reference-item').forEach(el => {
+                    if (el.getAttribute("data-value") == jd["mainReference"]){
+                        el.click();
+                        $('reference-link').value = jd["mainReferenceLink"];
+                    }
+                });
+
+                $('title').value = jd["title"];
+
+                $("rating").value = jd["rating"];
+                $("rating").dispatchEvent(new Event('change'));
+
+                $("year").value = jd["year"];
+                $("year").dispatchEvent(new Event('change'));
+
+                // Remove all previous selected genres.
+                genreContainer.querySelectorAll('.genre-item').forEach(el => {
+                    el.classList.remove("selected");
+                });
+                // Re-Select
+                for (var g in jd["genre"]){
+                    genreContainer.querySelectorAll('.genre-item').forEach(el => {
+                        if (el.getAttribute("data-value") == jd["genre"][g]){
+                            el.click();
+                        }
+                    });
+
+                }
+
+                $('description').value = jd["description"];
+
+                seasonsSelect.value = jd["seasonsCount"];
+                seasonsSelect.dispatchEvent(new Event('change'));
+
+                for(var sep in jd["seasonEpisodes"]){
+                    $(`season-ep-${sep}`).value = jd["seasonEpisodes"][sep];
+                }
+
+
+
+            }
+
         }
-        
+
+
+
+        // --- Initial Setup on Page Load ---
+        console.log("Running initial setup...");
+        populateMainYearDropdown();
+        populateMainRatingDropdown();
+        populateTemplateDropdowns(); // Populate template dropdowns ONCE
+        populateSeasonsDropdown();
+        // Ensure initial state is correct (sections hidden)
+        if(seasonsSection) seasonsSection.style.display = 'none';
+        if(partsNumberContainer) partsNumberContainer.style.display = 'none';
+        console.log("Initial setup complete.");
+
     </script>
 </body>
 </html>

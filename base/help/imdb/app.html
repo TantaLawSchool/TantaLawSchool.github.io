@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستعرض بيانات IMDb</title>
+    <style>
+        /* --- START OF CSS --- */
+        :root {
+            --primary-color: #333;
+            --secondary-color: #f4f4f4;
+            --accent-color: #f5c518; /* IMDb Yellow */
+            --text-color: #111;
+            --border-radius: 5px;
+            --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        #imdb-url-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            min-width: 200px; /* Ensure input is not too small */
+        }
+         /* LTR for URL input */
+        #imdb-url-input {
+            direction: ltr;
+            text-align: left;
+        }
+
+        #fetch-button {
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            flex-shrink: 0; /* Prevent button from shrinking too much */
+        }
+
+        #fetch-button:hover {
+            background-color: #e0b417;
+        }
+        #fetch-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .error-message, .loading-message {
+            color: #d9534f; /* Red for errors */
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+         .loading-message {
+            color: #5bc0de; /* Blue for loading */
+         }
+
+
+        #movie-details {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: none; /* Hidden until data is loaded */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #movie-details.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr; /* Fixed width for image, rest for text */
+            gap: 20px;
+            align-items: start;
+        }
+
+        .poster-section {
+           text-align: center;
+        }
+
+        #movie-poster {
+            width: 150px;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        #download-button {
+            border: none;
+             display: inline-block;
+             padding: 8px 15px;
+             background-color: #5cb85c; /* Green */
+             color: white;
+             text-decoration: none;
+             border-radius: var(--border-radius);
+             font-size: 0.9rem;
+             text-align: center;
+             margin-top: 5px;
+             transition: background-color 0.2s ease;
+        }
+        #download-button:hover{
+            background-color: #4cae4c;
+        }
+
+
+        .text-details h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .text-details p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+         .text-details strong {
+            color: var(--primary-color);
+         }
+
+        .genres {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .genres li {
+            background-color: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 15px; /* Pill shape */
+            font-size: 0.9rem;
+            color: #495057;
+        }
+
+        .rating-badge {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            margin-left: 5px; /* Arabic: margin-left */
+        }
+        .certificate-badge {
+            border: 1px solid #666;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-left: 5px; /* Arabic: margin-left */
+            display: inline-block; /* Ensures padding/border work */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .input-section {
+                flex-direction: column; /* Stack input and button vertically */
+            }
+
+             #imdb-url-input {
+                 width: 100%; /* Make input take full width */
+                 box-sizing: border-box; /* Include padding in width */
+            }
+            #fetch-button {
+                 width: 100%; /* Make button take full width */
+            }
+
+
+            .details-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+                text-align: center; /* Center align text */
+            }
+
+             .poster-section {
+                margin-bottom: 20px; /* Add space below image */
+            }
+
+             #movie-poster {
+                /* Optional: slightly smaller image on mobile */
+                 /* width: 120px; */
+             }
+
+            .text-details h2 {
+                font-size: 1.5rem;
+            }
+             .genres {
+                justify-content: center; /* Center genres */
+            }
+        }
+        /* --- END OF CSS --- */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>مستعرض بيانات IMDb</h1>
+
+        <div class="input-section">
+            <input type="text" id="imdb-url-input" placeholder="أدخل رابط فيلم أو مسلسل من IMDb هنا..." dir="ltr">
+            <button id="fetch-button">عرض البيانات</button>
+        </div>
+
+        <p class="error-message" id="error-message"></p>
+        <p class="loading-message" id="loading-message">جاري التحميل...</p>
+
+        <div id="movie-details">
+             <div class="details-grid">
+                 <div class="poster-section">
+                     <img id="movie-poster" src="" alt="Movie Poster">
+                     <button id="download-button">تحميل الصورة</button>
+                 </div>
+                 <div class="text-details">
+                     <h2 id="movie-title"></h2>
+                     <p>
+                        <strong>التقييم:</strong> <span id="movie-rating"></span>
+                        <span id="movie-certificate"></span>
+                    </p>
+                     <p>
+                        <strong>السنة:</strong> <span id="movie-year"></span> |
+                        <strong>المدة:</strong> <span id="movie-time"></span>
+                    </p>
+                     <p><strong>الوصف:</strong> <span id="movie-description"></span></p>
+                     <p><strong>النوع:</strong></p>
+                     <ul class="genres" id="movie-genres"></ul>
+                 </div>
+             </div>
+        </div>
+    </div>
+
+    <script>
+        // --- START OF imdb.js (Included directly) ---
+        function selectApplicationLdJson(doc){
+            const ApplicationLdJson = "application/ld+json";
+            const script_tags = doc.getElementsByTagName("script");
+            let selected_json_element = null; // Initialize to null
+            for(let i = 0; i < script_tags.length; i++){ // Use standard loop
+                if(script_tags[i].type === ApplicationLdJson){
+                   selected_json_element = script_tags[i];
+                   break;
+                }
+            }
+            // Check if element was found before returning
+            if (!selected_json_element) {
+                console.error("LD+JSON script tag not found.");
+            }
+            return selected_json_element;
+        }
+
+        function selectApplicationJson(doc){
+            const ApplicationJson = doc.getElementById("__NEXT_DATA__");
+            if (!ApplicationJson) {
+                 console.error("Element with ID '__NEXT_DATA__' not found.");
+            }
+            return ApplicationJson;
+        }
+
+        function getIMDBData(el1, el2){
+            // Add checks to ensure elements and their textContent exist
+            if (!el1 || !el1.textContent) {
+                console.error("LD+JSON element or its content is missing.");
+                throw new Error("Missing LD+JSON data required for parsing.");
+            }
+             if (!el2 || !el2.textContent) {
+                console.error("__NEXT_DATA__ element or its content is missing.");
+                 throw new Error("Missing __NEXT_DATA__ element required for parsing.");
+            }
+
+            const main_data = JSON.parse(el1.textContent);
+            const sub_data  = JSON.parse(el2.textContent);
+
+            const _type = main_data["@type"] || "N/A";
+            let _imdbId = "N/A";
+            let _name   = main_data["name"] || "N/A";
+            let _image  = main_data["image"] || "";
+            let _description = main_data["description"] || "لا يوجد وصف متاح.";
+            let _rating = "0";
+            let _certificate = "";
+            let _genre = ["غير محدد"];
+            let _year = "N/A";
+            let _time = "";
+
+            // Use safer access with optional chaining (?.) and nullish coalescing (??)
+            _imdbId = sub_data?.props?.pageProps?.aboveTheFoldData?.id ?? _imdbId;
+            _rating = main_data?.aggregateRating?.ratingValue?.toString() ?? _rating; // Ensure string
+            _certificate = sub_data?.props?.pageProps?.aboveTheFoldData?.certificate?.rating ?? _certificate;
+            _genre = main_data?.genre ?? _genre;
+            // Ensure genre is always an array
+             if (typeof _genre === 'string') {
+                 _genre = [_genre]; // Convert single string genre to array
+            } else if (!Array.isArray(_genre) || _genre.length === 0) {
+                _genre = ["غير محدد"]; // Default if not array or empty
+            }
+
+            _year = sub_data?.props?.pageProps?.aboveTheFoldData?.releaseYear?.year?.toString() ?? _year; // Ensure string
+            _time = sub_data?.props?.pageProps?.aboveTheFoldData?.runtime?.displayableProperty?.value?.plainText ?? _time;
+
+             // Basic sanitization/validation (example)
+             _name = _name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+             _description = _description.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+
+            return {
+                type: _type,
+                imdbId: _imdbId,
+                name: _name,
+                image: _image,
+                description: _description,
+                rating: _rating,
+                certificate: _certificate,
+                genre: _genre,
+                year: _year,
+                time: _time
+            };
+        }
+
+
+        function IMDB(doc){
+            try {
+                const el1 = selectApplicationLdJson(doc);
+                const el2 = selectApplicationJson(doc);
+                // Crucial: Check if elements were found before proceeding
+                 if (!el1 || !el2) {
+                    console.error("Required JSON script elements not found in the fetched HTML.");
+                    throw new Error("لا يمكن تحليل بيانات الصفحة. قد يكون تنسيق IMDb قد تغير.");
+                 }
+                return getIMDBData(el1, el2);
+            } catch (error) {
+                 console.error("Error parsing IMDb data:", error);
+                 // Re-throw a more user-friendly error or a specific error object
+                 throw new Error(`حدث خطأ أثناء معالجة بيانات IMDb: ${error.message}`);
+            }
+        }
+        // --- END OF imdb.js ---
+
+
+        // --- START OF VALIDATION & FETCH LOGIC ---
+        function isIMDB(url) {
+            try {
+                const u = new URL(url);
+                const allowed_host_names = ["www.imdb.com", "imdb.com"];
+
+                if (allowed_host_names.includes(u.hostname)) {
+                    // Check if the path starts with /title/ and has something after it
+                    const pathParts = u.pathname.split('/');
+                    // pathParts will be like ["", "title", "tt1234567", ...]
+                    return pathParts.length >= 3 && pathParts[1] === "title" && pathParts[2].startsWith('tt');
+                } else {
+                    return false;
+                }
+            } catch (err) {
+                // Invalid URL format
+                return false;
+            }
+        }
+
+        const urlInput = document.getElementById('imdb-url-input');
+        const fetchButton = document.getElementById('fetch-button');
+        const errorMessage = document.getElementById('error-message');
+        const loadingMessage = document.getElementById('loading-message');
+        const movieDetailsDiv = document.getElementById('movie-details');
+        const API_ENDPOINT = 'http://127.0.0.1:2003/fetch-imdb'; // Your Flask API endpoint
+
+        // DOM elements for displaying data
+        const moviePoster = document.getElementById('movie-poster');
+        const downloadButton = document.getElementById('download-button');
+        const movieTitle = document.getElementById('movie-title');
+        const movieRating = document.getElementById('movie-rating');
+        const movieCertificate = document.getElementById('movie-certificate');
+        const movieYear = document.getElementById('movie-year');
+        const movieTime = document.getElementById('movie-time');
+        const movieDescription = document.getElementById('movie-description');
+        const movieGenres = document.getElementById('movie-genres');
+
+
+        function displayError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            loadingMessage.style.display = 'none';
+            movieDetailsDiv.classList.remove('visible');
+            fetchButton.disabled = false; // Re-enable button on error
+        }
+
+        function displayLoading(isLoading) {
+             loadingMessage.style.display = isLoading ? 'block' : 'none';
+             fetchButton.disabled = isLoading;
+             if(isLoading) {
+                 errorMessage.style.display = 'none'; // Hide error when loading starts
+                 movieDetailsDiv.classList.remove('visible'); // Hide results when loading
+             }
+        }
+
+        function updateMovieDetails(data) {
+            movieTitle.innerHTML = data.name || 'غير متوفر';
+            moviePoster.src = data.image || 'placeholder.png'; // Add a placeholder image path if needed
+            moviePoster.alt = `ملصق فيلم ${data.name || ''}`;
+            movieDescription.innerHTML = data.description || 'لا يوجد وصف.'; // Use innerHTML if desc can have basic tags, otherwise textContent
+
+            // Display rating with badge
+            movieRating.innerHTML = ''; // Clear previous
+            if (data.rating && data.rating !== "0") {
+                const ratingSpan = document.createElement('span');
+                ratingSpan.className = 'rating-badge';
+                ratingSpan.textContent = `⭐ ${data.rating}`;
+                movieRating.appendChild(ratingSpan);
+            } else {
+                movieRating.textContent = 'لا يوجد تقييم';
+            }
+
+             // Display certificate with badge if available
+             movieCertificate.innerHTML = ''; // Clear previous
+             if (data.certificate) {
+                 const certSpan = document.createElement('span');
+                 certSpan.className = 'certificate-badge';
+                 certSpan.textContent = data.certificate;
+                 movieCertificate.appendChild(certSpan);
+             }
+
+
+            movieYear.textContent = data.year || 'N/A';
+            movieTime.textContent = data.time || 'N/A';
+
+            // Handle Genres (List)
+            movieGenres.innerHTML = ''; // Clear previous genres
+            if (Array.isArray(data.genre) && data.genre.length > 0) {
+                data.genre.forEach(genre => {
+                    const li = document.createElement('li');
+                    li.textContent = genre;
+                    movieGenres.appendChild(li);
+                });
+            } else {
+                 const li = document.createElement('li');
+                 li.textContent = 'غير محدد';
+                 movieGenres.appendChild(li);
+            }
+
+            // Setup download button
+             if (data.image && data.year && data.name) {
+                // Sanitize name for filename: replace spaces and invalid characters
+                const safeName = data.name.replace(/[^a-zA-Z0-9_\-\.]/g, '_').replace(/_+/g, '_');
+                const filename = `imdb_${data.year}_${safeName}.jpg`;
+                downloadButton.href = data.image;
+                downloadButton.download = filename;
+                downloadButton.style.display = 'inline-block'; // Show button only if image exists
+             } else {
+                 downloadButton.style.display = 'none'; // Hide if no image/year/name
+             }
+
+
+            // Show the details section
+            movieDetailsDiv.classList.add('visible');
+        }
+
+        fetchButton.addEventListener('click', async () => {
+            const url = urlInput.value.trim();
+
+            // 1. Clear previous state & Show Loading
+            displayError(''); // Clear error
+            displayLoading(true);
+
+
+            // 2. Validate URL
+            if (!url) {
+                displayError('الرجاء إدخال رابط IMDb.');
+                displayLoading(false);
+                return;
+            }
+            if (!isIMDB(url)) {
+                displayError('الرابط الذي أدخلته ليس رابط فيلم أو مسلسل صالح من IMDb. تأكد أنه يبدأ بـ /title/.');
+                 displayLoading(false);
+                return;
+            }
+
+            // 3. Fetch HTML content from backend API
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: url })
+                });
+
+                if (!response.ok) {
+                    // Handle HTTP errors (e.g., 404, 500 from backend)
+                    let errorMsg = `فشل جلب البيانات من الخادم. الحالة: ${response.status}`;
+                    try { // Try to get error message from backend response body
+                        const errorData = await response.text();
+                        errorMsg += ` - ${errorData}`;
+                    } catch (_) {} // Ignore if can't read body
+                     throw new Error(errorMsg);
+                }
+
+                const htmlContent = await response.text();
+
+                // 4. Parse HTML and Extract Data using imdb.js functions
+                 const parser = new DOMParser();
+                 const doc = parser.parseFromString(htmlContent, 'text/html');
+
+                 // The IMDB function now includes try-catch and throws specific errors
+                 const imdbData = IMDB(doc); // This might throw an error
+
+                // 5. Display Data
+                updateMovieDetails(imdbData);
+
+            } catch (error) {
+                console.error('Fetch or Parse Error:', error);
+                // Display combined error messages (Network, Backend, Parsing)
+                displayError(`حدث خطأ: ${error.message}`);
+            } finally {
+                 // 6. Hide Loading
+                 displayLoading(false);
+            }
+        });
+
+        // Optional: Allow fetching on pressing Enter in the input field
+        urlInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent potential form submission if wrapped in form
+                fetchButton.click(); // Trigger the button click
+            }
+        });
+
+        // --- END OF VALIDATION & FETCH LOGIC ---
+
+
+
+
+        document.getElementById("download-button").addEventListener("click", function (e) {
+           
+            const imageUrl = document.getElementById("movie-poster").src;
+            const fileName = `${movieTitle.textContent}_${movieYear.textContent}`;
+            fetch(imageUrl, { mode: 'cors' }) // حاول استخدام 'no-cors' إن لم تنجح
+            .then(response => response.blob())
+            .then(blob => {
+                
+                const blobUrl = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = blobUrl;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(blobUrl); // تنظيف الرابط المؤقت
+            })
+            .catch(err => {
+                
+                console.error("حدث خطأ أثناء تحميل الصورة:", err);
+            });
+
+            });
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

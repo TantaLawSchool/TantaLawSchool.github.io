@@ -531,7 +531,8 @@
             // إخفاء رسالة الخطأ (إذا كانت ظاهرة) وإظهار التفاصيل
             $("error-message").style.display = 'none';
 
-            posterElement.src = `/data/media/${title.id}.jpg`;
+            //posterElement.src = `/data/media/${title.id}.jpg`;
+            posterElement.src = title.poster;
             posterElement.alt = `بوستر ${title.title}`;
             titleElement.textContent = title.title;
             ratingElement.textContent = title.rating;
@@ -553,16 +554,16 @@
 
                 options_template = ``;
                 option_t = ``;
-                for (var i=1;i<=Number(title.seasons);i++){
+                for (var i=1;i<=Number(title.seasonsCount);i++){
                     if(i==Number(localStorageManager.getResume(title.id)["season"])){
-                        option_t = `<option value="${i}" episodes="${title["season"][i]}" selected> الموسم ${i} </option>`;
+                        option_t = `<option value="${i}" episodes="${title["seasonEpisodes"][i]}" selected> الموسم ${i} </option>`;
                     }else {
-                        option_t = `<option value="${i}" episodes="${title["season"][i]}"> الموسم ${i} </option>`;
+                        option_t = `<option value="${i}" episodes="${title["seasonEpisodes"][i]}"> الموسم ${i} </option>`;
                     }
                     options_template = options_template + option_t;
                 }
                 $("seasons").innerHTML=options_template;
-                drawEpisodes(Number(title.season[localStorageManager.getResume(title.id)["season"]]),Number($("seasons").options[$("seasons").selectedIndex].getAttribute("value")));
+                drawEpisodes(Number(title.seasonEpisodes[localStorageManager.getResume(title.id)["season"]]),Number($("seasons").options[$("seasons").selectedIndex].getAttribute("value")));
 
 
             }else if(title.type=="Arabic-Movie" || title.type=="Foreign-Movie"){
@@ -586,7 +587,8 @@
                 div.setAttribute("id",i);
                 div.setAttribute("onclick","chooseEpisode(this)");
                 div.innerHTML = `
-                        <img src="/data/media/${JSON.parse($("title").textContent).id}.jpg"></img>
+                        <!--<img src="/data/media/${JSON.parse($("title").textContent).id}.jpg"></img>-->
+                        <img src="${JSON.parse($("title").textContent).poster}"></img>
                         <div class="epiLabel">الحلقة</div>
                         <div class="episodeNumber">${i}</div>
                    `;
