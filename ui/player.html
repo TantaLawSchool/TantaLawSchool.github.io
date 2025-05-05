@@ -32,7 +32,7 @@
         let currentChunk = 0;
 
         mediaSource.addEventListener('sourceopen', () => {
-            sourceBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+            sourceBuffer = mediaSource.addSourceBuffer('video/mp4;');
             sourceBuffer.addEventListener('updateend', onUpdateEnd);
             loadChunks();
         });
