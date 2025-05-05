@@ -309,7 +309,7 @@
         }
 
         /* --- بطاقة الفيلم/المسلسل --- */
-        .movie-card {
+        .movie-carousel-card {
             flex: 0 0 auto;
             width: clamp(130px, 15vw, 170px); /* عرض متجاوب */
             /* margin-left تم استبداله بـ gap */
@@ -322,13 +322,13 @@
             position: relative; /* لإضافة عناصر فوق الصورة لاحقاً إذا لزم الأمر */
         }
 
-        .movie-card:hover {
+        .movie-carousel-card:hover {
             transform: scale(1.06);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             z-index: 10;
         }
 
-        .movie-card img {
+        .movie-carousel-card img {
             width: 100%;
             /* height: 255px; ارتفاع ثابت للبوستر */
             aspect-ratio: 2 / 3; /* نسبة عرض إلى ارتفاع شائعة للبوسترات */
@@ -746,7 +746,7 @@
             container.innerHTML = '';
             movies.forEach(movie => {
                 const movieCard = document.createElement('div');
-                movieCard.classList.add('movie-card');
+                movieCard.classList.add('movie-carousel-card');
                 movieCard.dataset.movieId = movie.id;
                 movieCard.setAttribute('role', 'button'); // لتحسين الدلالة
                 movieCard.setAttribute('tabindex', '0'); // للسماح بالوصول عبر لوحة المفاتيح
