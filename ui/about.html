@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن تطبيق نشاهد</title>
+
+    <!-- رابط Font Awesome -->
+    <!-- تأكد من أن المسار صحيح نسبةً لمكان ملف index.html -->
+    <link rel="stylesheet" href="./3rdparty/fontawesome-free-6.7.2-web/css/all.min.css"/>
+
+    <style>
+        /* --- تعريف الخط المخصص --- */
+        @font-face {
+            font-family: 'MyBoldFont';
+            /* تأكد من صحة المسار للخط نسبةً لمكان ملف الـ HTML هذا */
+            src: url('./assets/fonts/bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* --- تعريف متغيرات الألوان (الثيم) --- */
+        :root {
+            --watchCore-bg: #101820;
+            --watchCore-navbar: #1b2a41;
+            --watchCore-card: #27333f;
+            --watchCore-primary: #1e90ff;
+            --watchCore-primary-hover: #4682b4;
+            --watchCore-text: #f0f8ff;
+            --watchCore-text-muted: #b0c4de;
+            --watchCore-border: #2c3e50;
+        }
+
+        /* --- إعادة تعيين أساسية وتنسيقات عامة --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--watchCore-primary) var(--watchCore-navbar); /* Firefox */
+        }
+
+        html {
+            scroll-behavior: smooth; /* تمرير سلس عند النقر على الروابط الداخلية */
+        }
+
+
+        /* تخصيص شريط التمرير لـ WebKit (Chrome, Safari) */
+        ::-webkit-scrollbar {
+             width: 8px;
+             height: 8px; /* لشريط التمرير الأفقي */
+        }
+        ::-webkit-scrollbar-track {
+             background: var(--watchCore-navbar);
+             border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+             background-color: var(--watchCore-primary);
+             border-radius: 4px;
+             border: 2px solid var(--watchCore-navbar); /* لخلق بعض المساحة */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+             background-color: var(--watchCore-primary-hover);
+        }
+
+        body {
+            font-family: 'MyBoldFont', 'Arial', sans-serif; /* خط احتياطي */
+            background-color: var(--watchCore-bg);
+            color: var(--watchCore-text);
+            line-height: 1.6;
+            font-size: 16px; /* حجم خط أساسي */
+            direction: rtl; /* اتجاه النص من اليمين لليسار */
+        }
+
+        .container {
+            max-width: 960px; /* أقصى عرض للمحتوى */
+            margin: 0 auto; /* توسيط المحتوى */
+            padding: 20px;
+        }
+
+        /* --- تنسيق الهيدر --- */
+        header {
+            background-color: var(--watchCore-navbar);
+            
+            text-align: center;
+            border-bottom: 2px solid var(--watchCore-border);
+            
+        }
+
+        header h1 {
+            font-family: 'MyBoldFont', sans-serif; /* استخدام الخط المخصص */
+            color: var(--watchCore-primary);
+            font-size: 2.8em; /* حجم كبير للعنوان الرئيسي */
+            margin: 0;
+        }
+
+        /* --- تنسيق الأقسام --- */
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: var(--watchCore-card);
+            border: 1px solid var(--watchCore-border);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف للعمق */
+        }
+
+        h2 {
+            font-family: 'MyBoldFont', sans-serif; /* استخدام الخط المخصص للعناوين الفرعية */
+            color: var(--watchCore-primary);
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--watchCore-border);
+            padding-bottom: 10px;
+        }
+
+        /* --- تنسيق قائمة المميزات --- */
+        .features-list {
+            list-style: none; /* إزالة نقاط القائمة الافتراضية */
+            padding: 0;
+        }
+
+        .features-list li {
+            background-color: rgba(255, 255, 255, 0.05); /* خلفية شفافة قليلاً للتمييز */
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-right: 4px solid var(--watchCore-primary); /* شريط جانبي مميز */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .features-list li:hover {
+            background-color: rgba(30, 144, 255, 0.1); /* تغيير الخلفية عند المرور */
+            transform: translateX(-5px); /* حركة بسيطة عند المرور */
+        }
+
+        .features-list i { /* تنسيق الأيقونة بجانب الميزة */
+            color: var(--watchCore-primary);
+            margin-left: 10px; /* مسافة بين الأيقونة والنص */
+            font-size: 1.1em;
+            vertical-align: middle; /* محاذاة الأيقونة رأسياً مع النص */
+        }
+
+        .features-list p {
+            display: inline; /* جعل النص والأيقونة في نفس السطر */
+            color: var(--watchCore-text);
+        }
+
+        /* --- تنسيق قسم تابعنا على --- */
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--watchCore-text-muted);
+            font-size: 2.5em; /* حجم كبير للأيقونات */
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block; /* للسماح بتطبيق transform */
+        }
+
+        .social-links a:hover {
+            color: var(--watchCore-primary-hover);
+            transform: scale(1.1); /* تكبير بسيط عند المرور */
+        }
+
+        /* --- تنسيقات متجاوبة --- */
+
+        /* شاشات متوسطة (Tablets) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.4em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .container {
+                padding: 15px;
+            }
+            .features-list li {
+                padding: 12px;
+            }
+            .social-links a {
+                font-size: 2.2em;
+                margin: 0 12px;
+            }
+        }
+
+        /* شاشات صغيرة (Mobiles) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px; /* تصغير الخط قليلاً */
+            }
+            header {
+                padding: 20px 0;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            section {
+                padding: 15px;
+                margin-bottom: 30px;
+            }
+            h2 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+            .features-list li {
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 0.95em; /* تصغير خط المميزات */
+            }
+             .features-list i {
+                 font-size: 1em;
+                 margin-left: 8px;
+             }
+            .social-links a {
+                font-size: 2em;
+                margin: 0 10px;
+            }
+        }
+
+        /* شاشات صغيرة جداً (حتى 300px) */
+        @media (max-width: 320px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 1.7em;
+            }
+             section {
+                padding: 10px;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+             .features-list li {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+            .social-links {
+                margin-top: 15px;
+            }
+            .social-links a {
+                font-size: 1.8em;
+                margin: 0 8px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    
+
+    <main>
+        <div class="container">
+            <!-- قسم مميزات التطبيق -->
+            <section id="features">
+                <h2><i class="fas fa-circle-info"></i> عن تطبيق نشاهد ومميزاته</h2>
+                <ul class="features-list">
+                    <li><i class="fas fa-film"></i> <p>مكتبة ضخمة ومتجددة من أحدث الأفلام والمسلسلات العربية والأجنبية.</p></li>
+                    <li><i class="fas fa-sync-alt"></i> <p>تحديثات مستمرة وإضافة محتوى جديد بشكل يومي.</p></li>
+                    <li><i class="fas fa-desktop"></i> <p>واجهة استخدام سهلة وبسيطة بتصميم عصري وجذاب.</p></li>
+                    <li><i class="fas fa-tv"></i> <p>دعم جودات عرض متعددة تصل إلى Full HD و 4K لتجربة مشاهدة فائقة.</p></li>
+                    <li><i class="fas fa-thumbs-up"></i> <p>نظام توصيات ذكي يقترح عليك المحتوى الذي قد يعجبك بناءً على سجل مشاهداتك.</p></li>
+                    <li><i class="fas fa-download"></i> <p>إمكانية تحميل المحتوى للمشاهدة لاحقاً بدون الحاجة لاتصال بالإنترنت.</p></li>
+                     <li><i class="fas fa-user-circle"></i> <p>ملفات شخصية متعددة لكل فرد من أفراد العائلة.</p></li>
+                    <li><i class="fas fa-mobile-alt"></i> <p>تطبيق متوفر على مختلف الأجهزة والهواتف الذكية وأنظمة التشغيل.</p></li>
+                </ul>
+            </section>
+
+            <!-- قسم تابعنا على -->
+            <section id="follow-us">
+                <h2><i class="fas fa-share-alt"></i> تابعنا على</h2>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="تابعنا على فيسبوك">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="تابعنا على انستغرام">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                    <!-- يمكنك إضافة أيقونات أخرى هنا بنفس الطريقة -->
+                    <!-- مثال لتويتر:
+                    <a href="#" target="_blank" aria-label="تابعنا على تويتر">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                     -->
+                     <!-- مثال ليوتيوب:
+                    <a href="#" target="_blank" aria-label="تابعنا على يوتيوب">
+                        <i class="fab fa-youtube-square"></i>
+                    </a>
+                     -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- يمكن إضافة أي كود JavaScript هنا إذا احتجت إليه لاحقاً -->
+    <script>
+        // مثال بسيط: طباعة رسالة في الكونسول للتأكد من أن الجافاسكربت يعمل
+        console.log("صفحة 'عن نشاهد' تم تحميلها بنجاح!");
+
+        // لا يوجد JavaScript معقد مطلوب لهذه الصفحة حسب الطلب
+    </script>
+
+</body>
+</html>
