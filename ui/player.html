@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +22,6 @@
             'SampleVideo.mp4_chunk_8',
             'SampleVideo.mp4_chunk_9',
             'SampleVideo.mp4_chunk_10'
-            
-            
         ];
 
         const videoElement = document.getElementById('video');
@@ -29,17 +29,19 @@
         videoElement.src = URL.createObjectURL(mediaSource);
 
         let sourceBuffer;
+        let currentChunk = 0;
+
         mediaSource.addEventListener('sourceopen', () => {
             sourceBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+            sourceBuffer.addEventListener('updateend', onUpdateEnd);
             loadChunks();
         });
-
-        let currentChunk = 0;
 
         function loadChunks() {
             if (currentChunk < chunkUrls.length) {
                 fetchChunk(chunkUrls[currentChunk]);
             } else {
+                // تأكد من أن جميع الـ chunks تم تحميلها قبل استدعاء endOfStream
                 mediaSource.endOfStream();
                 videoElement.play();
             }
@@ -49,13 +51,19 @@
             fetch(url)
                 .then(response => response.arrayBuffer())
                 .then(data => {
+                    // إضافة الـ chunk إلى الـ video
                     sourceBuffer.appendBuffer(data);
-                    currentChunk++;
-                    loadChunks();  // تحميل الـ chunk التالي
                 })
                 .catch(error => {
                     console.error("حدث خطأ أثناء تحميل الـ chunk:", error);
                 });
+        }
+
+        function onUpdateEnd() {
+            if (currentChunk < chunkUrls.length) {
+                currentChunk++;
+                loadChunks();
+            }
         }
     </script>
 </body>
