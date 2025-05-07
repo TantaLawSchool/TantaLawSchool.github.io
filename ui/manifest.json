@@ -2,6 +2,7 @@
     "name":"watchCore",
     "local-app-agent-version":"1",
     "watch-tonight-hero":{
+        "id":"20",
         "poster":"/data/customMedia/main-hero-poster.jpg",
         "title":"بريستيج",
         "genre":[
@@ -12,5 +13,28 @@
         "year":"2025",
         "rating":"3.3",
         "description":"عاصفة قوية تضرب شوارع القاهرة، مما يجبر 14 شخصًا من خلفيات اجتماعية مختلفة على اللجوء إلى مقهى في وسط البلد، وبينما يحاول الجميع الاحتماء من العاصفة، ينقطع التيار الكهربائي فجأة، ليكتشفوا أن أحدهم قد قُتل، ومع تصاعد التوترات، يدركون أن القاتل بينهم."
-    }
+    },
+    "carousel":[
+        {
+            "id":"animation-carousel",
+            "label":"أنيميشن",
+            "titles":["5","6","7","8","9","10","11","12"]
+        },
+        {
+            "id":"Theatrical-carousel",
+            "label":"أعمال مسرحية",
+            "titles":["1","2","3","4"]
+        },
+        {
+            "id":"trending-carousel",
+            "label":"الأكثر مشاهدة",
+            "titles":["13","14","15","16","17","18"]
+        },
+        {
+            "id":"arabic-series-carousel",
+            "label":"مسلسلات عربية",
+            "titles":["19","20"]
+        }
+        
+    ]
 }

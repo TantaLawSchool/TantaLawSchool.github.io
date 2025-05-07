@@ -228,23 +228,23 @@
              color: var(--watchCore-primary); /* استخدام اللون المميز للعنوان الرئيسي */
         }
 
-        #watch-tonight-hero .movie-info { margin-top: 15px; }
+        #watch-tonight-hero .hero-info { margin-top: 15px; }
 
-        #watch-tonight-hero .movie-title {
+        #watch-tonight-hero .hero-title {
             font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: 700;
             margin-bottom: 8px;
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         }
 
-        #watch-tonight-hero .movie-details {
+        #watch-tonight-hero .hero-details {
             font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: var(--watchCore-text-muted);
             margin-bottom: 15px;
         }
-         #watch-tonight-hero .movie-details span { margin-left: 10px; } /* مسافة بين التفاصيل */
+         #watch-tonight-hero .hero-details span { margin-left: 10px; } /* مسافة بين التفاصيل */
 
-        #watch-tonight-hero .movie-synopsis {
+        #watch-tonight-hero .hero-synopsis {
             font-size: clamp(0.85rem, 2.2vw, 1rem);
             line-height: 1.7;
             margin-bottom: 25px;
@@ -296,7 +296,7 @@
             padding-right: 5px;
         }
 
-        .movie-carousel {
+        .title-carousel {
             display: flex;
             overflow-x: auto;
             overflow-y: hidden;
@@ -309,7 +309,7 @@
         }
 
         /* --- بطاقة الفيلم/المسلسل --- */
-        .movie-carousel-card {
+        .title-carousel-card {
             flex: 0 0 auto;
             width: clamp(130px, 15vw, 170px); /* عرض متجاوب */
             /* margin-left تم استبداله بـ gap */
@@ -322,13 +322,13 @@
             position: relative; /* لإضافة عناصر فوق الصورة لاحقاً إذا لزم الأمر */
         }
 
-        .movie-carousel-card:hover {
+        .title-carousel-card:hover {
             transform: scale(1.06);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             z-index: 10;
         }
 
-        .movie-carousel-card img {
+        .title-carousel-card img {
             width: 100%;
             /* height: 255px; ارتفاع ثابت للبوستر */
             aspect-ratio: 2 / 3; /* نسبة عرض إلى ارتفاع شائعة للبوسترات */
@@ -359,12 +359,12 @@
                  background: linear-gradient(to top, var(--watchCore-bg) 15%, rgba(16, 24, 32, 0.7) 50%, rgba(16, 24, 32, 0) 80%); /* تدرج سفلي أقوى */
              }
              #watch-tonight-hero .content-container { max-width: 90%; }
-             #watch-tonight-hero .movie-synopsis { max-width: 100%; -webkit-line-clamp: 2; }
+             #watch-tonight-hero .hero-synopsis { max-width: 100%; -webkit-line-clamp: 2; }
         }
 
         @media (max-width: 768px) {
             .header-icons a, .header-icons button { font-size: 1.3rem; margin-right: 15px; }
-            .movie-carousel { gap: 12px; padding-left: 12px; }
+            .title-carousel { gap: 12px; padding-left: 12px; }
         }
 
         @media (max-width: 576px) {
@@ -378,11 +378,11 @@
              }
              #watch-tonight-hero .watch-button { padding: 8px 20px; }
              .header-icons .profile-icon { margin-right: 0; }
-             .movie-carousel { gap: 10px; padding-left: 10px; }
+             .title-carousel { gap: 10px; padding-left: 10px; }
         }
 
          @media (max-width: 400px) {
-              .movie-carousel { gap: 8px; padding-left: 8px; }
+              .title-carousel { gap: 8px; padding-left: 8px; }
          }
 
 
@@ -585,14 +585,14 @@
          <div class="content-container">
              <!-- !! عدّل هذه المعلومات للفيلم المميز !! -->
              <h1 class="main-title">شاهد الليلة</h1>
-             <div class="movie-info">
-                 <h2 class="movie-title" id="hero-title"> إسم </h2>
-                 <p class="movie-details">
+             <div class="hero-info" id="hero-info" hero-id="">
+                 <h2 class="hero-title" id="hero-title"> إسم </h2>
+                 <p class="hero-details">
                      <span><i class="fas fa-grip-horizontal" style="margin-left: 5px;"></i> <span id="hero-genre"> تصنيف 2 ,تصنيف 1 </span></span>
                      <span><i class="fas fa-calendar-alt" style="margin-left: 5px;"></i> <span id="hero-year"> العام </span></span>
                      <span><i class="fas fa-star" style="margin-left: 5px;"></i> <span id="hero-rating"> تقييم </span></span>
                  </p>
-                 <p class="movie-synopsis" id="hero-description">
+                 <p class="hero-synopsis" id="hero-description">
                     القصة
                  </p>
                  <button class="watch-button" id="hero-watch-button">
@@ -607,42 +607,25 @@
     <!-- === المحتوى الرئيسي === -->
     <!-- ========================== -->
     <main id="main-content">
+        
 
+        <!--
         <section class="content-row">
             <h2>أنيميشن</h2>
-            <div class="movie-carousel" id="animation-carousel">
-                 <!-- البطاقات تضاف هنا بواسطة JS -->
+            <div class="title-carousel" id="animation-carousel">
+                 
             </div>
         </section>
 
         <section class="content-row">
             <h2>الأكثر مشاهدة</h2>
-            <div class="movie-carousel" id="trending-carousel">
-                <!-- البطاقات تضاف هنا بواسطة JS -->
+            <div class="title-carousel" id="trending-carousel">
+                
             </div>
         </section>
+        -->
 
-        <section class="content-row">
-            <h2>أضيف حديثاً</h2>
-            <div class="movie-carousel" id="new-releases-carousel">
-                <!-- البطاقات تضاف هنا بواسطة JS -->
-            </div>
-        </section>
-
-         <section class="content-row">
-            <h2>مسلسلات رمضان 2024</h2>
-            <div class="movie-carousel" id="ramadan-series-carousel">
-                <!-- البطاقات تضاف هنا بواسطة JS -->
-            </div>
-        </section>
-
-        <section class="content-row">
-            <h2>أفلام عربية</h2>
-            <div class="movie-carousel" id="arabic-movies-carousel">
-                <!-- البطاقات تضاف هنا بواسطة JS -->
-            </div>
-        </section>
-
+       
     </main>
 
     <script>
@@ -669,15 +652,39 @@
         function handleManifest(MANIFEST_POINTER){
             const MANIFEST = JSON.parse($(MANIFEST_POINTER).textContent);
             handelHero(MANIFEST);
+            handleCarousel(MANIFEST);
         }
 
         function handelHero(MANIFEST){
             $("watch-tonight-hero").style.backgroundImage=`linear-gradient(to top, var(--watchCore-bg) 5%, rgba(16, 24, 32, 0) 40%),url('${MANIFEST["watch-tonight-hero"]["poster"]}')`;
+            $("hero-info").setAttribute("hero-id",MANIFEST["watch-tonight-hero"]["id"]);
             $("hero-title").innerHTML = MANIFEST["watch-tonight-hero"]["title"];
             $("hero-genre").innerHTML = `${i18n.translateList(MANIFEST["watch-tonight-hero"]["genre"]).join(' , ')}`;
             $("hero-year").innerHTML = MANIFEST["watch-tonight-hero"]["year"];
             $("hero-rating").innerHTML = MANIFEST["watch-tonight-hero"]["rating"];
             $("hero-description").innerHTML = MANIFEST["watch-tonight-hero"]["description"];
+
+        }
+
+        function handleCarousel(MANIFEST){
+            const MANIFEST_CAROUSEL = MANIFEST["carousel"];
+            MANIFEST_CAROUSEL.forEach(carousel_section => {
+                const carouselSection = document.createElement('section');
+                carouselSection.classList.add('content-row');
+                carouselSection.innerHTML = `
+                <h2>${carousel_section['label']}</h2>
+                <div class="title-carousel" id="${carousel_section['id']}">
+                     <!-- البطاقات تضاف هنا بواسطة JS -->
+                </div>
+                `;
+
+                $('main-content').appendChild(carouselSection);
+                displayTitlesInRow(carousel_section["titles"],carousel_section["id"]);
+
+
+
+            });
+            
 
         }
         
@@ -704,29 +711,7 @@
 
         window.addEventListener("scroll",detectEndAndLoadMore);
 
-        // --- بيانات الأفلام (مثال) ---
-        const sampleMoviesData = [
-             { id: 1, title: "فيلم 1", posterUrl: "/data/customMedia/1.jpg" },
-             { id: 2, title: "مسلسل 2", posterUrl: "/data/customMedia/2.jpg" },
-             { id: 3, title: "فيلم 3", posterUrl: "/data/customMedia/3.jpg" },
-             { id: 4, title: "مسلسل 4", posterUrl: "/data/customMedia/4.jpg" },
-             { id: 5, title: "فيلم 5", posterUrl: "/data/customMedia/5.jpg" },
-             { id: 6, title: "مسلسل 6", posterUrl: "/data/customMedia/6.jpg" },
-             { id: 7, title: "فيلم 7", posterUrl: "/data/customMedia/7.jpg" },
-             { id: 8, title: "مسلسل 8", posterUrl: "/data/customMedia/8.jpg" },
-             { id: 9, title: "فيلم 9", posterUrl: "/data/customMedia/9.jpg" },
-             { id: 10, title: "مسلسل 10", posterUrl: "/data/customMedia/10.jpg" }
-         ];
-        const sampleAnimationData = [
-             { id: 11, title: "أنمي 1", posterUrl: "/data/customMedia/11.jpg" },
-             { id: 12, title: "أنمي 2", posterUrl: "/data/customMedia/12.jpg" },
-             { id: 13, title: "أنمي 3", posterUrl: "/data/customMedia/13.jpg" },
-             { id: 14, title: "أنمي 4", posterUrl: "/data/customMedia/14.jpg" },
-             { id: 15, title: "أنمي 5", posterUrl: "/data/customMedia/15.jpg" },
-             { id: 16, title: "أنمي 6", posterUrl: "/data/customMedia/16.jpg" },
-             { id: 2, title: "مسلسل 2", posterUrl: "/data/customMedia/2.jpg" },
-             { id: 8, title: "مسلسل 8", posterUrl: "/data/customMedia/8.jpg" },
-        ];
+        
 
         // --- عناصر DOM ---
         const sidebar = document.getElementById('sidebar');
@@ -736,58 +721,70 @@
         const heroContentContainer = document.querySelector('#watch-tonight-hero .content-container'); // عنصر الهيرو
         const heroWatchButton = document.getElementById('hero-watch-button'); // زر المشاهدة في الهيرو
 
-        // --- وظيفة عرض الأفلام في صف معين ---
-        function displayMoviesInRow(movies, containerId) {
+        // --- وظيفة عرض العناوين في صف معين ---
+        function displayTitlesInRow(titles, containerId) {
             const container = document.getElementById(containerId);
             if (!container) {
                 console.error(`Container with ID ${containerId} not found.`);
                 return;
             }
             container.innerHTML = '';
-            movies.forEach(movie => {
-                const movieCard = document.createElement('div');
-                movieCard.classList.add('movie-carousel-card');
-                movieCard.dataset.movieId = movie.id;
-                movieCard.setAttribute('role', 'button'); // لتحسين الدلالة
-                movieCard.setAttribute('tabindex', '0'); // للسماح بالوصول عبر لوحة المفاتيح
+            titles.forEach(titleID => {
+                fetch(`/data/item/${titleID}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    const movieCard = document.createElement('div');
+                    movieCard.classList.add('title-carousel-card');
+                    movieCard.dataset.movieId = titleID;
+                    movieCard.setAttribute('role', 'button'); // لتحسين الدلالة
+                    movieCard.setAttribute('tabindex', '0'); // للسماح بالوصول عبر لوحة المفاتيح
 
-                const posterImg = new Image();
-                posterImg.src = movie.posterUrl;
-                posterImg.alt = movie.title;
-                posterImg.loading = "lazy";
-                posterImg.onerror = function() {
-                    this.style.display = 'none'; // إخفاء الصورة عند الفشل
-                    const errorDiv = document.createElement('div');
-                    errorDiv.style.cssText = `
-                        display: flex; align-items: center; justify-content: center;
-                        height: 100%; width: 100%; aspect-ratio: 2 / 3;
-                        background-color: var(--watchCore-card); color: var(--watchCore-text-muted);
-                        font-size: 0.8rem; text-align: center; padding: 10px;
-                    `;
-                    errorDiv.textContent = `فشل تحميل: ${movie.title}`;
-                    movieCard.appendChild(errorDiv);
-                };
+                    const posterImg = new Image();
+                    posterImg.src = data.poster;
+                    posterImg.alt = data.title;
+                    posterImg.loading = "lazy";
+                    posterImg.onerror = function() {
+                        
+                        this.style.display = 'none'; // إخفاء الصورة عند الفشل
+                        const errorDiv = document.createElement('div');
+                        errorDiv.style.cssText = `
+                           display: flex; align-items: center; justify-content: center;
+                           height: 100%; width: 100%; aspect-ratio: 2 / 3;
+                           background-color: var(--watchCore-card); color: var(--watchCore-text-muted);
+                           font-size: 0.8rem; text-align: center; padding: 10px;
+                        `;
+                        errorDiv.textContent = `فشل تحميل: ${data.title}`;
+                        movieCard.appendChild(errorDiv);
+                    };
 
-                movieCard.appendChild(posterImg);
+                    movieCard.appendChild(posterImg);
+                    // إضافة وظيفة عند النقر (مثال)
+                    movieCard.addEventListener('click', () => handleMovieClick(titleID, data.title));
+                    movieCard.addEventListener('keydown', (e) => {
+                        
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            
+                            handleMovieClick(titleID, data.title);
+                        }
+                    });
 
-                // إضافة وظيفة عند النقر (مثال)
-                 movieCard.addEventListener('click', () => handleMovieClick(movie.id, movie.title));
-                 movieCard.addEventListener('keydown', (e) => {
-                     if (e.key === 'Enter' || e.key === ' ') {
-                         handleMovieClick(movie.id, movie.title);
-                     }
-                 });
+                    container.appendChild(movieCard);
 
-                container.appendChild(movieCard);
+
+
+                }).catch(error => {
+                    console.log(error);
+                });
+
+                
             });
         }
 
          // --- وظيفة معالجة النقر على بطاقة فيلم ---
          function handleMovieClick(id, title) {
              console.log(`Clicked on movie: ${title} (ID: ${id})`);
-             alert(`تم النقر على: ${title}`);
              // هنا يمكنك توجيه المستخدم لصفحة الفيلم:
-             // window.location.href = `/movie/${id}`;
+             window.location.href = `/ui/title.html?id=${id}`;
          }
 
         // --- وظائف القائمة الجانبية والغطاء ---
@@ -902,18 +899,17 @@
             // وظيفة زر المشاهدة في قسم الهيرو
             if (heroWatchButton) {
                 heroWatchButton.addEventListener('click', () => {
-                    alert('بدء مشاهدة الفيلم المميز!');
-                    // window.location.href = '/link-to-featured-movie';
+                    window.location.href = `/ui/title.html?id=${heroWatchButton.parentNode.getAttribute("hero-id")}`;
                 });
             }
 
             // عرض الأفلام في كل الصفوف
             try {
-                displayMoviesInRow(sampleAnimationData, 'animation-carousel');
-                displayMoviesInRow(sampleMoviesData, 'trending-carousel');
-                displayMoviesInRow([...sampleMoviesData].reverse(), 'new-releases-carousel');
-                displayMoviesInRow(sampleMoviesData.slice(0, 7), 'ramadan-series-carousel'); // مثال
-                displayMoviesInRow(sampleMoviesData.filter(m => m.id % 2 !== 0), 'arabic-movies-carousel'); // مثال
+                //displayMoviesInRow(sampleAnimationData, 'animation-carousel');
+                //displayMoviesInRow(sampleMoviesData, 'trending-carousel');
+                //displayMoviesInRow([...sampleMoviesData].reverse(), 'new-releases-carousel');
+                //displayMoviesInRow(sampleMoviesData.slice(0, 7), 'ramadan-series-carousel'); // مثال
+                //displayMoviesInRow(sampleMoviesData.filter(m => m.id % 2 !== 0), 'arabic-movies-carousel'); // مثال
             } catch (error) {
                 console.error("Error displaying movie rows:", error);
             }

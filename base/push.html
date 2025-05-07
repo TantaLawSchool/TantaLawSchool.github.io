@@ -133,6 +133,7 @@
              <label class="type-item" data-value="Foreign-Movie"> فيلم أجنبي</label>
              <label class="type-item" data-value="Arabic-TVSeries"> مسلسل عربي</label>
              <label class="type-item" data-value="Foreign-TVSeries"> مسلسل أجنبي</label>
+             <label class="type-item" data-value="Theatrical-Performance"> عرض مسرحي</label>
         </div>
         <label>المرجع الرئيسي:</label>
         <div class="reference-container" id="reference">
@@ -593,7 +594,13 @@
                      outputData = { poster:$("mainPoster").toDataURL('image/png'), type: type, title: title, description: description, rating: mainRating, year: mainYear, genre: genres, mainReference: mainReference, mainReferenceLink: mainReferenceLink, isMultiPart: isMultiPart, parts: partsData };
                  }
 
-            } else if (type && type.includes('TVSeries')) {
+            } else if(type && type.includes('Theatrical-Performance')){
+                console.log("Processing as Theatrical-Performance...");
+                if (errors.length === 0){
+                    outputData = { poster:$("mainPoster").toDataURL('image/png'), type: type, title: title, description: description, rating: mainRating, year: mainYear, genre: genres, mainReference: mainReference, mainReferenceLink: mainReferenceLink};
+                }
+                
+            }else if (type && type.includes('TVSeries')) {
                 console.log("Processing as TVSeries...");
                  const seasonsCount = seasonsSelect ? parseInt(seasonsSelect.value) || 0 : 0;
                  const seasonCards = seasonCardsContainer ? seasonCardsContainer.querySelectorAll('.season-card') : [];
@@ -874,15 +881,52 @@
 
 
 
-                
 
+            }
+            else if(jd["type"] == "Theatrical-Performance"){
+                const img = new Image();
+                img.onload = function(){
+                    $("mainPoster").getContext('2d').clearRect(0, 0, $("mainPoster").width, $("mainPoster").height);
+                    $("mainPoster").getContext('2d').drawImage(img,0,0,$("mainPoster").width, $("mainPoster").height);
+                }
+                img.src = jd["poster"];
 
+                typeContainer.querySelectorAll('.type-item').forEach(el => {
+                    if (el.getAttribute("data-value") == jd["type"]){
+                        el.click();
+                    }
+                });
 
-                
+                referenceContainer.querySelectorAll('.reference-item').forEach(el => {
+                    if (el.getAttribute("data-value") == jd["mainReference"]){
+                        el.click();
+                        $('reference-link').value = jd["mainReferenceLink"];
+                    }
+                });
 
+                $('title').value = jd["title"];
 
+                $("rating").value = jd["rating"];
+                $("rating").dispatchEvent(new Event('change'));
 
+                $("year").value = jd["year"];
+                $("year").dispatchEvent(new Event('change'));
 
+                // Remove all previous selected genres.
+                genreContainer.querySelectorAll('.genre-item').forEach(el => {
+                    el.classList.remove("selected");
+                });
+                // Re-Select
+                for (var g in jd["genre"]){
+                    genreContainer.querySelectorAll('.genre-item').forEach(el => {
+                        if (el.getAttribute("data-value") == jd["genre"][g]){
+                            el.click();
+                        }
+                    });
+
+                }
+
+                $('description').value = jd["description"];
 
             }
             else if(jd["type"] == "Foreign-TVSeries" || jd["type"] == "Arabic-TVSeries"){
