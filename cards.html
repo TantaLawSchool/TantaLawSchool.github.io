@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض بطاقات الدفع</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* استخدام خط Cairo لجمالية أفضل للعربية */
+        body {
+            font-family: 'Cairo', sans-serif;
+            /* إضافة مساحة علوية لتجنب تداخل المحتوى مع الهيدر الثابت */
+            padding-top: 190px; /* يمكن تعديل هذه القيمة حسب الحاجة */
+        }
+        @media (min-width: 640px) {
+            body {
+               padding-top: 160px;
+            }
+        }
+        /* تخصيص شكل شريط التمرير */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #1f2937; /* gray-800 */
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #4b5563; /* gray-600 */
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #6b7280; /* gray-500 */
+        }
+        /* ستايل لتثبيت الهيدر */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+            background-color: #111827; /* bg-gray-900 */
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+        }
+        /* ستايل لتمييز الصف المختار */
+        .selected-row {
+            background-color: #374151 !important; /* gray-700 */
+        }
+        .selected-row td {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- قسم الإدخال في الأعلى (ثابت) -->
+    <div class="sticky-header">
+        <div class="container mx-auto px-4">
+            <div class="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">بيانات البطاقات</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- حقل رقم البطاقة -->
+                    <div class="flex flex-col">
+                        <label for="cc-number" class="mb-1 text-sm font-semibold text-gray-400">رقم البطاقة</label>
+                        <input id="cc-number" type="text" placeholder="xxxx xxxx xxxx xxxx" class="bg-gray-700 border border-gray-600 text-white rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" readonly>
+                    </div>
+                    <!-- حقول تاريخ الانتهاء -->
+                    <div class="flex flex-col">
+                        <label for="cc-month" class="mb-1 text-sm font-semibold text-gray-400">تاريخ الإنتهاء</label>
+                        <div class="flex gap-2">
+                            <input id="cc-month" type="text" placeholder="الشهر" class="w-1/2 bg-gray-700 border border-gray-600 text-white rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" readonly>
+                            <input id="cc-year" type="text" placeholder="السنة" class="w-1/2 bg-gray-700 border border-gray-600 text-white rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" readonly>
+                        </div>
+                    </div>
+                    <!-- حقل CVV -->
+                    <div class="flex flex-col">
+                        <label for="cc-cvv" class="mb-1 text-sm font-semibold text-gray-400">CVV</label>
+                        <input id="cc-cvv" type="text" placeholder="xxx" class="bg-gray-700 border border-gray-600 text-white rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" readonly>
+                    </div>
+                    <div class="flex flex-col justify-end">
+                         <button id="copy-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg w-full transition-colors duration-200">نسخ البيانات</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mx-auto p-4 max-w-7xl">
+        <!-- حاوية الجدول لجعلها قابلة للتمرير أفقياً على الشاشات الصغيرة -->
+        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div class="overflow-x-auto custom-scrollbar">
+                <table class="w-full text-sm text-left text-gray-300 whitespace-nowrap">
+                    <thead class="text-xs text-gray-300 uppercase bg-gray-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">#</th>
+                            <th scope="col" class="px-6 py-3">رقم البطاقة</th>
+                            <th scope="col" class="px-6 py-3">الشهر</th>
+                            <th scope="col" class="px-6 py-3">السنة</th>
+                            <th scope="col" class="px-6 py-3">CVV</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cards-table-body">
+                        <!-- سيتم إدراج صفوف البطاقات هنا بواسطة جافاسكريبت -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="text-center mt-4 text-xs text-gray-500">
+            <p>تم عرض <span id="card-count">0</span> بطاقة.</p>
+            <p class="mt-1">مرر الجدول أفقيًا على الشاشات الصغيرة لرؤية كافة البيانات.</p>
+        </div>
+    </div>
+
+    <!-- عنصر رسالة التأكيد -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300">
+      تم نسخ البيانات بنجاح!
+    </div>
+
+    <script>
+        // البيانات الخام من الملف
+        const cardData = `
+0000000000000000 01 22 000
+0000000000000000 01 22 000
+4223222564578386 06 27 392
+5219774399984109 03 26 218
+4581390059005110 09 26 448
+4573764266796309 12 22 552
+5399352174700131 06 25 826
+5078034769318390 09 26 385
+5078034881526839 10 27 434
+4578711212940775 07 23 621
+4573764572271609 11 26 312
+4745010174008467 12 24 959
+5078034704422687 03 25 307
+4117394013299705 01 27 137
+4117394013299705 01 27 137
+4988132200610656 10 25 132
+4116394645219195 11 25 292
+5264399912362205 03 25 215
+8399352511583521 08 24 436
+4573764100012509 09 25 898
+5078034871428491 10 27 379
+5078034898283721 09 26 206
+4223222564578386 06 27 392
+4988132200610656 10 25 132
+5482743938771525 11 24 392
+4223222390021734 11 26 873
+5078034842983582 09 25 766
+5399352174700131 06 25 826
+5078034881526839 10 27 434
+4223222390021734 11 26 873
+5594444653405605 02 25 445
+4117394930048680 10 27 607
+4573764947019600 12 23 709
+4117394403159899 10 26 230
+5078034884252243 07 27 337
+4988132200610656 10 25 132
+5078031200911668 11 25 368
+5200312000183042 08 24 470
+4745010160318268 12 24 476
+4573764947019600 12 23 709
+5078034884252243 07 27 337
+5078034846577190 08 22 236
+5078031028524206 05 24 446
+5078031013465183 09 23 809
+5219774399984109 03 26 218
+5482748984635235 11 24 547
+5399352572083007 10 24 746
+5078034846577190 01 22 236
+5338134064060022 11 26 640
+5078031028524206 05 24 446
+4117394817579575 08 25 717
+4573754100012509 09 25 898
+5264024519874804 11 22 336
+4714454794591642 12 24 642
+4988394951195408 04 24 979
+5482741070355891 11 24 300
+5338134427773436 08 27 242
+5078031028524206 05 24 446
+4581390050891989 09 27 819
+5078034700187995 03 26 424
+4117394808734338 01 27 706
+5078034864858548 11 27 041
+5078034847452583 11 26 609
+4097891102037254 09 22 019
+5170615223270800 11 24 213
+5078034884252243 07 27 337
+4988394951195408 04 24 979
+4578711212940775 07 23 621
+5078031028524206 05 24 446
+5078034851665260 11 27 101
+5170615223270800 11 24 213
+5211822130235907 11 25 318
+5338134331944172 11 26 239
+5170615223270800 11 24 213
+5211822130235907 11 25 318
+4082389953895935 11 27 379
+3223222184074774 05 27 373
+4573764997469408 05 24 382
+4988394951195408 04 24 979
+5078031038841442 09 24 183
+4174476308347818 12 23 313
+5078034816483346 11 27 644
+4573764028794037 11 27 901
+4097894095968410 07 24 480
+5170615223270800 10 30 123
+5078031019212803 07 22 047
+4573764997469408 05 24 382
+5170615223270800 11 24 213
+5138832343145107 01 24 564
+5078034852784946 09 25 679
+5078034700187995 03 26 424
+5338134331944172 11 26 239
+5078034806646159 11 26 631
+5338134666185565 11 26 760
+5078034701190535 11 26 980
+4117394744842237 11 26 458
+5078034823616771 08 26 131
+5175828889715852 10 24 302
+5078031039280095 10 24 246
+5078034828382130 09 26 787
+5219774399984109 03 26 218
+5078031040530918 07 24 740
+5078034701190535 11 26 980
+5078034841474377 09 25 912
+4582672216473920 11 22 271
+4097894095968410 07 24 480
+4174476308347818 12 23 313
+5078034889000845 08 27 613
+5078034701190535 11 26 980
+5078031040530918 07 24 740
+5338134666185565 11 26 760
+4223222183995110 11 26 272
+5078034720848503 11 26 925
+5078034881817949 11 22 581
+5078031019212803 07 22 047
+5482741749880287 11 24 133
+4174476308347818 12 23 313
+5078034803360515 11 22 607
+5078031008839285 06 26 551
+5219774399984109 03 26 218
+5441117014767873 05 25 192
+5078031039280095 10 24 246
+5078031040530918 07 24 740
+4117394571865665 11 25 494
+4582675303764200 11 22 957
+5078031039280095 10 24 246
+4097891160379614 08 27 881
+5078034889968751 06 27 907
+5078033813444830 04 26 538
+4097894095968410 07 24 480
+5078031039280095 10 24 246
+5078031064925176 08 23 617
+5078034881526839 10 27 434
+4117394444964505 11 26 764
+5078031028524206 05 24 446
+5078031028524206 05 24 446
+5078031040530918 07 24 740
+5482747056493036 11 24 382
+4117394571865665 11 25 494
+5078034769318390 09 26 385
+5399351140872610 12 25 43p
+5078031039280095 10 24 246
+5078034769318390 09 26 385
+4573764028494037 11 27 901
+5078031040530918 07 24 740
+5078031039280095 10 24 246
+5078031082327827 10 26 948
+5245249484686446 03 26 218
+5078034702848503 11 26 925
+5078034828382130 09 26 787
+5078034881526839 10 27 434
+5482745726461151 11 24 137
+5482743708426946 11 24 550
+5078034828382130 09 26 787
+5078031087132883 07 23 511
+5338134023261950 02 27 244
+5482743708426946 11 24 550
+5450752675563449 03 23 069
+5450752675563449 03 23 066
+5078031040530918 07 24 740
+5078031087132883 07 23 511
+5078034806192591 09 27 972
+4738640005804053 06 24 209
+5078034848982463 09 26 126
+5078031087132883 07 23 511
+5078034848982463 09 26 126
+5078034871428491 10 27 379
+5078084362370090 03 26 713
+5078031040530918 07 24 740
+4988132571292134 03 27 629
+5078031574839834 02 25 187
+4573764028494037 11 27 901
+4988132571292134 03 27 629
+5338134029086807 12 25 783
+5338134807077853 09 25 272
+5078034822272576 10 26 580
+5482747311143905 11 24 998
+4988132571292134 03 27 629
+4738640005804053 06 24 209
+5399352165900351 02 27 186
+4117394710834804 03 26 151
+5594444501739818 12 26 969
+4097894282102856 10 26 915
+4573764248969403 04 26 407
+5078031047081774 11 22 243
+5594444925119704 05 25 140
+5482741011485260 11 24 473
+5482749891861104 11 24 881
+5450752675563449 03 23 066
+5482749891861104 11 24 881
+5078034839451908 08 27 584
+5594444925119704 05 25 140
+5078031049075022 08 23 570
+5104742235419976 10 24 976
+4117394172382888 04 26 888
+5078034848982463 09 26 126
+5078031028538305 05 23 783
+5078034848982463 09 26 126
+5104742235419976 10 24 868
+5399352165900351 02 27 186
+5078034858959559 09 25 191
+5140742235419976 10 24 976
+5482743763252120 11 24 134
+5078034803360515 11 22 607
+4117394293786793 11 26 962
+5078031047160446 02 24 969
+5078034889000845 08 27 613
+5399352165900351 02 27 186
+4714451428250769 05 23 943
+4573764046815304 02 25 924
+5078031047160446 02 24 969
+5078034816483346 11 27 644
+5078031028538305 05 23 783
+5078034803360515 11 22 607
+5482748197815442 11 24 163
+4117394293786793 11 26 962
+5078031028538305 05 23 783
+4117394444964505 11 26 764
+5078034811937106 09 27 544
+4714451428250769 05 23 943
+5078031047081774 11 22 243
+4117394351120166 11 27 301
+4573764595275702 03 26 279
+5078034882237873 09 26 180
+5078031064925176 08 23 617
+5078031052157204 08 23 621
+5078034858959559 09 25 191
+4714459995351803 10 27 257
+5078034811937106 09 27 544
+5078034856963744 09 25 884
+5078031087132883 07 23 511
+4988133898196784 02 27 168
+4117394351120166 11 27 301
+4745010174008467 12 24 959
+5178799069585786 05 26 084
+5104742206961261 10 24 585
+5594444985331306 03 24 379
+5078034700476976 11 26 660
+4117394367384293 10 26 332
+4117394407763407 03 26 330
+5104742235419976 10 24 976
+5078034884252243 07 27 337
+4745010160318268 12 24 476
+5078034816483346 11 27 644
+4174476393932516 12 23 831
+5264399924073931 09 27 994
+5078031047081774 08 24 243
+5078034811937106 09 27 544
+5104742235419976 10 24 868
+4097891158068401 12 26 761
+4988132571292134 03 27 629
+4988132188084338 05 27 319
+5078034716824060 11 26 529
+5264025403556787 08 27 679
+5078034816483346 11 27 644
+5482745356504155 11 24 377
+5138832393145107 01 24 564
+4863930010155691 09 25 663
+4097891109833440 04 27 332
+5104740230480555 02 23 440
+5594444225884007 03 24 608
+5138832393145107 01 24 564
+5078031068278549 10 24 467
+5078031068278549 10 24 467
+5078031498339715 02 26 320
+5138832393145107 01 24 564
+5078031014426440 06 26 160
+5594444225884007 03 24 608
+5338134124618320 09 27 566
+4097891158068401 12 26 761
+5078034854754434 09 25 155
+5338134124618320 09 27 566
+5078034884252243 07 27 337
+5078034884252243 07 27 337
+5078034819224622 09 27 453
+4223222162816030 01 27 942
+4988132605657021 02 27 993
+4988132571292134 03 27 629
+5078031021430591 06 26 508
+5078034819224622 09 27 453
+4745010185176808 12 24 258
+5594444225884007 03 24 608
+4097891222441717 10 26 881
+5666778888997654 04 29 646
+4174476247082344 12 23 868
+4988132605657021 02 27 993
+4988132188084338 05 27 319
+5078031099048655 06 27 067
+4097891158068401 12 26 761
+5138832393145107 01 24 564
+5078034807097824 09 26 966
+4174476247082344 12 23 868
+5338134124718328 09 27 566
+5078034877566435 01 27 789
+5138832393145107 01 24 564
+5138832393145107 01 24 564
+5078034856693744 09 25 884
+4573764164605115 11 27 382
+5078031068278549 10 24 467
+5338134124718320 09 27 566
+4223222180903976 03 26 684
+4174476247082344 12 23 868
+4581390055011856 03 27 417
+4117394554045145 09 25 307
+5138832393145107 01 24 564
+5078034856963744 09 25 884
+4174470120489890 11 22 647
+4090000015063756 11 25 259
+5078034912532228 09 27 337
+5138832393145107 01 24 564
+4174476247082344 12 23 868
+4573764061643904 11 26 852
+4988132163616484 04 27 146
+4573764061643904 11 26 852
+4573764061643904 11 26 852
+5078034807097824 09 26 966
+4174476141773345 04 24 094
+4090000015063756 11 25 259
+4573764391106606 11 25 799
+5078034912532228 09 25 337
+4174476247082344 12 23 868
+5078034912532228 09 25 337
+5078034912532228 09 25 337
+5338134317065562 10 26 377
+5078034912532228 09 25 337
+        `;
+
+        let selectedRow = null; // متغير لتتبع الصف المختار حاليًا
+
+        // دالة لتقسيم البيانات وعرضها في الجدول
+        function populateTable() {
+            const tableBody = document.getElementById('cards-table-body');
+            const cardCountSpan = document.getElementById('card-count');
+            
+            // جلب حقول الإدخال مرة واحدة خارج الحلقة
+            const ccNumberInput = document.getElementById('cc-number');
+            const ccMonthInput = document.getElementById('cc-month');
+            const ccYearInput = document.getElementById('cc-year');
+            const ccCvvInput = document.getElementById('cc-cvv');
+
+            const lines = cardData.trim().split('\n').filter(line => line.trim() !== '');
+            let cardCounter = 0;
+
+            lines.forEach((line, index) => {
+                const parts = line.trim().split(/\s+/);
+                
+                if (parts.length >= 4) {
+                    cardCounter++;
+                    const [cardNumber, month, year, cvv] = parts;
+                    const row = document.createElement('tr');
+                    row.className = 'bg-gray-800 border-b border-gray-700 hover:bg-gray-600 transition-colors duration-200 cursor-pointer';
+
+                    row.innerHTML = `
+                        <td class="px-6 py-4 font-medium text-gray-400">${cardCounter}</td>
+                        <td class="px-6 py-4 font-mono text-cyan-400">${cardNumber}</td>
+                        <td class="px-6 py-4">${month}</td>
+                        <td class="px-6 py-4">${year}</td>
+                        <td class="px-6 py-4 text-amber-400">${cvv}</td>
+                    `;
+
+                    // إضافة حدث النقر على الصف
+                    row.addEventListener('click', () => {
+                        // إزالة التمييز من الصف المختار سابقًا
+                        if (selectedRow) {
+                            selectedRow.classList.remove('selected-row');
+                        }
+
+                        // تعيين بيانات الصف الحالي في حقول الإدخال
+                        ccNumberInput.value = cardNumber;
+                        ccMonthInput.value = month;
+                        ccYearInput.value = year;
+                        ccCvvInput.value = cvv;
+
+                        // تمييز الصف الحالي
+                        row.classList.add('selected-row');
+                        selectedRow = row; // تحديث الصف المختار
+                    });
+
+                    tableBody.appendChild(row);
+                }
+            });
+            
+            cardCountSpan.textContent = cardCounter;
+        }
+        
+        // دالة لنسخ البيانات - تم التعديل لإصلاح الخطأ
+        function copyCardData() {
+            const cardNumber = document.getElementById('cc-number').value;
+            const month = document.getElementById('cc-month').value;
+            const year = document.getElementById('cc-year').value;
+            const cvv = document.getElementById('cc-cvv').value;
+
+            if (!cardNumber) {
+                showToast("الرجاء تحديد بطاقة أولاً!", true); // true for error
+                return;
+            }
+
+            const textToCopy = `${cardNumber}|${month}|${year}|${cvv}`;
+            
+            // استخدام الطريقة القديمة الموثوقة التي تعمل في كل مكان
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            
+            // جعل حقل النص غير مرئي وتجنب أي وميض أو تمرير للصفحة
+            textArea.style.position = "fixed";
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.width = "2em";
+            textArea.style.height = "2em";
+            textArea.style.padding = "0";
+            textArea.style.border = "none";
+            textArea.style.outline = "none";
+            textArea.style.boxShadow = "none";
+            textArea.style.background = "transparent";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast("تم نسخ البيانات بنجاح!");
+                } else {
+                    showToast("فشل نسخ البيانات.", true);
+                }
+            } catch (err) {
+                console.error('فشل نسخ النص', err);
+                showToast("حدث خطأ أثناء النسخ.", true);
+            }
+
+            document.body.removeChild(textArea);
+        }
+        
+        // دالة لإظهار رسالة التأكيد - تم تعديلها لدعم رسائل الخطأ
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast-notification');
+            toast.textContent = message;
+            
+            // تغيير اللون في حالة وجود خطأ
+            if (isError) {
+                toast.classList.remove('bg-green-500');
+                toast.classList.add('bg-red-500');
+            } else {
+                toast.classList.remove('bg-red-500');
+                toast.classList.add('bg-green-500');
+            }
+
+            toast.classList.remove('opacity-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 2000); // إخفاء الرسالة بعد ثانيتين
+        }
+
+
+        // استدعاء الدالة عند تحميل الصفحة بالكامل
+        document.addEventListener('DOMContentLoaded', () => {
+             populateTable();
+             document.getElementById('copy-button').addEventListener('click', copyCardData);
+        });
+    </script>
+</body>
+</html>
