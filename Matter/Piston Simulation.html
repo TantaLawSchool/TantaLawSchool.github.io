@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Realistic Piston Simulation</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+
+<body>
+
+<script>
+
+const Engine = Matter.Engine;
+const Render = Matter.Render;
+const Runner = Matter.Runner;
+const Bodies = Matter.Bodies;
+const Body = Matter.Body;
+const Constraint = Matter.Constraint;
+const Composite = Matter.Composite;
+
+const engine = Engine.create();
+engine.world.gravity.y = 0;
+
+const render = Render.create({
+    element: document.body,
+    engine: engine,
+    options: {
+        width: 800,
+        height: 500,
+        wireframes: false
+    }
+});
+
+// piston
+const bodyWidth = 80;
+const bodyHeight = 40;
+const textureSrc = 'box-texture.jpg';
+const img = new Image();
+img.src = textureSrc;
+
+const xScale = bodyWidth / img.width;
+const yScale = bodyHeight / img.height;
+const piston = Bodies.rectangle(400, 200, 80, 40, {
+    friction: 0,
+    inertia: Infinity,
+    render: {
+        sprite: {
+            texture: textureSrc,
+            xScale: xScale,
+            yScale: yScale
+        }
+    }
+    });
+    
+    
+
+
+
+
+// cylinder walls
+const wallLeft = Bodies.rectangle(360, 200, 20, 200, { isStatic: true });
+const wallRight = Bodies.rectangle(440, 200, 20, 200, { isStatic: true });
+
+// crankshaft
+const crank = Bodies.circle(400, 350, 25);
+
+// fix crank center
+const crankFix = Constraint.create({
+    pointA: { x: 400, y: 350 },
+    bodyB: crank,
+    stiffness: 1
+});
+
+// connecting rod
+const rod = Constraint.create({
+    bodyA: crank,
+    pointA: { x: 0, y: 25 },
+    bodyB: piston,
+    length: 130,
+    stiffness: 1
+});
+
+Composite.add(engine.world, [
+    piston,
+    crank,
+    rod,
+    crankFix,
+    wallLeft,
+    wallRight
+]);
+
+// rotate crank continuously
+setInterval(() => {
+    Body.rotate(crank, 0.1);
+}, 5);
+
+
+
+// run engine
+Runner.run(engine);
+Render.run(render);
+
+</script>
+
+</body>
+</html>
