@@ -34,7 +34,7 @@ const render = Render.create({
 // piston
 const bodyWidth = 80;
 const bodyHeight = 40;
-const textureSrc = 'box-texture.jpg';
+const textureSrc = './assets/textures/pisten.png';
 const img = new Image();
 img.src = textureSrc;
 
@@ -58,8 +58,8 @@ const piston = Bodies.rectangle(400, 200, 80, 40, {
 
 
 // cylinder walls
-const wallLeft = Bodies.rectangle(360, 200, 20, 200, { isStatic: true });
-const wallRight = Bodies.rectangle(440, 200, 20, 200, { isStatic: true });
+const wallLeft = Bodies.rectangle(360, 200, 5, 200, { isStatic: true });
+const wallRight = Bodies.rectangle(440, 200, 5, 200, { isStatic: true });
 
 // crankshaft
 const crank = Bodies.circle(400, 350, 25);
