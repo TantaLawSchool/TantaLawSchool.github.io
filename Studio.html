@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>عرض توضيحي للكاميرا - Canvas</title>
+
+<style>
+body {
+
+  margin: 0;
+  height: 100vh;
+
+  background-color: #ffffff;
+
+  background-image:
+    linear-gradient(rgba(1,1,1,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1,1,1,0.5) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  background:   #88AA00;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="c"></canvas>
+
+<script>
+// =======================
+// 1. إعداد الـ Canvas والسياق
+// =======================
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+
+// =======================
+// 2. تعريف البيانات أولاً (تجنب خطأ Initialization)
+// =======================
+const camera = {
+  x: 0,
+  y: 0,
+  zoom: 1,
+  rotation: 0
+};
+
+const objects = [
+  { x: 0, y: 0, text: "Spider", alpha: 0 },
+  { x: 400, y: 200, text: "Is Back", alpha: 0 }
+];
+
+// =======================
+// 3. وظيفة الرسم الأساسية
+// =======================
+function draw() {
+  if (!ctx) return;
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+
+  // تحويلات الكاميرا
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  ctx.scale(camera.zoom, camera.zoom);
+  ctx.rotate(camera.rotation);
+  ctx.translate(-camera.x, -camera.y);
+
+  // رسم العناصر
+  objects.forEach(obj => {
+    ctx.globalAlpha = obj.alpha;
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 60px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(obj.text, obj.x, obj.y);
+  });
+
+  ctx.restore();
+}
+
+// =======================
+// 4. التعامل مع حجم النافذة
+// =======================
+function resize() {
+  const ratio = 9 / 16;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  if (w / h > ratio) {
+    canvas.height = h;
+    canvas.width = h * ratio;
+  } else {
+    canvas.width = w;
+    canvas.height = w / ratio;
+  }
+  draw(); 
+}
+
+// استدعاء resize بعد تعريف كل شيء
+window.onresize = resize;
+resize();
+
+// =======================
+// 5. محرك الأنيميشن
+// =======================
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+function degToRad(deg) {
+  return deg * Math.PI / 180;
+}
+
+function fadeIn(obj, duration) {
+  const start = performance.now();
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    obj.alpha = p;
+    draw();
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function moveCamera(target, duration) {
+  const start = performance.now();
+  const from = {
+    x: camera.x,
+    y: camera.y,
+    zoom: camera.zoom,
+    rotation: camera.rotation
+  };
+
+  const targetRotation = target.rotation !== undefined ? degToRad(target.rotation) : from.rotation;
+
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+
+    if (target.x !== undefined) camera.x = lerp(from.x, target.x, ease);
+    if (target.y !== undefined) camera.y = lerp(from.y, target.y, ease);
+    if (target.zoom !== undefined) camera.zoom = lerp(from.zoom, target.zoom, ease);
+    if (target.rotation !== undefined) camera.rotation = lerp(from.rotation, targetRotation, ease);
+
+    draw();
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// =======================
+// 6. تشغيل العرض
+// =======================
+function startDemo() {
+  setTimeout(() => fadeIn(objects[0], 1500), 500);
+  setTimeout(() => moveCamera({ zoom: 2.5 ,rotation:3600}, 1000), 2000);
+  setTimeout(() => moveCamera({ zoom: 1.5}, 500), 3000);
+  setTimeout(() => fadeIn(objects[1], 1000), 3500);
+  setTimeout(() => moveCamera({ x: 400 , y: 200}, 1000), 4500);
+  
+}
+
+window.onload = startDemo;
+</script>
+
+</body>
+</html>
