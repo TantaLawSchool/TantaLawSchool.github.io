@@ -59,7 +59,9 @@ const objects = [
     type: "text",
     x: 0, 
     y: 0, 
-    text: "الخطايا", 
+    text: "الخطايا",
+    currentText: "الخطايا",
+    font: "bold 60px Amiri",
     alpha: 0,
     rotation: 0,
   },
@@ -79,6 +81,8 @@ const objects = [
     x: 0, 
     y: 100, 
     text: "السبع", 
+    currentText: "السبع",
+    font: "bold 60px Amiri",
     alpha: 0,
     rotation: 0,
   },
@@ -87,7 +91,19 @@ const objects = [
     x: 0, 
     y: 200, 
     text: "المميتة", 
+    currentText: "المميتة",
+    font: "bold 60px Amiri",
     alpha: 0,
+    rotation: 0,
+  },
+  { 
+    type: "text",
+    x: 0, 
+    y: 260, 
+    text: "تاريخ الخطايا السبع", 
+    currentText: "",
+    font: "bold 30px Amiri",
+    alpha: 1,
     rotation: 0,
   }
 
@@ -122,7 +138,7 @@ function draw() {
     if (obj.type === "text") {
       ctx.globalAlpha = obj.alpha;
       ctx.fillStyle = "#fff";
-      ctx.font = "bold 60px Amiri";
+      ctx.font = obj.font;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       
@@ -134,7 +150,9 @@ function draw() {
 
 
       //ctx.fillText(obj.text, obj.x, obj.y);
-      ctx.fillText(obj.text, 0, 0);
+      //ctx.fillText(obj.text, 0, 0);
+      // استخدم currentText بدل obj.text
+      ctx.fillText(obj.currentText || "", 0, 0);
       
     }
 
@@ -169,6 +187,7 @@ function draw() {
 // =======================
 function resize() {
   const ratio = 9 / 16;
+  //const ratio = 16 / 9;
   const w = window.innerWidth;
   const h = window.innerHeight;
 
@@ -271,6 +290,32 @@ function rotateObject(obj, deg, duration) {
 }
 
 
+function typeWriter(obj, duration) {
+  // طول النص وعدد الحروف
+  const fullText = obj.text;
+  const totalChars = fullText.length;
+
+  const startTime = performance.now();
+
+  function step(now) {
+    const t = now - startTime;
+    const progress = Math.min(t / duration, 1); // من 0 إلى 1
+
+    // عدد الحروف اللي تظهر
+    const charsToShow = Math.floor(totalChars * progress);
+    obj.currentText = fullText.substring(0, charsToShow);
+
+    draw(); // رسم النص الحالي
+
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  obj.currentText = ""; // بداية فارغة
+  requestAnimationFrame(step);
+}
+
+
+
 function moveCamera(target, duration) {
   const start = performance.now();
   const from = {
@@ -316,6 +361,8 @@ function startDemo() {
   setTimeout(() => rotateObject(objects[1], 720, 3000), 6500);
   setTimeout(() => rotateObject(objects[2], 720, 3000), 9500);
   setTimeout(() => fadeIn(objects[3], 1000), 12500);
+  setTimeout(() => typeWriter(objects[4], 1000), 13500);
+  
   
 }
 
