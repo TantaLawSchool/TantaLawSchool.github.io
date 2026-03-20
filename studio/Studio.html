@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>عرض توضيحي للكاميرا - Canvas</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 body {
 
@@ -57,7 +59,7 @@ const objects = [
     type: "text",
     x: 0, 
     y: 0, 
-    text: "Hit", 
+    text: "الخطايا", 
     alpha: 0,
     rotation: 0,
   },
@@ -69,14 +71,22 @@ const objects = [
     height: 200,
     alpha: 0,
     rotation: 0,
-    src: "wood.svg",
+    src: "sevendeadlysins-circle.png",
     img: null
   },
   { 
     type: "text",
     x: 0, 
     y: 100, 
-    text: "Knife", 
+    text: "السبع", 
+    alpha: 0,
+    rotation: 0,
+  },
+  { 
+    type: "text",
+    x: 0, 
+    y: 200, 
+    text: "المميتة", 
     alpha: 0,
     rotation: 0,
   }
@@ -112,9 +122,16 @@ function draw() {
     if (obj.type === "text") {
       ctx.globalAlpha = obj.alpha;
       ctx.fillStyle = "#fff";
-      ctx.font = "bold 60px Arial";
+      ctx.font = "bold 60px Amiri";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
+      
+      // إعداد الظل
+      ctx.shadowColor = "rgba(0,0,0,0.9)"; // نصف شفاف أسود
+      ctx.shadowBlur = 20;                 // قوة التمويه
+      ctx.shadowOffsetX = 5;                // إزاحة أفقية
+      ctx.shadowOffsetY = 5;                // إزاحة عمودية
+
 
       //ctx.fillText(obj.text, obj.x, obj.y);
       ctx.fillText(obj.text, 0, 0);
@@ -298,6 +315,7 @@ function startDemo() {
   //setTimeout(() => moveCamera({rotation: 3600}, 3000), 6500);
   setTimeout(() => rotateObject(objects[1], 720, 3000), 6500);
   setTimeout(() => rotateObject(objects[2], 720, 3000), 9500);
+  setTimeout(() => fadeIn(objects[3], 1000), 12500);
   
 }
 
