@@ -58,7 +58,8 @@ const objects = [
     x: 0, 
     y: 0, 
     text: "Hit", 
-    alpha: 0 
+    alpha: 0,
+    rotation: 0,
   },
   {
     type: "image",
@@ -67,6 +68,7 @@ const objects = [
     width: 200,
     height: 200,
     alpha: 0,
+    rotation: 0,
     src: "wood.svg",
     img: null
   },
@@ -75,7 +77,8 @@ const objects = [
     x: 0, 
     y: 100, 
     text: "Knife", 
-    alpha: 0 
+    alpha: 0,
+    rotation: 0,
   }
 
   
@@ -100,6 +103,12 @@ function draw() {
 
   // رسم العناصر
   objects.forEach(obj => {
+    ctx.save();
+  // نحرك لنقطة العنصر
+    ctx.translate(obj.x, obj.y);
+  // نلف حوالين نفسه
+    if (obj.rotation) ctx.rotate(obj.rotation);
+  
     if (obj.type === "text") {
       ctx.globalAlpha = obj.alpha;
       ctx.fillStyle = "#fff";
@@ -107,12 +116,15 @@ function draw() {
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
-      ctx.fillText(obj.text, obj.x, obj.y);
+      //ctx.fillText(obj.text, obj.x, obj.y);
+      ctx.fillText(obj.text, 0, 0);
+      
     }
 
     else if (obj.type === "image" && obj.img) {
     console.log("loaded");
     ctx.globalAlpha = obj.alpha;
+    /*
       ctx.drawImage(
         obj.img,
         obj.x - obj.width / 2,
@@ -120,8 +132,16 @@ function draw() {
         obj.width,
         obj.height
       );
+      */
+       ctx.drawImage(
+    obj.img,
+    -obj.width / 2,   // 👈 مهم جدًا
+    -obj.height / 2,  // 👈 مهم جدًا
+    obj.width,
+    obj.height
+  );
     }
-    
+    ctx.restore();
   });
 
   ctx.restore();
@@ -213,6 +233,25 @@ function playAudioInDuration(src, duration) {
   return audio;
 }
 
+function rotateObject(obj, deg, duration) {
+  const start = performance.now();
+  const from = obj.rotation;
+  const to = from + degToRad(deg);
+
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+
+    obj.rotation = from + (to - from) * ease;
+
+    draw();
+
+    if (p < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
 
 
 function moveCamera(target, duration) {
@@ -256,7 +295,9 @@ function startDemo() {
   setTimeout(() => fadeOut(objects[0], 1000), 4500);
   setTimeout(() => fadeIn(objects[1], 1000), 5500);
   setTimeout(() => playAudioInDuration("spin.mp3", 3), 6500);
-  setTimeout(() => moveCamera({rotation: 3600}, 3000), 6500);
+  //setTimeout(() => moveCamera({rotation: 3600}, 3000), 6500);
+  setTimeout(() => rotateObject(objects[1], 720, 3000), 6500);
+  setTimeout(() => rotateObject(objects[2], 720, 3000), 9500);
   
 }
 
