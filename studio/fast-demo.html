@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>عرض توضيحي للكاميرا - Canvas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+
+  margin: 0;
+  height: 100vh;
+
+  background-color: #ffffff;
+
+  background-image:
+    linear-gradient(rgba(1,1,1,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1,1,1,0.5) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  background:   #88AA00;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="c"></canvas>
+
+
+<script>
+// =======================
+// 1. إعداد الـ Canvas والسياق
+// =======================
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+
+
+// =======================
+// 2. تعريف البيانات أولاً (تجنب خطأ Initialization)
+// =======================
+const camera = {
+  x: 0,
+  y: 0,
+  zoom: 1,
+  rotation: 0
+};
+
+const objects = [
+  { 
+    type: "text",
+    x: 0, 
+    y: 0, 
+    text: "الغرور",
+    currentText: "الغرور",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  },
+  { 
+    type: "text",
+    x: 0, 
+    y: 200, 
+    text: "الجشع", 
+    currentText: "الجشع",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  },
+  { 
+    type: "text",
+    x: 0, 
+    y: 400, 
+    text: "الشهوة", 
+    currentText: "الشهوة",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  },
+  { 
+    type: "text",
+    x: 0, 
+    y: 600, 
+    text: "الحسد", 
+    currentText: "الحسد",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  },
+  {
+    type: "text",
+    x: 0, 
+    y: 800, 
+    text: "الشراهة", 
+    currentText: "الشراهة",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  },
+  {
+    type: "text",
+    x: 0, 
+    y: 1000, 
+    text: "الغضب", 
+    currentText: "الغضب",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  },
+  {
+    type: "text",
+    x: 0, 
+    y: 1200, 
+    text: "الكسل", 
+    currentText: "الكسل",
+    font: "bold 60px Amiri",
+    alpha: 0,
+    rotation: 0,
+  }
+  
+];
+
+
+// =======================
+// 3. وظيفة الرسم الأساسية
+// =======================
+function draw() {
+  if (!ctx) return;
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.resetTransform();
+
+  // تحويلات الكاميرا
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  ctx.scale(camera.zoom, camera.zoom);
+  ctx.rotate(camera.rotation);
+  ctx.translate(-camera.x, -camera.y);
+
+  // رسم العناصر
+  objects.forEach(obj => {
+    ctx.save();
+  // نحرك لنقطة العنصر
+    ctx.translate(obj.x, obj.y);
+  // نلف حوالين نفسه
+    if (obj.rotation) ctx.rotate(obj.rotation);
+  
+    if (obj.type === "text") {
+      ctx.globalAlpha = obj.alpha;
+      ctx.fillStyle = "#fff";
+      ctx.font = obj.font;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      
+      // إعداد الظل
+      ctx.shadowColor = "rgba(0,0,0,0.9)"; // نصف شفاف أسود
+      ctx.shadowBlur = 20;                 // قوة التمويه
+      ctx.shadowOffsetX = 5;                // إزاحة أفقية
+      ctx.shadowOffsetY = 5;                // إزاحة عمودية
+
+
+      //ctx.fillText(obj.text, obj.x, obj.y);
+      //ctx.fillText(obj.text, 0, 0);
+      // استخدم currentText بدل obj.text
+      ctx.fillText(obj.currentText || "", 0, 0);
+      
+    }
+
+    else if (obj.type === "image" && obj.img) {
+    console.log("loaded");
+    ctx.globalAlpha = obj.alpha;
+    /*
+      ctx.drawImage(
+        obj.img,
+        obj.x - obj.width / 2,
+        obj.y - obj.height / 2,
+        obj.width,
+        obj.height
+      );
+      */
+       ctx.drawImage(
+    obj.img,
+    -obj.width / 2,   // 👈 مهم جدًا
+    -obj.height / 2,  // 👈 مهم جدًا
+    obj.width,
+    obj.height
+  );
+    }
+    ctx.restore();
+  });
+
+  ctx.restore();
+}
+
+// =======================
+// 4. التعامل مع حجم النافذة
+// =======================
+function resize() {
+  const ratio = 9 / 16;
+  //const ratio = 16 / 9;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  if (w / h > ratio) {
+    canvas.height = h;
+    canvas.width = h * ratio;
+  } else {
+    canvas.width = w;
+    canvas.height = w / ratio;
+  }
+  draw(); 
+}
+
+// استدعاء resize بعد تعريف كل شيء
+window.onresize = resize;
+resize();
+
+// =======================
+// 5. محرك الأنيميشن
+// =======================
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+function degToRad(deg) {
+  return deg * Math.PI / 180;
+}
+
+function fadeIn(obj, duration) {
+  const start = performance.now();
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    obj.alpha = p;
+    draw();
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function fadeOut(obj, duration) {
+  const start = performance.now();
+  const from = obj.alpha;
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    // نزول تدريجي من القيمة الحالية إلى 0
+    obj.alpha = from * (1 - p);
+    draw();
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function loadImage(obj) {
+  const image = new Image();
+  image.src = obj.src;
+
+  image.onload = () => {
+    obj.img = image;
+    draw();
+  };
+}
+
+function playAudioInDuration(src, duration) {
+  const audio = new Audio(src);
+
+  audio.addEventListener("loadedmetadata", () => {
+    const originalDuration = audio.duration;
+
+    // حساب السرعة
+    const rate = originalDuration / duration;
+
+    audio.playbackRate = rate;
+
+    audio.play();
+  });
+
+  return audio;
+}
+
+function rotateObject(obj, deg, duration) {
+  const start = performance.now();
+  const from = obj.rotation;
+  const to = from + degToRad(deg);
+
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+
+    obj.rotation = from + (to - from) * ease;
+
+    draw();
+
+    if (p < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+
+function typeWriter(obj, duration) {
+  // طول النص وعدد الحروف
+  const fullText = obj.text;
+  const totalChars = fullText.length;
+
+  const startTime = performance.now();
+
+  function step(now) {
+    const t = now - startTime;
+    const progress = Math.min(t / duration, 1); // من 0 إلى 1
+
+    // عدد الحروف اللي تظهر
+    const charsToShow = Math.floor(totalChars * progress);
+    obj.currentText = fullText.substring(0, charsToShow);
+
+    draw(); // رسم النص الحالي
+
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  obj.currentText = ""; // بداية فارغة
+  requestAnimationFrame(step);
+}
+
+
+
+function moveCamera(target, duration) {
+  const start = performance.now();
+  const from = {
+    x: camera.x,
+    y: camera.y,
+    zoom: camera.zoom,
+    rotation: camera.rotation
+  };
+
+  const targetRotation = target.rotation !== undefined ? degToRad(target.rotation) : from.rotation;
+
+  function step(now) {
+    const t = now - start;
+    const p = Math.min(t / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+
+    if (target.x !== undefined) camera.x = lerp(from.x, target.x, ease);
+    if (target.y !== undefined) camera.y = lerp(from.y, target.y, ease);
+    if (target.zoom !== undefined) camera.zoom = lerp(from.zoom, target.zoom, ease);
+    if (target.rotation !== undefined) camera.rotation = lerp(from.rotation, targetRotation, ease);
+
+    draw();
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// =======================
+// 6. تشغيل العرض
+// =======================
+function startDemo() {
+  setTimeout(() => fadeIn(objects[0], 1000), 500);
+  setTimeout(() => moveCamera({ zoom: 1.5}, 500), 2000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 2000);
+  
+  setTimeout(() => moveCamera({ x: 0 , y: 200}, 500), 2500);
+  setTimeout(() => fadeIn(objects[1], 500), 3000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 3000);
+  
+  setTimeout(() => moveCamera({ x: 0 , y: 400}, 500), 3500);
+  setTimeout(() => fadeIn(objects[2], 500), 4000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 4000);
+  
+  setTimeout(() => moveCamera({ x: 0 , y: 600}, 500), 4500);
+  setTimeout(() => fadeIn(objects[3], 500), 5000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 5000);
+  
+  setTimeout(() => moveCamera({ x: 0 , y: 800}, 500), 5500);
+  setTimeout(() => fadeIn(objects[4], 500), 6000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 6000);
+  
+  setTimeout(() => moveCamera({ x: 0 , y: 1000}, 500), 6500);
+  setTimeout(() => fadeIn(objects[5], 500), 7000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 7000);
+  
+  setTimeout(() => moveCamera({ x: 0 , y: 1200}, 500), 7500);
+  setTimeout(() => fadeIn(objects[6], 500), 8000); setTimeout(() => playAudioInDuration("hit.mp3", 0.5), 8000);
+  
+  
+  
+}
+
+//window.onload = startDemo;
+// Listener على Enter
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    startDemo();
+  }
+});
+
+</script>
+
+</body>
+</html>
