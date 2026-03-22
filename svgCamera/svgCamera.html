@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SVG Camera Follow</title>
+<style>
+  body { margin: 0; background: #111; }
+  svg { display: block; margin: auto; background: #1E90FF; }
+</style>
+</head>
+<body>
+
+<svg id="svg" width="600" height="400" viewBox="0 0 600 400">
+
+  <!-- 🔹 خلفية عشوائية -->
+  <g id="world">
+    <image id="island"
+         x="900"
+         y="200"
+         href="./island.png"
+         width="400"
+         transform="translate(-40 -40)"/>
+    
+    <image id="island2"
+         x="300"
+         y="-100"
+         href="./island.png"
+         width="400"
+         transform="translate(-40 -40)"/>
+    <circle cx="500" cy="300" r="30" fill="green"/>
+    <rect x="700" y="100" width="60" height="60" fill="yellow"/>
+  </g>
+
+  <!-- 🔹 المسار -->
+  <path id="motionPath"
+        d="M0,200 L50,200
+           C150,50 300,350 450,200 
+           S750,50 900,200"
+        fill="none"
+        stroke="white" stroke-dasharray="10,5"/>
+
+  <!-- 🔹 العنصر المتحرك -->
+  <image id="obj"
+         href="./boat.png"
+         width="80"
+         height="80"
+         transform="translate(-40 -40)">
+
+    <animateMotion id="anim"
+                   dur="10s"
+                   repeatCount="1"
+                   fill="freeze"
+                   rotate="auto">
+      <mpath href="#motionPath"/>
+    </animateMotion>
+
+  </image>
+
+</svg>
+
+<script>
+const svg = document.getElementById("svg");
+const obj = document.getElementById("obj");
+const path = document.getElementById("motionPath");
+const anim = document.getElementById("anim");
+
+var shipCameraState = 0;
+
+anim.addEventListener("beginEvent", () => {
+  console.log("الأنيميشن بدأ");
+  shipCameraState = 1;
+  requestAnimationFrame(updateCamera);
+});
+
+anim.addEventListener("endEvent", () => {
+  console.log("الأنيميشن انتهى");
+  shipCameraState = 0;
+});
+
+
+let startTime = null;
+
+function updateCamera(timestamp) {
+
+  if (!startTime) startTime = timestamp;
+  const elapsed = (timestamp - startTime) / 1000; // بالثواني
+  const dur = 10; // مدة الأنيميشن بالثواني
+  const progress = Math.min(elapsed / dur, 1);   // 0 → 1
+
+  // نحسب النقطة على المسار
+  const point = path.getPointAtLength(path.getTotalLength() * progress);
+
+  // نحرك الكاميرا (viewBox)
+  const viewWidth = 600;
+  const viewHeight = 400;
+
+  const x = point.x - viewWidth / 2;
+  const y = point.y - viewHeight / 2;
+
+  svg.setAttribute("viewBox", `${x} ${y} ${viewWidth} ${viewHeight}`);
+  if(shipCameraState == 1){
+    requestAnimationFrame(updateCamera);
+  }
+  else{
+    console.log(svg.getAttribute("viewBox"));
+  }
+  
+}
+
+
+
+</script>
+
+</body>
+</html>
