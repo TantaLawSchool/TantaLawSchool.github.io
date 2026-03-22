@@ -4,8 +4,17 @@
 <meta charset="UTF-8">
 <title>SVG Camera Follow</title>
 <style>
-  body { margin: 0; background: #111; }
-  svg { display: block; margin: auto; background: #1E90FF; }
+  body { margin: 0; background: #111; perspective: 1000px;}
+  svg { 
+  display: block; margin: auto; background: #1E90FF;
+  transform-origin: 50% 50%; /* مركز التدوير */
+  transform-style: preserve-3d; /* للحفاظ على العمق */
+  animation: rotateYBoard 5s forwards;
+  }
+  @keyframes rotateYBoard {
+  from { transform: rotateX(0deg)rotateY(0deg); }
+  to { transform: rotateX(0deg)rotateY(0deg); }
+}
 </style>
 </head>
 <body>
@@ -38,10 +47,14 @@
            S750,50 900,200"
         fill="none"
         stroke="white" stroke-dasharray="10,5"/>
+  <path id="motionPath2"
+        d="M 900 200 C 698 268 397 282 281 291 C 79 306 53 253 50 200 L 0 200"
+        fill="none"
+        stroke="white" stroke-dasharray="10,5"/>
 
   <!-- 🔹 العنصر المتحرك -->
   <image id="obj"
-         href="./boat.png"
+         href="./boat4.png"
          width="80"
          height="80"
          transform="translate(-40 -40)">
@@ -52,6 +65,21 @@
                    fill="freeze"
                    rotate="auto">
       <mpath href="#motionPath"/>
+    </animateMotion>
+
+  </image>
+  <image id="obj2"
+         href="./boat5.png"
+         width="80"
+         height="80"
+         transform="translate(-40 -40)">
+
+    <animateMotion id="anim2"
+                   dur="10s"
+                   repeatCount="1"
+                   fill="freeze"
+                   rotate="auto">
+      <mpath href="#motionPath2"/>
     </animateMotion>
 
   </image>
