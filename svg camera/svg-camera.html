@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SVG Camera Follow</title>
+<style>
+  body { margin: 0; background: #111; }
+  svg { display: block; margin: auto; background: #1E90FF; }
+</style>
+</head>
+<body>
+
+<svg id="svg" width="600" height="400" viewBox="0 0 600 400">
+
+  <!-- 🔹 خلفية عشوائية -->
+  <g id="world">
+    <circle cx="100" cy="100" r="20" fill="red"/>
+    <rect x="300" y="200" width="50" height="50" fill="blue"/>
+    <circle cx="500" cy="300" r="30" fill="green"/>
+    <rect x="700" y="100" width="60" height="60" fill="yellow"/>
+  </g>
+
+  <!-- 🔹 المسار -->
+  <path id="motionPath"
+        d="M50,200 
+           C150,50 300,350 450,200 
+           S750,50 900,200"
+        fill="none"
+        stroke="white"/>
+
+  <!-- 🔹 العنصر المتحرك -->
+  <image id="obj"
+         href="./boat.png"
+         width="80"
+         height="80"
+         transform="translate(-40 -40)">
+
+    <animateMotion id="anim"
+                   dur="10s"
+                   repeatCount="indefinite"
+                   rotate="auto">
+      <mpath href="#motionPath"/>
+    </animateMotion>
+
+  </image>
+
+</svg>
+
+<script>
+const svg = document.getElementById("svg");
+const obj = document.getElementById("obj");
+const path = document.getElementById("motionPath");
+
+// طول المسار
+const pathLength = path.getTotalLength();
+
+function updateCamera() {
+  // الوقت الحالي للأنيميشن (0 → 1)
+  const anim = document.getElementById("anim");
+  const dur = 10; // نفس مدة الأنيميشن
+  const time = (performance.now() / 1000) % dur;
+  const progress = time / dur;
+
+  // نحسب النقطة على المسار
+  const point = path.getPointAtLength(pathLength * progress);
+
+  // نحرك الكاميرا (viewBox)
+  const viewWidth = 600;
+  const viewHeight = 400;
+
+  const x = point.x - viewWidth / 2;
+  const y = point.y - viewHeight / 2;
+
+  svg.setAttribute("viewBox", `${x} ${y} ${viewWidth} ${viewHeight}`);
+
+  requestAnimationFrame(updateCamera);
+}
+
+updateCamera();
+</script>
+
+</body>
+</html>
