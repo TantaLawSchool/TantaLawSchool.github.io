@@ -36,19 +36,29 @@
          href="./island.png"
          width="400"
          transform="translate(-40 -40)"/>
+         
     <circle cx="500" cy="300" r="30" fill="green"/>
     <rect x="700" y="100" width="60" height="60" fill="yellow"/>
+    
+
+  <foreignObject x="700" y="100" width="80" height="100">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="color:white; background:red;">
+      جزيرة
+    </div>
+  </foreignObject>
+
+
+    
   </g>
+ 
 
   <!-- 🔹 المسار -->
   <path id="motionPath"
-        d="M0,200 L50,200
-           C150,50 300,350 450,200 
-           S750,50 900,200"
+        d="M 0 200 L 31 170 C 150 50 300 350 450 200 S 750 50 900 200"
         fill="none"
         stroke="white" stroke-dasharray="10,5"/>
   <path id="motionPath2"
-        d="M 900 200 C 698 268 397 282 281 291 C 79 306 53 253 50 200 L 0 200"
+        d="M 900 200 C 698 268 397 282 276 277 C 68 246 74 230 35 219 L 0 200"
         fill="none"
         stroke="white" stroke-dasharray="10,5"/>
 
