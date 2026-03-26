@@ -1,0 +1,28 @@
+<video id="myVideo" width="500">
+  <source src="murder club.mp4" type="video/mp4">
+</video>
+
+<script>
+  const video = document.getElementById("myVideo");
+
+  const startTime = 109.40; // بداية التشغيل بالثواني
+  const endTime = 111.95;   // نهاية التشغيل
+
+  video.addEventListener("loadedmetadata", () => {
+    video.currentTime = startTime;
+  });
+
+  video.addEventListener("timeupdate", () => {
+    if (video.currentTime >= endTime) {
+      video.pause();
+    }
+  });
+
+  // زر لتشغيل الجزء المحدد
+  function playSegment() {
+    video.currentTime = startTime;
+    video.play();
+  }
+</script>
+
+<button onclick="playSegment()">تشغيل جزء من الفيديو</button>
