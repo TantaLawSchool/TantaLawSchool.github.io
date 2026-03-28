@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vertices Editor</title>
+<style>
+  body { margin: 0; background: #111; color: white; font-family: sans-serif; }
+  #ui {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }
+  button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  textarea {
+    width: 300px;
+    height: 150px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div id="ui">
+  <button onclick="exportVertices()">Export</button>
+  <button onclick="clearAll()">Clear</button>
+  <br>
+  <textarea id="output"></textarea>
+</div>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let vertices = [];
+let draggingIndex = -1;
+
+// إضافة نقطة
+canvas.addEventListener("click", (e) => {
+  if (draggingIndex === -1) {
+    vertices.push({ x: e.clientX, y: e.clientY });
+  }
+});
+
+// حذف آخر نقطة (right click)
+canvas.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  vertices.pop();
+});
+
+// بدء سحب نقطة
+canvas.addEventListener("mousedown", (e) => {
+  const mouse = { x: e.clientX, y: e.clientY };
+
+  vertices.forEach((v, i) => {
+    const dx = v.x - mouse.x;
+    const dy = v.y - mouse.y;
+    if (Math.sqrt(dx*dx + dy*dy) < 10) {
+      draggingIndex = i;
+    }
+  });
+});
+
+// أثناء السحب
+canvas.addEventListener("mousemove", (e) => {
+  if (draggingIndex !== -1) {
+    vertices[draggingIndex].x = e.clientX;
+    vertices[draggingIndex].y = e.clientY;
+  }
+});
+
+// إيقاف السحب
+canvas.addEventListener("mouseup", () => {
+  draggingIndex = -1;
+});
+
+// رسم
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // رسم الخطوط
+  if (vertices.length > 1) {
+    ctx.beginPath();
+    ctx.moveTo(vertices[0].x, vertices[0].y);
+
+    for (let i = 1; i < vertices.length; i++) {
+      ctx.lineTo(vertices[i].x, vertices[i].y);
+    }
+
+    ctx.strokeStyle = "#00FFAA";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  // رسم النقاط
+  vertices.forEach(v => {
+    ctx.beginPath();
+    ctx.arc(v.x, v.y, 6, 0, Math.PI * 2);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+// تصدير
+function exportVertices() {
+  const formatted = vertices.map(v => ({
+    x: Math.round(v.x),
+    y: Math.round(v.y)
+  }));
+
+  document.getElementById("output").value =
+    JSON.stringify(formatted, null, 2);
+}
+
+// مسح
+function clearAll() {
+  vertices = [];
+  document.getElementById("output").value = "";
+}
+</script>
+
+</body>
+</html>
