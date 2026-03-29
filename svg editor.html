@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محرر SVG الاحترافي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --panel-bg: #ffffff;
+            --accent-color: #2563eb;
+            --text-color: #1f2937;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Layout */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background: var(--panel-bg);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+        }
+
+        main {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            cursor: grab;
+        }
+
+        main:active {
+            cursor: grabbing;
+        }
+
+        /* SVG Canvas */
+        #svg-container {
+            position: absolute;
+            background: black;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            transform-origin: 0 0;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        /* Sidebar Panel */
+        #properties-panel {
+            position: fixed;
+            top: 60px;
+            right: -320px;
+            width: 300px;
+            bottom: 20px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #properties-panel.active {
+            right: 20px;
+        }
+
+        /* UI Elements */
+        button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        button.secondary {
+            background: #64748b;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 80px;
+            font-family: monospace;
+            direction: ltr;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1001;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-content button {
+            background: none;
+            color: black;
+            width: 100%;
+            text-align: right;
+            border-radius: 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dropdown-content button:hover {
+            background: #f1f5f9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Initial Dialog */
+        #init-dialog {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .dialog-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Selection highlight */
+        .selected-element {
+            outline: 2px dashed var(--accent-color) !important;
+        }
+    </style>
+</head>
+<body>
+
+<div id="init-dialog">
+    <div class="dialog-box">
+        <h3>إنشاء مشروع SVG جديد</h3>
+        <div class="input-group">
+            <label>عرض الـ SVG (px)</label>
+            <input type="number" id="init-width" value="800">
+        </div>
+        <div class="input-group">
+            <label>ارتفاع الـ SVG (px)</label>
+            <input type="number" id="init-height" value="600">
+        </div>
+        <button onclick="initCanvas()">بدء التصميم</button>
+    </div>
+</div>
+
+<div class="app-container">
+    <header>
+        <div class="toolbar">
+            <div class="dropdown">
+                <button>➕ Insert</button>
+                <div class="dropdown-content">
+                    <button onclick="addRect()">Rect (مستطيل)</button>
+                    <button onclick="addCircle()">Circle (دائرة)</button>
+                    <button onclick="addText()">Text (نص)</button>
+                    <button onclick="addImage()">Image (صورة)</button>
+                    <button onclick="addForeignObject()">ForeignObject (HTML)</button>
+                    <button onclick="addPath()">Path (مسار فارغ)</button>
+                    <button onclick="addGroup()">Group (مجموعة)</button>
+                </div>
+            </div>
+            <button class="secondary" onclick="importSVG()">📥 Import</button>
+            <button class="secondary" onclick="exportSVG()">📤 Export</button>
+        </div>
+        <div style="font-weight: bold;">محرر SVG الاحترافي</div>
+    </header>
+
+    <main id="viewport">
+        <div id="svg-container">
+            <svg id="main-svg" xmlns="http://www.w3.org/2000/svg">
+                <g id="canvas-group"></g>
+            </svg>
+        </div>
+    </main>
+
+    <aside id="properties-panel">
+        <h4 style="margin-top: 0;">خصائص العنصر</h4>
+        <div id="prop-controls">
+            <!-- Dynamic Controls -->
+        </div>
+        <div class="input-group">
+            <label>كود الخصائص (Code Input)</label>
+            <textarea id="raw-attrs" placeholder='fill="red" x="10"'></textarea>
+            <button style="margin-top: 5px; width: 100%;" onclick="applyRawAttrs()">تطبيق الكود</button>
+        </div>
+        <button class="secondary" onclick="deleteElement()" style="background: #ef4444; margin-top: auto;">حذف العنصر</button>
+        <button class="secondary" onclick="closePanel()" style="margin-top: 10px;">إغلاق</button>
+    </aside>
+</div>
+
+<script>
+    const viewport = document.getElementById('viewport');
+    const svgContainer = document.getElementById('svg-container');
+    const mainSvg = document.getElementById('main-svg');
+    const canvasGroup = document.getElementById('canvas-group');
+    const propsPanel = document.getElementById('properties-panel');
+    const propControls = document.getElementById('prop-controls');
+    const rawAttrsInput = document.getElementById('raw-attrs');
+
+    let isPanning = false;
+    let panX = 0, panY = 0;
+    let startX, startY;
+
+    let selectedElement = null;
+    let isDraggingElement = false;
+    let dragStartX, dragStartY;
+    let elementStartX, elementStartY;
+
+    // --- 1. Initialization ---
+    function initCanvas() {
+        const w = document.getElementById('init-width').value;
+        const h = document.getElementById('init-height').value;
+        
+        mainSvg.setAttribute('width', w);
+        mainSvg.setAttribute('height', h);
+        svgContainer.style.width = w + 'px';
+        svgContainer.style.height = h + 'px';
+        
+        // Center the canvas
+        panX = (window.innerWidth - w) / 2;
+        panY = (window.innerHeight - h) / 2;
+        updateTransform();
+        
+        document.getElementById('init-dialog').style.display = 'none';
+    }
+
+    // --- 2. Panning (Navigation) ---
+    viewport.addEventListener('mousedown', (e) => {
+        if (e.target === viewport || e.target === svgContainer || e.target === mainSvg) {
+            isPanning = true;
+            startX = e.clientX - panX;
+            startY = e.clientY - panY;
+            viewport.style.cursor = 'grabbing';
+        }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (isPanning) {
+            panX = e.clientX - startX;
+            panY = e.clientY - startY;
+            updateTransform();
+        }
+        if (isDraggingElement && selectedElement) {
+            const dx = e.clientX - dragStartX;
+            const dy = e.clientY - dragStartY;
+            
+            if (selectedElement.tagName === 'circle') {
+                selectedElement.setAttribute('cx', elementStartX + dx);
+                selectedElement.setAttribute('cy', elementStartY + dy);
+            } else {
+                selectedElement.setAttribute('x', elementStartX + dx);
+                selectedElement.setAttribute('y', elementStartY + dy);
+            }
+            updatePanel();
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        isPanning = false;
+        isDraggingElement = false;
+        viewport.style.cursor = 'grab';
+    });
+
+    viewport.addEventListener('wheel', (e) => {
+        panX -= e.deltaX;
+        panY -= e.deltaY;
+        updateTransform();
+        e.preventDefault();
+    }, { passive: false });
+
+    function updateTransform() {
+        svgContainer.style.transform = `translate(${panX}px, ${panY}px)`;
+    }
+
+    // --- 3. Elements Logic ---
+    function createElement(tag, attrs = {}) {
+        const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        for (let k in attrs) el.setAttribute(k, attrs[k]);
+        
+        el.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+            selectElement(el);
+            isDraggingElement = true;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
+            
+            if (el.tagName === 'circle') {
+                elementStartX = parseFloat(el.getAttribute('cx')) || 0;
+                elementStartY = parseFloat(el.getAttribute('cy')) || 0;
+            } else {
+                elementStartX = parseFloat(el.getAttribute('x')) || 0;
+                elementStartY = parseFloat(el.getAttribute('y')) || 0;
+            }
+        });
+        
+        canvasGroup.appendChild(el);
+        selectElement(el);
+        return el;
+    }
+
+    function addRect() {
+        createElement('rect', { x: 50, y: 50, width: 100, height: 100, fill: '#2563eb', stroke: '#000', 'stroke-width': 1 });
+    }
+
+    function addCircle() {
+        createElement('circle', { cx: 100, cy: 100, r: 50, fill: '#ef4444', stroke: '#000', 'stroke-width': 1 });
+    }
+
+    function addText() {
+        const el = createElement('text', { x: 100, y: 100, fill: '#000', 'font-size': '24' });
+        el.textContent = "نص جديد";
+    }
+
+    function addImage() {
+        const url = prompt("أدخل رابط الصورة (URL):", "https://via.placeholder.com/150");
+        if (url) createElement('image', { x: 50, y: 50, width: 150, height: 150, href: url });
+    }
+
+    function addForeignObject() {
+        const fo = createElement('foreignObject', { x: 50, y: 50, width: 200, height: 100 });
+        const div = document.createElement('div');
+        div.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+        div.style.cssText = "background: white; border: 1px solid black; padding: 10px; height: 100%; overflow: hidden;";
+        div.innerHTML = "<strong>محتوى HTML</strong><p>يمكنك كتابة أي شيء هنا.</p>";
+        fo.appendChild(div);
+    }
+
+    function addPath() {
+        createElement('path', { d: "M 10 10 L 90 90", stroke: "black", "stroke-width": 2, fill: "none" });
+    }
+
+    function addGroup() {
+        createElement('g', { x: 0, y: 0 });
+    }
+
+    // --- 4. Properties Panel ---
+    function selectElement(el) {
+        if (selectedElement) selectedElement.classList.remove('selected-element');
+        selectedElement = el;
+        selectedElement.classList.add('selected-element');
+        updatePanel();
+        propsPanel.classList.add('active');
+    }
+
+    function updatePanel() {
+        if (!selectedElement) return;
+        propControls.innerHTML = '';
+        
+        const attrs = selectedElement.attributes;
+        for (let i = 0; i < attrs.length; i++) {
+            if (attrs[i].name === 'class') continue;
+            createInput(attrs[i].name, attrs[i].value);
+        }
+
+        // Special handling for Text content
+        if (selectedElement.tagName === 'text') {
+            createInput('textContent', selectedElement.textContent, (val) => {
+                selectedElement.textContent = val;
+            });
+        }
+        
+        // Special handling for foreignObject HTML
+        if (selectedElement.tagName === 'foreignObject') {
+            const div = selectedElement.querySelector('div');
+            if (div) {
+                createInput('innerHTML', div.innerHTML, (val) => {
+                    div.innerHTML = val;
+                }, 'textarea');
+            }
+        }
+    }
+
+    function createInput(label, value, customSetter = null, type = 'input') {
+        const div = document.createElement('div');
+        div.className = 'input-group';
+        div.innerHTML = `<label>${label}</label>`;
+        
+        const input = document.createElement(type === 'textarea' ? 'textarea' : 'input');
+        input.value = value;
+        input.oninput = () => {
+            if (customSetter) {
+                customSetter(input.value);
+            } else {
+                selectedElement.setAttribute(label, input.value);
+            }
+        };
+        
+        div.appendChild(input);
+        propControls.appendChild(div);
+    }
+
+    function applyRawAttrs() {
+        if (!selectedElement) return;
+        const text = rawAttrsInput.value;
+        const regex = /(\w+(?:-\w+)*)\s*=\s*"([^"]*)"/g;
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+            selectedElement.setAttribute(match[1], match[2]);
+        }
+        updatePanel();
+    }
+
+    function deleteElement() {
+        if (selectedElement && confirm("هل أنت متأكد من حذف هذا العنصر؟")) {
+            selectedElement.remove();
+            closePanel();
+        }
+    }
+
+    function closePanel() {
+        if (selectedElement) selectedElement.classList.remove('selected-element');
+        selectedElement = null;
+        propsPanel.classList.remove('active');
+    }
+
+    // --- 5. Import/Export ---
+    function exportSVG() {
+        // Remove selection highlights before exporting
+        const highlights = mainSvg.querySelectorAll('.selected-element');
+        highlights.forEach(h => h.classList.remove('selected-element'));
+
+        const serializer = new XMLSerializer();
+        const source = serializer.serializeToString(mainSvg);
+        const blob = new Blob([source], { type: "image/svg+xml;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "project.svg";
+        link.click();
+    }
+
+    function importSVG() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.svg';
+        input.onchange = e => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = readerEvent => {
+                const content = readerEvent.target.result;
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(content, "image/svg+xml");
+                const newSvg = doc.querySelector('svg');
+                
+                if (newSvg) {
+                    // Update dimensions
+                    const w = newSvg.getAttribute('width') || 800;
+                    const h = newSvg.getAttribute('height') || 600;
+                    mainSvg.setAttribute('width', w);
+                    mainSvg.setAttribute('height', h);
+                    svgContainer.style.width = w + 'px';
+                    svgContainer.style.height = h + 'px';
+
+                    // Clean and move children
+                    canvasGroup.innerHTML = '';
+                    Array.from(newSvg.children).forEach(child => {
+                        // Re-attach drag events
+                        child.addEventListener('mousedown', (e) => {
+                            e.stopPropagation();
+                            selectElement(child);
+                            isDraggingElement = true;
+                            dragStartX = e.clientX;
+                            dragStartY = e.clientY;
+                            if (child.tagName === 'circle') {
+                                elementStartX = parseFloat(child.getAttribute('cx')) || 0;
+                                elementStartY = parseFloat(child.getAttribute('cy')) || 0;
+                            } else {
+                                elementStartX = parseFloat(child.getAttribute('x')) || 0;
+                                elementStartY = parseFloat(child.getAttribute('y')) || 0;
+                            }
+                        });
+                        canvasGroup.appendChild(child);
+                    });
+                }
+            }
+            reader.readAsText(file);
+        }
+        input.click();
+    }
+</script>
+
+</body>
+</html>
