@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محرر SVG الاحترافي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Amiri);
+/* Global */
+html{
+  min-height: 300%;
+  overflow: hidden;
+}
+body {
+   background-image: radial-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+
+  background-image: url(./mape.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center center;
+  color: #fff;
+  text-align: center;
+  font-size: 300%;
+  
+  width: 100vw;
+  font-weight: 700;
+  overflow: hidden;
+  font-family: 'Amiri', monospace;
+  
+}
+body:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  background-image: linear-gradient(to bottom right, #4a1f52, #822841);
+  opacity: 0;
+}
+
+#fly-in {
+  font-size: 4em;
+  position: absolute;
+  top:0%;
+  left:0%;
+  bottom:0%;
+  right:0%;
+  
+  text-transform: uppercase;
+}
+
+#fly-in span {
+  display: block;
+  font-size: .4em;
+  opacity: .8;
+}
+
+#fly-in div {
+  position: absolute;
+  margin: 2vh 0;
+  opacity: 0;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  
+  animation: switch 32s linear infinite;
+}
+
+#fly-in div:nth-child(2) { animation-delay: 4s}
+#fly-in div:nth-child(3) { animation-delay: 8s}
+#fly-in div:nth-child(4) { animation-delay: 12s}
+#fly-in div:nth-child(5) { animation-delay: 16s}
+#fly-in div:nth-child(6) { animation-delay: 20s}
+#fly-in div:nth-child(7) { animation-delay: 24s}
+#fly-in div:nth-child(8) { animation-delay: 28s}
+
+@keyframes switch {
+    0% { opacity: 0;filter: blur(20px); transform:translate(-50%,-50%)scale(12)}
+    3% { opacity: 1;filter: blur(0); transform:translate(-50%,-50%)scale(1)}
+    10% { opacity: 1;filter: blur(0); transform:translate(-50%,-50%)scale(.9)}
+    13% { opacity: 0;filter: blur(10px); transform:translate(-50%,-50%)scale(.1)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+
+
+    </style>
+</head>
+<body>
+<div id="fly-in">  
+<div>
+معركة
+</div>
+<div>
+ليبانتو
+</div>
+<div>
+البحرية
+</div>
+<div>
+نهاية
+<span>
+عصر القوادس
+</span>
+</div>
+</div>
+
+    </body>
+</html>
