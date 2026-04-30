@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transparent WebM Test</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+
+    /* خلفية مربعات لإظهار الشفافية */
+    background: repeating-conic-gradient(
+      #ccc 0% 25%, 
+      #fff 0% 50%
+    ) 50% / 40px 40px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    width: 300px;
+    height: 300px;
+  }
+</style>
+</head>
+
+<body>
+
+<video autoplay loop muted playsinline>
+  <source src="transparent-animation.webm" type="video/webm">
+</video>
+
+</body>
+</html>
