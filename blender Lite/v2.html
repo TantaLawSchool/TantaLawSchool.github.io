@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Grass Explorer - Detailed Shadows</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #87CEEB; font-family: sans-serif; }
+        #ui-overlay {
+            position: absolute; bottom: 20px; left: 20px; 
+            background: rgba(0, 0, 0, 0.6); color: white; 
+            padding: 15px; border-radius: 10px; pointer-events: none;
+            direction: ltr; text-align: left; border: 1px solid rgba(255,255,255,0.2);
+        }
+        #instructions {
+            position: absolute; top: 50%; left: 50%; 
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95); padding: 30px;
+            border-radius: 15px; text-align: center; color: #333;
+            cursor: pointer; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+        .crosshair {
+            position: absolute; top: 50%; left: 50%;
+            width: 10px; height: 10px; border: 2px solid white;
+            border-radius: 50%; transform: translate(-50%, -50%);
+            pointer-events: none; opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="instructions">
+        <h2>مستكشف الطبيعة</h2>
+        <p>انقر للبدء واستخدام الماوس للنظر</p>
+        <p><b>WASD</b> للتحرك | <b>ESC</b> للخروج</p>
+    </div>
+
+    <div class="crosshair"></div>
+
+    <div id="ui-overlay">
+        Movement: W, A, S, D<br>
+        View: Mouse Move<br>
+        Status: Detailed Shadows Active
+    </div>
+
+    <script>
+        let scene, camera, renderer, clock;
+        let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
+        let velocity = new THREE.Vector3();
+        let direction = new THREE.Vector3();
+        let pitch = 0, yaw = 0;
+
+        function init() {
+            scene = new THREE.Scene();
+            const skyColor = 0x87CEEB;
+            scene.background = new THREE.Color(skyColor);
+            scene.fog = new THREE.Fog(skyColor, 10, 250); // ضباب للأفق
+
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 1.7, 10);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            
+            // تفعيل الظلال بجودة عالية
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            
+            renderer.outputEncoding = THREE.sRGBEncoding;
+            document.body.appendChild(renderer.domElement);
+
+            clock = new THREE.Clock();
+
+            // إضاءة الشمس (مصدر الظلال)
+            const sunLight = new THREE.DirectionalLight(0xffffff, 1);
+            sunLight.position.set(30, 60, 30);
+            sunLight.castShadow = true;
+            
+            // ضبط دقة الظل ومساحته
+            sunLight.shadow.mapSize.width = 4096; // دقة عالية جداً للظلال
+            sunLight.shadow.mapSize.height = 4096;
+            sunLight.shadow.camera.left = -100;
+            sunLight.shadow.camera.right = 100;
+            sunLight.shadow.camera.top = 100;
+            sunLight.shadow.camera.bottom = -100;
+            sunLight.shadow.bias = -0.0001;
+            scene.add(sunLight);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+
+            const textureLoader = new THREE.TextureLoader();
+
+            // --- تحميل وتطبيق نسيج العشب للأرضية ---
+            // ملاحظة: تأكد من تسمية الملف grass_texture.jpg أو استبداله بالمسار الصحيح
+            textureLoader.load("grass_texture.jpg", function(grassTex) {
+                grassTex.wrapS = grassTex.wrapT = THREE.RepeatWrapping;
+                grassTex.repeat.set(128, 128); // تكرار النسيج ليظهر العشب صغيراً وواقعياً
+                grassTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+                const floorMat = new THREE.MeshStandardMaterial({ 
+                    map: grassTex,
+                    roughness: 0.8,
+                    metalness: 0.0
+                });
+                const floorGeo = new THREE.PlaneGeometry(1000, 1000);
+                const floor = new THREE.Mesh(floorGeo, floorMat);
+                floor.rotation.x = -Math.PI / 2;
+                floor.receiveShadow = true;
+                scene.add(floor);
+            }, undefined, function() {
+                // بديل في حال عدم وجود الصورة
+                const floorMat = new THREE.MeshStandardMaterial({ color: 0x447744 });
+                const floorGeo = new THREE.PlaneGeometry(1000, 1000);
+                const floor = new THREE.Mesh(floorGeo, floorMat);
+                floor.rotation.x = -Math.PI / 2;
+                floor.receiveShadow = true;
+                scene.add(floor);
+            });
+
+            // --- تحميل الـ Sprites مع ظل مفصل ---
+            textureLoader.load("sprite.png", function(texture) {
+                const spriteCount = 60;
+                const geometry = new THREE.PlaneGeometry(4, 4);
+
+                for (let i = 0; i < spriteCount; i++) {
+                    const material = new THREE.MeshStandardMaterial({ 
+                        map: texture, 
+                        transparent: true, 
+                        alphaTest: 0.1, // بكسلات الشفافية أقل من 0.5 لا تُعرض
+                        side: THREE.DoubleSide 
+                    });
+
+                    const mesh = new THREE.Mesh(geometry, material);
+                    mesh.position.set((Math.random() - 0.5) * 150, 2, (Math.random() - 0.5) * 150);
+                    mesh.castShadow = true;
+                    mesh.receiveShadow = true;
+
+                    // --- الجزء الأهم: جعل الظل يتبع الشفافية بدقة ---
+                    mesh.customDepthMaterial = new THREE.MeshDepthMaterial({
+                        depthPacking: THREE.RGBADepthPacking,
+                        map: texture,
+                        alphaTest: 0.1
+                    });
+
+                    scene.add(mesh);
+                }
+            });
+
+            // التحكم بالماوس
+            document.getElementById('instructions').addEventListener('click', () => {
+                document.body.requestPointerLock();
+            });
+
+            document.addEventListener('pointerlockchange', () => {
+                document.getElementById('instructions').style.display = 
+                    document.pointerLockElement === document.body ? 'none' : 'block';
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (document.pointerLockElement === document.body) {
+                    yaw -= e.movementX * 0.002;
+                    pitch -= e.movementY * 0.002;
+                    pitch = Math.max(-Math.PI/2.1, Math.min(Math.PI/2.1, pitch));
+                }
+            });
+
+            // التحكم بالأزرار
+            const handleKey = (code, isDown) => {
+                switch (code) {
+                    case 'KeyW': moveForward = isDown; break;
+                    case 'KeyA': moveLeft = isDown; break;
+                    case 'KeyS': moveBackward = isDown; break;
+                    case 'KeyD': moveRight = isDown; break;
+                }
+            };
+            document.addEventListener('keydown', (e) => handleKey(e.code, true));
+            document.addEventListener('keyup', (e) => handleKey(e.code, false));
+
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const delta = clock.getDelta();
+
+            if (document.pointerLockElement === document.body) {
+                camera.quaternion.setFromEuler(new THREE.Euler(pitch, yaw, 0, 'YXZ'));
+
+                velocity.x -= velocity.x * 10.0 * delta;
+                velocity.z -= velocity.z * 10.0 * delta;
+
+                direction.z = Number(moveForward) - Number(moveBackward);
+                direction.x = Number(moveRight) - Number(moveLeft);
+                direction.normalize();
+
+                if (moveForward || moveBackward) velocity.z -= direction.z * 80.0 * delta;
+                if (moveLeft || moveRight) velocity.x -= direction.x * 80.0 * delta;
+
+                camera.translateX(-velocity.x * delta);
+                camera.translateZ(-velocity.z * delta);
+                camera.position.y = 1.7; 
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        window.onload = init;
+    </script>
+</body>
+</html>
