@@ -1,0 +1,46 @@
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+    #btn-spin {
+        font:
+            bold 12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+        background-color: #3386c0;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        z-index: 1;
+        border: none;
+        width: 200px;
+        margin-left: -100px;
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 3px;
+    }
+    #btn-spin:hover {
+        background-color: #4ea0da;
+    }
+    
+    #export-btn {
+    position: absolute; /* لجعل الزر يطفو فوق الخريطة */
+    top: 20px;
+    right: 20px;
+    z-index: 10; /* لضمان ظهوره فوق كل طبقات الخريطة */
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* أبيض شفاف متناسق مع الخريطة */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+#export-btn:hover {
+    background-color: #f0f0f0;
+}
