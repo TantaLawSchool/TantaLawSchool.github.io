@@ -3,7 +3,7 @@
         container: 'map',
         /*style: 'mapbox://styles/mapbox/outdoors-v12',*/
         style: 'mapbox://styles/yamsasson/cmh5dv2gw004201qwf6o074i5',
-        zoom: 1.9,
+        zoom: 6,
         center: [31.2, 30.0],
         projection: 'mercator', 
     
@@ -14,7 +14,8 @@
     
     // 3. (اختياري) منع دوران الخريطة لتبقى دائماً جهة الشمال للأعلى
     touchZoomRotate: false,
-    preserveDrawingBuffer: true // ضروري جداً للسماح بالتقاط الصورة
+    preserveDrawingBuffer: true, // ضروري جداً للسماح بالتقاط الصورة
+    renderWorldCopies: false, // هذا يمنع تكرار العالم أفقياً
     });
 
     map.on('style.load', () => {
@@ -165,8 +166,8 @@ function exportHugeMap() {
     const originalHeight = container.style.height;
 
     // تكبير الحاوية لأبعاد ضخمة (داخلياً)
-    container.style.width = '5000px';
-    container.style.height = '4000px';
+    container.style.width = '7000px';
+    container.style.height = '7000px';
     map.resize();
 
     // ننتظر قليلاً حتى تنتهي الخريطة من رندر التفاصيل الجديدة
@@ -181,5 +182,5 @@ function exportHugeMap() {
         container.style.width = originalWidth;
         container.style.height = originalHeight;
         map.resize();
-    }, 3000); 
+    }, 40000); 
 }
