@@ -1,0 +1,507 @@
+<script>console.log('DataTable Rows Count: 17');</script><script>console.log('First Row T2_SubjectCode: U2006');</script><script>console.log('First Row T2_SubjectDescrAr: منطق قديم ');</script><script>console.log('First Row T0_RatingDescrAr: ض');</script><script>console.log('First Row Status: راسب');</script>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    
+   
+    
+       
+    
+     <style>
+            body, .form-control, .btn, h2, label, input, button {
+        font-family: 'Cairo', sans-serif !important;
+    }
+        
+        /* Force Light Mode - Override AdminLTE Dark Mode */
+        body {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+        }
+        
+        .content-wrapper {
+            background-color: #f4f6f9 !important;
+        }
+        
+        .card {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+            border: 1px solid #dee2e6 !important;
+        }
+        
+        .navbar {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+        }
+        
+        .navbar-light {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: #333333 !important;
+        }
+        
+        .main-sidebar {
+            background-color: #f8f9fa !important;
+        }
+        
+        /* Override sidebar for light mode consistency */
+        .sidebar-light-primary {
+            background-color: #f8f9fa !important;
+        }
+        
+        .sidebar-light-primary .nav-sidebar .nav-link {
+            color: #333333 !important;
+        }
+        
+        .sidebar-light-primary .nav-sidebar .nav-link:hover {
+            background-color: #e9ecef !important;
+            color: #333333 !important;
+        }
+        
+        .sidebar-light-primary .nav-sidebar .nav-link.active {
+            background-color: #007bff !important;
+            color: #ffffff !important;
+        }
+        
+        .form-control {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+            border-color: #ced4da !important;
+        }
+        
+        .btn {
+            background-color: #007bff !important;
+            color: #ffffff !important;
+        }
+        
+        .text-white {
+            color: #333333 !important;
+        }
+        
+        .bg-primary {
+            background-color: #007bff !important;
+            color: #ffffff !important;
+        }
+        
+        /* Override any dark mode classes */
+        .dark-mode,
+        [data-bs-theme="dark"],
+        .theme-dark {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+        }
+        
+        .dark-mode .content-wrapper,
+        [data-bs-theme="dark"] .content-wrapper,
+        .theme-dark .content-wrapper {
+            background-color: #f4f6f9 !important;
+        }
+        
+        .dark-mode .card,
+        [data-bs-theme="dark"] .card,
+        .theme-dark .card {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+            border: 1px solid #dee2e6 !important;
+        }
+        
+        /* Ensure text is always dark */
+        .dark-mode *,
+        [data-bs-theme="dark"] *,
+        .theme-dark * {
+            color: #333333 !important;
+        }
+        
+        /* Keep primary elements with their intended colors */
+        .dark-mode .bg-primary,
+        [data-bs-theme="dark"] .bg-primary,
+        .theme-dark .bg-primary,
+        .dark-mode .btn-primary,
+        [data-bs-theme="dark"] .btn-primary,
+        .theme-dark .btn-primary {
+            background-color: #007bff !important;
+            color: #ffffff !important;
+        }
+        
+        /* Force light mode at the highest level */
+        html, body {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+        }
+        
+        /* Override any AdminLTE dark mode */
+        .hold-transition {
+            background-color: #ffffff !important;
+        }
+        
+        .hold-transition .content-wrapper {
+            background-color: #f4f6f9 !important;
+        }
+        
+        .hold-transition .card {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+        }
+        
+        /* Ensure all text elements are dark */
+        h1, h2, h3, h4, h5, h6, p, span, div, label {
+            color: #333333 !important;
+        }
+        
+        /* Override any Bootstrap dark mode */
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #ffffff !important;
+            --bs-body-color: #333333 !important;
+        }
+        </style>
+    <title>البوابة الالكترونية للطالب  - جامعة الازهر</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI (For sortable, draggable, etc.) -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- jQuery UI CSS (Optional for styling) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.full.min.js"></script>
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+
+    <!-- iCheck -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/plugins/jqvmap/jqvmap.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/dist/css/adminlte.min.css">
+
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/plugins/daterangepicker/daterangepicker.css">
+
+    <!-- summernote -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/plugins/summernote/summernote-bs4.css">
+
+    <!-- Bootstrap 4 RTL -->
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
+
+    <!-- Custom style for RTL -->
+    <link rel="stylesheet" href="https://studentportal.azu.edu.eg/portal/dist/css/custom.css">
+
+    <!-- Add Select2 CSS   To Enable search in dropdownlist-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/Portal/StudentDashboard.html" class="nav-link">الرئيسية</a>
+                </li>
+            </ul>
+
+            <!-- SEARCH FORM -->
+            <form class="form-inline ml-3">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav mr-auto-navbav">
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item">
+                    <span class="nav-link">
+                        <i class="far fa-user"></i>
+                        
+                            <span>مرحبا بك، محمود رمضان احمد محمود رمضان</span>
+                        
+                        <a href="/Portal/Logout.html" class="btn btn-sm btn-danger mr-2">
+                            <i class="fas fa-sign-out-alt"></i> تسجيل خروج
+                        </a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-light-primary elevation-4">
+            <!-- Brand Logo -->
+             <img src="https://studentportal.azu.edu.eg/Portal/images/azhar-logo.png" style="  display: block;
+    margin: 0 auto 0px auto; /* top: 0, right: auto, bottom: 20px, left: auto */
+    width: 121px; height:121px;"  />
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex"></div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a id="lnkDashboard" class="nav-link" href="StudentDashboard.html">
+                                <i class="fas fa-home"></i> الرئيسية
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="HyperLink1" class="nav-link" href="StudentResult.html">
+                                <i class="far fa-list-alt "></i> نتيجة الطالب
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="lnkStudentSchedule" class="nav-link" href="StudentSchedule.html">
+                                <i class="fas fa-calendar-alt"></i> الجدول الدراسي
+                            </a>
+                        </li>
+                          
+                        
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <form method="post" action="./StudentResult" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="76AB6FEC" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="hHJh+bD1nZ8d42vjyggA/M2G2NRGSAjBHyUEfqfUTODMvkMd9cvdfOMaxvZdSBrKj46Kv3bUfwT9wke7588ZWxw720XH3EzGGh3j6pNq4BGqgpY/dvJ/d13xYRV7WJoGIc6YTCVlrmBR/fyM97b2pQ==" />
+</div>
+        <div class="content-wrapper">
+            <br />
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <section class="col-md-12">
+                            
+   
+        <div class="container mt-0">
+            <div class="row">
+                <div class="col-md-12">
+                  
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col-md-6 mb-2">
+                                    <span id="MainContent_lblStudentName" class="form-control mb-0"><b>اسم الطالب :  </b> محمود رمضان احمد محمود رمضان</span>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <span id="MainContent_lblStudentCase" class="form-control mb-0"><b>حالة الطالب فى الفرقة :  </b> مستجد</span>
+                                </div>
+                                
+                            </div>
+
+                            <div class="table-responsive">
+                                <div>
+	<table class="table table-striped table-bordered" cellspacing="0" rules="rows" border="1" id="MainContent_gvResults" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col"> كود المقرر</th><th scope="col">المقرر باللغة العربية</th><th scope="col">التقدير</th><th scope="col">الحالة</th>
+		</tr><tr>
+			<td>U2006</td><td>منطق قديم </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2007</td><td>فلسفة عامة </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2008</td><td>علوم القرآن </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2009</td><td>خطابة </td><td>ل</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2010</td><td>شبهات حول الحديث </td><td>ل</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2011</td><td>فقه </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2001</td><td>القرآن الكريم </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2002</td><td>التفسير التحليلي </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2003</td><td>الحديث التحليلي </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2004</td><td>التوحيد </td><td>ج ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2005</td><td>النظم الاسلامية </td><td>ل</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2012</td><td>اخلاق اسلامية </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2013</td><td>تيارات فكرية معاصرة </td><td>ج ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2014</td><td>ادب وبلاغة </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2015</td><td>شبهات حول القرآن </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2017</td><td>الغة أوربية </td><td>ج</td><td>ناجح</td>
+		</tr><tr>
+			<td>U2016</td><td>علوم حديث </td><td>ج</td><td>ناجح</td>
+		</tr>
+	</table>
+</div>
+                                
+                               
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <span id="MainContent_lblPhaseRate" class="form-label" style="font-weight:bold;">التقدير:</span>
+                                    <input name="ctl00$MainContent$txt_PhaseRate" type="text" value="ج" readonly="readonly" id="MainContent_txt_PhaseRate" class="form-control" />
+                                </div>
+                                <div class="col-md-4">
+                                    <span id="MainContent_lbl_PhaseNote" class="form-label" style="font-weight:bold;">حالة النجاح:</span>
+                                    <input name="ctl00$MainContent$txt_PhaseNote" type="text" value="ناجح" readonly="readonly" id="MainContent_txt_PhaseNote" class="form-control" />
+                                </div>
+                                <div class="col-md-4">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+                        </section>
+                        <!-- /.Left col -->
+                        <!-- right col (We are only adding the ID to make the widgets sortable) -->
+                        <section class="col-lg-5 connectedSortable"></section>
+                        <!-- right col -->
+                    </div>
+                    <!-- /.row (main row) -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        </form>
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+          حقوق النشر © 2023-2024 انفورماتيك لبرمجيات التعليم / جميع الحقوق محفوظة
+           
+            <div class="float-right d-none d-sm-inline-block">
+                Version 1
+            </div>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- Bootstrap 4 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Sparkline Plugin -->
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/sparklines/sparkline.js"></script>
+
+    <!-- Other Scripts -->
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/chart.js/Chart.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/moment/moment.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/dist/js/adminlte.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/dist/js/pages/dashboard.js"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/dist/js/demo.js"></script>
+
+    <!-- jQuery Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.0/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://studentportal.azu.edu.eg/portal/js/datatable-init.js"></script>
+
+
+    <!-- Add Select2 JS  To Enable search in dropdownlist-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    
+    <!-- Force Light Mode Script -->
+    <script>
+        // Force light mode on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove any dark mode classes
+            document.body.classList.remove('dark-mode', 'theme-dark');
+            document.documentElement.classList.remove('dark-mode', 'theme-dark');
+            
+            // Set light mode attributes
+            document.documentElement.setAttribute('data-bs-theme', 'light');
+            document.body.setAttribute('data-bs-theme', 'light');
+            
+            // Force light mode styles
+            document.body.style.backgroundColor = '#ffffff';
+            document.body.style.color = '#333333';
+            
+            // Override any CSS variables
+            document.documentElement.style.setProperty('--bs-body-bg', '#ffffff');
+            document.documentElement.style.setProperty('--bs-body-color', '#333333');
+        });
+        
+        // Also run on window load to catch any late-loading styles
+        window.addEventListener('load', function() {
+            document.body.classList.remove('dark-mode', 'theme-dark');
+            document.documentElement.classList.remove('dark-mode', 'theme-dark');
+            document.documentElement.setAttribute('data-bs-theme', 'light');
+            document.body.setAttribute('data-bs-theme', 'light');
+        });
+    </script>
+  
+</body>
+</html>
